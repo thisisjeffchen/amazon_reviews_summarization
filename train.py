@@ -35,7 +35,7 @@ def segment (reviews):
   review_indicies = []
   for idx in range (len (reviews)):
     review = reviews[idx]
-    text = review [reviewText]
+    text = review ['reviewText']
     sentences = text.split (". ")
     for sent in sentences:
       all_sentences.append (sent)
