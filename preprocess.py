@@ -3,10 +3,10 @@ import collections
 import json
 
 RAW_PATH = "data/raw/reviews_Electronics.json.gz"
-PROCESSED_PATH = "data/processed/single_product.json"
-TO_PRINT = 10
-TO_PROCESS = 100000 #-1 means process all
-PICKED_PRODUCT = "B00001WRSJ"
+PROCESSED_PATH = "data/processed/"
+TO_PRINT = 25
+TO_PROCESS = -1 #-1 means process all
+PICKED_PRODUCTS = ["B00001WRSJ", "B006ML9J4O", "B007I5JT4S"]
 
 def parse (path):
   g = gzip.open (path, 'r')
@@ -36,7 +36,7 @@ for idx in range(TO_PRINT):
   key, value = p_sorted [idx]
   print (key + ": " + str (products_review_count [key]))
 
-
-print ("Saving product " + PICKED_PRODUCT)
-with open(PROCESSED_PATH, 'w') as f:
-  json.dump(products[PICKED_PRODUCT], f, ensure_ascii=False, indent=2)
+for asin in PICKED_PRODUCTS:
+  print ("Saving product " + asin)
+  with open(PROCESSED_PATH + asin + ".json", 'w') as f:
+   json.dump(products[asin], f, ensure_ascii=False, indent=2)
