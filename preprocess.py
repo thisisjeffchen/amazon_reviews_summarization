@@ -39,6 +39,4 @@ for idx in range(TO_PRINT):
 
 print ("Saving product " + PICKED_PRODUCT)
 with open(PROCESSED_PATH, 'w') as f:
-  for review in products[PICKED_PRODUCT]:
-    json.dump(review, f, ensure_ascii=False)
-    f.write('\n')
+  json.dump(products[PICKED_PRODUCT], f, ensure_ascii=False, indent=2)
