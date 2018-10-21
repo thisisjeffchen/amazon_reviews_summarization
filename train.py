@@ -14,14 +14,14 @@ def main():
   reviews = get_reviews ()
   all_sentences, review_indicies = segment (reviews)
   print (all_sentences)
+  all_sentences=all_sentences[0:10]
   embedded = embed (all_sentences)  
 
-  print (embedded)
-
+  
   print (len(all_sentences))
   print (len(embedded))
 
-
+  print (embedded)
   #grab a model
 
 def get_reviews ():
@@ -44,10 +44,17 @@ def segment (reviews):
   return all_sentences, review_indicies
 
 def embed (all_sentences):
-  embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder-large/3")
+  with tf.Graph().as_default():
+  module_url = "https://tfhub.dev/google/nnlm-en-dim128-with-normalization/1"
+  embed = hub.Module(module_url)
   embeddings = embed(all_sentences)
-  return embeddings
 
+  with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    sess.run(tf.tables_initializer())
+
+    return sess.run(embeddings)
+    
 def cluster ():
   pass
 
