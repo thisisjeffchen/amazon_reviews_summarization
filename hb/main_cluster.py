@@ -49,10 +49,11 @@ def get_kmeans_summary(product_reviews, encoder):
 def main():
     reviews_indexer= SQLLiteIndexer(DATA_PATH)
     encoder= get_encoder()
-    asin_list= ['B00001WRSJ', 'B007I5JT4S']
+    asin_list= ['B00001WRSJ', 'B009AYLDSU', 'B007I5JT4S']
     summary_dict= OrderedDict()
     
     for i, asin in enumerate(asin_list):
+#        pdb.set_trace()
         product_reviews= reviews_indexer[asin]
         summary_dict[asin]= get_kmeans_summary(product_reviews, encoder)
     
