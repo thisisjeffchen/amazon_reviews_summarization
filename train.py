@@ -6,6 +6,7 @@ import tensorflow as tf
 import tensorflow_hub as hub
 from sklearn.cluster import KMeans
 from nltk.tokenize import sent_tokenize
+from rouge import Rouge
 
 
 REVIEWS_PATH = "data/processed/"
@@ -28,21 +29,31 @@ def main():
   
     reviewTexts = [review['reviewText'] for review in reviews ]
     all_sentences = [sent for review in reviewTexts for sent in sent_tokenize(review)]
+
+    counts = []
   
     print ("Embedding...")
     embedded = embed (args, all_sentences)  
   
     print ("Running kmeans...")
     clusters = KMeans(n_clusters = args.clusters, random_state = 0).fit (embedded)  
-    for centroid in range(1, args.clusters + 1):
-      
+    for label in range(args.clusters):
+      count = len (clusters.labels_[clusters.labels_[:] == label])
+      counts.append (count)      
 
     dist = clusters.transform (embedded)
     product_reviews_np = np.array (all_sentences)
-    summaries = product_reviews_np[np.argmin (dist, axis = 0)]
+    summaries = product_reviews_np[np.argmin (dist, axis = 0)].tolist()
+
+    #compute rouge1
+    summaries_concat = ". ".join (summaries)
+    
+
+
   
     with open(RESULTS_PATH + "5_summary_" + product + ".json", 'w') as f:
-      json.dump(summaries.tolist(), f, ensure_ascii=False, indent=2)
+      json.dump(summaries, f, ensure_ascii=False, indent=2)
+      json.dump(counts, f, ensure_ascii=False, indent=2)
 
 
 def get_reviews (args, product):
