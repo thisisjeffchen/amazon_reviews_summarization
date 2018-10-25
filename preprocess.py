@@ -6,7 +6,7 @@ RAW_PATH = "data/raw/reviews_Electronics.json.gz"
 PROCESSED_PATH = "data/processed/"
 TO_PRINT = 25
 TO_PROCESS = -1 #-1 means process all
-PICKED_PRODUCTS = ["B00001WRSJ", "B009AYLDSU", "B007I5JT4S"]
+PICKED_PRODUCTS = ["B00001WRSJ", "B009AYLDSU", "B007I5JT4S", "B000EI0EB8", "B0007OWASE", "B00008OE43"]
 REVIEW_HUMAN_COUNT = 75
 
 def parse (path):
