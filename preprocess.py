@@ -7,6 +7,7 @@ PROCESSED_PATH = "data/processed/"
 TO_PRINT = 25
 TO_PROCESS = -1 #-1 means process all
 PICKED_PRODUCTS = ["B00001WRSJ", "B009AYLDSU", "B007I5JT4S"]
+REVIEW_HUMAN_COUNT = 75
 
 def parse (path):
   g = gzip.open (path, 'r')
@@ -34,6 +35,17 @@ p_sorted = sorted(products_review_count.items(), key = lambda item: item[1],
 print ("MOST REVIEWED PRODUCTS")
 for idx in range(TO_PRINT):
   key, value = p_sorted [idx]
+  print (key + ": " + str (products_review_count [key]))
+
+idx_75 = 0
+for idx in range (len (p_sorted)):
+  if (p_sorted[idx][1] <= REVIEW_HUMAN_COUNT):
+    idx_75 = idx
+    break
+
+print ("PRODUCTS WITH BETWEEN 75-100 REVIEWS")
+for idx in range(TO_PRINT):
+  key, value = p_sorted [idx_75 + idx]
   print (key + ": " + str (products_review_count [key]))
 
 for asin in PICKED_PRODUCTS:
