@@ -47,9 +47,6 @@ def main():
 
     #compute rouge1
     summaries_concat = ". ".join (summaries)
-    
-
-
   
     with open(RESULTS_PATH + "5_summary_" + product + ".json", 'w') as f:
       json.dump(summaries, f, ensure_ascii=False, indent=2)
