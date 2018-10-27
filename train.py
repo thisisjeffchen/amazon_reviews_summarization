@@ -28,7 +28,12 @@ def main():
     #all_sentences=all_sentences[0:10]
   
     reviewTexts = [review['reviewText'] for review in reviews ]
-    all_sentences = [sent for review in reviewTexts for sent in sent_tokenize(review)]
+    sentenceParent = []
+    all_sentences = []
+    for idx, review in enumerate(reviewTexts):
+      for sent in sent_tokenize(review):
+        all_sentences.append(sent)
+        sentenceParent.append(idx)
 
     counts = []
   
@@ -38,7 +43,11 @@ def main():
     print ("Running kmeans...")
     clusters = KMeans(n_clusters = args.clusters, random_state = 0).fit (embedded)  
     for label in range(args.clusters):
-      count = len (clusters.labels_[clusters.labels_[:] == label])
+      reviewsForLabel = []
+      for idx, reviewLabel in enumerate(clusters.labels_):
+        if reviewLabel == label:
+          reviewsForLabel.append (sentenceParent[idx])
+      count = len ( set (reviewsForLabel))
       counts.append (count)      
 
     dist = clusters.transform (embedded)
