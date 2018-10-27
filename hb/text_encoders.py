@@ -22,8 +22,8 @@ class BaseHubModel(object):
 
 class NNLM(BaseHubModel):
     def __init__(self, path= "https://tfhub.dev/google/nnlm-en-dim128-with-normalization/1",
-                 trainable= False, name= 'nnlm'):
-        self.model= hub.Module(path, trainable= trainable, name= name)
+                 trainable= False):
+        self.model= hub.Module(path, trainable= trainable)
         super().__init__()
     
     def __call__(self, inp):
@@ -32,8 +32,8 @@ class NNLM(BaseHubModel):
 
 class Word2Vec(BaseHubModel):
     def __init__(self, path= "https://tfhub.dev/google/nnlm-en-dim128-with-normalization/1",
-                 trainable= False, name= 'word2vec'):
-        self.model= hub.Module(path, trainable= trainable, name= name)
+                 trainable= False):
+        self.model= hub.Module(path, trainable= trainable)
         super().__init__()
     
     def __call__(self, inp):
@@ -42,8 +42,8 @@ class Word2Vec(BaseHubModel):
 
 class USE(BaseHubModel):
     def __init__(self, path= "https://tfhub.dev/google/nnlm-en-dim128-with-normalization/1",
-                 trainable= False, name= 'use'):
-        self.model= hub.Module(path, trainable= trainable, name= name)
+                 trainable= False):
+        self.model= hub.Module(path, trainable= trainable)
         super().__init__()
     
     def __call__(self, inp):
@@ -52,8 +52,8 @@ class USE(BaseHubModel):
 
 class ELMO(BaseHubModel):
     def __init__(self, path= "https://tfhub.dev/google/nnlm-en-dim128-with-normalization/1",
-                 trainable= False, name= 'elmo'):
-        self.model= hub.Module(path, trainable= trainable, name= name)
+                 trainable= False):
+        self.model= hub.Module(path, trainable= trainable)
         super().__init__()
     
     def __call__(self, inp):
