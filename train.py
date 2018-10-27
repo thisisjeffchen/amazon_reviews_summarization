@@ -10,7 +10,8 @@ from rouge import Rouge
 
 
 REVIEWS_PATH = "data/processed/"
-PICKED_PRODUCTS = ["B00001WRSJ", "B009AYLDSU", "B007I5JT4S", "B000EI0EB8", "B0007OWASE", "B00008OE43"]
+PICKED_PRODUCTS = ["B000EI0EB8", "B0007OWASE", "B00008OE43"]
+#PICKED_PRODUCTS = ["B00001WRSJ", "B009AYLDSU", "B007I5JT4S", "B000EI0EB8", "B0007OWASE", "B00008OE43"]
 RESULTS_PATH = "results/"
 
 def main():
@@ -57,20 +58,41 @@ def main():
     #compute rouge1
     summariesConcat = ". ".join (summaries)
     total = 0
+    rouge = Rouge()
 
     for review in reviewTexts:
-      total += rouge.get_scores (summariesConcat, review)["rouge-1"]["f"]
+      total += rouge.get_scores (summariesConcat, review)[0]["rouge-1"]["f"]
 
     rougeAvg = total / len(reviewTexts)
 
-    
+    bestFitAverages = []
+    #compute best-fit rouge1
+    for idx, sentence in enumerate (all_sentences):
+      sentReviewTotal = 0
+      for review in reviewTexts:
+        sentReviewTotal += rouge.get_scores (sentence, review)[0]["rouge-1"]["f"]
+      bestFitAverages.append((sentReviewTotal / len(reviewTexts), idx))
 
+    bestFitSorted = sorted(bestFitAverages, reverse = True)
+
+    bestFitSummaries = [all_sentences[element[1]] for element in bestFitSorted[0:args.clusters]]
+
+    bestFitSummariesConcat = ". ".join (bestFitSummaries)
+    bestFitTotal = 0
+
+    #ugly
+    for review in reviewTexts:
+      bestFitTotal += rouge.get_scores (bestFitSummariesConcat, review)[0]["rouge-1"]["f"]
+
+    rougeBestFitAvg = bestFitTotal / len(reviewTexts)
 
   
     with open(RESULTS_PATH + "5_summary_" + product + ".json", 'w') as f:
       json.dump(summaries, f, ensure_ascii=False, indent=2)
       json.dump(counts, f, ensure_ascii=False, indent=2)
       json.dump(rougeAvg, f, ensure_ascii=False, indent=2)
+      json.dump(bestFitSummaries, f, ensure_ascii=False, indent=2)
+      json.dump(rougeBestFitAvg, f, ensure_ascii=False, indent=2)
 
 
 def get_reviews (args, product):
