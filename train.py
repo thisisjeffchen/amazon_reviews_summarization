@@ -55,11 +55,22 @@ def main():
     summaries = product_reviews_np[np.argmin (dist, axis = 0)].tolist()
 
     #compute rouge1
-    summaries_concat = ". ".join (summaries)
+    summariesConcat = ". ".join (summaries)
+    total = 0
+
+    for review in reviewTexts:
+      total += rouge.get_scores (summariesConcat, review)["rouge-1"]["f"]
+
+    rougeAvg = total / len(reviewTexts)
+
+    
+
+
   
     with open(RESULTS_PATH + "5_summary_" + product + ".json", 'w') as f:
       json.dump(summaries, f, ensure_ascii=False, indent=2)
       json.dump(counts, f, ensure_ascii=False, indent=2)
+      json.dump(rougeAvg, f, ensure_ascii=False, indent=2)
 
 
 def get_reviews (args, product):
