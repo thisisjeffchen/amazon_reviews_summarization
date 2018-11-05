@@ -183,20 +183,3 @@ class SQLLiteBatchIterator(object):
         self.cur.close()
         self.conn.close()
 
-
-
-
-# =============================================================================
-# Model data utils
-# =============================================================================
-DATA_PATH= os.environ['DATA_PATH']
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-
-
-def build_tokenizer(data_path= DATA_PATH, db_name= "reviews.s3db"):
-    
-    
-    
-    
-    
