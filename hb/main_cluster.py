@@ -35,13 +35,31 @@ from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
 #rouge.get_scores(hyp, ref)
 #
 
-def get_norm_rouge(summary_list, ground_truth_sentences):
+def get_norm_rouge1(summary_list, ground_truth_sentences):
     rouge= Rouge()
     rouge_list= []
     for hyp in summary_list:
         scores= [rouge.get_scores(hyp.lower(), r.lower())[0]['rouge-1']['f'] 
                     for r in ground_truth_sentences if len(r)>10]
         rouge_list.extend(scores)
+    return np.mean(rouge_list)
+
+
+def get_norm_rouge2(summary_list, reviewTexts):
+    rouge= Rouge()
+    summariesConcat= ". ".join (summary_list)
+    total= 0
+    for review in reviewTexts:
+      total += rouge.get_scores (summariesConcat, review)[0]["rouge-1"]["f"]
+    rougeAvg = total / len(reviewTexts)
+    return rougeAvg
+
+
+def get_norm_rouge3(summary_list, ground_truth_sentences):
+    rouge= Rouge()
+    summariesConcat= ". ".join (summary_list)
+    rouge_list= [rouge.get_scores(summariesConcat.lower(), r.lower())[0]['rouge-1']['f'] 
+                for r in ground_truth_sentences if len(r)>10]
     return np.mean(rouge_list)
 
 
@@ -52,7 +70,9 @@ def get_kmeans_summary(product_reviews, encoder):
     dist= kmeans.transform(product_embs)
     product_reviews_np= np.array(product_sentences)
     summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
-    score= get_norm_rouge(summary_reviews, product_reviews_np.tolist())
+#    score= get_norm_rouge1(summary_reviews, product_reviews_np.tolist())
+#    score= get_norm_rouge2(summary_reviews, product_reviews)
+    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
     return summary_reviews, score
 
 
@@ -78,6 +98,45 @@ def main():
     
     with open('summary_dict_proposal.json', 'w') as fo:
         json.dump(summary_dict, fo)
+
+
+def read_file(filename, num_products= 3, num_sents= 5):
+    sentences= []
+    count= 0
+    asins= []
+    ret_dict= {}
+    with open(filename, 'r') as f:
+        for i in range(num_products):
+            asin= f.readline().replace('\n', '')
+            asins.append(asin)
+            for j in range(num_sents):
+                sentences.append(f.readline().replace('\n', ''))
+            _= f.readline()
+            ret_dict[asin]= sentences
+            sentences= []
+    return ret_dict
+
+
+def oracle():
+    reviews_indexer= SQLLiteIndexer(DATA_PATH)
+    path= '../github/cs221_project/data/oracle'
+    files= ['will.txt', 'jeff.txt']
+    review_counts= [3,3]
+    rouge_list= []
+    for i, file in enumerate(files):
+        full_name= os.path.join(path, file)
+        asin_dict= read_file(full_name)
+        for asin, human_summaries in asin_dict.items():
+            product_reviews= reviews_indexer[asin]
+            ground_truth_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
+            score= get_norm_rouge(human_summaries, ground_truth_sentences)
+            rouge_list.append(score)
+            print(i)
+    
+    print(np.mean(rouge_list))
+    print(pd.Series(rouge_list).describe())
+
+
 
 
 if __name__ == "__main__":
