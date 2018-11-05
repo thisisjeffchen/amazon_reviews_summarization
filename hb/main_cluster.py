@@ -23,7 +23,7 @@ from rouge import Rouge
 import json
 from nltk.tokenize import sent_tokenize
 
-DATA_PATH= os.environ['DATA_PATH']
+from config import DATA_PATH
 from config import args
 from main_encode import get_encoder
 from data_utils import SQLLiteBatchIterator, SQLLiteIndexer

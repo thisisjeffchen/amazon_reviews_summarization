@@ -113,3 +113,4 @@ venv.bak/
 .idea/*
 
 *.s3db
+*.json.gz
