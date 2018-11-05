@@ -22,7 +22,7 @@ import ast
 import random
 import tensorflow as tf
 
-DATA_PATH= os.environ['DATA_PATH']
+from config import DATA_PATH
 MAX_SEQUENCE_LENGTH = 100
 MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 100

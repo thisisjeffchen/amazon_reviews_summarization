@@ -114,3 +114,5 @@ venv.bak/
 
 *.s3db
 *.json.gz
+
+cs221/
