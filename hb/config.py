@@ -8,6 +8,8 @@ Created on Sat Oct 20 14:59:36 2018
 
 import argparse
 import ast
+import os
+
 
 parser= argparse.ArgumentParser()
 
@@ -48,3 +50,5 @@ parser.add_argument('--test_batches', type=int,
                     help='the number of product groups taken each of chunksize')
 
 args = parser.parse_args()
+
+DATA_PATH= os.environ.get('DATA_PATH') or 'data'
