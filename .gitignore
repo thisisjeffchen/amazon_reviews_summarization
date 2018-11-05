@@ -106,3 +106,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+.idea
+.idea/workspace.xml
+.idea/*
+
+*.s3db
+*.json.gz

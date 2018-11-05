@@ -21,8 +21,7 @@ from collections import defaultdict
 import time
 import dill as pickle
 
-DATA_PATH= os.environ['DATA_PATH']
-
+from config import DATA_PATH
 from config import args
 from text_encoders import NNLM, Word2Vec, USE, ELMO
 from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
