@@ -51,4 +51,4 @@ parser.add_argument('--test_batches', type=int,
 
 args = parser.parse_args()
 
-DATA_PATH= os.environ.get('DATA_PATH') or 'data'
+DATA_PATH= os.environ.get('DATA_PATH') or '../data'

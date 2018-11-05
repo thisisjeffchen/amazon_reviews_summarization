@@ -20,8 +20,9 @@ import time
 import tensorflow as tf
 import dill as pickle
 
-DATA_PATH= os.environ['DATA_PATH']
+from config import DATA_PATH
 from config import args
+
 #from main_encode import get_encoder
 #from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
 #from text_encoders import ENCODER_PATH_DICT

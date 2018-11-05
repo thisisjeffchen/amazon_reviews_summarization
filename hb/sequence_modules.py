@@ -21,7 +21,7 @@ import tensorflow_hub as hub
 import dill as pickle
 import copy
 
-DATA_PATH= os.environ['DATA_PATH']
+from config import DATA_PATH
 from config import args
 from text_encoders import ENCODER_PATH_DICT
 from model_data import MAX_SEQUENCE_LENGTH
@@ -168,7 +168,7 @@ class InferenceDecoder(BaseDecoder):
 
 
 class GumbelSoftmaxDecoder(BaseDecoder):
-    def __call__(final_encoder_state, seq_len= 100):
+    def __call__(self, final_encoder_state, seq_len= 100):
         """
         Must return a dictionary ret_dict with keys 'decoder_logits' and 'decoder_word_ids'
         of size (?, L, vocab_size) and (?, L) and types tf.float32 and tf.int32 respectively
