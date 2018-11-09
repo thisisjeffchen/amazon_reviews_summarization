@@ -22,9 +22,7 @@ import dill as pickle
 from rouge import Rouge
 import json
 from nltk.tokenize import sent_tokenize
-
-from config import DATA_PATH
-from config import args
+import config
 from main_encode import get_encoder
 from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
 
@@ -63,41 +61,83 @@ def get_norm_rouge3(summary_list, ground_truth_sentences):
     return np.mean(rouge_list)
 
 
+def get_kmeans_summary_2(product_reviews, encoder):
+    sentence_parent = []
+    product_sentences = []
+    for idx, review in enumerate(product_reviews):
+      for sent in sent_tokenize(review):
+        product_sentences.append(sent)
+        sentence_parent.append(idx)
+
+    counts = []
+
+    print ("product_reviews_count {}".format(len(product_reviews)))
+    print ("product_sentences_count {}".format(len(product_sentences)))
+
+    print ("Embedding...")
+    product_embs= encoder(product_sentences)
+
+    print ("Running kmeans...")
+    kmeans= KMeans(n_clusters=5, random_state=0).fit(product_embs)
+
+    for label in range(config.args.clusters):
+      reviews_for_label = []
+      for idx, review_label in enumerate(kmeans.labels_):
+        if review_label == label:
+          reviews_for_label.append (sentence_parent[idx])
+      count = len ( set (reviews_for_label))
+      counts.append (count)      
+
+    dist= kmeans.transform(product_embs)
+    product_reviews_np= np.array(product_sentences)
+    summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
+#    score= get_norm_rouge1(summary_reviews, product_reviews_np.tolist())
+    score= get_norm_rouge2(summary_reviews, product_reviews) #rouge2 score does score after concat
+#    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
+    return summary_reviews, score, counts
+
+
 def get_kmeans_summary(product_reviews, encoder):
     product_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
+    print ("product_reviews_count {}".format(len(product_reviews)))
+    print ("product_sentences_count {}".format(len(product_sentences)))
     product_embs= encoder(product_sentences)
     kmeans= KMeans(n_clusters=5, random_state=0).fit(product_embs)
     dist= kmeans.transform(product_embs)
     product_reviews_np= np.array(product_sentences)
     summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
 #    score= get_norm_rouge1(summary_reviews, product_reviews_np.tolist())
-#    score= get_norm_rouge2(summary_reviews, product_reviews)
-    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
+    score= get_norm_rouge2(summary_reviews, product_reviews) #rouge2 score does score after concat
+#    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
     return summary_reviews, score
 
 
 def main():
-    reviews_indexer= SQLLiteIndexer(DATA_PATH)
+    reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
     encoder= get_encoder()
 #    asin_list= ['B00001WRSJ', 'B009AYLDSU', 'B007I5JT4S']
-    df= pd.read_csv('df2use_train.csv', encoding='latin1')
-    df_filt= df[df.num_reviews<=60].reset_index(drop=True)
-    asin_list= df_filt.asin.tolist()[:100]
+    #df= pd.read_csv('df2use_train.csv', encoding='latin1')
+    #df_filt= df[df.num_reviews<=100].reset_index(drop=True)
+    #asin_list= df_filt.asin.tolist()[:100]
     asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
     summary_dict= OrderedDict()
     rouge_list= []
     for i, asin in enumerate(asin_list):
 #        pdb.set_trace()
         product_reviews= reviews_indexer[asin]
-        summary_dict[asin], rouge_score= get_kmeans_summary(product_reviews, encoder)
+        summary_dict[asin] = {}
+        summary, rouge_score, counts = get_kmeans_summary_2(product_reviews, encoder)
+        summary_dict[asin]["summary"] = summary
+        summary_dict[asin]["rouge"] = rouge_score
+        summary_dict[asin]["counts"] = counts
         rouge_list.append(rouge_score)
         print(i)
     
     print(np.mean(rouge_list))
     print(pd.Series(rouge_list).describe())
     
-    with open('summary_dict_proposal.json', 'w') as fo:
-        json.dump(summary_dict, fo)
+    with open(config.RESULTS_PATH + 'summary_dict_proposal.json', 'w') as fo:
+        json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
 
 
 def read_file(filename, num_products= 3, num_sents= 5):
@@ -118,7 +158,7 @@ def read_file(filename, num_products= 3, num_sents= 5):
 
 
 def oracle():
-    reviews_indexer= SQLLiteIndexer(DATA_PATH)
+    reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
     path= '../github/cs221_project/data/oracle'
     files= ['will.txt', 'jeff.txt']
     review_counts= [3,3]

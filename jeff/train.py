@@ -9,10 +9,10 @@ from nltk.tokenize import sent_tokenize
 from rouge import Rouge
 
 
-REVIEWS_PATH = "data/processed/"
+REVIEWS_PATH = "../data/processed/"
 PICKED_PRODUCTS = ["B000EI0EB8", "B0007OWASE", "B00008OE43"]
 #PICKED_PRODUCTS = ["B00001WRSJ", "B009AYLDSU", "B007I5JT4S", "B000EI0EB8", "B0007OWASE", "B00008OE43"]
-RESULTS_PATH = "results/"
+RESULTS_PATH = "../results/"
 
 def main():
   parser = argparse.ArgumentParser ()
@@ -37,6 +37,9 @@ def main():
         sentenceParent.append(idx)
 
     counts = []
+    print ("reviews {}".format(len(reviews)))
+
+    print ("product_sentences_count {}".format(len(all_sentences)))
   
     print ("Embedding...")
     embedded = embed (args, all_sentences)  

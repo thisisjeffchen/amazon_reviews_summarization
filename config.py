@@ -48,7 +48,10 @@ parser.add_argument('--test_chunksize', type=int,
 parser.add_argument('--test_batches', type=int, 
                     default=1,
                     help='the number of product groups taken each of chunksize')
+parser.add_argument ('--clusters', type=int, default=5,
+                       help="5 clusters for kmeans")
 
 args = parser.parse_args()
 
-DATA_PATH= os.environ.get('DATA_PATH') or './data'
+DATA_PATH= os.environ.get('DATA_PATH') or './data/'
+RESULTS_PATH = './results/'
