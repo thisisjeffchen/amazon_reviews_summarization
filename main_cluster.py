@@ -61,7 +61,7 @@ def get_norm_rouge3(summary_list, ground_truth_sentences):
     return np.mean(rouge_list)
 
 
-def get_kmeans_summary_2(product_reviews, encoder):
+def get_kmeans_summary(product_reviews, encoder):
     sentence_parent = []
     product_sentences = []
     for idx, review in enumerate(product_reviews):
@@ -97,21 +97,6 @@ def get_kmeans_summary_2(product_reviews, encoder):
     return summary_reviews, score, counts
 
 
-def get_kmeans_summary(product_reviews, encoder):
-    product_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
-    print ("product_reviews_count {}".format(len(product_reviews)))
-    print ("product_sentences_count {}".format(len(product_sentences)))
-    product_embs= encoder(product_sentences)
-    kmeans= KMeans(n_clusters=5, random_state=0).fit(product_embs)
-    dist= kmeans.transform(product_embs)
-    product_reviews_np= np.array(product_sentences)
-    summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
-#    score= get_norm_rouge1(summary_reviews, product_reviews_np.tolist())
-    score= get_norm_rouge2(summary_reviews, product_reviews) #rouge2 score does score after concat
-#    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
-    return summary_reviews, score
-
-
 def main():
     reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
     encoder= get_encoder()
@@ -126,7 +111,7 @@ def main():
 #        pdb.set_trace()
         product_reviews= reviews_indexer[asin]
         summary_dict[asin] = {}
-        summary, rouge_score, counts = get_kmeans_summary_2(product_reviews, encoder)
+        summary, rouge_score, counts = get_kmeans_summary(product_reviews, encoder)
         summary_dict[asin]["summary"] = summary
         summary_dict[asin]["rouge"] = rouge_score
         summary_dict[asin]["counts"] = counts
