@@ -18,6 +18,7 @@ from ipdb import slaunch_ipdb_on_exception
 from collections import defaultdict, OrderedDict
 import time
 from sklearn.cluster import KMeans
+from sklearn.cluster import AffinityPropagation
 import dill as pickle
 from rouge import Rouge
 import json
@@ -60,8 +61,7 @@ def get_norm_rouge3(summary_list, ground_truth_sentences):
                 for r in ground_truth_sentences if len(r)>10]
     return np.mean(rouge_list)
 
-
-def get_kmeans_summary(product_reviews, encoder):
+def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
     sentence_parent = []
     product_sentences = []
     for idx, review in enumerate(product_reviews):
@@ -77,20 +77,40 @@ def get_kmeans_summary(product_reviews, encoder):
     print ("Embedding...")
     product_embs= encoder(product_sentences)
 
-    print ("Running kmeans...")
-    kmeans= KMeans(n_clusters=5, random_state=0).fit(product_embs)
+    if model == "kmeans":
+        print ("Running kmeans...")
+        clusters = KMeans(n_clusters=5, random_state=0).fit(product_embs)
+        num_clusters = config.args.num_clusters
+    elif model == "affinity":
+        print ("Running affinity...")
+        clusters =  AffinityPropagation ().fit(product_embs)
+        num_clusters = len(clusters.cluster_centers_)
+ 
 
-    for label in range(config.args.clusters):
+    if model =="kmeans":
+        dist= clusters.transform(product_embs)
+        product_reviews_np= np.array(product_sentences)
+        summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
+        centroid_labels = range(num_clusters)
+    elif model == "affinity":
+        product_reviews_np= np.array(product_sentences)
+        cluster_counts = defaultdict(int)
+        for label in clusters.labels_:
+            cluster_counts[label] += 1
+        sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
+        #pick the largest clusters
+        top_center_indicies = [kv[0] for kv in sorted_by_value][0:config.args.num_clusters]
+        summary_reviews= product_reviews_np[top_center_indicies].tolist()
+        centroid_labels = top_center_indicies
+
+    for label in centroid_labels:
       reviews_for_label = []
-      for idx, review_label in enumerate(kmeans.labels_):
+      for idx, review_label in enumerate(clusters.labels_):
         if review_label == label:
           reviews_for_label.append (sentence_parent[idx])
       count = len ( set (reviews_for_label))
-      counts.append (count)      
+      counts.append (count)     
 
-    dist= kmeans.transform(product_embs)
-    product_reviews_np= np.array(product_sentences)
-    summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
 #    score= get_norm_rouge1(summary_reviews, product_reviews_np.tolist())
     score= get_norm_rouge2(summary_reviews, product_reviews) #rouge2 score does score after concat
 #    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
@@ -106,24 +126,28 @@ def main():
     #asin_list= df_filt.asin.tolist()[:100]
     asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
     summary_dict= OrderedDict()
-    rouge_list= []
-    for i, asin in enumerate(asin_list):
-#        pdb.set_trace()
-        product_reviews= reviews_indexer[asin]
-        summary_dict[asin] = {}
-        summary, rouge_score, counts = get_kmeans_summary(product_reviews, encoder)
-        summary_dict[asin]["summary"] = summary
-        summary_dict[asin]["rouge"] = rouge_score
-        summary_dict[asin]["counts"] = counts
-        rouge_list.append(rouge_score)
-        print(i)
-    
-    print(np.mean(rouge_list))
-    print(pd.Series(rouge_list).describe())
-    
-    with open(config.RESULTS_PATH + 'summary_dict_proposal.json', 'w') as fo:
-        json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+    #TODO: we should really put algos in classes and make runners
+    for model in ["kmeans", "affinity"]:
+        rouge_list= []
 
+        for i, asin in enumerate(asin_list):
+#            pdb.set_trace()
+            product_reviews= reviews_indexer[asin]
+            summary_dict[asin] = {}
+            summary, rouge_score, counts = get_kmeans_summary(product_reviews, encoder, model)
+            summary_dict[asin]["summary"] = summary
+            summary_dict[asin]["rouge"] = rouge_score
+            summary_dict[asin]["counts"] = counts
+            rouge_list.append(rouge_score)
+            print(i)
+        
+        print(np.mean(rouge_list))
+        print(pd.Series(rouge_list).describe())
+
+        
+        with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(model), 'w') as fo:
+            json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+    
 
 def read_file(filename, num_products= 3, num_sents= 5):
     sentences= []

@@ -48,8 +48,8 @@ parser.add_argument('--test_chunksize', type=int,
 parser.add_argument('--test_batches', type=int, 
                     default=1,
                     help='the number of product groups taken each of chunksize')
-parser.add_argument ('--clusters', type=int, default=5,
-                       help="5 clusters for kmeans")
+parser.add_argument ('--num_clusters', type=int, default=5,
+                       help="5 clusters for kmeans, also works for affinity only top 5 get picked")
 
 args = parser.parse_args()
 

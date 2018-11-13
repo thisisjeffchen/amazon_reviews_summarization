@@ -1,0 +1,53 @@
+{
+  "B00008OE43": {
+    "summary": [
+      "I myself prefer Canon more than any other brand for cameras.",
+      "It's a great camera to take on adventures (especially to places that don't have lithium batteries!",
+      "The LCD is completely trashed and unusable and the flash is now nonexistent, but the durn thing still takes pictures!!",
+      "Am I not supposed to use the LCD screen for shooting and viewing all the time?",
+      "Eats batteries, but you need to buy rechargeables anyway, for any digicam, so it's not a big problem in my opinion."
+    ],
+    "rouge": 0.21281536085685898,
+    "counts": [
+      24,
+      22,
+      24,
+      17,
+      15
+    ]
+  },
+  "B0007OWASE": {
+    "summary": [
+      "I would like to delete some functions like it says I can in the book but it is not possible.",
+      "I have purchased this drive for backing up data regularly.",
+      "If you have other programs like Media Player & I Tunes, Shrink or Power DVD you'll find you're using them to run this drive, Shame on Nero for looking sharp & being nothing.",
+      "It claims a complete DVD-R write(4.5 GB) would take only 6 minutes.",
+      "It was damn slow."
+    ],
+    "rouge": 0.18671813485098518,
+    "counts": [
+      24,
+      18,
+      14,
+      15,
+      14
+    ]
+  },
+  "B000EI0EB8": {
+    "summary": [
+      "Love Cerwin Vega, sound great in my basement hooked up to surround sound its a good center speaker for 7.1",
+      "The sound quality is very impressive and as L/R speakers, the output is really nice.",
+      "I'm not afraid to &#34;turn up the volume&#34;.",
+      "This speaker is very loud and clear with just the right amount of bass.",
+      "Receiver-Pioneer VSX 1020Sub-bic America v1220 435 watts peakCV-center channelCV-frontsJVC-rearsNo lie this system rocks all movies and music presented to it."
+    ],
+    "rouge": 0.22947992400141204,
+    "counts": [
+      21,
+      18,
+      18,
+      18,
+      16
+    ]
+  }
+}
