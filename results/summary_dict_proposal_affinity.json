@@ -1,0 +1,53 @@
+{
+  "B00008OE43": {
+    "summary": [
+      "Of course you do not get an optical zoom, nor can you control the depth of field, or the shutter speed with this model, but this model is meant to be a starter model...",
+      ").I have had this camera for less than a month and first impressions:- Photo quality is excellent.",
+      "At close distances it tends to whiten everything in its wake, and at moderate distances it seems too weak to do anything useful!- Noise is considerable at ISO 400 setting.",
+      "Will save $$$- Most of the controls can be understood without reading the manual.",
+      "the 640x480 mode creates large files (approx 25MB) of ok sharpness.- the images tend to be a bit on the softer side.For the price this camera is an absolute steal."
+    ],
+    "rouge": 0.2236634216560149,
+    "counts": [
+      12,
+      11,
+      12,
+      7,
+      6
+    ]
+  },
+  "B0007OWASE": {
+    "summary": [
+      "The drive looked really nice with black/silver colorings.",
+      "It's 1x not 16x.",
+      "It was damn slow.",
+      "Great piece of machinery.",
+      "It claims a complete DVD-R write(4.5 GB) would take only 6 minutes."
+    ],
+    "rouge": 0.1294653161975953,
+    "counts": [
+      7,
+      8,
+      7,
+      5,
+      5
+    ]
+  },
+  "B000EI0EB8": {
+    "summary": [
+      "I got this speaker as my Centre and I have to say I was very impressed - am still impressed.",
+      "The sound quality is very impressive and as L/R speakers, the output is really nice.",
+      "It is inexpensive when ordered directly from amazon.",
+      "I like the wattage capability.",
+      "I Had old Yamaha fronts for 15 years and wanted new sound and I really found it with CV and Bic America."
+    ],
+    "rouge": 0.24754283308852879,
+    "counts": [
+      10,
+      10,
+      7,
+      6,
+      12
+    ]
+  }
+}
