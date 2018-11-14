@@ -1,10 +1,9 @@
 {
   "B00008OE43": {
     "summary": [
-      "but I am attached to this camera.",
-      "Given that digital camera prices keep falling, and steeply for the higher end models, this camera is almost a steal."
+      "Occasionally you could get overexposed results, but that's easily sorted out with white-balance settings.The only potential negative is the legend of barrel distortion on small Canon cams, but I still have to see what that looks like (and I take several architecture pics).A great steal of a small camera, it sure doesn't behave like one!"
     ],
-    "rouge": 0.1754469008733468,
+    "rouge": 0.21484647334648668,
     "counts": [
       17,
       14
@@ -12,12 +11,11 @@
   },
   "B0007OWASE": {
     "summary": [
+      "After trying everything I and google newsgroups could think of, I took it to work -- none of my work computers would recognize it either.",
       "Sweet.I haven't experienced any significant noise from the unit or any other flaws.So for the burner its 5 stars - maybe the software will work with my old Windows ME box when I get around to trying it out... :)",
-      "Worked super right out of the box.",
-      "Great piece of machinery.",
-      "Software easy to work with for a computer challenged person like me.Eventhough the program did not jive with the supplied book and instructions."
+      "Computer would not recognize it."
     ],
-    "rouge": 0.23876551946713878,
+    "rouge": 0.22525583032275623,
     "counts": [
       14,
       9,
@@ -28,12 +26,11 @@
   "B000EI0EB8": {
     "summary": [
       "There is a reasonable amount of centre speakers out there in the market; but not many with this price tag and performance.It does what it was designed to and built nice.I was quite surprised to see how well the speaker was finished and how it performed once I had it hooked up.It can take a lot of high volumes and the vocals coming through are crisp and clear.It has Value for the cost of purchase.It can also run as surrounds if you bought a pair.Please note it is not a high end product and should not be compared with one.it has its own independent lure and should be appreciated that way.Buy it and you will enjoy it for what its potential is.",
-      "If you search for center channel reviews chances are that you will come up with Bose, Polk, Sony before you find any mention of Cerwin Verga and yet this is what I consider the hidden gem of the home theater.",
-      "From craftsmanship to it's sound reproduction this speaker is second to none in my opinion.",
-      "I have owned Bose, Polk and Sony and none of them come close to this Vega in accurate sound reproduction when it comes to movie dialogue.",
-      "It is inexpensive when ordered directly from amazon."
+      "With an arrangement as mine, or similar where there are discrete line-level outputs for the various channels, It is possible to insert a modest 5-band equalizer in the signal path (between the output of the OPPO center-channel and the input to the power amp) and use the equalizer to provide some &#34;sound tailoring&#34; to tone down a bit of the horn-like prominence - of course, this would only work where the discrete analog outputs are line-level and not speaker level.",
+      "All I can say is \"wow\" what a difference this Cerwin Vega is over the smaller center channel speaker that came as part of the HTIB system.",
+      "If you are a movie lover, do yourself a favor and get a nice center channel like this one."
     ],
-    "rouge": 0.2414326740184869,
+    "rouge": 0.2218320321035089,
     "counts": [
       22,
       7,
