@@ -88,11 +88,11 @@ def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
         clusters = AffinityPropagation().fit(product_embs)
         num_clusters = len(clusters.cluster_centers_)
     elif model == "dbscan":
+        print("Running dbscan...")
         eps = 0.22
         clusters = DBSCAN(eps=eps, metric="cosine", min_samples=2)
         clusters.fit(product_embs)
         num_clusters = len(set(clusters.labels_))
-        print("\nNUM CLUSTERS DBSCAN: %d " % num_clusters)
 
     if model =="kmeans":
         dist= clusters.transform(product_embs)
@@ -107,22 +107,28 @@ def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
         sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
         #pick the largest clusters
         top_center_indicies = [kv[0] for kv in sorted_by_value][0:config.args.num_clusters]
-        summary_reviews= product_reviews_np[top_center_indicies].tolist()
+        summary_indicies = []
+        for cluster_center_index in clusters.cluster_centers_indices_:
+            label = clusters.labels_[cluster_center_index]
+            if label in top_center_indicies:
+                summary_indicies.append(cluster_center_index)
+        summary_reviews = product_reviews_np[summary_indicies].tolist()
         centroid_labels = top_center_indicies
     elif model == "dbscan":
         product_reviews_np = np.array(product_sentences)
         cluster_counts = defaultdict(int)
         for label in clusters.labels_:
             cluster_counts[label] += 1
-
         sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
         top_center_indicies = [kv[0] for kv in sorted_by_value][0:config.args.num_clusters]
-
-        summary_indicies = []
-        for cluster_center_index in clusters.cluster_centers_indices_:
+        label_to_summary_index = {}
+        for cluster_center_index in clusters.core_sample_indices_:
             label = clusters.labels_[cluster_center_index]
             if label in top_center_indicies:
-                summary_indicies.append(cluster_center_index)
+                label_to_summary_index[label] = cluster_center_index
+            if len(label_to_summary_index) >= num_clusters:
+                break
+        summary_indicies = list(label_to_summary_index.values())
         summary_reviews = product_reviews_np[summary_indicies].tolist()
         centroid_labels = top_center_indicies
 
