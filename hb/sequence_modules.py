@@ -146,7 +146,7 @@ class BaseDecoder(object):
 
 class InferenceDecoder(BaseDecoder):
     def __call__(self, final_encoder_state, seq_len= 100):
-#        pdb.set_trace()
+        pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(final_encoder_state)[0], tf.float32)
         dec_inp_id= None
         logits_list, word_id_list= [], []
@@ -154,14 +154,19 @@ class InferenceDecoder(BaseDecoder):
             if step == 0:
                 inp_emb= final_encoder_state
             else:
-#                inp_emb= self.infer_word_embedding(dec_inp_id)
                 inp_emb= self.embedding_layer(dec_inp_id)
+
             cell_output, dec_state= self.dec_cell(inp_emb, dec_state)
+
             logits_list.append(self.vocab_softmax(cell_output))
+
             dec_inp_id= self.argmax_next_word(cell_output)
             word_id_list.append(dec_inp_id)
+
         inf_decoder_logits= tf.stack(logits_list, axis= 1)
+
         decoder_word_ids= tf.stack(word_id_list, axis= 1)
+
         ret_dict= {'decoder_logits': inf_decoder_logits,
                    'decoder_word_ids': decoder_word_ids}
         return ret_dict
@@ -174,7 +179,6 @@ class GumbelSoftmaxDecoder(BaseDecoder):
         of size (?, L, vocab_size) and (?, L) and types tf.float32 and tf.int32 respectively
         """
         raise NotImplementedError("To implement call method of gumbel softmax decoder")
-
 
 class TeacherForcingDecoder(BaseDecoder):
     def __call__(self, final_encoder_state, targets_wids):
@@ -197,9 +201,12 @@ class TeacherForcingDecoder(BaseDecoder):
         return ret_dict
 
 
+
 def seq2seq_ae(features, mode, params, layers_dict):
-#    pdb.set_trace()
+    #pdb.set_trace()
+
     is_train= mode == tf.contrib.learn.ModeKeys.TRAIN
+    is_train = False
     
     encoder= layers_dict['encoder']
     if params['pretrained_encoder'] == True:
@@ -214,8 +221,14 @@ def seq2seq_ae(features, mode, params, layers_dict):
         ae_decoder_output= decoder(final_encoder_state= ae_encoder_output, targets_wids= features['data_batch'])
     else:
         from model_data import MAX_SEQUENCE_LENGTH
+        # softmax_layer = GumbelSoftmax(0.3)
+        # layers_dict['vocab_softmax_layer'] = softmax_layer
+
         decoder= InferenceDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
                            layers_dict['vocab_softmax_layer'])
+
+
+
         ae_decoder_output= decoder(final_encoder_state= ae_encoder_output, seq_len= MAX_SEQUENCE_LENGTH)
     
     return ae_encoder_output, ae_decoder_output
