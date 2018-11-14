@@ -1,0 +1,51 @@
+{
+  "B00008OE43": {
+    "summary": [
+      "but I am attached to this camera.",
+      "Given that digital camera prices keep falling, and steeply for the higher end models, this camera is almost a steal."
+    ],
+    "rouge": 0.1754469008733468,
+    "counts": [
+      17,
+      14
+    ]
+  },
+  "B0007OWASE": {
+    "summary": [
+      "Sweet.I haven't experienced any significant noise from the unit or any other flaws.So for the burner its 5 stars - maybe the software will work with my old Windows ME box when I get around to trying it out... :)",
+      "Worked super right out of the box.",
+      "Great piece of machinery.",
+      "Software easy to work with for a computer challenged person like me.Eventhough the program did not jive with the supplied book and instructions."
+    ],
+    "rouge": 0.23876551946713878,
+    "counts": [
+      14,
+      9,
+      2,
+      1
+    ]
+  },
+  "B000EI0EB8": {
+    "summary": [
+      "There is a reasonable amount of centre speakers out there in the market; but not many with this price tag and performance.It does what it was designed to and built nice.I was quite surprised to see how well the speaker was finished and how it performed once I had it hooked up.It can take a lot of high volumes and the vocals coming through are crisp and clear.It has Value for the cost of purchase.It can also run as surrounds if you bought a pair.Please note it is not a high end product and should not be compared with one.it has its own independent lure and should be appreciated that way.Buy it and you will enjoy it for what its potential is.",
+      "If you search for center channel reviews chances are that you will come up with Bose, Polk, Sony before you find any mention of Cerwin Verga and yet this is what I consider the hidden gem of the home theater.",
+      "From craftsmanship to it's sound reproduction this speaker is second to none in my opinion.",
+      "I have owned Bose, Polk and Sony and none of them come close to this Vega in accurate sound reproduction when it comes to movie dialogue.",
+      "It is inexpensive when ordered directly from amazon.",
+      "The size is right too making it possible to fit in tight spaces without sacrificing sound quality.",
+      "I got this speaker as my Centre and I have to say I was very impressed - am still impressed.",
+      "Except that I have moved these as Left and Right speakers and got an even bigger Centre."
+    ],
+    "rouge": 0.24111257302350628,
+    "counts": [
+      22,
+      7,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  }
+}
