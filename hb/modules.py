@@ -48,13 +48,14 @@ def cosine_loss(a, b):
 
 
 def my_model(features, labels, mode, params):
-    pdb.set_trace()
+    #pdb.set_trace()
     ret= summarization_model(features, mode, params)
     ae_encoder_output= ret['ae_encoder_output']
     ae_decoder_output= ret['ae_decoder_output']
     summ_encoder_output= ret['summ_encoder_output']
     summar_text_list= ret['summar_text_list']
-    pdb.set_trace()
+
+    #pdb.set_trace()
     # Compute predictions.
     if mode == tf.estimator.ModeKeys.PREDICT:
         predictions = {
