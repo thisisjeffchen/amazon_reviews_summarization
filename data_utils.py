@@ -92,38 +92,38 @@ def create_review_db(data_dir, raw_review_file):
     asin_counts= defaultdict(int)
     prev_asin= None
     text_list, rating_list= [], []
-    #try:
-    for i, dd in enumerate(parse(raw_review_file)):
-        curr_asin= dd['asin']
-        asin_counts[curr_asin]+=1
-        if curr_asin in unique_asins:
-            raise ValueError("Not in order")
-        if prev_asin != curr_asin:
-            unique_asins.add(prev_asin)
-            insert(cur, prev_asin, text_list, rating_list)
-            text_list, rating_list= [], []
-        prev_asin= curr_asin
-        text_list.append(dd['reviewText'])
-        rating_list.append(dd['overall'])
-        if i>0 and i%100000==0:
-            logging.info("Done: {}".format(i))
-        if i>0 and i%1000000==0:
-            conn.commit()
+    try:
+        for i, dd in enumerate(parse(raw_review_file)):
+            curr_asin= dd['asin']
+            asin_counts[curr_asin]+=1
+            if curr_asin in unique_asins:
+                raise ValueError("Not in order")
+            if prev_asin != curr_asin:
+                unique_asins.add(prev_asin)
+                insert(cur, prev_asin, text_list, rating_list)
+                text_list, rating_list= [], []
+            prev_asin= curr_asin
+            text_list.append(dd['reviewText'])
+            rating_list.append(dd['overall'])
+            if i>0 and i%100000==0:
+                logging.info("Done: {}".format(i))
+            if i>0 and i%1000000==0:
+                conn.commit()
 #            if i>300000:
 #                break
-    insert(cur, prev_asin, text_list, rating_list)
-    conn.commit()
-    df= pd.DataFrame.from_dict(asin_counts, orient='index')
-    print(df.describe())
-    df['asin']= df.index
-    df.columns= ['num_reviews', 'asin']
-    df.to_csv('num_reviews.csv', index=False)
-    # except Exception as e:
-    #     logging.info("Error type: {}".format(type(e).__name__))
-    #     conn.rollback()
-    #finally:
-    cur.close()
-    conn.close()
+        insert(cur, prev_asin, text_list, rating_list)
+        conn.commit()
+        df= pd.DataFrame.from_dict(asin_counts, orient='index')
+        print(df.describe())
+        df['asin']= df.index
+        df.columns= ['num_reviews', 'asin']
+        df.to_csv('num_reviews.csv', index=False)
+    except Exception as e:
+        logging.info("Error type: {}".format(type(e).__name__))
+        conn.rollback()
+    finally:
+        cur.close()
+        conn.close()
 
 
 class SQLLiteIndexer(object):
