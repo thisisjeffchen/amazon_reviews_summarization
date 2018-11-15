@@ -8,6 +8,7 @@ Created on Sat Oct 20 14:59:36 2018
 
 import argparse
 import ast
+import os
 
 parser= argparse.ArgumentParser()
 
@@ -48,11 +49,20 @@ parser.add_argument('--test_batches', type=int,
                     help='the number of product groups taken each of chunksize')
 
 parser.add_argument('--extractive_model', type=str, 
-                    default='kmeans',
+                    default='all',
                     help='the type of extractive model to use: kmeans, affinity, dbscan, pagerank')
 
 parser.add_argument('--summary_length', type=int, 
                     default=5,
                     help='the number of sentences the extractive model must extract')
 
+parser.add_argument('--products', type=str, 
+                    default="three",
+                    help='three or all, all will run through all with 50-100 reviews')
+
+
 args = parser.parse_args()
+
+
+DATA_PATH= os.environ.get('DATA_PATH') or './data/'
+RESULTS_PATH = './results/'
