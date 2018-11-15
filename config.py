@@ -8,8 +8,6 @@ Created on Sat Oct 20 14:59:36 2018
 
 import argparse
 import ast
-import os
-
 
 parser= argparse.ArgumentParser()
 
@@ -48,10 +46,13 @@ parser.add_argument('--test_chunksize', type=int,
 parser.add_argument('--test_batches', type=int, 
                     default=1,
                     help='the number of product groups taken each of chunksize')
-parser.add_argument ('--num_clusters', type=int, default=5,
-                       help="5 clusters for kmeans, also works for affinity only top 5 get picked")
+
+parser.add_argument('--extractive_model', type=str, 
+                    default='kmeans',
+                    help='the type of extractive model to use: kmeans, affinity, dbscan, pagerank')
+
+parser.add_argument('--summary_length', type=int, 
+                    default=5,
+                    help='the number of sentences the extractive model must extract')
 
 args = parser.parse_args()
-
-DATA_PATH= os.environ.get('DATA_PATH') or './data/'
-RESULTS_PATH = './results/'
