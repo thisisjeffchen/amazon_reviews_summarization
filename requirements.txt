@@ -8,3 +8,4 @@ tensorflow==1.11.0
 tensorflow-hub==0.1.1
 keras==2.2.4
 tokenizer==1.0.8
+networkx==2.2
