@@ -21,7 +21,8 @@ import dill as pickle
 import json
 from nltk.tokenize import sent_tokenize
 
-DATA_PATH= os.environ['DATA_PATH']
+
+from config import DATA_PATH
 from config import args
 from main_encode import get_encoder
 from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
@@ -57,5 +58,6 @@ def main(kwargs):
 
 
 if __name__ == "__main__":
-   with slaunch_ipdb_on_exception():
-       main(vars(args))
+    main(vars(args))
+   # with slaunch_ipdb_on_exception():
+   #     main(vars(args))

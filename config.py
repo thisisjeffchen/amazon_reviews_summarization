@@ -8,6 +8,7 @@ Created on Sat Oct 20 14:59:36 2018
 
 import argparse
 import ast
+import os
 
 parser= argparse.ArgumentParser()
 
@@ -56,3 +57,7 @@ parser.add_argument('--summary_length', type=int,
                     help='the number of sentences the extractive model must extract')
 
 args = parser.parse_args()
+
+
+DATA_PATH= os.environ.get('DATA_PATH') or './data/'
+RESULTS_PATH = './results/'
