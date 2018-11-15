@@ -89,7 +89,7 @@ def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
         num_clusters = len(clusters.cluster_centers_)
     elif model == "dbscan":
         print("Running dbscan...")
-        eps = 0.22
+        eps = 0.20131
         clusters = DBSCAN(eps=eps, metric="cosine", min_samples=2)
         clusters.fit(product_embs)
         num_clusters = len(set(clusters.labels_))
@@ -125,8 +125,10 @@ def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
         label_to_summary_index = {}
         for cluster_center_index in clusters.core_sample_indices_:
             label = clusters.labels_[cluster_center_index]
-            if label in top_center_indicies:
-                label_to_summary_index[label] = cluster_center_index
+            if label in top_center_indicies and not label in label_to_summary_index:
+                s = product_sentences[cluster_center_index]
+                if len(s) > 10 and not '.' in s[0:-2]:
+                    label_to_summary_index[label] = cluster_center_index
             if len(label_to_summary_index) >= num_clusters:
                 break
         summary_indicies = list(label_to_summary_index.values())
@@ -158,8 +160,8 @@ def main():
     asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
     summary_dict= OrderedDict()
     #TODO: we should really put algos in classes and make runners
-    for model in ["kmeans", "affinity", "dbscan"]:
-    #for model in ["dbscan"]:
+    #for model in ["kmeans", "affinity", "dbscan"]:
+    for model in ["dbscan"]:
         rouge_list= []
 
         for i, asin in enumerate(asin_list):
