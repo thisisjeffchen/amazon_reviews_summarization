@@ -94,6 +94,7 @@ def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
         clusters.fit(product_embs)
         num_clusters = len(set(clusters.labels_))
 
+
     if model =="kmeans":
         dist= clusters.transform(product_embs)
         product_reviews_np= np.array(product_sentences)
@@ -142,8 +143,7 @@ def get_kmeans_summary(product_reviews, encoder, model="kmeans"):
       counts.append (count)     
 
 #    score= get_norm_rouge1(summary_reviews, product_reviews_np.tolist())
-    if summary_reviews:
-        score= get_norm_rouge2(summary_reviews, product_reviews) #rouge2 score does score after concat
+    score= get_norm_rouge2(summary_reviews, product_reviews) #rouge2 score does score after concat
 #    score= get_norm_rouge3(summary_reviews, product_reviews_np.tolist())
     return summary_reviews, score, counts
 
