@@ -8,50 +8,132 @@ Created on Wed Nov 14 21:08:42 2018
 
 
 from sklearn.cluster import KMeans
+from sklearn.cluster import AffinityPropagation
+from sklearn.cluster import DBSCAN
 import dill as pickle
 from rouge import Rouge
 import numpy as np
 from nltk.tokenize import sent_tokenize
 import networkx as nx
 from sklearn.metrics.pairwise import cosine_similarity
+from collections import defaultdict
 
-
-class KMeansExtract(object):
+class BaseExtract(object):
     def __init__(self, summary_length):
         self.summary_length= summary_length
-    
+
+    def reset (self):
+        self.sentence_parent = []
+        self.product_sentences = []
+        self.counts = []
+        self.encoder = None
+        self.product_embs = None
+
+
+    def tokenize_and_embed (self, product_reviews):
+        for idx, review in enumerate(product_reviews):
+            for sent in sent_tokenize(review):
+                self.product_sentences.append(sent)
+                self.sentence_parent.append(idx)
+        print ("product_reviews_count {}".format(len(product_reviews)))
+        print ("product_sentences_count {}".format(len(self.product_sentences)))
+
+        print ("Embedding...")
+        self.product_embs = self.encoder(self.product_sentences)
+
+    def compute_counts (self, clusters, centroid_labels):
+        for label in centroid_labels:
+          reviews_for_label = []
+          for idx, review_label in enumerate(clusters.labels_):
+            if review_label == label:
+              reviews_for_label.append (self.sentence_parent[idx])
+          count = len ( set (reviews_for_label))
+          self.counts.append (count)  
+
+
+class KMeansExtract(BaseExtract):
     def __call__(self, product_reviews, encoder):
-        summary_reviews= []
-        product_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
-        product_embs= encoder(product_sentences)
-        kmeans= KMeans(n_clusters= self.summary_length, random_state=0).fit(product_embs)
-        dist= kmeans.transform(product_embs)
-        product_reviews_np= np.array(product_sentences)
+        self.reset ()
+        self.encoder = encoder
+        self.tokenize_and_embed (product_reviews)
+
+        print ("Running kmeans...")
+        clusters = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
+        
+        dist= clusters.transform(self.product_embs)
+        product_reviews_np= np.array(self.product_sentences)
         summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
-        return summary_reviews
+        centroid_labels = range(self.summary_length)
+
+        self.compute_counts (clusters, centroid_labels)
+        
+        return summary_reviews, self.counts
 
 
-class AffinityExtract(object):
-    def __init__(self, summary_length):
-        self.summary_length= summary_length
-    
+class AffinityExtract(BaseExtract):   
     def __call__(self, product_reviews, encoder):
-        summary_reviews= []
-        raise NotImplementedError("To implement")
-        return summary_reviews
+        self.reset ()
+        self.encoder = encoder
+        self.tokenize_and_embed (product_reviews)
+
+        print("Running affinity...")
+        clusters = AffinityPropagation().fit(self.product_embs)
+        num_clusters = len(clusters.cluster_centers_)
+
+        product_reviews_np= np.array(self.product_sentences)
+        cluster_counts = defaultdict(int)
+        for label in clusters.labels_:
+            cluster_counts[label] += 1
+        sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
+        #pick the largest clusters
+        top_center_indicies = [kv[0] for kv in sorted_by_value][0:self.summary_length]
+        summary_indicies = []
+        for cluster_center_index in clusters.cluster_centers_indices_:
+            label = clusters.labels_[cluster_center_index]
+            if label in top_center_indicies:
+                summary_indicies.append(cluster_center_index)
+        summary_reviews = product_reviews_np[summary_indicies].tolist()
+        centroid_labels = top_center_indicies
+        self.compute_counts (clusters, centroid_labels)
+        
+        return summary_reviews, self.counts
 
 
-class DBSCANExtract(object):
-    def __init__(self, summary_length):
-        self.summary_length= summary_length
-    
+class DBSCANExtract(BaseExtract):  
     def __call__(self, product_reviews, encoder):
-        summary_reviews= []
-        raise NotImplementedError("To implement")
-        return summary_reviews
+        self.reset ()
+        self.encoder = encoder
+        self.tokenize_and_embed (product_reviews)
 
+        print("Running dbscan...")
+        eps = 0.22
+        clusters = DBSCAN(eps=eps, metric="cosine", min_samples=2)
+        clusters.fit(self.product_embs)
+        num_clusters = len(set(clusters.labels_))
 
-class PageRankExtract(object):
+        product_reviews_np = np.array(self.product_sentences)
+        cluster_counts = defaultdict(int)
+        for label in clusters.labels_:
+            cluster_counts[label] += 1
+        sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
+        top_center_indicies = [kv[0] for kv in sorted_by_value][0:self.summary_length]
+        label_to_summary_index = {}
+        for cluster_center_index in clusters.core_sample_indices_:
+            label = clusters.labels_[cluster_center_index]
+            if label in top_center_indicies:
+                label_to_summary_index[label] = cluster_center_index
+            if len(label_to_summary_index) >= num_clusters:
+                break
+        summary_indicies = list(label_to_summary_index.values())
+        summary_reviews = product_reviews_np[summary_indicies].tolist()
+        centroid_labels = top_center_indicies
+
+        self.compute_counts (clusters, centroid_labels)        
+        return summary_reviews, self.counts
+
+        
+
+class PageRankExtract(BaseExtract):
     def __init__(self, summary_length):
         self.summary_length= summary_length
     

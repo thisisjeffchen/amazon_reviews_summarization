@@ -28,31 +28,44 @@ from extractive_summ_modules import get_ex_summarizer, MyRouge
 
 
 def main(kwargs):
-    summarization_module= get_ex_summarizer(model_type= kwargs['extractive_model'],
-                                            summary_length= kwargs['summary_length'])
-    rouge_module= MyRouge()
-    encoder= get_encoder()
-    reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
-    df= pd.read_csv('df2use_train.csv', encoding='latin1')
-    df_filt= df[df.num_reviews<=100].reset_index(drop=True)
-    asin_list= df_filt.asin.tolist()[:]
-#    asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
-    summary_dict= OrderedDict()
-    rouge_list= []
-    for i, asin in enumerate(asin_list):
-        product_reviews= reviews_indexer[asin]
-        summary= summarization_module(product_reviews, encoder)
-        if len(summary) == 0:
-            continue
-        summary_dict[asin]= summary
-        rouge_score= rouge_module(summary, product_reviews)
-        rouge_list.append(rouge_score)
-        print(i)
-    print(np.mean(rouge_list))
-    print(pd.Series(rouge_list).describe())
-    
-    with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(kwargs['extractive_model']), 'w') as fo:
-        json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+    if kwargs['extractive_model'] == "all":
+        models = ["kmeans", "affinity", "dbscan"]
+    else:
+        models = [kwargs['extractive_model']]
+
+    for model in models:
+        summarization_module= get_ex_summarizer(model_type= model,
+                                                summary_length= kwargs['summary_length'])
+        rouge_module= MyRouge()
+        encoder= get_encoder()
+        reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
+        df= pd.read_csv('df2use_train.csv', encoding='latin1')
+        df_filt= df[df.num_reviews<=100].reset_index(drop=True)
+        if kwargs["products"] == "three":
+            asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
+        elif kwargs["products"] == "all":
+            asin_list= df_filt.asin.tolist()[:]
+        else:
+            raise Exception ("Product group not recognized")
+        summary_dict= OrderedDict()
+        rouge_list= []
+        for i, asin in enumerate(asin_list):
+            summary_dict[asin] = {}
+            product_reviews= reviews_indexer[asin]
+            summary, counts= summarization_module(product_reviews, encoder)
+            if len(summary) == 0:
+                continue
+            summary_dict[asin]["summary"]= summary
+            rouge_score= rouge_module(summary, product_reviews)
+            summary_dict[asin]["rouge"] = rouge_score
+            summary_dict[asin]["counts"] = counts
+            rouge_list.append(rouge_score)
+            print(i)
+        print(np.mean(rouge_list))
+        print(pd.Series(rouge_list).describe())
+        
+        with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(model), 'w') as fo:
+            json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
