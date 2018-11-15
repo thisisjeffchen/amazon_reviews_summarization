@@ -1,36 +1,36 @@
 {
   "B00008OE43": {
     "summary": [
-      "This is our first experience with a digital camera.",
-      "Onlydigital zoom--very handy, but degrades quality.2.",
-      "The A300 is a lot better than what I need.",
-      "It is easy to use, has great picture quality and is fairly cheap.",
+      "I wasn't able to take a picture until the next day.",
+      "Have owned this camera for a few years.",
+      "I got this camera a couple of months ago and I'm not real please with it.",
+      "The camera has a good zoom on it, and is very easy to use.",
       "If you need small cameras, you have to typically settle for picture quality that LOOKS like it came from a tourist gadget.Not this one!"
     ],
-    "rouge": 0.2564820467716715,
+    "rouge": 0.24535421674414223,
     "counts": [
-      12,
-      11,
-      12,
-      7,
-      6
+      24,
+      22,
+      24,
+      17,
+      15
     ]
   },
   "B0007OWASE": {
     "summary": [
-      "This dvd drive is not compatible with USB1.1.",
-      "I highly recommend this unit.",
-      "I got this from TheFactoryDepot and what a rip off.",
-      "Obviously, a bad idea.",
-      "The drivers installed upon plugin and since then it's worked like a champ."
+      "It has been very easy to do so with the bundled Nero software.",
+      "This is a pretty nice drive for the price and if you have other applications it should work just fine.",
+      "It's not exactly what I wanted.",
+      "My advice is to buy Memorex but never bother with the installation of Nero.",
+      "I haven't tried to burn a DVD yet, so we'll see what happens."
     ],
-    "rouge": 0.16600212314373128,
+    "rouge": 0.22773077014214158,
     "counts": [
-      7,
-      8,
-      7,
-      5,
-      5
+      24,
+      18,
+      14,
+      15,
+      14
     ]
   },
   "B000EI0EB8": {
@@ -38,16 +38,16 @@
       "This speaker sounds great and it doesn't disappear behind the rest of my home theater.",
       "I replaced my old center channel speaker with this one and am amazed at the quality of the sound.",
       "For me, this is the perfect center channel speaker.",
-      "Its sound and looks great.",
-      "I have had Cerwin-Vega speakers before, but on a much larger scale."
+      "It has a good sound that I think the average person will be more than pleased with.",
+      "I've been saving up for new stuff and the center speaker was the last thing to buy."
     ],
-    "rouge": 0.27464608862470713,
+    "rouge": 0.2505933195502087,
     "counts": [
-      10,
-      10,
-      7,
-      6,
-      12
+      21,
+      18,
+      18,
+      18,
+      16
     ]
   }
 }

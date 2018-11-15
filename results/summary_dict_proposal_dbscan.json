@@ -1,42 +1,50 @@
 {
   "B00008OE43": {
     "summary": [
-      "Occasionally you could get overexposed results, but that's easily sorted out with white-balance settings.The only potential negative is the legend of barrel distortion on small Canon cams, but I still have to see what that looks like (and I take several architecture pics).A great steal of a small camera, it sure doesn't behave like one!"
+      "I had this camera for a little over two years and it ate batteries like candy, had a confusing screen interface that malfunctioned frequently, then it just died, and was too expensive to fix.",
+      "!",
+      "Even with alkaline batteries you can only take 4 or 5 shots before the batteries die.",
+      "In summary, this is a very competent camera and a great value."
     ],
-    "rouge": 0.21484647334648668,
+    "rouge": 0.22319195944370004,
     "counts": [
-      17,
-      14
+      72,
+      64,
+      5,
+      4,
+      2
     ]
   },
   "B0007OWASE": {
     "summary": [
-      "After trying everything I and google newsgroups could think of, I took it to work -- none of my work computers would recognize it either.",
       "Sweet.I haven't experienced any significant noise from the unit or any other flaws.So for the burner its 5 stars - maybe the software will work with my old Windows ME box when I get around to trying it out... :)",
+      "Memorex blamed me for loading the software, however everything required by the software met with my computers abilities.",
+      "Highly recommend.",
       "Computer would not recognize it."
     ],
-    "rouge": 0.22525583032275623,
+    "rouge": 0.16133196036012967,
     "counts": [
-      14,
-      9,
+      67,
+      54,
+      2,
       2,
       1
     ]
   },
   "B000EI0EB8": {
     "summary": [
-      "There is a reasonable amount of centre speakers out there in the market; but not many with this price tag and performance.It does what it was designed to and built nice.I was quite surprised to see how well the speaker was finished and how it performed once I had it hooked up.It can take a lot of high volumes and the vocals coming through are crisp and clear.It has Value for the cost of purchase.It can also run as surrounds if you bought a pair.Please note it is not a high end product and should not be compared with one.it has its own independent lure and should be appreciated that way.Buy it and you will enjoy it for what its potential is.",
-      "With an arrangement as mine, or similar where there are discrete line-level outputs for the various channels, It is possible to insert a modest 5-band equalizer in the signal path (between the output of the OPPO center-channel and the input to the power amp) and use the equalizer to provide some &#34;sound tailoring&#34; to tone down a bit of the horn-like prominence - of course, this would only work where the discrete analog outputs are line-level and not speaker level.",
-      "All I can say is \"wow\" what a difference this Cerwin Vega is over the smaller center channel speaker that came as part of the HTIB system.",
-      "If you are a movie lover, do yourself a favor and get a nice center channel like this one."
+      "I think if your in the market for a center that is under 18 Inches this is a solid choice.Not sure if I'd choose this for my Living Room Center-- But for a small room that I cant really crank it up anyway-- it sounds great..Side Note for my setup I have my crossover on my AVR set to 100 Hz and it sounds great.Update..Just uploaded 2 pics of the speaker..",
+      "!",
+      "It's a great pairing and I can never crank it past 50% or I'll go deaf.",
+      "THE JBL'S WERE MORE $ THEN THE REST AND SOUND THAT WAY.S"
     ],
-    "rouge": 0.2218320321035089,
+    "rouge": 0.1762316902876244,
     "counts": [
-      22,
-      7,
-      1,
-      2,
-      2
+      71,
+      35,
+      4,
+      3,
+      3
     ]
   }
 }
