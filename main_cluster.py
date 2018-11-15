@@ -58,6 +58,5 @@ def main(kwargs):
 
 
 if __name__ == "__main__":
-    main(vars(args))
-   # with slaunch_ipdb_on_exception():
-   #     main(vars(args))
+   with slaunch_ipdb_on_exception():
+       main(vars(args))
