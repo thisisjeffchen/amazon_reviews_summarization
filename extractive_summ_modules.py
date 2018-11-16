@@ -17,16 +17,19 @@ from nltk.tokenize import sent_tokenize
 import networkx as nx
 from sklearn.metrics.pairwise import cosine_similarity
 from collections import defaultdict
+import ipdb as pdb
+from ipdb import slaunch_ipdb_on_exception
 
 class BaseExtract(object):
     def __init__(self, summary_length):
         self.summary_length= summary_length
+        
 
-    def reset (self):
+    def reset (self, encoder):
         self.sentence_parent = []
         self.product_sentences = []
         self.counts = []
-        self.encoder = None
+        self.encoder = encoder
         self.product_embs = None
 
 
@@ -35,91 +38,90 @@ class BaseExtract(object):
             for sent in sent_tokenize(review):
                 self.product_sentences.append(sent)
                 self.sentence_parent.append(idx)
-        print ("product_reviews_count {}".format(len(product_reviews)))
-        print ("product_sentences_count {}".format(len(self.product_sentences)))
+        # print ("product_reviews_count {}".format(len(product_reviews)))
+        # print ("product_sentences_count {}".format(len(self.product_sentences)))
 
-        print ("Embedding...")
+        # print ("Embedding...")
         self.product_embs = self.encoder(self.product_sentences)
 
-    def compute_counts (self, clusters, centroid_labels):
+    def compute_counts (self, cluster_obj, centroid_labels):
+        # pdb.set_trace()
         for label in centroid_labels:
-          reviews_for_label = []
-          for idx, review_label in enumerate(clusters.labels_):
-            if review_label == label:
-              reviews_for_label.append (self.sentence_parent[idx])
-          count = len ( set (reviews_for_label))
-          self.counts.append (count)  
+            reviews_for_label = []
+            for idx, review_label in enumerate(cluster_obj.labels_):
+                if review_label == label:
+                    reviews_for_label.append (self.sentence_parent[idx])
+            count = len ( set (reviews_for_label))
+            self.counts.append (count)
 
 
 class KMeansExtract(BaseExtract):
     def __call__(self, product_reviews, encoder):
-        self.reset ()
-        self.encoder = encoder
+        self.reset (encoder)
         self.tokenize_and_embed (product_reviews)
 
         print ("Running kmeans...")
-        clusters = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
+        cluster_obj = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
         
-        dist= clusters.transform(self.product_embs)
+        dist= cluster_obj.transform(self.product_embs)
         product_reviews_np= np.array(self.product_sentences)
         summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
         centroid_labels = range(self.summary_length)
 
-        self.compute_counts (clusters, centroid_labels)
+        self.compute_counts (cluster_obj, centroid_labels)
         
         return summary_reviews, self.counts
 
 
 class AffinityExtract(BaseExtract):   
     def __call__(self, product_reviews, encoder):
-        self.reset ()
+        self.reset (encoder)
         self.encoder = encoder
         self.tokenize_and_embed (product_reviews)
 
         print("Running affinity...")
-        clusters = AffinityPropagation().fit(self.product_embs)
-        num_clusters = len(clusters.cluster_centers_)
+        cluster_obj = AffinityPropagation().fit(self.product_embs)
+        num_clusters = len(cluster_obj.cluster_centers_)
 
         product_reviews_np= np.array(self.product_sentences)
         cluster_counts = defaultdict(int)
-        for label in clusters.labels_:
+        for label in cluster_obj.labels_:
             cluster_counts[label] += 1
         sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
-        #pick the largest clusters
+        #pick the largest cluster_obj
         top_center_indicies = [kv[0] for kv in sorted_by_value][0:self.summary_length]
         summary_indicies = []
-        for cluster_center_index in clusters.cluster_centers_indices_:
-            label = clusters.labels_[cluster_center_index]
+        for cluster_center_index in cluster_obj.cluster_centers_indices_:
+            label = cluster_obj.labels_[cluster_center_index]
             if label in top_center_indicies:
                 summary_indicies.append(cluster_center_index)
         summary_reviews = product_reviews_np[summary_indicies].tolist()
         centroid_labels = top_center_indicies
-        self.compute_counts (clusters, centroid_labels)
+        self.compute_counts (cluster_obj, centroid_labels)
         
         return summary_reviews, self.counts
 
 
 class DBSCANExtract(BaseExtract):  
     def __call__(self, product_reviews, encoder):
-        self.reset ()
-        self.encoder = encoder
+        self.reset (encoder)
         self.tokenize_and_embed (product_reviews)
 
         print("Running dbscan...")
         eps = 0.20131
-        clusters = DBSCAN(eps=eps, metric="cosine", min_samples=2)
-        clusters.fit(self.product_embs)
-        num_clusters = len(set(clusters.labels_))
+        cluster_obj = DBSCAN(eps=eps, metric="cosine", min_samples=2)
+        cluster_obj.fit(self.product_embs)
+        num_clusters = len(set(cluster_obj.labels_))
 
         product_reviews_np = np.array(self.product_sentences)
         cluster_counts = defaultdict(int)
-        for label in clusters.labels_:
+        for label in cluster_obj.labels_:
             cluster_counts[label] += 1
         sorted_by_value = sorted(cluster_counts.items(), key=lambda kv: kv[1], reverse = True)
         top_center_indicies = [kv[0] for kv in sorted_by_value][0:self.summary_length]
         label_to_summary_index = {}
-        for cluster_center_index in clusters.core_sample_indices_:
-            label = clusters.labels_[cluster_center_index]
+        for cluster_center_index in cluster_obj.core_sample_indices_:
+            label = cluster_obj.labels_[cluster_center_index]
             if label in top_center_indicies and not label in label_to_summary_index:
                  s = self.product_sentences[cluster_center_index]
                  if len(s) > 10 and not '.' in s[0:-2]:
@@ -130,15 +132,14 @@ class DBSCANExtract(BaseExtract):
         summary_reviews = product_reviews_np[summary_indicies].tolist()
         centroid_labels = top_center_indicies
 
-        self.compute_counts (clusters, centroid_labels)        
+        self.compute_counts (cluster_obj, centroid_labels)        
         return summary_reviews, self.counts
 
         
 
 class PageRankExtract(BaseExtract):
     def __call__(self, product_reviews, encoder):
-        self.reset ()
-        self.encoder = encoder
+        self.reset (encoder)
         self.tokenize_and_embed (product_reviews)
         summary_reviews = []
 
@@ -155,6 +156,9 @@ class PageRankExtract(BaseExtract):
             summary_reviews.append(ranked_sentences[i][1])
 
         #TODO: hanoz please add counts, you need to get the best centroids
+        #XXX: counts the way its implemented here is not possible to calculate for pagerank as there is no such
+        #       thing as a cluster.labels_. Putting a dummy value to maintain common interface
+        self.counts = [0] * self.summary_length
         return summary_reviews, self.counts
 
 
