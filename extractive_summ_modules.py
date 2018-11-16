@@ -120,8 +120,10 @@ class DBSCANExtract(BaseExtract):
         label_to_summary_index = {}
         for cluster_center_index in clusters.core_sample_indices_:
             label = clusters.labels_[cluster_center_index]
-            if label in top_center_indicies:
-                label_to_summary_index[label] = cluster_center_index
+            if label in top_center_indicies and not label in label_to_summary_index:
+                 s = self.product_sentences[cluster_center_index]
+                 if len(s) > 10 and not '.' in s[0:-2]:
+                     label_to_summary_index[label] = cluster_center_index
             if len(label_to_summary_index) >= num_clusters:
                 break
         summary_indicies = list(label_to_summary_index.values())
@@ -175,10 +177,14 @@ class MyRouge(object):
     
     def __call__(self, summary_list, reviewTexts):
         summariesConcat= ". ".join (summary_list)
-        total= 0
+        total = 0
+        skipped = 0
         for review in reviewTexts:
-            total += self.rouge.get_scores (summariesConcat, review)[0]["rouge-1"]["f"]
-            rougeAvg = total / len(reviewTexts)
+            if len(review) > 0:
+                total += self.rouge.get_scores(summariesConcat, review)[0]["rouge-1"]["f"]
+            else:
+                skipped += 1
+        rougeAvg = total / (len(reviewTexts) - skipped)
         return rougeAvg
 
 
