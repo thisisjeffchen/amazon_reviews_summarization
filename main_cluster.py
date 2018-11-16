@@ -27,13 +27,18 @@ from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
 from extractive_summ_modules import get_ex_summarizer, MyRouge
 
 
+def write_json(kwargs, summary_dict, model):
+    file_id = model if kwargs["products"] == "three" else model + "-1000"
+    with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(file_id), 'w') as fo:
+        json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+
+
 def main(kwargs):
     # pdb.set_trace()
     if kwargs['extractive_model'] == "all":
         models = ["kmeans", "affinity", "dbscan", "pagerank"]
     else:
         models = [kwargs['extractive_model']]
-
 
     for model in models:
         summarization_module= get_ex_summarizer(model_type= model,
@@ -48,29 +53,37 @@ def main(kwargs):
         elif kwargs["products"] == "all":
             asin_list= df_filt.asin.tolist()[:]
             # Cap at 1000 products
-            asin_list = asin_list[0:1000]
+            asin_list = asin_list[0:20]
         else:
             raise Exception ("Product group not recognized")
         summary_dict= OrderedDict()
         rouge_list= []
+        semantic_score_list= []
         for i, asin in enumerate(asin_list):
             summary_dict[asin] = {}
             product_reviews= reviews_indexer[asin]
-            summary, counts= summarization_module(product_reviews, encoder)
+            summary, counts, cosine_score= summarization_module(product_reviews, encoder)
             if len(summary) == 0:
                 continue
             summary_dict[asin]["summary"]= summary
             rouge_score= rouge_module(summary, product_reviews)
             summary_dict[asin]["rouge"] = rouge_score
             summary_dict[asin]["counts"] = counts
+            summary_dict[asin]["cosine_score"] = str(cosine_score)
             rouge_list.append(rouge_score)
+            semantic_score_list.append(cosine_score)
             print(i)
+            if i % 10 == 0:
+                write_json(kwargs, summary_dict, model)
         print(np.mean(rouge_list))
+        print("Rouge metrics")
         print(pd.Series(rouge_list).describe())
+        print("Semantic score metrics")
+        print(pd.Series(semantic_score_list).describe())
+        write_json(kwargs, summary_dict, model)
 
-        file_id = model if kwargs["products"] == "three" else model + "-1000"
-        with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(file_id), 'w') as fo:
-            json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+        
+
 
 
 if __name__ == "__main__":

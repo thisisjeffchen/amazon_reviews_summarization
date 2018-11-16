@@ -13,7 +13,7 @@ from sklearn.cluster import DBSCAN
 import dill as pickle
 from rouge import Rouge
 import numpy as np
-from nltk.tokenize import sent_tokenize
+from nltk.tokenize import sent_tokenize, word_tokenize
 import networkx as nx
 from sklearn.metrics.pairwise import cosine_similarity
 from collections import defaultdict
@@ -53,6 +53,12 @@ class BaseExtract(object):
                     reviews_for_label.append (self.sentence_parent[idx])
             count = len ( set (reviews_for_label))
             self.counts.append (count)
+    
+    def sematic_similarity(self, product_embs, summary_embs):
+        product_mean= product_embs.mean(axis= 0, keepdims=True)
+        summary_mean= summary_embs.mean(axis= 0, keepdims=True)
+        cosine= cosine_similarity(product_mean, summary_mean)[0][0]
+        return cosine        
 
 
 class KMeansExtract(BaseExtract):
@@ -70,7 +76,9 @@ class KMeansExtract(BaseExtract):
 
         self.compute_counts (cluster_obj, centroid_labels)
         
-        return summary_reviews, self.counts
+        summary_embs= self.encoder(summary_reviews)
+        cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
+        return summary_reviews, self.counts, cosine_score
 
 
 class AffinityExtract(BaseExtract):   
@@ -99,7 +107,9 @@ class AffinityExtract(BaseExtract):
         centroid_labels = top_center_indicies
         self.compute_counts (cluster_obj, centroid_labels)
         
-        return summary_reviews, self.counts
+        summary_embs= self.encoder(summary_reviews)
+        cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
+        return summary_reviews, self.counts, cosine_score
 
 
 class DBSCANExtract(BaseExtract):  
@@ -132,12 +142,20 @@ class DBSCANExtract(BaseExtract):
         summary_reviews = product_reviews_np[summary_indicies].tolist()
         centroid_labels = top_center_indicies
 
-        self.compute_counts (cluster_obj, centroid_labels)        
-        return summary_reviews, self.counts
+        self.compute_counts (cluster_obj, centroid_labels)
+
+        summary_embs= self.encoder(summary_reviews)
+        cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
+        return summary_reviews, self.counts, cosine_score
 
         
 
 class PageRankExtract(BaseExtract):
+    def __init__(self, *args, **kwargs):
+        # pdb.set_trace()
+        self.max_summ_sent_len= kwargs.pop('max_summ_sent_len', 30)
+        super().__init__(*args, **kwargs)
+
     def __call__(self, product_reviews, encoder):
         self.reset (encoder)
         self.tokenize_and_embed (product_reviews)
@@ -148,18 +166,48 @@ class PageRankExtract(BaseExtract):
         sim_mat= cosine_similarity(self.product_embs)
         graph= nx.from_numpy_array(sim_mat)
         try:
-            scores= nx.pagerank(graph)
+            scores= nx.pagerank(graph, max_iter=50)
         except nx.exception.PowerIterationFailedConvergence:
-            return summary_reviews, self.counts
+            return summary_reviews, self.counts, -2.0
         ranked_sentences= sorted(((scores[i],s) for i, s in enumerate(self.product_sentences)), reverse=True)
-        for i in range(self.summary_length):
-            summary_reviews.append(ranked_sentences[i][1])
+
+        # loop through the ranked sentences; if the word length is less than threshold add to the summary
+        
+        summary_len= 0
+        ranked_meta= [(len(ranked_sentences), )] #to record the number of sentences to better interpret the rank
+        for i in range(len(ranked_sentences)):
+            candidate_summary= ranked_sentences[i][1]
+            if len(word_tokenize(candidate_summary)) > self.max_summ_sent_len:
+                continue
+            summary_reviews.append(candidate_summary)
+            summary_len+= 1
+            # maintain ranked_meta as a tuple of the rank of the ranked_sentence and its word len going into the summary
+            ranked_meta.append((i, len(word_tokenize(candidate_summary))))
+            # if the number of summaries reaches the threshold of output summaries break
+            if summary_len == self.summary_length:
+                break
+
+        # this should rarely if ever be called; but it will make sure that there are self.summary_length 
+        # number of sentences output as summary if the above for loop doesnt do it
+        i=0
+        while summary_len < self.summary_length:
+            candidate_summary= ranked_sentences[i][1]
+            if candidate_summary in summary_reviews:
+                continue
+            summary_reviews.append(candidate_summary)
+            summary_len+= 1
+            ranked_meta.append((i, len(word_tokenize(candidate_summary))))
 
         #TODO: hanoz please add counts, you need to get the best centroids
         #XXX: counts the way its implemented here is not possible to calculate for pagerank as there is no such
-        #       thing as a cluster.labels_. Putting a dummy value to maintain common interface
-        self.counts = [0] * self.summary_length
-        return summary_reviews, self.counts
+        #       thing as a cluster.labels_. Implementing an alternate meaning of counts for Pagerank
+        # self.counts = [0] * self.summary_length
+        self.counts= ranked_meta
+
+        summary_embs= self.encoder(summary_reviews)
+        cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
+        # pdb.set_trace()
+        return summary_reviews, self.counts, cosine_score
 
 
 def get_ex_summarizer(model_type, summary_length= 5):
