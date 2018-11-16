@@ -45,6 +45,8 @@ def main(kwargs):
             asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
         elif kwargs["products"] == "all":
             asin_list= df_filt.asin.tolist()[:]
+            # Cap at 1000 products
+            asin_list = asin_list[0:1000]
         else:
             raise Exception ("Product group not recognized")
         summary_dict= OrderedDict()
@@ -63,8 +65,9 @@ def main(kwargs):
             print(i)
         print(np.mean(rouge_list))
         print(pd.Series(rouge_list).describe())
-        
-        with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(model), 'w') as fo:
+
+        file_id = model if kwargs["products"] == "three" else model + "-1000"
+        with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(file_id), 'w') as fo:
             json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
 
 
