@@ -34,6 +34,7 @@ def main(kwargs):
     else:
         models = [kwargs['extractive_model']]
 
+
     for model in models:
         summarization_module= get_ex_summarizer(model_type= model,
                                                 summary_length= kwargs['summary_length'])
