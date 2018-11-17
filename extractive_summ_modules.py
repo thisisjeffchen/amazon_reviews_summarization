@@ -163,7 +163,8 @@ class PageRankExtract(BaseExtract):
 
         print("Running pagerank...")
         
-        sim_mat= cosine_similarity(self.product_embs)
+        # sim_mat= cosine_similarity(self.product_embs)
+        sim_mat= (cosine_similarity(self.product_embs) + 1)/2
         graph= nx.from_numpy_array(sim_mat)
         try:
             scores= nx.pagerank(graph, max_iter=50)

@@ -53,7 +53,7 @@ def main(kwargs):
         elif kwargs["products"] == "all":
             asin_list= df_filt.asin.tolist()[:]
             # Cap at 1000 products
-            asin_list = asin_list[0:20]
+            asin_list = asin_list[0:1000]
         else:
             raise Exception ("Product group not recognized")
         summary_dict= OrderedDict()
@@ -75,15 +75,16 @@ def main(kwargs):
             print(i)
             if i % 10 == 0:
                 write_json(kwargs, summary_dict, model)
+                print("Rouge metrics")
+                print(pd.Series(rouge_list).describe())
+                print("Semantic score metrics")
+                print(pd.Series(semantic_score_list).describe())
         print(np.mean(rouge_list))
         print("Rouge metrics")
         print(pd.Series(rouge_list).describe())
         print("Semantic score metrics")
         print(pd.Series(semantic_score_list).describe())
         write_json(kwargs, summary_dict, model)
-
-        
-
 
 
 if __name__ == "__main__":
