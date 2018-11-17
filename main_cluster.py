@@ -37,10 +37,11 @@ def write_json(kwargs, summary_dict, model):
 def main(kwargs):
     # pdb.set_trace()
     if kwargs['extractive_model'] == "all":
-        models = ["kmeans", "affinity", "dbscan", "pagerank"]
+        models = ["kmeans", "affinity", "dbscan", "pagerank", "pagerank_slow"]
     else:
         models = [kwargs['extractive_model']]
 
+    products_skipped= 0
     for model in models:
         summarization_module= get_ex_summarizer(model_type= model,
                                                 summary_length= kwargs['summary_length'])
@@ -65,6 +66,7 @@ def main(kwargs):
             product_reviews= reviews_indexer[asin]
             summary, counts, cosine_score= summarization_module(product_reviews, encoder)
             if len(summary) == 0:
+                products_skipped+= 1
                 continue
             summary_dict[asin]["summary"]= summary
             rouge_score= rouge_module(summary, product_reviews)
@@ -74,7 +76,7 @@ def main(kwargs):
             rouge_list.append(rouge_score)
             semantic_score_list.append(cosine_score)
             print(i)
-            if i % 10 == 0:
+            if i > 0 and i % 50 == 0:
                 write_json(kwargs, summary_dict, model)
                 print("Rouge metrics")
                 print(pd.Series(rouge_list).describe())
@@ -86,6 +88,7 @@ def main(kwargs):
         print(pd.Series(rouge_list).describe())
         print("Semantic score metrics")
         print(pd.Series(semantic_score_list).describe())
+        print("Finished run, {} products were skipped due to run-time exceptions".format(products_skipped))
         write_json(kwargs, summary_dict, model)
 
 
