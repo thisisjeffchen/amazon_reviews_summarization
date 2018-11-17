@@ -6,6 +6,7 @@ Created on Sun Oct 21 14:47:39 2018
 @author: hanozbhathena
 """
 
+import sys
 import os
 import pandas as pd
 import numpy as np
@@ -79,6 +80,7 @@ def main(kwargs):
                 print(pd.Series(rouge_list).describe())
                 print("Semantic score metrics")
                 print(pd.Series(semantic_score_list).describe())
+            sys.stdout.flush()
         print(np.mean(rouge_list))
         print("Rouge metrics")
         print(pd.Series(rouge_list).describe())
