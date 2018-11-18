@@ -1,0 +1,75 @@
+{
+  "B00008OE43": {
+    "summary": [
+      "If you need small cameras, you have to typically settle for picture quality that LOOKS like it came from a tourist gadget.Not this one!",
+      "This is my first digital camera and while I was camera searching there are two very important things that you have to take into consideration.",
+      "I do not enjoy carrying the larger movie cameras and this is just right for me.",
+      "I would either purchase a set of rechargable batteries or try another camera.The pictures that we have taken do turn out very well.",
+      "Try experimenting with the features to find something that suits you.For the money, its a great camera, but dont expect miracles out of it."
+    ],
+    "rouge": 0.26307015337370093,
+    "counts": [
+      [
+        620
+      ],
+      [
+        20,
+        26
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        29,
+        17
+      ],
+      [
+        39,
+        24
+      ],
+      [
+        40,
+        27
+      ]
+    ],
+    "cosine_score": "0.967965"
+  },
+  "B0007OWASE": {
+    "summary": [
+      "This is a pretty nice drive for the price and if you have other applications it should work just fine.",
+      "This burner took me a little getting used to, but now that I am, it works just great, with minimal sound when compared to other burners.",
+      "The stand is sturdy and can keep your drive vertically without any risk of falling.But after I bought this, I plugged it into my computer.",
+      "I so far like the drive, my major complaint is the Nero software that came with it, I've had nothing but aggravation with it!",
+      "I just got this burner today, and I just wanted to write a review about how pleasantly surprised I was with it."
+    ],
+    "rouge": 0.217302550075317,
+    "counts": [
+      [
+        407
+      ],
+      [
+        6,
+        21
+      ],
+      [
+        10,
+        30
+      ],
+      [
+        21,
+        27
+      ],
+      [
+        25,
+        28
+      ],
+      [
+        33,
+        24
+      ]
+    ],
+    "cosine_score": "0.94605464"
+  },
+  "B000EI0EB8": {}
+}
