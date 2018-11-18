@@ -235,7 +235,7 @@ class PageRankExtract(BaseExtract):
 
         try:
             scores= graph.pagerank(weights= sim_mat[sim_mat.nonzero()].tolist(), niter=100)
-        except nx.exception.PowerIterationFailedConvergence:
+        except Exception:
             return [], self.counts, -2.0
         ranked_sentences= sorted(((scores[i],s) for i, s in enumerate(self.product_sentences)), reverse=True)
 
