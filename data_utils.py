@@ -24,6 +24,11 @@ from collections import defaultdict
 import json
 import ast
 import time
+import matplotlib.pyplot as plt
+from nltk.tokenize import word_tokenize
+from nltk.tokenize.treebank import TreebankWordTokenizer, TreebankWordDetokenizer
+
+WORD_CUTOFF = 200
 
 
 def parse(path):
@@ -73,25 +78,52 @@ def test_shelve():
     d.close()
 
 
-def insert(cur, asin, reviewText, overall):
-    cur.execute("INSERT INTO reviews_dict (asin, reviewText, overall) VALUES (?, ?, ?)",
-                (str(asin), str(reviewText), str(overall)))
+def insert(cur, asin, reviewText, reviewShort, rating, ratingShort):
+    cur.execute("INSERT INTO reviews_dict (asin, reviewText, reviewShort, rating, ratingShort) VALUES (?, ?, ?, ?, ?)",
+                (str(asin), str(reviewText), str(reviewShort), str(rating), str(ratingShort)))
+
+def data_analysis (data_dir, raw_review_file):
+    t = TreebankWordTokenizer()
+    asin_counts = defaultdict(int)
+    review_lengths = []
+    for i, dd in enumerate(parse (raw_review_file)):
+        curr_asin = dd["asin"]
+        asin_counts[curr_asin] += 1
+        review_lengths.append (len(t.tokenize(dd["reviewText"])))
+        if i > 0 and i % 100000 == 0:
+            print ("Processed {}".format (i))
+
+    review_lengths.sort()
+    idx = review_lengths.index(WORD_CUTOFF)
+    percent = idx * 100 / len(review_lengths)
+    print ("{} Word cutoff represents {} percent of the data".format
+        (WORD_CUTOFF, percent))
+
+    n, bins, patches = plt.hist (review_lengths, 50, (0,1000))
+    plt.ylabel('Frequency')
+    plt.xlabel('Words / Review')
+    plt.savefig("frequency.png")
+
 
 
 def create_review_db(data_dir, raw_review_file):
-    db_file= os.path.join(data_dir, "reviews.s3db")
+    db_file= os.path.join(data_dir, "reviews2.s3db")
     conn= sqlite3.connect(db_file)
     cur= conn.cursor()
     cur.execute("drop table if exists reviews_dict;")
     cur.execute("CREATE TABLE IF NOT EXISTS reviews_dict ("
                 "asin VARCHAR(255) PRIMARY KEY NOT NULL, "
                 "reviewText VARCHAR(255),"
-                "overall VARCHAR(255))")
+                "reviewShort VARCHR(255),"
+                "rating VARCHAR(255),"
+                "ratingShort VARCHAR(255))")
     
     unique_asins= set()
     asin_counts= defaultdict(int)
     prev_asin= None
-    text_list, rating_list= [], []
+    text_list, rating_list, text_list_short, rating_list_short = [], [], [], []
+    d = TreebankWordDetokenizer()
+    t = TreebankWordTokenizer()
     try:
         for i, dd in enumerate(parse(raw_review_file)):
             curr_asin= dd['asin']
@@ -100,18 +132,32 @@ def create_review_db(data_dir, raw_review_file):
                 raise ValueError("Not in order")
             if prev_asin != curr_asin:
                 unique_asins.add(prev_asin)
-                insert(cur, prev_asin, text_list, rating_list)
-                text_list, rating_list= [], []
+                insert(cur, prev_asin, text_list, text_list_short, rating_list, rating_list_short)
+                text_list, rating_list, text_list_short, rating_list_short  = [], [], [], []
             prev_asin= curr_asin
             text_list.append(dd['reviewText'])
             rating_list.append(dd['overall'])
+            tokenized = t.tokenize(dd['reviewText'])[0:WORD_CUTOFF]
+            detokenized = d.detokenize(tokenized)
+            text_list_short.append (detokenized)
+
+            rating = dd['overall']
+            if rating < 3:
+                rating_short = -1.0
+            elif rating > 3:
+                rating_short = +1.0
+            else:
+                rating_short = 0.0
+
+            rating_list_short.append (rating_short)
+
             if i>0 and i%100000==0:
                 logging.info("Done: {}".format(i))
             if i>0 and i%1000000==0:
                 conn.commit()
 #            if i>300000:
 #                break
-        insert(cur, prev_asin, text_list, rating_list)
+        insert(cur, prev_asin, text_list, text_list_short, rating_list, rating_list_short)
         conn.commit()
         df= pd.DataFrame.from_dict(asin_counts, orient='index')
         print(df.describe())
