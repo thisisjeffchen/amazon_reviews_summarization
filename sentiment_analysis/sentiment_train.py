@@ -10,6 +10,7 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
+import pdb
 
 import tensorflow as tf
 
@@ -44,9 +45,12 @@ def run_model(dataset_name, emb_dim, voc_size, sen_len,
                 optimizer="rmsprop",
                 metrics=["accuracy"])
 
+
   tf.logging.info("Loading the data")
   x_train, y_train, x_test, y_test = dataset.load(
       dataset_name, voc_size, sen_len)
+
+  pdb.set_trace()
 
   model.fit(x_train, y_train, batch_size=batch_size,
             validation_split=0.4, epochs=epochs)
