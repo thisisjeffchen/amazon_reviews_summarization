@@ -104,13 +104,13 @@ def load(vocabulary_size, sentence_length, num_samples):
   if num_samples == 100000:
     x_train = x[0:80000]
     y_train = y[0:80000]
-    x_test = x[80001:100000]
-    y_test = y[80001:100000]
+    x_test = x[80000:100000]
+    y_test = y[80000:100000]
   elif num_samples == 1000000:
     x_train = x[0:800000]
     y_train = y[0:800000]
-    x_test = x[800001:1000000]
-    y_test = y[800001:1000000]
+    x_test = x[800000:1000000]
+    y_test = y[800000:1000000]
 
 
   print ("Fitting tokenizer...")
