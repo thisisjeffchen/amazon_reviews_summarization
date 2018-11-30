@@ -160,7 +160,7 @@ def custom_model_fn(features, labels, mode, params):
 # =============================================================================
 
 def test_model():
-    with open('tokenizer.pkl', 'rb') as fi:
+    with open('cache/tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     
     #pdb.set_trace()
@@ -169,7 +169,7 @@ def test_model():
     params['tokenizer']= tokenizer
     params['token2id']= tokenizer.word_index
     params['vocab_size']= tokenizer.num_words
-    params['word_embeddings']= np.load('pretrained_embeddings.npy')
+    params['word_embeddings']= np.load('cache/pretrained_embeddings.npy')
     params['word_embeddings_dim']= word_emb_size
     params['encoder_output_size']= 512
     params['pretrained_encoder']= False
