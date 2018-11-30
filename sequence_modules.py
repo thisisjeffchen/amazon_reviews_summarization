@@ -283,7 +283,7 @@ class GumbelSoftmaxDecoder(BaseDecoder):
         Must return a dictionary ret_dict with keys 'decoder_logits' and 'decoder_word_ids'
         of size (?, L, vocab_size) and (?, L) and types tf.float32 and tf.int32 respectively
         """
-        pdb.set_trace()
+        #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
         next_word_embedding= tf.identity(init_decoder_input)
         gumbel_softmax_logits= None
@@ -356,7 +356,7 @@ def summarizer(features, mode, params, layers_dict):
                            layers_dict['vocab_softmax_layer'])
         summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
     
-    pdb.set_trace()
+    #pdb.set_trace()
     encoder= layers_dict['encoder']
     summary_wids= summ_decoder_output['decoder_word_ids']
     summar_text_list= decode_id_to_string(tf.reshape(summary_wids, (-1,)), params) #length 1 list
@@ -411,7 +411,7 @@ def build_layers(features, mode, params):
 
 
 def summarization_model(features, mode, params):
-    pdb.set_trace()
+    #pdb.set_trace()
     layers_dict= build_layers(features, mode, params)
     ae_encoder_output, ae_decoder_output= seq2seq_ae(features, mode, params, layers_dict)
     features['ae_encoder_output']= ae_encoder_output
