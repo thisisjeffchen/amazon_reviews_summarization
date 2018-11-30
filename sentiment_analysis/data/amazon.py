@@ -60,8 +60,8 @@ class SQLLiteIndexer(object):
       self.cur.close()
       self.conn.close()
 
-def save_tokenizer (tokenizer):
-  with open('cache/tokenizer_sentiment.pickle', 'wb') as handle:
+def save_tokenizer (tokenizer, num_samples):
+  with open("cache/tokenizer_{}_sentiment.pickle".format(num_samples), 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def load_tokenizer ():
@@ -138,7 +138,7 @@ def load(vocabulary_size, sentence_length, num_samples):
   x_test_processed = np.array(x_test_processed)
 
   print ("Saving tokenizer...")
-  save_tokenizer (tokenizer)
+  save_tokenizer (tokenizer, num_samples)
 
   #pdb.set_trace()
 
