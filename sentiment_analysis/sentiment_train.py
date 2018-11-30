@@ -59,6 +59,7 @@ def run_model(dataset_name, emb_dim, voc_size, sen_len,
   print ("Saving model...")
   model.save("cache/{}_{}_model.h5".format(dataset_name, num_samples))
   tf.logging.info("Score: {}".format(score))
+  print ("Test Score: {}".format(score))
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
