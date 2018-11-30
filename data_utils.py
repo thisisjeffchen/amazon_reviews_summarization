@@ -189,6 +189,14 @@ class SQLLiteIndexer(object):
                  table_name= self.table_name), (asin,))
         return ast.literal_eval(self.cur.fetchall()[0][0])
 
+    def get_reviews_short (self, asin):
+        self.cur.execute("""
+                 SELECT {attribute} from {table_name} 
+                 where asin=?
+                 """.format(attribute= "reviewShort", 
+                 table_name= self.table_name), (asin,))
+        return ast.literal_eval(self.cur.fetchall()[0][0])
+
     def getall(self, attributes = "reviewShort, ratingShort"):
         self.cur.execute ("""
                 SELECT {attributes} from {table_name}
