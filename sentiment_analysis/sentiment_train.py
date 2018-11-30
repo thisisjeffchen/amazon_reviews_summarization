@@ -57,7 +57,7 @@ def run_model(dataset_name, emb_dim, voc_size, sen_len,
   score = model.evaluate(x_test, y_test, batch_size=batch_size)
 
   print ("Saving model...")
-  model.save("cache/{}_{}_model.h5".format(dataset, num_samples))
+  model.save("cache/{}_{}_model.h5".format(dataset_name, num_samples))
   tf.logging.info("Score: {}".format(score))
 
 if __name__ == "__main__":
@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
   parser.add_argument("-p", "--epochs",
                       help="The number of epochs for training.",
-                      type=int, default=55)
+                      type=int, default=40)
 
   args = parser.parse_args()
 
