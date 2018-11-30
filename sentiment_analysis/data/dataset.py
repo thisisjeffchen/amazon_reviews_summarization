@@ -14,7 +14,7 @@ DATASET_IMDB = "imdb"
 DATASET_AMAZON = "amazon"
 
 
-def load(dataset, vocabulary_size, sentence_length):
+def load(dataset, vocabulary_size, sentence_length, num_samples):
   """Returns training and evaluation input.
 
   Args:
@@ -35,7 +35,7 @@ def load(dataset, vocabulary_size, sentence_length):
   if dataset == DATASET_IMDB:
     return imdb.load(vocabulary_size, sentence_length)
   elif dataset == DATASET_AMAZON:
-    return amazon.load(vocabulary_size, sentence_length)
+    return amazon.load(vocabulary_size, sentence_length, num_samples)
   else:
     raise ValueError("unsupported dataset: " + dataset)
 
