@@ -38,6 +38,7 @@ def seq_ae_loss(logits, targets, real_lens):
 
 
 def cosine_loss(a, b):
+    pdb.set_trace()
     normalize_a = tf.nn.l2_normalize(a, 0)
     normalize_b = tf.nn.l2_normalize(b, 0)
     cos_similarity= tf.reduce_sum(tf.multiply(normalize_a,normalize_b))
@@ -78,8 +79,6 @@ def my_model(features, labels, mode, params):
     optimizer = tf.train.AdagradOptimizer(learning_rate=0.001)
     train_op = optimizer.minimize(loss, global_step=tf.train.get_global_step())
     return tf.estimator.EstimatorSpec(mode, loss=loss, train_op=train_op)
-
-
 
 
 ## Model
@@ -164,16 +163,16 @@ def test_model():
     with open('tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     
-    #pdb.set_trace()
+    pdb.set_trace()
     word_emb_size= 300
     params= {}
     params['tokenizer']= tokenizer
     params['token2id']= tokenizer.word_index
     params['vocab_size']= tokenizer.num_words
-    params['word_embeddings']= np.random.rand(params['vocab_size'], word_emb_size)
+    params['word_embeddings']= np.load('pretrained_embeddings.npy')
     params['word_embeddings_dim']= word_emb_size
     params['encoder_output_size']= 512
-    params['pretrained_encoder']= True
+    params['pretrained_encoder']= False
     
     config= {}
     config['num_layers']= 1
