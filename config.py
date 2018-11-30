@@ -61,6 +61,10 @@ parser.add_argument('--products', type=str,
                     help='three or all, all will run through all with 50-100 reviews')
 
 
+parser.add_argument('--debug', type=ast.literal_eval, 
+                    default=True,
+                    help='disable pdb breakpoints')
+
 args = parser.parse_args()
 
 

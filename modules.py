@@ -25,7 +25,7 @@ import config
 #from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
 #from text_encoders import ENCODER_PATH_DICT
 from sequence_modules import summarization_model
-
+from config import args
 
 def seq_ae_loss(logits, targets, real_lens):
     weights= tf.sequence_mask(real_lens, targets.get_shape().as_list()[-1], dtype= tf.float32)
@@ -160,16 +160,16 @@ def custom_model_fn(features, labels, mode, params):
 # =============================================================================
 
 def test_model():
-    with open('cache/tokenizer.pkl', 'rb') as fi:
+    with open('tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     
-    #pdb.set_trace()
+    pdb.set_trace()
     word_emb_size= 300
     params= {}
     params['tokenizer']= tokenizer
     params['token2id']= tokenizer.word_index
     params['vocab_size']= tokenizer.num_words
-    params['word_embeddings']= np.load('cache/pretrained_embeddings.npy')
+    params['word_embeddings']= np.load('pretrained_embeddings.npy')
     params['word_embeddings_dim']= word_emb_size
     params['encoder_output_size']= 512
     params['pretrained_encoder']= False
@@ -198,5 +198,7 @@ def test_model():
         input_fn=lambda: train_input_fn(),
         steps=2)
 
-
+if args.debug == False:
+    pdb.set_trace= lambda:None
+    
 test_model()
