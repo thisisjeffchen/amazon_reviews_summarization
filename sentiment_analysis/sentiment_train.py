@@ -21,7 +21,7 @@ _DROPOUT_RATE = 0.95
 
 
 def run_model(dataset_name, emb_dim, voc_size, sen_len,
-              hid_dim, batch_size, epochs):
+              hid_dim, batch_size, epochs, num_samples):
   """Run training loop and an evaluation at the end.
 
   Args:
@@ -48,7 +48,7 @@ def run_model(dataset_name, emb_dim, voc_size, sen_len,
 
   tf.logging.info("Loading the data")
   x_train, y_train, x_test, y_test = dataset.load(
-      dataset_name, voc_size, sen_len)
+      dataset_name, voc_size, sen_len, num_samples)
 
   #pdb.set_trace()
 
@@ -86,7 +86,11 @@ if __name__ == "__main__":
 
   parser.add_argument("-b", "--batch_size",
                       help="The size of each batch for training.",
-                      type=int, default=500)
+                      type=int, default=1000)
+
+  parser.add_argument("-n", "--num_samples",
+                      help="number of samples to use",
+                      type=int, default=100000)
 
   parser.add_argument("-p", "--epochs",
                       help="The number of epochs for training.",
@@ -96,4 +100,4 @@ if __name__ == "__main__":
 
   run_model(args.dataset, args.embedding_dim, args.vocabulary_size,
             args.sentence_length, args.hidden_dim,
-            args.batch_size, args.epochs)
+            args.batch_size, args.epochs, args.num_samples)

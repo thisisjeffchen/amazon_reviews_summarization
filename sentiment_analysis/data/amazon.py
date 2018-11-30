@@ -48,7 +48,7 @@ class SQLLiteIndexer(object):
   def getall(self, attributes = "reviewShort, ratingShort"):
       self.cur.execute ("""
               SELECT {attributes} from {table_name}
-              LIMIT 10000
+              LIMIT 100000
               """.format (attributes = attributes, 
                           table_name = self.table_name))
       fetched = self.cur.fetchall()
@@ -68,7 +68,7 @@ def load_tokenizer ():
   with open('cache/tokenizer_sentiment.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
-def load(vocabulary_size, sentence_length):
+def load(vocabulary_size, sentence_length, num_samples):
   """Returns training and evaluation input for imdb dataset.
 
   Args:
@@ -88,7 +88,7 @@ def load(vocabulary_size, sentence_length):
   x = []
   y = []
 
-  print ("Adding rows to train/dev/test sets")
+  print ("Adding rows to train/test sets")
   for row in rows:
     assert len(row[0]) == len(row[1])
     for idx in range (len(row[0])):
@@ -98,15 +98,20 @@ def load(vocabulary_size, sentence_length):
   #convert y to integers
   y = [int(elem) for elem in y]
 
-  print ("Total reviews: {}, currently only using 100k".format(len(x)))
+  print ("Total reviews: {}, currently only using {}".format(len(x), num_samples))
   #Currently only using 100k
 
-  x_train = x[0:60000]
-  y_train = y[0:60000]
-  x_dev = x[60001:80000]
-  y_dev = y[60001:80000]
-  x_test = x[80001:100000]
-  y_test = y[80001:100000]
+  if num_samples == 100000:
+    x_train = x[0:80000]
+    y_train = y[0:80000]
+    x_test = x[80001:100000]
+    y_test = y[80001:100000]
+  elif num_samples == 1000000:
+    x_train = x[0:800000]
+    y_train = y[0:800000]
+    x_test = x[800001:1000000]
+    y_test = y[800001:1000000]
+
 
   print ("Fitting tokenizer...")
   #TODO: not using start and end chars, does it matter?
@@ -115,7 +120,6 @@ def load(vocabulary_size, sentence_length):
   print ("Tokenizing...")
   x_train = tokenizer.texts_to_sequences(x_train)
   x_test = tokenizer.texts_to_sequences(x_test)
-  x_dev = tokenizer.texts_to_sequences(x_dev)
 
   #pdb.set_trace ()
 

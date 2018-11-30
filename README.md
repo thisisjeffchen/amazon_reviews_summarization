@@ -2,10 +2,10 @@
 
 
 Train sentiment model imdb data:
-time CUDA_VISIBLE_DEVICES=0 python sentiment_train.py
+time CUDA_VISIBLE_DEVICES=0 python sentiment_analysis/sentiment_train.py
 
 Train sentiment amazon data:
-time CUDA_VISIBLE_DEVICES=0 python sentiment_train.py
+time CUDA_VISIBLE_DEVICES=0 python sentiment_analysis/sentiment_train.py --dataset=amazon --num_samples=1000000
 
 Make database for data:
 python create_database.py
