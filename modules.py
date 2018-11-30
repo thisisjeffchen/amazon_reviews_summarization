@@ -163,7 +163,7 @@ def test_model():
     with open('tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     
-    pdb.set_trace()
+    #pdb.set_trace()
     word_emb_size= 300
     params= {}
     params['tokenizer']= tokenizer

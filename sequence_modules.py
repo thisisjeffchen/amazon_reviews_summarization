@@ -138,7 +138,7 @@ class BaseEncoder(object):
 
 class SeqEncoder(BaseEncoder):
     def __call__(self, inputs, real_seq_lens, apply_embedding_layer= True):
-        pdb.set_trace()
+        #pdb.set_trace()
         if apply_embedding_layer:
             enc_inputs= self.embedding_layer(inputs)
         else:
@@ -202,7 +202,7 @@ class BaseDecoder(object):
 
 class TeacherForcingDecoder(BaseDecoder):
     def __call__(self, init_decoder_input, targets_wids):
-        pdb.set_trace()
+        #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
         dec_input_ids_list= tf.unstack(targets_wids, axis= 1)
         logits_list= []
@@ -223,7 +223,7 @@ class TeacherForcingDecoder(BaseDecoder):
 
 class InferenceDecoder(BaseDecoder):
     def __call__(self, init_decoder_input, seq_len= 100):
-        pdb.set_trace()
+        #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
         dec_inp_id= None
         logits_list, word_id_list= [], []
