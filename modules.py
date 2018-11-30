@@ -161,7 +161,7 @@ def custom_model_fn(features, labels, mode, params):
 # =============================================================================
 
 def test_model():
-    with open('tokenizer.pkl', 'rb') as fi:
+    with open('cache/tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     
     #pdb.set_trace()
