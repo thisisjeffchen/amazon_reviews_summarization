@@ -15,3 +15,9 @@ python data_stats.py
 
 Running clustering
 python main_cluster.py --extractive_model=all --products=all
+
+Run abstractive summarization
+python modules.py 
+
+Run abstractive summarization without breakpoints
+python modules.py --debug=False
