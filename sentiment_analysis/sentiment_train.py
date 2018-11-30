@@ -61,7 +61,7 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser()
   parser.add_argument("-d", "--dataset", help="Dataset to be trained "
                                               "and evaluated.",
-                      type=str, choices=["imdb"], default="imdb")
+                      type=str, choices=["imdb", "amazon"], default="imdb")
 
   parser.add_argument("-e", "--embedding_dim",
                       help="The dimension of the Embedding layer.",

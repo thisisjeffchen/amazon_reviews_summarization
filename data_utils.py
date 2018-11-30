@@ -23,13 +23,13 @@ from ipdb import slaunch_ipdb_on_exception
 from collections import defaultdict
 import json
 import ast
+import config
 import time
 import matplotlib.pyplot as plt
 from nltk.tokenize import word_tokenize
 from nltk.tokenize.treebank import TreebankWordTokenizer, TreebankWordDetokenizer
 
 WORD_CUTOFF = 200
-
 
 def parse(path):
     g = gzip.open(path, 'r')
@@ -107,7 +107,7 @@ def data_analysis (data_dir, raw_review_file):
 
 
 def create_review_db(data_dir, raw_review_file):
-    db_file= os.path.join(data_dir, "reviews2.s3db")
+    db_file= os.path.join(data_dir, "reviews.s3db")
     conn= sqlite3.connect(db_file)
     cur= conn.cursor()
     cur.execute("drop table if exists reviews_dict;")
@@ -173,7 +173,7 @@ def create_review_db(data_dir, raw_review_file):
 
 
 class SQLLiteIndexer(object):
-    def __init__(self, data_dir, attribute= "reviewText", table_name= "reviews_dict", 
+    def __init__(self, data_dir = config.DATA_PATH, attribute= "reviewText", table_name= "reviews_dict", 
                  db_file= "reviews.s3db"):
         db_file= os.path.join(data_dir, db_file)
         self.conn= sqlite3.connect(db_file)
@@ -188,6 +188,16 @@ class SQLLiteIndexer(object):
                  """.format(attribute= self.attribute, 
                  table_name= self.table_name), (asin,))
         return ast.literal_eval(self.cur.fetchall()[0][0])
+
+    def getall(self, attributes = "reviewShort, ratingShort"):
+        self.cur.execute ("""
+                SELECT {attributes} from {table_name}
+                """.format (attributes = attributes, 
+                            table_name = self.table_name))
+        fetched = self.cur.fetchall()
+        fetched_list = [(ast.literal_eval(row[0]), ast.literal_eval(row[1])) for row in fetched]
+        return fetched_list
+
     
     def __del__(self):
         print("Closing SQLLite connection")

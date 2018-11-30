@@ -8,8 +8,10 @@ from __future__ import division
 from __future__ import print_function
 
 import data.imdb as imdb
+import data.amazon as amazon
 
 DATASET_IMDB = "imdb"
+DATASET_AMAZON = "amazon"
 
 
 def load(dataset, vocabulary_size, sentence_length):
@@ -29,8 +31,11 @@ def load(dataset, vocabulary_size, sentence_length):
     evaluation sentences, and evaluation labels,
     each being an numpy array.
   """
+
   if dataset == DATASET_IMDB:
     return imdb.load(vocabulary_size, sentence_length)
+  elif dataset == DATASET_AMAZON:
+    return amazon.load(vocabulary_size, sentence_length)
   else:
     raise ValueError("unsupported dataset: " + dataset)
 
@@ -48,5 +53,7 @@ def get_num_class(dataset):
   """
   if dataset == DATASET_IMDB:
     return imdb.NUM_CLASS
+  elif dataset == DATASET_AMAZON:
+    return amazon.NUM_CLASS
   else:
     raise ValueError("unsupported dataset: " + dataset)
