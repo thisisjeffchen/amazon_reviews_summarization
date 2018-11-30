@@ -21,11 +21,13 @@ import sqlite3
 import ast
 import random
 import tensorflow as tf
+import ipdb as pdb
+from ipdb import slaunch_ipdb_on_exception
 
 from config import DATA_PATH
 MAX_SEQUENCE_LENGTH = 100
 MAX_NUM_WORDS = 20000
-EMBEDDING_DIM = 100
+EMBEDDING_DIM = 300
 OOV_TOKEN= '<OOV>'
 BATCH_SIZE= 32
 NUM_EPOCHS= 10
@@ -125,3 +127,54 @@ def test():
     tup= sess.run(value)
     return value
 
+
+def abstractive_dataset_create(all_data_file= 'num_reviews.csv', num_reviews= 8):
+    from sklearn.model_selection import train_test_split
+    df= pd.read_csv(all_data_file, encoding='latin1')
+    df1= df[df.num_reviews>=num_reviews].reset_index(drop=True)
+    df_train, df_test= train_test_split(df1, test_size= .1, random_state=42)
+    df_train.reset_index(drop=True, inplace=True)
+    df_test.reset_index(drop=True, inplace=True)
+    df_train.to_csv('abs_train_set_{}.csv'.format(num_reviews), index=False)
+    df_test.to_csv('abs_test_set_{}.csv'.format(num_reviews), index=False)
+    
+
+
+def create_pretrained_embeddings(keras_tokenizer_fname= 'tokenizer.pkl'):
+    # first, build index mapping words in the embeddings set
+    # to their embedding vector
+    glove_embeddings_fname= os.environ.get('GLOVE_PATH', None)
+    if glove_embeddings_fname is None:
+        raise ValueError("Set GLOVE_PATH in bashrc")
+    print('Indexing word vectors.')
+    embeddings_index = {}
+    with open(glove_embeddings_fname) as f:
+        for i, line in enumerate(f):
+            values = line.split()
+            word = values[0]
+            try:
+                coefs = np.asarray(values[1:], dtype='float32')
+            except ValueError:
+                continue
+            embeddings_index[word] = coefs
+    print('Preparing embedding matrix.')
+    with open(keras_tokenizer_fname, 'rb') as f:
+        tokenizer= pickle.load(f)
+    word_index = tokenizer.word_index
+    # prepare embedding matrix
+    num_words = min(MAX_NUM_WORDS, len(word_index)) + 1
+    embedding_matrix = np.zeros((num_words, EMBEDDING_DIM))
+    for word, i in word_index.items():
+        if i > MAX_NUM_WORDS:
+            continue
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            # words not found in embedding index will be all-zeros.
+            embedding_matrix[i] = embedding_vector
+    print(embedding_matrix.shape)
+    np.save('pretrained_embeddings.npy', embedding_matrix)
+
+
+#create_pretrained_embeddings()
+#if __name__ == "__main__":
+#    build_tokenizer()

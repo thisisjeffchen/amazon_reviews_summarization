@@ -82,6 +82,12 @@ def evaluate_sentiment (reviews_short, summary, sent_model, sent_tokenizer):
     return reviews_short_avg, summary_score, int (reviews_short_avg == summary_score)
 
 
+def write_json(kwargs, summary_dict, model):
+    file_id = model if kwargs["products"] == "three" else model + "-1000"
+    with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(file_id), 'w') as fo:
+        json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+
+
 def main(kwargs):
     # pdb.set_trace()
     if kwargs['extractive_model'] == "all":
@@ -122,6 +128,9 @@ def main(kwargs):
             summary_dict[asin]["rouge"] = rouge_score
             summary_dict[asin]["counts"] = counts
             summary_dict[asin]["cosine_score"] = str(cosine_score)
+            rouge_list.append(rouge_score)
+            semantic_score_list.append(cosine_score)
+
             #score is either 1 for correct or 0 for wrong
             reviews_short = reviews_indexer.get_reviews_short(asin)
             assert (len(reviews_short) == len(product_reviews))
@@ -135,8 +144,6 @@ def main(kwargs):
             sentiment_score_list.append (score_sentiment)
             rouge_list.append(rouge_score)
             semantic_score_list.append(cosine_score)
-
-            print(i)
             if i > 0 and i % 50 == 0:
                 write_json(kwargs, summary_dict, model)
                 print("Rouge metrics")
