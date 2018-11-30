@@ -64,9 +64,6 @@ def save_tokenizer (tokenizer, num_samples):
   with open("cache/tokenizer_{}_sentiment.pickle".format(num_samples), 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-def load_tokenizer ():
-  with open('cache/tokenizer_sentiment.pickle', 'rb') as handle:
-    tokenizer = pickle.load(handle)
 
 def load(vocabulary_size, sentence_length, num_samples):
   """Returns training and evaluation input for imdb dataset.
