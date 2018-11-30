@@ -61,11 +61,11 @@ class SQLLiteIndexer(object):
       self.conn.close()
 
 def save_tokenizer (tokenizer):
-  with open('tokenizer.pickle', 'wb') as handle:
+  with open('cache/tokenizer_sentiment.pickle', 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def load_tokenizer ():
-  with open('tokenizer.pickle', 'rb') as handle:
+  with open('cache/tokenizer_sentiment.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 def load(vocabulary_size, sentence_length):

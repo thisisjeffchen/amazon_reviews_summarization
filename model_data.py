@@ -45,7 +45,7 @@ def build_tokenizer(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_fil
     tokenizer= Tokenizer(num_words=MAX_NUM_WORDS, lower= True, oov_token= OOV_TOKEN)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
     tokenizer.fit_on_texts(db_cur_gen(review_iterator))
-    with open('tokenizer.pkl', 'wb') as fo:
+    with open('cache/tokenizer.pkl', 'wb') as fo:
         pickle.dump(tokenizer, fo, pickle.HIGHEST_PROTOCOL)
     print("Saved Keras tokenizer")
 
@@ -76,7 +76,7 @@ class TFReviewIterator(object):
 
 
 def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "df2use_train.csv"):
-    with open('tokenizer.pkl', 'rb') as fi:
+    with open('cache/tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
     
