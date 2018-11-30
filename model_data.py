@@ -140,7 +140,7 @@ def abstractive_dataset_create(all_data_file= 'num_reviews.csv', num_reviews= 8)
     
 
 
-def create_pretrained_embeddings(keras_tokenizer_fname= 'tokenizer.pkl'):
+def create_pretrained_embeddings(keras_tokenizer_fname= 'cache/tokenizer.pkl'):
     # first, build index mapping words in the embeddings set
     # to their embedding vector
     glove_embeddings_fname= os.environ.get('GLOVE_PATH', None)
@@ -172,7 +172,7 @@ def create_pretrained_embeddings(keras_tokenizer_fname= 'tokenizer.pkl'):
             # words not found in embedding index will be all-zeros.
             embedding_matrix[i] = embedding_vector
     print(embedding_matrix.shape)
-    np.save('pretrained_embeddings.npy', embedding_matrix)
+    np.save('cache/pretrained_embeddings.npy', embedding_matrix)
 
 
 #create_pretrained_embeddings()
