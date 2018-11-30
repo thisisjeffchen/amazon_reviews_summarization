@@ -50,11 +50,14 @@ def run_model(dataset_name, emb_dim, voc_size, sen_len,
   x_train, y_train, x_test, y_test = dataset.load(
       dataset_name, voc_size, sen_len)
 
-  pdb.set_trace()
+  #pdb.set_trace()
 
   model.fit(x_train, y_train, batch_size=batch_size,
             validation_split=0.4, epochs=epochs)
   score = model.evaluate(x_test, y_test, batch_size=batch_size)
+
+  print ("Saving model...")
+  model.save('cache/sentiment_model.h5')
   tf.logging.info("Score: {}".format(score))
 
 if __name__ == "__main__":
