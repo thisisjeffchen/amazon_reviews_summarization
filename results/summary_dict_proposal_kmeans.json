@@ -14,7 +14,11 @@
       56,
       44,
       55
-    ]
+    ],
+    "cosine_score": "0.95234245",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
   },
   "B0007OWASE": {
     "summary": [
@@ -31,7 +35,11 @@
       45,
       38,
       43
-    ]
+    ],
+    "cosine_score": "0.9429617",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
   },
   "B000EI0EB8": {
     "summary": [
@@ -48,6 +56,10 @@
       33,
       5,
       60
-    ]
+    ],
+    "cosine_score": "0.89027166",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
   }
 }
