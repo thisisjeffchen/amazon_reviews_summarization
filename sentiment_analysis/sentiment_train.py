@@ -57,7 +57,7 @@ def run_model(dataset_name, emb_dim, voc_size, sen_len,
   score = model.evaluate(x_test, y_test, batch_size=batch_size)
 
   print ("Saving model...")
-  model.save('cache/sentiment_model.h5')
+  model.save("cache/{}_{}_model.h5".format(dataset, num_samples))
   tf.logging.info("Score: {}".format(score))
 
 if __name__ == "__main__":
