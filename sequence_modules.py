@@ -21,8 +21,7 @@ import tensorflow_hub as hub
 import dill as pickle
 import copy
 
-from config import DATA_PATH
-from config import args
+from config import DATA_PATH, args
 from text_encoders import ENCODER_PATH_DICT
 from model_data import MAX_SEQUENCE_LENGTH
 
@@ -32,10 +31,9 @@ from model_data import MAX_SEQUENCE_LENGTH
 
 def construct_cells(config, basic_cell, bidirectional= False):
     def cell():
-        return tf.contrib.rnn.DropoutWrapper(basic_cell(config['hidden_size']),
+        return tf.nn.rnn_cell.DropoutWrapper(basic_cell(config['hidden_size']),
                        output_keep_prob=config['dropout_keep'],
-                       dtype= tf.float32,
-                       variational_recurrent= config.get('variational_do', False))
+                       dtype= tf.float32)
     if bidirectional == True:
         multi_cell_f= tf.contrib.rnn.MultiRNNCell(
                 [cell() for _ in range(config['num_layers'])],
@@ -138,7 +136,7 @@ class BaseEncoder(object):
 
 class SeqEncoder(BaseEncoder):
     def __call__(self, inputs, real_seq_lens, apply_embedding_layer= True):
-        pdb.set_trace()
+        #pdb.set_trace()
         if apply_embedding_layer:
             enc_inputs= self.embedding_layer(inputs)
         else:
@@ -202,7 +200,7 @@ class BaseDecoder(object):
 
 class TeacherForcingDecoder(BaseDecoder):
     def __call__(self, init_decoder_input, targets_wids):
-        pdb.set_trace()
+        #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
         dec_input_ids_list= tf.unstack(targets_wids, axis= 1)
         logits_list= []
@@ -223,7 +221,7 @@ class TeacherForcingDecoder(BaseDecoder):
 
 class InferenceDecoder(BaseDecoder):
     def __call__(self, init_decoder_input, seq_len= 100):
-        pdb.set_trace()
+        #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
         dec_inp_id= None
         logits_list, word_id_list= [], []
@@ -283,7 +281,7 @@ class GumbelSoftmaxDecoder(BaseDecoder):
         Must return a dictionary ret_dict with keys 'decoder_logits' and 'decoder_word_ids'
         of size (?, L, vocab_size) and (?, L) and types tf.float32 and tf.int32 respectively
         """
-        pdb.set_trace()
+        #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
         next_word_embedding= tf.identity(init_decoder_input)
         gumbel_softmax_logits= None
@@ -345,10 +343,11 @@ def decode_id_to_string(word_ids, params):
 def summarizer(features, mode, params, layers_dict):
     is_train= mode == tf.contrib.learn.ModeKeys.TRAIN
     
-    ae_encoder_output= features['ae_encoder_output']
-    decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True)
+    ae_encoder_output= features['ae_encoder_output'] # (batch_size x word_emb_size)
+    decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True) # TODO: grouby mean asin using tf.math.segment_mean
     if not is_train:
-        decoder= InferenceDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
+        # TODO: check problem with InferenceDecoder and change back from GumbelSoftmaxDecoder now
+        decoder= GumbelSoftmaxDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
                            layers_dict['vocab_softmax_layer'])
         summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
     else:
@@ -356,11 +355,9 @@ def summarizer(features, mode, params, layers_dict):
                            layers_dict['vocab_softmax_layer'])
         summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
     
-    pdb.set_trace()
+    #pdb.set_trace()
     encoder= layers_dict['encoder']
     summary_wids= summ_decoder_output['decoder_word_ids']
-    summar_text_list= decode_id_to_string(tf.reshape(summary_wids, (-1,)), params) #length 1 list
-
     if is_train:
         if params['pretrained_encoder'] == True:
             raise ValueError("Cant use pretrained encoder for this as input to encoder is in word embeddings ONLY!")
@@ -369,30 +366,34 @@ def summarizer(features, mode, params, layers_dict):
             summ_encoder_output= encoder(encoder_inputs, None, apply_embedding_layer= False)
     else:
         summ_encoder_output= None
-    return summ_encoder_output, summar_text_list
+        # summar_text_list= decode_id_to_string(tf.reshape(summary_wids, (-1,)), params) #length 1 list
+    return summ_encoder_output, summary_wids
 
 
 def build_layers(features, mode, params):
     # pdb.set_trace()
     layers_dict= {}
-    token2id= params['token2id']
     vocab_size= params['vocab_size']
     try:
         init_embeddings= tf.keras.initializers.Constant(params['word_embeddings'])
         embedding_layer= tf.keras.layers.Embedding(input_dim= params['word_embeddings'].shape[0], 
-        output_dim= params['word_embeddings'].shape[1], embeddings_initializer= init_embeddings)
+                        output_dim= params['word_embeddings'].shape[1], embeddings_initializer= init_embeddings)
     except KeyError:
         init_embeddings= 'uniform'
         embedding_layer= tf.keras.layers.Embedding(input_dim= vocab_size+1, 
-        output_dim= params['word_embeddings_dim'], embeddings_initializer= init_embeddings)
-    
+                        output_dim= params['word_embeddings_dim'], embeddings_initializer= init_embeddings)
     layers_dict['embedding_layer']= embedding_layer
-    vocab_softmax_layer= tf.keras.layers.Dense(vocab_size+1, activation=None, use_bias=False,
-                                         kernel_initializer='glorot_uniform')
+
+    if params['tie_in_out_embeddings']:
+        init_projection= tf.keras.initializers.Constant(params['word_embeddings'].T)
+    else:
+        init_projection= 'glorot_uniform'
+    vocab_softmax_layer= tf.keras.layers.Dense(embedding_layer.input_dim, activation=None, use_bias=False,
+                                         kernel_initializer=init_projection)
     layers_dict['vocab_softmax_layer']= vocab_softmax_layer
     
     encoder_projection_layer= tf.keras.layers.Dense(params['word_embeddings_dim'], activation=None, 
-                                         use_bias=False, kernel_initializer='glorot_uniform')
+                                         use_bias=True, kernel_initializer='glorot_uniform')
     layers_dict['encoder_projection_layer']= encoder_projection_layer
     
     if params['pretrained_encoder'] == True:
@@ -411,16 +412,16 @@ def build_layers(features, mode, params):
 
 
 def summarization_model(features, mode, params):
-    pdb.set_trace()
+    #pdb.set_trace()
     layers_dict= build_layers(features, mode, params)
     ae_encoder_output, ae_decoder_output= seq2seq_ae(features, mode, params, layers_dict)
     features['ae_encoder_output']= ae_encoder_output
     features['ae_decoder_output']= ae_decoder_output
-    summ_encoder_output, summar_text_list= summarizer(features, mode, params, layers_dict)
+    summ_encoder_output, summar_id_list= summarizer(features, mode, params, layers_dict)
     output_dict= {'ae_encoder_output': ae_encoder_output,
                   'ae_decoder_output': ae_decoder_output,
                   'summ_encoder_output': summ_encoder_output,
-                  'summar_text_list': summar_text_list,}
+                  'summar_id_list': summar_id_list,}
     return output_dict
 
 

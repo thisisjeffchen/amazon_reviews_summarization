@@ -24,26 +24,27 @@ import tensorflow as tf
 import ipdb as pdb
 from ipdb import slaunch_ipdb_on_exception
 
-from config import DATA_PATH
+from config import DATA_PATH, args
 MAX_SEQUENCE_LENGTH = 100
 MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 300
 OOV_TOKEN= '<OOV>'
 BATCH_SIZE= 32
-NUM_EPOCHS= 10
-NUM_REVIEWS_K= 16
+NUM_EPOCHS= 1
+NUM_REVIEWS_K= 8
 
 
 def db_cur_gen(cur):
     for i, c in enumerate(cur):
         if i > 0 and i % 10000 == 0:
             print(i)
-            break
+        #     break
         for text in ast.literal_eval(c[1]):
             yield text
 
 
-def build_tokenizer(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "df2use_train.csv"):
+def build_tokenizer(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
+    pdb.set_trace()
     tokenizer= Tokenizer(num_words=MAX_NUM_WORDS, lower= True, oov_token= OOV_TOKEN)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
     tokenizer.fit_on_texts(db_cur_gen(review_iterator))
@@ -55,7 +56,7 @@ def build_tokenizer(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_fil
 class TFReviewIterator(object):
     def __init__(self, data_path= DATA_PATH, 
                  db_name= "reviews.s3db", 
-                 asins2use_file= "df2use_train.csv"):
+                 asins2use_file= "abs_train_set_8.csv"):
         db_file= os.path.join(data_path, db_name)
         asin_df= pd.read_csv(asins2use_file, encoding= 'latin1')
         self.asin_list= asin_df['asin'].tolist()
@@ -77,7 +78,7 @@ class TFReviewIterator(object):
 
 
 
-def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "df2use_train.csv"):
+def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
     with open('cache/tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
@@ -116,7 +117,6 @@ def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file
     
     dataset= ds.shuffle(1000).repeat(NUM_EPOCHS)
 #    dataset= dataset.batch(BATCH_SIZE)
-    
     return dataset
 
 
@@ -128,19 +128,20 @@ def test():
     return value
 
 
-def abstractive_dataset_create(all_data_file= 'num_reviews.csv', num_reviews= 8):
+def abstractive_dataset_create(all_data_file= 'num_reviews.csv', num_reviews= args.abs_num_reviews):
     from sklearn.model_selection import train_test_split
     df= pd.read_csv(all_data_file, encoding='latin1')
     df1= df[df.num_reviews>=num_reviews].reset_index(drop=True)
     df_train, df_test= train_test_split(df1, test_size= .1, random_state=42)
     df_train.reset_index(drop=True, inplace=True)
     df_test.reset_index(drop=True, inplace=True)
-    df_train.to_csv('abs_train_set_{}.csv'.format(num_reviews), index=False)
-    df_test.to_csv('abs_test_set_{}.csv'.format(num_reviews), index=False)
-    
+    train_filename, test_filename= 'abs_train_set_{}.csv'.format(num_reviews), 'abs_test_set_{}.csv'.format(num_reviews)
+    df_train.to_csv(train_filename, index=False)
+    df_test.to_csv(test_filename, index=False)
+    return train_filename, test_filename
 
 
-def create_pretrained_embeddings(keras_tokenizer_fname= 'tokenizer.pkl'):
+def create_pretrained_embeddings(keras_tokenizer_fname= 'cache/tokenizer.pkl'):
     # first, build index mapping words in the embeddings set
     # to their embedding vector
     glove_embeddings_fname= os.environ.get('GLOVE_PATH', None)
@@ -172,9 +173,12 @@ def create_pretrained_embeddings(keras_tokenizer_fname= 'tokenizer.pkl'):
             # words not found in embedding index will be all-zeros.
             embedding_matrix[i] = embedding_vector
     print(embedding_matrix.shape)
-    np.save('pretrained_embeddings.npy', embedding_matrix)
+    np.save('cache/pretrained_embeddings.npy', embedding_matrix)
 
 
-#create_pretrained_embeddings()
-#if __name__ == "__main__":
-#    build_tokenizer()
+
+if __name__ == "__main__":
+    with slaunch_ipdb_on_exception():
+        train_filename, test_filename= abstractive_dataset_create()
+        build_tokenizer(asins2use_file= train_filename)
+        create_pretrained_embeddings()
