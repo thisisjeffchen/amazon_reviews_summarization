@@ -144,6 +144,7 @@ def main(kwargs):
             sentiment_score_list.append (score_sentiment)
             rouge_list.append(rouge_score)
             semantic_score_list.append(cosine_score)
+            print (i)
             if i > 0 and i % 50 == 0:
                 write_json(kwargs, summary_dict, model)
                 print("Rouge metrics")
