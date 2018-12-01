@@ -300,6 +300,8 @@ def get_ex_summarizer(model_type, summary_length= 5):
         return PageRankExtract(summary_length)
     elif model_type == "pagerank_slow":
         return PageRankExtract_slow(summary_length)
+    elif model_type == "random":
+        return RandomExtract(summary_length)
     else:
         raise ValueError("Invalid model type supplied")
 
