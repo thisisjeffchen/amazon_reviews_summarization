@@ -21,6 +21,7 @@ import tensorflow_hub as hub
 import dill as pickle
 import copy
 
+from tensorflow.python.client import device_lib
 from config import DATA_PATH, args
 from text_encoders import ENCODER_PATH_DICT
 from model_data import MAX_SEQUENCE_LENGTH
@@ -370,8 +371,19 @@ def summarizer(features, mode, params, layers_dict):
     return summ_encoder_output, summary_wids
 
 
+def get_available_gpus():
+    local_device_protos = device_lib.list_local_devices()
+    return [x.name for x in local_device_protos if x.device_type == 'GPU']
+
+
 def build_layers(features, mode, params):
     # pdb.set_trace()
+    def get_cell():
+        if len(get_available_gpus()) > 0:
+            return tf.nn.rnn_cell.GRUCell
+        else:
+            return tf.contrib.rnn.GRUBlockCellV2
+    
     layers_dict= {}
     vocab_size= params['vocab_size']
     try:
@@ -400,11 +412,11 @@ def build_layers(features, mode, params):
         encoder= PretrainedEncoder(embedding_layer, encoder_projection_layer, params)
     else:
         # First create an encoder cell and then pass to encoder_fn
-        enc_cell= construct_cells(params['config'], tf.contrib.rnn.GRUBlockCellV2, bidirectional=True)
+        enc_cell= construct_cells(params['config'], get_cell(), bidirectional=True)
         encoder= SeqEncoder(embedding_layer, encoder_projection_layer, params['config'], enc_cell)
     
     layers_dict['encoder']= encoder
-    dec_cell= construct_cells(params['config'], tf.contrib.rnn.GRUBlockCellV2, bidirectional=False)['fwd']
+    dec_cell= construct_cells(params['config'], get_cell(), bidirectional=False)['fwd']
     
     layers_dict['dec_cell']= dec_cell
     
