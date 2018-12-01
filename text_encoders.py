@@ -12,7 +12,7 @@ from nltk.tokenize import word_tokenize
 
 ENCODER_PATH_DICT= {'nnlm': 'https://tfhub.dev/google/nnlm-en-dim128-with-normalization/1',
                     'w2v': 'https://tfhub.dev/google/Wiki-words-500-with-normalization/1',
-                    'use': 'https://tfhub.dev/google/universal-sentence-encoder/2',
+                    'use': 'https://tfhub.dev/google/universal-sentence-encoder/3',
                     'elmo': 'https://tfhub.dev/google/elmo/2',
                     }
 
