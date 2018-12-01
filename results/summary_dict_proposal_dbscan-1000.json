@@ -980,5 +980,5768 @@
     "reviews_sentiment": "1",
     "summary_sentiment": "1",
     "sentiment_score": "1"
+  },
+  "B0036ECGS6": {
+    "summary": [
+      "The keys have a solid feel, but a little more tactile feedback would be nice.",
+      "The browser buttons on the left-hand side of the keyboard are an interesting feature, but I haven't found them beneficial in daily use.",
+      "As I already had a Logitech Anywhere MX cordless mouse with the same receiver I was wanting a matching keyboard."
+    ],
+    "rouge": 0.1880557456618782,
+    "counts": [
+      128,
+      100,
+      9,
+      9,
+      6
+    ],
+    "cosine_score": "0.8966988",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001212ELY": {
+    "summary": [
+      "All I had to do was go to the modem tab and add the password that unlocks my blackberry.",
+      "It was fairly easy to set up.",
+      "This is awesome!!!"
+    ],
+    "rouge": 0.16227943074870585,
+    "counts": [
+      205,
+      149,
+      7,
+      6,
+      4
+    ],
+    "cosine_score": "0.8356076",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B002T0EK64": {
+    "summary": [
+      ", you can buy some stuff to fill them in later and match the color ( some meathead had a CB mounted before me and i found the stuff to fill in holes )great product holds well , nice arm adjust to get it right where you want itLOVE IT",
+      "This product is great!",
+      "I highly recommend this product!",
+      "So far, it seems to work very well."
+    ],
+    "rouge": 0.1745797008304374,
+    "counts": [
+      157,
+      100,
+      7,
+      3,
+      3
+    ],
+    "cosine_score": "0.85129505",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0000665V6": {
+    "summary": [
+      "I purchased this thinking that I could use it with my Nikon DSLR camera, and realized after an hour of setting up my telescope and getting it zeroed in, this does NOT attach to the camera, and you need an ADDITIONAL adaptor that fits into this one for your camera ring.",
+      "I got this to connect my 7d to the telescope at my loacl college where I am taking an Astronomy class I was able to connect with no trouble and got some real nice images on the first night out.",
+      "I did NOT have any focusing problems with the camera T-Adapter or the camera T-Mount adapter with my Dynamax 8 telescope."
+    ],
+    "rouge": 0.20819371408014137,
+    "counts": [
+      103,
+      61,
+      3,
+      3,
+      2
+    ],
+    "cosine_score": "0.9218402",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000OG4E1G": {
+    "summary": [
+      "I purchased these speakers to replace the ones I got with my HTIB, which I ended up returning anyway but that's a different story.",
+      "Great Great speakers!",
+      "VERY GOOD  QUALITY, GREAT SOUND  WOULD RECCOMMEND THESE TO EVERYONE WHO ARE THINKING  OF BUYING NEW SPEAKERS, WHAT CAN I SAY  THERE GREAT.",
+      "*** *** **** ***** ******"
+    ],
+    "rouge": 0.12654682911044535,
+    "counts": [
+      283,
+      251,
+      15,
+      3,
+      4
+    ],
+    "cosine_score": "0.504544",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B006XGCQ2U": {
+    "summary": [
+      "I really love this tablet , you will too!",
+      "COULD NEVER GET IT TO COME BACK ON.",
+      "Oh yea it has the best Wi-Fi reception out of the three Android phones and the two other 7\" Android tablets that I have."
+    ],
+    "rouge": 0.1404114607632582,
+    "counts": [
+      218,
+      172,
+      13,
+      5,
+      1
+    ],
+    "cosine_score": "0.75531113",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00000K4KH": {
+    "summary": [
+      "I have difficulty getting the lock to work but that might be more my incompetence.",
+      "Great product!",
+      "I bought this lock for my son to take to college to help protect his new MacBook Pro laptop."
+    ],
+    "rouge": 0.1646763216440424,
+    "counts": [
+      191,
+      141,
+      5,
+      5,
+      4
+    ],
+    "cosine_score": "0.80969954",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00BVUQZZ2": {
+    "summary": [
+      "Why did they not just add the eraser at the end, that is all it needed.",
+      "I use it with a Samsung Galaxy Note 10.1",
+      "THERE MAY NOW BE A NEWER MODEL MADE SPECIFICALLY FOR THE GALAXY NOTE TABLETS - WHEN I BOUGHT IT, THERE WAS ONLY ONE MODEL AVAILABLE (IN WHITE, BLACK, OR CARBON)."
+    ],
+    "rouge": 0.14114955760293327,
+    "counts": [
+      171,
+      150,
+      5,
+      1,
+      4
+    ],
+    "cosine_score": "0.5524727",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00ACF8XWA": {
+    "summary": [
+      "I thought it was a good value, and it was easy to install.",
+      "Excellent product.",
+      "It works great."
+    ],
+    "rouge": 0.17777696227300135,
+    "counts": [
+      430,
+      417,
+      22,
+      17,
+      9
+    ],
+    "cosine_score": "0.68363166",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001SEQPGA": {
+    "summary": [
+      "Initially, the pictures came out good, however I did notice a change from the old Sony.",
+      "This camera is a really nice acquisition.",
+      "I definitely recommend it!"
+    ],
+    "rouge": 0.13053696225399924,
+    "counts": [
+      270,
+      260,
+      16,
+      14,
+      13
+    ],
+    "cosine_score": "0.85590684",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001NXDC4O": {
+    "summary": [
+      "It's a great portable media player, but there are quite a few things I don't like about it.",
+      "Simply outstanding sound quality.",
+      "Definitivamente tendr&aacute; que cambiar los audifonos que vienen con el reproductor pues son tan estandar como los que ahora le dan cuando compra un tel&eacute;fono celular (\"b&aacute;sicos y corrientes\")."
+    ],
+    "rouge": 0.08608937293991303,
+    "counts": [
+      175,
+      162,
+      9,
+      8,
+      2
+    ],
+    "cosine_score": "0.50209194",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00005BC0J": {
+    "summary": [
+      "and hooked them up to my PC for quite listening.",
+      "So glad I got these speakers!",
+      "These speakers are perfect."
+    ],
+    "rouge": 0.16144567590696265,
+    "counts": [
+      304,
+      237,
+      13,
+      8,
+      8
+    ],
+    "cosine_score": "0.77268153",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004MMEI6Y": {
+    "summary": [
+      "I was tired of using earbuds, but didn't want to spend hundreds of dollars on a set of headphones that my kids would end up breaking.",
+      "A good purchase overall.",
+      "I bought these headphones because I wanted a pair to use at work."
+    ],
+    "rouge": 0.16260754795623927,
+    "counts": [
+      316,
+      346,
+      16,
+      3,
+      3
+    ],
+    "cosine_score": "0.82588995",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003B4CU3M": {
+    "summary": [
+      "I don't how else to describe this software.",
+      "Simply load your photo, select the painting style you are interested in (options are oil, impressionist, modern, illustration, detailed watercolor, watercolor sketch, pencil, colored pencil, pen and ink, and pastel), and watch as your photo is transformed.",
+      "Corel Paint it!",
+      "These include Oil, simulating the color and texture of oil paint, Impressionist, Modern, Illustration, Detailed Watercolor, Watercolor Sketch."
+    ],
+    "rouge": 0.1519320593114698,
+    "counts": [
+      97,
+      98,
+      12,
+      8,
+      4
+    ],
+    "cosine_score": "0.6674913",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000VJG356": {
+    "summary": [
+      "Has to figure out where to put it if not using it.",
+      "This light is very bright.",
+      "I have bought many u sb lights and this one may actually last more than a month before it falls apart.",
+      "THIS IS THE ONE YOU WANT !!!!!"
+    ],
+    "rouge": 0.17292037544075498,
+    "counts": [
+      203,
+      125,
+      9,
+      7,
+      5
+    ],
+    "cosine_score": "0.84387183",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B003ZSHKIO": {
+    "summary": [
+      "Holding a good charge for the week or so I've been using it.",
+      "For such a low price compared to the Canon version, this is hard to beat.",
+      "Highly recommended."
+    ],
+    "rouge": 0.17615239697113083,
+    "counts": [
+      153,
+      92,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.8029945",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B001F50UHM": {
+    "summary": [
+      "This version of their walkman was well thought out, and is a great older mp3 player that still holds up in terms of ease of use, even in the touch screen era.",
+      "Highly recommend.",
+      "I bought this for my husband for his birthday."
+    ],
+    "rouge": 0.1877798045105327,
+    "counts": [
+      274,
+      244,
+      11,
+      8,
+      4
+    ],
+    "cosine_score": "0.79392326",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002A6CWCQ": {
+    "summary": [
+      "I used these couplers to extend the cables in my DVR security system.",
+      "These thing work as they should with no problems.",
+      "Nothing more to say.",
+      "Filler words."
+    ],
+    "rouge": 0.18123388254434294,
+    "counts": [
+      101,
+      8,
+      7,
+      5,
+      1
+    ],
+    "cosine_score": "0.7628928",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001S2R8E0": {
+    "summary": [
+      "I was hoping to use this to store a smaller GPS unit with all the accessories but it isn't quite big enough.",
+      "I would recommend this product.",
+      "I just got this case for my new TOMTOM ,THIS IS CASE #2 IT LOOKS GREAT WELL MADE THE ONLY PROBLEM I HAVE WITH THIS IS YOU DON'T HAVE ANY PLACE TO PUT YOUR POWER CORD.",
+      "Great product!"
+    ],
+    "rouge": 0.1703420097864132,
+    "counts": [
+      170,
+      78,
+      4,
+      4,
+      4
+    ],
+    "cosine_score": "0.7584834",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001BWLA8W": {
+    "summary": [
+      "Even if you're not traveling, this is a great multi purpose USB charger for multiple devices.",
+      "I've had it for about a year and have used it on several trips with no problems.",
+      "This is an excellent product.",
+      "Most of the time I'll have my iPhone, iPad, and bluetooth headset plugged in to this."
+    ],
+    "rouge": 0.2320700583820995,
+    "counts": [
+      137,
+      84,
+      7,
+      5,
+      3
+    ],
+    "cosine_score": "0.92440355",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00127VAW2": {
+    "summary": [
+      "I wanted something that packs flat like the Opteka diffuser but was wary of the poor quality and performance so I went with this one.",
+      "I am so happy I purchased this!",
+      "I JUST LOADED 2 MORE IMAGES AND ADDED ABOVE -PLEASE NOTICE HOW \"COOL\" THE FONG IMAGES ARE."
+    ],
+    "rouge": 0.12383068825915648,
+    "counts": [
+      92,
+      59,
+      4,
+      1,
+      2
+    ],
+    "cosine_score": "0.69144243",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000U1YBNQ": {
+    "summary": [
+      "I read all the reviews before I bought this & like everyone else stating that it has a strong smell of rubber or something close to that effect is absolutely true, however, I let mine sit in the basement for 2 weeks to air out & it was fine.",
+      "I'll probably just give it away, cause I have no use for it.",
+      "This fit my 17\" HP laptop perfect."
+    ],
+    "rouge": 0.2221227656144997,
+    "counts": [
+      181,
+      113,
+      9,
+      3,
+      3
+    ],
+    "cosine_score": "0.93516016",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0064L8Q1E": {
+    "summary": [
+      "It's okay, but I will continue to look for one that I like better.",
+      "Nice product.",
+      "I REALLY ENJOY THE STYLUS FOR KINDLE FIRE.",
+      "I love this pen."
+    ],
+    "rouge": 0.11728349700289685,
+    "counts": [
+      355,
+      255,
+      11,
+      13,
+      9
+    ],
+    "cosine_score": "0.69341063",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002QDCP3Y": {
+    "summary": [
+      "It works better then several other brands and worth a try if you just cant seems to get the right fit for your ear.",
+      "It fits very well.",
+      "I'm totally satisfied."
+    ],
+    "rouge": 0.1738758656863812,
+    "counts": [
+      290,
+      245,
+      9,
+      8,
+      4
+    ],
+    "cosine_score": "0.8586701",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00004Z0C7": {
+    "summary": [
+      "does what its supposed to do",
+      "It is an usefull item and lots of use for good connection to listen music + TV on your own without bothering anyone",
+      "A great value.",
+      "This cord works just fine."
+    ],
+    "rouge": 0.15424802316068312,
+    "counts": [
+      235,
+      174,
+      7,
+      5,
+      5
+    ],
+    "cosine_score": "0.81483126",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002LE8D2A": {
+    "summary": [
+      "Also the heat plates seem to work very well i have had many lesser brands burnout on me but this memory just doesn't give up.",
+      "and sorry that i never reviewed this item before but now i figure that its better since i now got the chance to tell everybody that it still works!",
+      "Would have dropped into my new desktop I built since I rarely use the HTPC anymore after buying a WD tv live hub, but my cpu heat sink is so big it gets in the way of the first ram slot on my motherboard."
+    ],
+    "rouge": 0.1686676231708579,
+    "counts": [
+      105,
+      29,
+      3,
+      2,
+      3
+    ],
+    "cosine_score": "0.9153512",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00603RTC8": {
+    "summary": [
+      "The UV filter is an absolute necessity, as it protects the lens and cuts down on glare/distortion coming into the lens to some degree.",
+      "The three filters come in a very nice cloth pouch that makes them easy to carry with your photo equipment.",
+      "The UV filter is fine and I suspect the Warming Filter will be fine too, but the CP is a piece of junk."
+    ],
+    "rouge": 0.20209672723068617,
+    "counts": [
+      163,
+      93,
+      3,
+      2,
+      3
+    ],
+    "cosine_score": "0.8897803",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002ISZD2C": {
+    "summary": [
+      "have long driveway and give me an idea that someone is coming expecially when you put two or three along the road.",
+      "I would highly recommend this product to anyone.",
+      "Works great."
+    ],
+    "rouge": 0.18293249460641384,
+    "counts": [
+      275,
+      137,
+      8,
+      7,
+      6
+    ],
+    "cosine_score": "0.8365375",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004477D0K": {
+    "summary": [
+      "I used these on my daily jogs and the sweat got the best of them.",
+      "These headphones are phenomenal!",
+      "I liked these headphones a lot."
+    ],
+    "rouge": 0.1806418542562253,
+    "counts": [
+      337,
+      331,
+      12,
+      13,
+      9
+    ],
+    "cosine_score": "0.80927086",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00FH66AW4": {
+    "summary": [
+      "When I forgot to turn off a device on an airplane, and it drained the battery searching for a signal, I had two full charges on standby in this device.",
+      "I am VERY pleased with how quickly this battery recharges my iPhone.",
+      "I love it, it does the job."
+    ],
+    "rouge": 0.1964899103038726,
+    "counts": [
+      190,
+      139,
+      6,
+      6,
+      4
+    ],
+    "cosine_score": "0.88794446",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00654PUPA": {
+    "summary": [
+      "That's pretty much all I expected from this card and it delivered, so I'm glad I didn't buy a more expensive card.",
+      "Drivers are much better for Win7 64Pro; has a dedicated headphone jack and the scout mode is a very nice feature and not just a gimmick.",
+      "The sound is amazing.",
+      "muy bueno excelente, siempre quise tener una de estas para poder apreciar bien el sonido de mi computadora y esta tarjeta hace la diferencia"
+    ],
+    "rouge": 0.16346951060493833,
+    "counts": [
+      92,
+      56,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.6834563",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007BXD6DW": {
+    "summary": [
+      "Well, these cards are a bit expensive, but you will get what you paid for.",
+      "I don't do a lot of card comparisons, so I can't really evaluate this thoroughly IMO."
+    ],
+    "rouge": 0.14228745790141023,
+    "counts": [
+      93,
+      31,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.83109844",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000BYCKUI": {
+    "summary": [
+      "It's one of those things that you don't want to buy but it's annoying not to have it on your camera.",
+      "What I will end up doing is dremmeling down the bottom so that it will be completely flush or even in a U shape as opposed to the n shape it currently has.",
+      "I bought this as a replacement, because I lost the original one."
+    ],
+    "rouge": 0.20019088571192845,
+    "counts": [
+      101,
+      15,
+      12,
+      3,
+      5
+    ],
+    "cosine_score": "0.94490844",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0027CTQC2": {
+    "summary": [
+      "Got this for my Sony Camcorder, and it works excellent.",
+      "I have been running out of room on the internal memory (Had only 8 GBs), but this allows me tons of hours.",
+      "All I can really say."
+    ],
+    "rouge": 0.1984727760970384,
+    "counts": [
+      242,
+      117,
+      8,
+      4,
+      3
+    ],
+    "cosine_score": "0.8995726",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00A6HH28U": {
+    "summary": [
+      "The mount holds the phone snugly but shakes too much to get good video.",
+      "THIS IS FINE, IT GLUED WELL TO THE CAR`S WINDSCREEN AND THE PACKAGE CAME ON TIME AS EXPECTED!",
+      "Great product, great price!"
+    ],
+    "rouge": 0.09377989954820233,
+    "counts": [
+      460,
+      292,
+      16,
+      16,
+      4
+    ],
+    "cosine_score": "0.49997455",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004BQKQ8A": {
+    "summary": [
+      "Gave me a lot of trouble installing it, but it finally did the trick.",
+      "Installed the card and downloaded the drivers.",
+      "This card installed in minutes and does just what I need it to do."
+    ],
+    "rouge": 0.19074506042363656,
+    "counts": [
+      149,
+      63,
+      4,
+      2,
+      2
+    ],
+    "cosine_score": "0.859728",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007BXD66E": {
+    "summary": [
+      "Combined with the 7D's 8 frames/second speed in high-speed continuous shooting mode, this makes the camera even more ideal for action/sports/wildlife photography and it starts to edge closer to UDMA-7 speeds.",
+      "This card is extremely fast."
+    ],
+    "rouge": 0.1806534384618825,
+    "counts": [
+      163,
+      81,
+      5,
+      3,
+      1
+    ],
+    "cosine_score": "0.78501594",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00DDK1QUC": {
+    "summary": [
+      "It looks really nice and if you don't know that is a router you would never guess.",
+      "It's nice to know you can.",
+      "The D Link Wireless AC Gaming router is a solid router for your multi device connected home.",
+      "It has great reach and a quick and easy set up."
+    ],
+    "rouge": 0.1533931427807727,
+    "counts": [
+      108,
+      93,
+      3,
+      3,
+      2
+    ],
+    "cosine_score": "0.8685436",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00844N5OC": {
+    "summary": [
+      "I has loads of features, you can determine the amount of light you want to come from the camera.",
+      "It is really an awesome flash.",
+      "You truly get what you pay for."
+    ],
+    "rouge": 0.1519239960545333,
+    "counts": [
+      216,
+      152,
+      8,
+      6,
+      3
+    ],
+    "cosine_score": "0.8281077",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003YT578O": {
+    "summary": [
+      "Uses a double usb plug so you don't need a electric power cord, just plug in to 2 of your usb ports and go.",
+      "I recommend it as a good value for the money.",
+      "no problems whatsoever.",
+      "So far so good."
+    ],
+    "rouge": 0.18975154854639864,
+    "counts": [
+      162,
+      80,
+      5,
+      5,
+      3
+    ],
+    "cosine_score": "0.8462729",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001H9NR2Q": {
+    "summary": [
+      "I have used several GPS's in the past, and this one has got to be one of the easiest I've ever used.",
+      "Great price and great product.",
+      "I got this for Christmas this year and I love it.",
+      "For the price, it's a great value."
+    ],
+    "rouge": 0.2041922992409068,
+    "counts": [
+      262,
+      202,
+      19,
+      17,
+      7
+    ],
+    "cosine_score": "0.81458515",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002YTDE5I": {
+    "summary": [
+      "But if I bought it, I know it was a very reasonable price.",
+      "This is awesome!",
+      "It was easy to put on and looks great & makes me feel good about taking a little extra care of such an valuable camera."
+    ],
+    "rouge": 0.20375471934741723,
+    "counts": [
+      137,
+      86,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.8189832",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000H6CBA4": {
+    "summary": [
+      "When I first used it I noticed substantial heat buildup and so made it a point to turn the drive off except when I was actually doing a backup.",
+      "It is quite simple.",
+      "Me parece una muy buena adquisici&oacute;n, a un precio m&aacute;s que razonable."
+    ],
+    "rouge": 0.15453724575402414,
+    "counts": [
+      224,
+      168,
+      9,
+      2,
+      4
+    ],
+    "cosine_score": "0.7434051",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00196757K": {
+    "summary": [
+      "I had a Digital Antenna with bunny ears before this one and on the HD channels it constantly would cut in and out.",
+      "You have to really tweak it's position.",
+      "I like it and it works fine."
+    ],
+    "rouge": 0.20521458427649594,
+    "counts": [
+      251,
+      174,
+      7,
+      6,
+      4
+    ],
+    "cosine_score": "0.83478355",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0039XRUBM": {
+    "summary": [
+      "I would have given a Zero star rating - but you can't.",
+      "This DVD player is GREAT.",
+      "It was a good product for the price, while it worked.",
+      "FOR THE PRICE, THIS IS THE BEST YET!"
+    ],
+    "rouge": 0.18467552808104729,
+    "counts": [
+      281,
+      191,
+      2,
+      5,
+      4
+    ],
+    "cosine_score": "0.70530105",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "0",
+    "sentiment_score": "1"
+  },
+  "B002BFA91C": {
+    "summary": [
+      "I had a old laptop that took a poop, so just took the drive out got this case to recover a majority of the data and kept it moving.",
+      "This is an amazing product for the price.",
+      "Very simple to use."
+    ],
+    "rouge": 0.23131341246344236,
+    "counts": [
+      214,
+      166,
+      8,
+      7,
+      6
+    ],
+    "cosine_score": "0.87513983",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004XJ6R0Q": {
+    "summary": [
+      "These covers arrived in a timely fashion, everything as promised, I would have liked them to be a little thicker (as the ones they were replacing) but they perfectly fit and feel comfortable.",
+      "Exactly what I needed and it fits great on my headsets.",
+      "Great earpads for the price.",
+      "Simply stretch one side of the opening with the tweezers and then pull the other side over the earbud."
+    ],
+    "rouge": 0.20290888234037294,
+    "counts": [
+      175,
+      107,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.92863",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000J022G6": {
+    "summary": [
+      "I've been using it for connecting my ipod to my aux in on my Pontiac Solstice car stereo.",
+      "I would definitely recommend.",
+      "This cable does exactly what it is supposed to do."
+    ],
+    "rouge": 0.19702894505400484,
+    "counts": [
+      176,
+      131,
+      5,
+      4,
+      4
+    ],
+    "cosine_score": "0.81937885",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B005276QSQ": {
+    "summary": [
+      "Boy this Router is the ticket if u want to increase the speed of your network and use the available speed of your DSL line.",
+      "DO NOT WASTE YOUR MONEY ON THIS PRODUCT.",
+      "I started with a Westell modem and a Linksys router."
+    ],
+    "rouge": 0.15201394255974826,
+    "counts": [
+      212,
+      147,
+      10,
+      4,
+      4
+    ],
+    "cosine_score": "0.7107722",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B009WROL6G": {
+    "summary": [
+      "The internal tuner was not as good as the tuner in the TV.",
+      "I love this unit!",
+      "This DVR is great!"
+    ],
+    "rouge": 0.14333895899183544,
+    "counts": [
+      226,
+      179,
+      9,
+      6,
+      7
+    ],
+    "cosine_score": "0.7095913",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00G6CLNCK": {
+    "summary": [
+      "My video editing needs are very basic, but I want a piece of software that could do more should the need arise.",
+      "My first exposure to Pinnacle Studio was when I had to import and edit videos from my mini-DV camcorder many years ago.",
+      "It's worked really well for me."
+    ],
+    "rouge": 0.2066353475777968,
+    "counts": [
+      98,
+      94,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.91944075",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0050RKH2Y": {
+    "summary": [
+      "Works great and looks great!",
+      "I have moved the wii to my bedroom and it used now as a streaming device for netflix mostly.",
+      "Great product!"
+    ],
+    "rouge": 0.1875200376542074,
+    "counts": [
+      362,
+      307,
+      9,
+      7,
+      7
+    ],
+    "cosine_score": "0.73536336",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000OFWJO6": {
+    "summary": [
+      "I don't have any other cards to compare this to, but I think it is plenty fast for this camera.",
+      "Highly recommend!",
+      "This is a great deal.",
+      "I used this 8GB card in my daughter's new Nikon S210 point and shoot digital camera, and it works great, especially for capturing large amounts of video."
+    ],
+    "rouge": 0.20931448062130883,
+    "counts": [
+      205,
+      99,
+      5,
+      5,
+      4
+    ],
+    "cosine_score": "0.8963735",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00562O8U0": {
+    "summary": [
+      "The arm could use to give a bit more and be softer but thats about it.",
+      "Excellent product.",
+      "These glasses are great!"
+    ],
+    "rouge": 0.15097983029304807,
+    "counts": [
+      272,
+      178,
+      9,
+      9,
+      6
+    ],
+    "cosine_score": "0.76903427",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0053T4PHC": {
+    "summary": [
+      "Luckily though, this didn't matter as I was able to use my sound cards software EQ to turn the bass down a tiny bit around 170Hz, and then bring up the dBs around 1kHz to 6kHz, with a slow drop all the way back to a flat EQ at 16kHz.",
+      "highly recommended.",
+      "But these speakers are fantastic for what they are."
+    ],
+    "rouge": 0.18758394502792713,
+    "counts": [
+      226,
+      190,
+      9,
+      8,
+      6
+    ],
+    "cosine_score": "0.88754684",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000JLM50I": {
+    "summary": [
+      "Mounting a telephoto on this actually feels like it might stress the head to the point of breaking because you'll come within a pound of the weight limit or exceed it if you're using any professional glass.",
+      "It worked great and is very solid.",
+      "I bought this for my monopod and I love it.",
+      "Highly Recommended!"
+    ],
+    "rouge": 0.20868669087600275,
+    "counts": [
+      106,
+      57,
+      7,
+      3,
+      3
+    ],
+    "cosine_score": "0.8827692",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001S0LUCI": {
+    "summary": [
+      "I order JVC HARX900 could'n use them thry my Bose sistem 321, so I called the support tim to tell me what I need to make this headphones work with the Bose, thry the TV is no problem the headphones work,I been told to get this product and should work with my surround sistem but that was not true,so I am wondering do those support tim they know what are they doing?",
+      "Does what it needs to do.",
+      "For audio when I'm traveling, I often need two cords: a \"male 1/8 stereo phono jack\" to \"male 1/8 stereo phono jack\", and a \"male 1/8 stereo phono jack\" to \"two male RCA jack\" cord.",
+      "It works great!!"
+    ],
+    "rouge": 0.16901758007601164,
+    "counts": [
+      133,
+      50,
+      11,
+      4,
+      2
+    ],
+    "cosine_score": "0.8763114",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001B8R03U": {
+    "summary": [
+      "This battery was purchased for my Inspiron 1521.",
+      "It was not holding a full charge by the time of the 1 year warranty and within 2 months after having it for 1 year, there is no charge at all to it.",
+      "I am completely satisfied with this product."
+    ],
+    "rouge": 0.2468816932744491,
+    "counts": [
+      337,
+      229,
+      12,
+      9,
+      5
+    ],
+    "cosine_score": "0.8596306",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B004EC20Y4": {
+    "summary": [
+      "I would definitely buy again if I need another battery!",
+      "I bought three of these STK batteries for less than the price of one Fuji original.",
+      "I ordered two as backups for the Fuji battery that came with the X100S."
+    ],
+    "rouge": 0.20645560418733586,
+    "counts": [
+      184,
+      98,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.868454",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00CXACPN0": {
+    "summary": [
+      "This was great.",
+      "Unfortunately though, I seem to be the only customer that DID NOT receive any additional items, only the Pi, case & WiFi adapter.",
+      "GREAT customer service.",
+      "Great product!"
+    ],
+    "rouge": 0.11141101998428822,
+    "counts": [
+      349,
+      202,
+      16,
+      6,
+      4
+    ],
+    "cosine_score": "0.66970575",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0092MD6NA": {
+    "summary": [
+      "I wasn't sure that this would work as well as some people say it does until I purchased it.",
+      "This was a great idea.",
+      "It was easy to pair, easy to clip onto my shirt, and easy to use."
+    ],
+    "rouge": 0.1859849333395432,
+    "counts": [
+      328,
+      282,
+      8,
+      7,
+      7
+    ],
+    "cosine_score": "0.8714297",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0042TLA90": {
+    "summary": [
+      "I don't even know how to tell if it works.",
+      "I can personally tell you that for one it does it's job of keeping static away from killing my parts because I built my very first computer with this attached.",
+      "You have to flip this plastic clamp thing, pull on the band and then push the clamp back down.",
+      "it does what is suppose to do well."
+    ],
+    "rouge": 0.2063148770570076,
+    "counts": [
+      91,
+      42,
+      2,
+      3,
+      3
+    ],
+    "cosine_score": "0.9075764",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001207YMY": {
+    "summary": [
+      "It replaces the original Kodak battery or it can be used as a backup battery for example-  Good device, though.",
+      "I didn't do any time tests on how long it took for them to charge or how many photos I could take with each one.",
+      "Taking that as a clue, I taped a thin strip of card board to the bottom of the batteries that hadn't been working and now I have my old batteries back and a new one as well!",
+      "But for the price, really can't complain."
+    ],
+    "rouge": 0.20891956377184712,
+    "counts": [
+      109,
+      21,
+      16,
+      3,
+      2
+    ],
+    "cosine_score": "0.95634496",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00BCXF4HI": {
+    "summary": [
+      "My almost 12 inch graphics card fit highly recommend modular psu not any room for a bunch of cables take your time and you will be pleased",
+      "Seriously, this is a great case.",
+      "I love the look of the case, and I wanted it for it's size."
+    ],
+    "rouge": 0.19486865437293108,
+    "counts": [
+      131,
+      95,
+      8,
+      3,
+      3
+    ],
+    "cosine_score": "0.8995044",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B005PCDSBQ": {
+    "summary": [
+      "Need to be aware and not to jam the camera in the camera bag which could possibly damage the transmitter.",
+      "Does exactly what it says it does.",
+      "Highly recommend !,,"
+    ],
+    "rouge": 0.1349073742128477,
+    "counts": [
+      172,
+      114,
+      7,
+      6,
+      5
+    ],
+    "cosine_score": "0.769238",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0010T8X9A": {
+    "summary": [
+      "My recommendation, though, is make sure you get the Verbatim 16x and not anything less.",
+      "I have used this type of disk before and never had a bad disc.",
+      "Would definitely recommend this product to others.",
+      "I BURN OVER 300 ITEM AND I NEVER I REPEAT NEVER GOTTEN A BAD DVD OR CD."
+    ],
+    "rouge": 0.1619831044123538,
+    "counts": [
+      142,
+      49,
+      7,
+      1,
+      4
+    ],
+    "cosine_score": "0.83251286",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000CDLCGG": {
+    "summary": [
+      "I would say it is about 50-50 on getting working RAM with these, and when you finally do it will have taken you about a month.",
+      "I have never had any problems with this manufacturer.",
+      "Compre unas aca en Venezuela (que salen mucho mas caras por cierto) y pues y la verdad para lo que estan echas dan buen rendimiento.",
+      "with this memory, the PC becomes very fast, very fast times, starting because corsair manufactures fastest memory for PC and Apple, I recommend, very fast!Corsair TW2X4G6400C5PRO XMS PRO 4GB 2 X 2 GB PC2-6400 800MHz 240-Pin DDR2 Dual Channel Memory Kit"
+    ],
+    "rouge": 0.1216472595883368,
+    "counts": [
+      195,
+      49,
+      10,
+      5,
+      3
+    ],
+    "cosine_score": "0.72744024",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004QQG18Y": {
+    "summary": [
+      "Unfortunately, the card that came with my shield had a jagged edge that left a large scratch across the front of my iPad.",
+      "I love this.",
+      "I highly recommend this product!"
+    ],
+    "rouge": 0.14563188757907222,
+    "counts": [
+      309,
+      288,
+      10,
+      7,
+      6
+    ],
+    "cosine_score": "0.81301683",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000EWHEM6": {
+    "summary": [
+      "However I suggest purchasing the 8gb (even if you dont need the 4gb for storage, the extra 4gb can be used as ram for windows readyboost and speed up your computer (explained below).",
+      "U3 is really useless.",
+      "great product."
+    ],
+    "rouge": 0.13578999480438586,
+    "counts": [
+      199,
+      133,
+      6,
+      5,
+      3
+    ],
+    "cosine_score": "0.8103697",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00336G7MI": {
+    "summary": [
+      "It is a very small and handy charger.",
+      "It amazes me that even very expensive Camcorders often leave out a separate battery charger requiring you to charge the battery while connected to the Camcorder.",
+      "No complaints and does what it's supposed to do.",
+      "MY HUSBAND NEEDED THIS CHARGER AND HE IS VERY PLEASED WITH IT."
+    ],
+    "rouge": 0.1601924798968524,
+    "counts": [
+      129,
+      60,
+      5,
+      3,
+      3
+    ],
+    "cosine_score": "0.82013106",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0046HAW7Y": {
+    "summary": [
+      "This card was intended for a HTPC setup and I tested it with some games I have.",
+      "This graphics card is Outstanding!"
+    ],
+    "rouge": 0.18081201451843149,
+    "counts": [
+      174,
+      106,
+      10,
+      8,
+      6
+    ],
+    "cosine_score": "0.7645426",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001R1Q0OG": {
+    "summary": [
+      "the fan part broke off of it's stand after only 6 months because it is held together by a very weak ring of plastic at both ends.",
+      "Very quiet and efficient.",
+      "IT IS VERY SMALL, PACKED IN AN OVERSIZE BOX TO MAKE IT LOOK BIGGER, BUT IT IS WAY TOO SMALL."
+    ],
+    "rouge": 0.13138456727059733,
+    "counts": [
+      269,
+      234,
+      10,
+      7,
+      4
+    ],
+    "cosine_score": "0.6336795",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000AY2L3U": {
+    "summary": [
+      "The S510 keyboard is aesthetically good looking and it is easy to get used to despite the odd placement of the group of keys above the arrow keys.",
+      "I would highly recommend it to anyone.",
+      "I am very pleased with it."
+    ],
+    "rouge": 0.19734045247325127,
+    "counts": [
+      158,
+      129,
+      8,
+      3,
+      3
+    ],
+    "cosine_score": "0.84719",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004WK3U9W": {
+    "summary": [
+      "I have yet to get a message from my Blackberry saying \"the USB charger you are using is unable to power this device\".",
+      "This is because the iPad and Kindle require much more current to charge than is supplied by the typical USB charger.",
+      "This is a nice little charger device.",
+      "Yeah, you can look at your devices to see if they are charging, but why should you have to?"
+    ],
+    "rouge": 0.21814351279018718,
+    "counts": [
+      74,
+      52,
+      2,
+      2,
+      2
+    ],
+    "cosine_score": "0.9148934",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B000JKHXPQ": {
+    "summary": [
+      "I've tried many earbud type units and have found the Sony to be the best I've used.",
+      "I love these headphones, they're great.",
+      "This is my second pair of headphones over two years."
+    ],
+    "rouge": 0.17562625764037518,
+    "counts": [
+      240,
+      239,
+      12,
+      7,
+      5
+    ],
+    "cosine_score": "0.84850085",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0067I4Z6O": {
+    "summary": [
+      "When it is installed in a desktop, the computer itself may block the signal to the router and moving the antenna around is a lot easier than moving the entire computer around.",
+      "Yes, this product is very inexpensive, but it works well.",
+      "I would buy again."
+    ],
+    "rouge": 0.20330524508884523,
+    "counts": [
+      194,
+      111,
+      8,
+      5,
+      4
+    ],
+    "cosine_score": "0.91164577",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0038W0NEU": {
+    "summary": [
+      "They are so loud that when I would jam out after 5:00pm occasionally the attorney who owned the firm would stay late and if I didn't know he was still there, a few times he came down the two halls (we were at opposite ends of L shape of two sides of a building to ask me to turn down my \"rap crap\".",
+      "I would highly recommend these.",
+      "THIS PRODUCT IS VERY EASY TO SET UP AND THE SOUND IS AMAZING."
+    ],
+    "rouge": 0.13761372779211617,
+    "counts": [
+      249,
+      178,
+      10,
+      4,
+      7
+    ],
+    "cosine_score": "0.75990134",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004FV67XO": {
+    "summary": [
+      "I lost both my pairs (carelessness), but still feel like i got a good value our of them.",
+      "The JVC Headphones are great.",
+      "They have great sound quality."
+    ],
+    "rouge": 0.1766364174312659,
+    "counts": [
+      171,
+      152,
+      6,
+      5,
+      2
+    ],
+    "cosine_score": "0.8113904",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00C8T7CXO": {
+    "summary": [
+      "If I give something 3 stars (which I consider average) its usually something like shoes where sizing may not be accurate, or they may be fine for 75% of the population just not me and I clearly state that.",
+      "Great value for the price.",
+      "(SIDE NOTE OTHER CUSTOMERS SAY THE USED ONCE AND THE BATTERY DRAINED AND WOULD NOT CHARGE IT IS NOT BECAUSE OF THE KEYBOARD IS A LEMON BUT RATHER THE USB JUST SWAP USB PROBLEM SOLVED."
+    ],
+    "rouge": 0.09300006086614081,
+    "counts": [
+      440,
+      380,
+      19,
+      6,
+      11
+    ],
+    "cosine_score": "0.64588773",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B00004VX15": {
+    "summary": [
+      "The only problem I notice was that when I tried update the firmware of my phone using this USB cable, it wouldn't get past 63%, leaving my phone completely unusable until I was able to successfully update it.",
+      "The bulge on the unit prevents the cover plate from fitting.",
+      "PROBABLY A GOOD PRODUCT BUT DID NOT PRODUCE WHAT IT WAS ADVERTIZED TO DO."
+    ],
+    "rouge": 0.13953398644079118,
+    "counts": [
+      231,
+      174,
+      4,
+      2,
+      3
+    ],
+    "cosine_score": "0.776577",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00548QAPC": {
+    "summary": [
+      "I don't use it as much as I thought I would, but that's because I'm not that into tech.",
+      "She loves it too!",
+      "el producto llego a tiempo y se uso de manera correcta, aunque el producto no es muy bueno por eso me compre ota tablet mejor."
+    ],
+    "rouge": 0.10484582652544112,
+    "counts": [
+      233,
+      205,
+      8,
+      6,
+      5
+    ],
+    "cosine_score": "0.5654627",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B007ZT23ZE": {
+    "summary": [
+      "I even tested it while repeating in the same room as the router, and still only 20mbps versus a 70mbps wifi connection direct to the router.",
+      "Great product.",
+      "EXTENDS MY NETWORK TO A HARD TO REACH ROOM IN MY HOUSE-WORTH THE PRICE AS IT WORKS."
+    ],
+    "rouge": 0.14562500585572768,
+    "counts": [
+      174,
+      132,
+      5,
+      5,
+      3
+    ],
+    "cosine_score": "0.529565",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B002KQ5KVG": {
+    "summary": [
+      "Sometimes you have to force the key down very hard just to get the letter to appear.",
+      "I have had this keyboard and mouse for 4 years.",
+      "I have been using this set for some time now with my Media Center PC and it has been working great.",
+      "After purchasing and using this item after having my old mouse for a few years I discovered that the quality of Logitech's items has eroded and I will be seeking my next purchase from an alternate company."
+    ],
+    "rouge": 0.22269877577474986,
+    "counts": [
+      106,
+      98,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.8990979",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0036OR92E": {
+    "summary": [
+      "I love this remote.",
+      "This TiVOGlo remote is a learning remote: I just put the Samsung remote in front of the new TIVO remote and pressed the buttons as directed.",
+      "I highly recommend this even if you think you don't need it.",
+      "Now I love it!"
+    ],
+    "rouge": 0.2013209444784926,
+    "counts": [
+      104,
+      51,
+      5,
+      4,
+      4
+    ],
+    "cosine_score": "0.8339999",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001PA94NS": {
+    "summary": [
+      "The sound quality is ok but nothing special.",
+      "This earphones are not good.",
+      "These are great."
+    ],
+    "rouge": 0.12391540674089992,
+    "counts": [
+      384,
+      402,
+      18,
+      8,
+      4
+    ],
+    "cosine_score": "0.7556396",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "0",
+    "sentiment_score": "1"
+  },
+  "B0002J2MV4": {
+    "summary": [
+      "I recently purchased a new 1080P LCD TV but when I got it home, I realized the audio out was a coaxial connector instead of the optical output I had on my old TV.",
+      "Plugged it in and it works great.",
+      "Works great."
+    ],
+    "rouge": 0.21596841435992062,
+    "counts": [
+      208,
+      157,
+      9,
+      3,
+      6
+    ],
+    "cosine_score": "0.8176814",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00G57BN1M": {
+    "summary": [
+      "There were no holes in the bottom of the converter into which I might put a couple of screws to securely mount my drive.",
+      "!I was excited to put my new SSD in my new computer.",
+      "This does exactly what it says it will do."
+    ],
+    "rouge": 0.1984596403963834,
+    "counts": [
+      202,
+      139,
+      2,
+      5,
+      3
+    ],
+    "cosine_score": "0.86644953",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001TI9F8U": {
+    "summary": [
+      "The fabric is thin and fragile, so you have to handle it carefully, but it does work as advertised.",
+      "This product is huge.",
+      "The item comes with four backdrops (white, red, blue and black)."
+    ],
+    "rouge": 0.15610109530206884,
+    "counts": [
+      267,
+      208,
+      9,
+      8,
+      4
+    ],
+    "cosine_score": "0.7780577",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00158OJ9O": {
+    "summary": [
+      "Most of all i am just happy to never have to hook my computer up to the TV anymore to watch a ripped movie or TV show, i can just throw it on a usb flash drive now.",
+      "This is a nice player.",
+      "It works perfectly fine.",
+      "Press 1, 3, 8, 9, 3, 1 on the remote."
+    ],
+    "rouge": 0.16947518653648744,
+    "counts": [
+      178,
+      121,
+      5,
+      3,
+      3
+    ],
+    "cosine_score": "0.79923975",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0035FZJM6": {
+    "summary": [
+      "Unfortunately, Adorama allows only 14 days to return the merchandise, being out of the country taking pictures and movies for 18 days, just now I was able to download the movies to the computer and have no success in playing.",
+      "Great camera!."
+    ],
+    "rouge": 0.1392933453694119,
+    "counts": [
+      330,
+      339,
+      10,
+      7,
+      5
+    ],
+    "cosine_score": "0.77506864",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0094S8V3M": {
+    "summary": [
+      "A connector with a protrusion on one side and indentation on the other would be nicer, though would probably add a lot to costs or bulk.",
+      "highly recommend it.",
+      "I am very pleased with this case for the money."
+    ],
+    "rouge": 0.20045203123341218,
+    "counts": [
+      197,
+      145,
+      9,
+      7,
+      7
+    ],
+    "cosine_score": "0.8897945",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0089V4WOC": {
+    "summary": [
+      "I had to fiddle quite a lot in order to get it working.",
+      "Before i had the correct software to format and control the raid it did not work when i actually started to copy data onto the drive.",
+      "It is easy to set up and very good quality.",
+      "This is the latest iteration and is the best so far."
+    ],
+    "rouge": 0.1821471788031598,
+    "counts": [
+      82,
+      50,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.90014654",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B007KZQM9G": {
+    "summary": [
+      "I was able to initially get into it, when I first set it up.",
+      "But after having problems, I tried to get back into the Dashboard with my username and pw.",
+      "After I powered off the existing router I plugged in the My Net N600, used the supplied (yellow) Ethernet cable to connect to the cable modem, another cable to connect to a media server and I USB-attached an HDD."
+    ],
+    "rouge": 0.17039866471626391,
+    "counts": [
+      109,
+      80,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.8830622",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00365EVWO": {
+    "summary": [
+      "Now, some may say it is my network, but no, my Xbox 360 is a FAR better option for streaming Netflix.",
+      "compre este producto en 24 noviembre 2010 no lo use si no 2 veces por 5 horas y se apago y no volvio a prender lo lleve al taller de samsung en cali -colombia para su reparacion supuestamente lo repararon y me cobraron  us $30.",
+      "I am very satisfied with my purchased and would highly recommend it."
+    ],
+    "rouge": 0.11724496769465659,
+    "counts": [
+      145,
+      110,
+      5,
+      1,
+      4
+    ],
+    "cosine_score": "0.6337429",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004YAVF8I": {
+    "summary": [
+      "They say it is good and they enjoy working with it.",
+      "This is the second one I've owned.",
+      "It does what it's supposed to do flawlessly.",
+      "This is a nice compact mouse."
+    ],
+    "rouge": 0.1878123480785742,
+    "counts": [
+      159,
+      106,
+      8,
+      4,
+      4
+    ],
+    "cosine_score": "0.8128085",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0019OZ3OO": {
+    "summary": [
+      "No tools or cables are necessary to install or remove either of the two hard drives that this NAS will accommodate.",
+      "I am very pleased with this enclosure.",
+      "When I asked what does rebooting the unit have to do with file permissions, Tech 2 replied with a \"we will reboot the unit now, sir\"."
+    ],
+    "rouge": 0.15302543687561485,
+    "counts": [
+      108,
+      78,
+      1,
+      1,
+      3
+    ],
+    "cosine_score": "0.8850453",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0096TKA7E": {
+    "summary": [
+      "Its a good screen protector and does the job for the kindle and feels sturdy, and got it at a super price!",
+      "Good buy for the money.",
+      "THE SCREEN PROTECTOR WAS EASY TO INSTALL AND ACCOMPLISHED FAIRLY QUICKLY."
+    ],
+    "rouge": 0.12875019170871768,
+    "counts": [
+      351,
+      283,
+      12,
+      3,
+      7
+    ],
+    "cosine_score": "0.662786",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003DZ1684": {
+    "summary": [
+      "I find this cover attractive and very useful especially when I use the reading light while I'm watching tv and reading at the same time or when there's a book I can't put down and I'm reading late.",
+      "TO GET THE MOST FROM YOUR KINDLE YOU DEFINITELY NEED A COVER WITH A LIGHT.",
+      "Thank you Amazon!"
+    ],
+    "rouge": 0.1515595935641577,
+    "counts": [
+      1394,
+      966,
+      63,
+      17,
+      9
+    ],
+    "cosine_score": "0.665839",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0095R71FG": {
+    "summary": [
+      "Easy to set up and use.",
+      "Then I pressed it again, and again and again.",
+      "For the price the keyboard was a good buy."
+    ],
+    "rouge": 0.19509486295004594,
+    "counts": [
+      257,
+      181,
+      16,
+      6,
+      5
+    ],
+    "cosine_score": "0.8323809",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B006U1VH2S": {
+    "summary": [
+      "The amplitude is great and came with the remote.",
+      "The reason I bought this sony stereo receiver is because it has the least amount of buttons and features which means less to go wrong.",
+      "I'd recommend it to a friend."
+    ],
+    "rouge": 0.19444603257367016,
+    "counts": [
+      294,
+      151,
+      8,
+      4,
+      5
+    ],
+    "cosine_score": "0.9083185",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00K91DB7Y": {
+    "summary": [
+      "It has a large footprint so don't to look to put in the same location as your old router.",
+      "The range is great."
+    ],
+    "rouge": 0.1306948299742009,
+    "counts": [
+      177,
+      138,
+      5,
+      3,
+      3
+    ],
+    "cosine_score": "0.8056402",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009WNR13U": {
+    "summary": [
+      "Highly recommend!",
+      "I bought this adapter so I could play music from my phone through the speakers via bluetooth connection.",
+      "Simple to use."
+    ],
+    "rouge": 0.14220003700399353,
+    "counts": [
+      379,
+      208,
+      19,
+      18,
+      8
+    ],
+    "cosine_score": "0.731192",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0012XFDWO": {
+    "summary": [
+      "This is pretty cool headset.",
+      "I've searching for the perfect headset for several years.",
+      "Superb quality."
+    ],
+    "rouge": 0.094523061694476,
+    "counts": [
+      247,
+      255,
+      7,
+      3,
+      4
+    ],
+    "cosine_score": "0.71167207",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001XILMEG": {
+    "summary": [
+      "The second cable I purchased had no sleeve but was otherwise as equally well made.",
+      "This is a great HDMI cable and for the price it cannot be beaten.",
+      "So, as you can see I can't test it to see if it can handle 3D either."
+    ],
+    "rouge": 0.21590711176434405,
+    "counts": [
+      121,
+      38,
+      2,
+      4,
+      3
+    ],
+    "cosine_score": "0.8932849",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004M8SVGQ": {
+    "summary": [
+      "The L120 is rated very high by consumer reports and is really fun to use, but takes some time to get use to.",
+      "It takes amazing pictures.",
+      "GREAT ALL AROUND CAMERA BUT SHOP AROUND ALSO."
+    ],
+    "rouge": 0.1219635491427499,
+    "counts": [
+      300,
+      278,
+      19,
+      12,
+      4
+    ],
+    "cosine_score": "0.671044",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EZ9XG62": {
+    "summary": [
+      "So glad I went ahead and tried it.",
+      "Definitely would recommend!",
+      "The cover also matches the back of the iPad."
+    ],
+    "rouge": 0.14420894005528914,
+    "counts": [
+      284,
+      223,
+      17,
+      7,
+      6
+    ],
+    "cosine_score": "0.80131733",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00906DHLE": {
+    "summary": [
+      "this motherboard is everything is said its very fast need to remember to were a rist band for the stadic electricity gowing through your body it will boot right up with no problems",
+      "Thanks ASUS!",
+      "This motherboard is not the best, I had another Motherboard that is made in China Elitegroup, and it is a lot more better than this high end motherboard."
+    ],
+    "rouge": 0.19329325584997778,
+    "counts": [
+      100,
+      53,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.8561417",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008YD80KC": {
+    "summary": [
+      "It would be nice to have installed the software and given it my router info and had it do an auto setup.",
+      "Foscam software is easy to setup and use.",
+      "This software is great!"
+    ],
+    "rouge": 0.18311660900592655,
+    "counts": [
+      210,
+      154,
+      7,
+      6,
+      5
+    ],
+    "cosine_score": "0.7975921",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001LYPIIS": {
+    "summary": [
+      "Very good little monitor, has not had any problems, other than I have to clean dust and gunk off occasionally, but this is normal.",
+      "No dead pixels.",
+      "This is an absolutely wonderful monitor.",
+      "THIS THING DOES NOT TURN OFF WHEN YOU COMPUTER IS IN STANDBY USING HDMI."
+    ],
+    "rouge": 0.1495071148384477,
+    "counts": [
+      158,
+      110,
+      2,
+      4,
+      4
+    ],
+    "cosine_score": "0.7367187",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00DQZSEWM": {
+    "summary": [
+      "I had a very difficult time getting it on correctly.",
+      "I would buy again.",
+      "I believe  the screen is a must item for all touch screens."
+    ],
+    "rouge": 0.17397789095576066,
+    "counts": [
+      140,
+      82,
+      5,
+      3,
+      2
+    ],
+    "cosine_score": "0.86638904",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B004IZN3YI": {
+    "summary": [
+      "For the price, you can't beat the storage capacity.",
+      "I have a pretty hefty machine I put together in my recording studio last year, but never bought the 6gbps drives that are supposed to go into it.",
+      "Great price."
+    ],
+    "rouge": 0.15520684484508518,
+    "counts": [
+      149,
+      56,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.8180951",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004YTCNJY": {
+    "summary": [
+      "They do appear to be cheaply made, but at this price I'll just handle them carefully and purchase an extra.",
+      "They work perfectly.",
+      "Yongnuo is allowing me to to things I otherwise wouldn't be able to afford.",
+      "Would definitely recommend them."
+    ],
+    "rouge": 0.1444361302869645,
+    "counts": [
+      105,
+      72,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.8051493",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0064FS7HI": {
+    "summary": [
+      "If they would have taken 1 second to perform a quality inspection they would have found this battery unusable.",
+      "Very Satisfied.",
+      "So much better than paying $$$ for a Canon brand battery and it works just the same!",
+      "For the price I would say it is a very good value."
+    ],
+    "rouge": 0.21180383883119056,
+    "counts": [
+      204,
+      88,
+      5,
+      4,
+      4
+    ],
+    "cosine_score": "0.8710431",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0000E6I1N": {
+    "summary": [
+      "I wanted a device that would allow me to take advantage of the 9 plugged and 3 portable FM radios that I already own, while listening to a variety of program sources.",
+      "I feel sorry that I have to return it.",
+      "So I peeled off the two rubber feet and removed the screws behind them."
+    ],
+    "rouge": 0.14544920571074182,
+    "counts": [
+      185,
+      146,
+      4,
+      2,
+      3
+    ],
+    "cosine_score": "0.8896426",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0073ESZ58": {
+    "summary": [
+      "Works very well, very little slack in terms of fitment, could perhaps be a little better, but it's definitely great!Very comfortable and makes playing the vita for extended periods of time much more enjoyable!",
+      "This hand grip is awesome.",
+      "I love this thing!"
+    ],
+    "rouge": 0.21189800243720897,
+    "counts": [
+      195,
+      182,
+      8,
+      5,
+      5
+    ],
+    "cosine_score": "0.8517171",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000BSJFJS": {
+    "summary": [
+      "It is a little wide though, and will require you to move other USB connections, or get a pigtail cable.",
+      "Not this baby,-it worked like a charm.",
+      "It works great!"
+    ],
+    "rouge": 0.15407647133786528,
+    "counts": [
+      263,
+      187,
+      11,
+      8,
+      4
+    ],
+    "cosine_score": "0.80543876",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0092S2TPA": {
+    "summary": [
+      "Our other room only had local channels and a Wii, that we could watch Hulu Plus through but the quality was terrible.",
+      "This little device is powerful.",
+      "I would definitely recommend this to others."
+    ],
+    "rouge": 0.17596577079508519,
+    "counts": [
+      308,
+      126,
+      14,
+      11,
+      8
+    ],
+    "cosine_score": "0.8811295",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B008BMWPKW": {
+    "summary": [
+      "Now I can watch my netflix movies right from my iphone to the large screen wht the HDMI connection.",
+      "Overall this is a very good product.",
+      "Would definitely recommend to others."
+    ],
+    "rouge": 0.1681515244904799,
+    "counts": [
+      253,
+      168,
+      8,
+      10,
+      8
+    ],
+    "cosine_score": "0.86194766",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000PDR1LS": {
+    "summary": [
+      "Good product, however technically  challenged people should consider adopting a 8 or 9 year old child to show them, patiently I might add, how to operate it.",
+      "I would highly recommend it.",
+      "EVEN IN THE DEEPEST DARKEST FOREST I NEVER EVEN CAME CLOSE TO LOSING RECEPTION."
+    ],
+    "rouge": 0.07445797726610173,
+    "counts": [
+      292,
+      228,
+      2,
+      7,
+      5
+    ],
+    "cosine_score": "0.62112045",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003307BYW": {
+    "summary": [
+      "This was easy and quick to set up.",
+      "She loves it!!!",
+      "Coby DP700WD 7-Inch Widescreen Digital Photo Frame (Wood Design)Me encant&oacute; el producto, con relaci&oacute;n al precio que se paga es una muy buena compra."
+    ],
+    "rouge": 0.06967460536393442,
+    "counts": [
+      387,
+      365,
+      12,
+      13,
+      7
+    ],
+    "cosine_score": "0.49601197",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0001GZ87I": {
+    "summary": [
+      "I have had this carrying case for about 2 months now and it has been great for me.",
+      "I would not recommend this item.",
+      "I love this case overall; it is of excellent quality and the price of around twenty-five bucks is a steal."
+    ],
+    "rouge": 0.22170893998632002,
+    "counts": [
+      206,
+      152,
+      11,
+      7,
+      4
+    ],
+    "cosine_score": "0.8881747",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004O0TRDI": {
+    "summary": [
+      "I was a little skeptical when I purchase this sound system because I noticed some of the reviews were low because of product quality and reliability.",
+      "This is my first Onkyo product.",
+      "I have been a fan of Onkyo products for years and have never had any problems."
+    ],
+    "rouge": 0.20235690185098623,
+    "counts": [
+      267,
+      246,
+      8,
+      5,
+      3
+    ],
+    "cosine_score": "0.8459226",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B008Y8PON8": {
+    "summary": [
+      "When I am able to upgrade, I will freely give it away to a needy PC somewhere whom does not already possess a greater card.",
+      "I had my eye on this card for a while.",
+      "I had upgraded my video card with a card by a different manufacturer and it actually dropped my Windows experience score by a full point."
+    ],
+    "rouge": 0.18757628354369826,
+    "counts": [
+      117,
+      38,
+      6,
+      2,
+      1
+    ],
+    "cosine_score": "0.8774644",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B003EEMDMC": {
+    "summary": [
+      "this worked great",
+      "I have enjoyed that on many of my older units the image appears sharper, but on a few of my cd player, the disc was not readable to the CD system.",
+      "I am so happy with my experience."
+    ],
+    "rouge": 0.1927321767078595,
+    "counts": [
+      200,
+      116,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.83670914",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B001LYWBOM": {
+    "summary": [
+      "I am happy with this screen.",
+      "(It is not just me, if you look at other reviews for Asus, you will find others who had the same experience.",
+      "Great value for the size of the monitor.",
+      "This is an AMAZING monitor."
+    ],
+    "rouge": 0.1819626557656594,
+    "counts": [
+      179,
+      140,
+      10,
+      8,
+      6
+    ],
+    "cosine_score": "0.88410395",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001AYCNIW": {
+    "summary": [
+      "This monitor/HDTV has many great features but the available color adjustments are as bad as I have ever seen.",
+      "I highly recommend this product.",
+      "I use it for my computer, DIRECT TV & video games."
+    ],
+    "rouge": 0.15361291047748385,
+    "counts": [
+      230,
+      220,
+      8,
+      3,
+      3
+    ],
+    "cosine_score": "0.83005595",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001U0OFKU": {
+    "summary": [
+      "I've had this Mac mini for nearly 5 months now and it serves as a desktop replacement for an older Windows 98 box for family members who need basic computing resources such as internet, email and Word/Excel; and provides an easy to operate experience for computer technophobes.",
+      "Then, to make matters worse, I had to pay to have it shipped back to the vendor.",
+      "I've hooked it up to my Sony Bravia TV (1366x768 screen resolution) via the VGA input using a Mini-DVI to VGA Female Adapter Cable."
+    ],
+    "rouge": 0.16120357044214506,
+    "counts": [
+      84,
+      59,
+      6,
+      6,
+      3
+    ],
+    "cosine_score": "0.85258436",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00GZNCP3G": {
+    "summary": [
+      "This is exactly what I was looking for: a slim case that adds very little bulk to the tablet.",
+      "Look great, strong and fit well.",
+      "Great case."
+    ],
+    "rouge": 0.20818255710072853,
+    "counts": [
+      214,
+      146,
+      10,
+      5,
+      5
+    ],
+    "cosine_score": "0.78744304",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002VFVQWS": {
+    "summary": [
+      "I had to get different bolts for my particular speakers, but the mounts work great anyhow.",
+      "These mounts are great!",
+      "But, they're cheap.",
+      "For the price you really cannot go wrong they were absolutely perfect."
+    ],
+    "rouge": 0.18144232053799036,
+    "counts": [
+      134,
+      70,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.8690508",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003VAK1G4": {
+    "summary": [
+      "I bought 3 of these headsets and 2 of them broke within the first month by 2 different users.",
+      "I would definitely recommend these.",
+      "IT WAS ALSO A JOY TO GET UP AND WALK AROUND MY PLACE LISTENIING TO MUSIC AND NOT HAVING ANY WIRES IN THE WAY."
+    ],
+    "rouge": 0.08887247577322671,
+    "counts": [
+      274,
+      245,
+      7,
+      8,
+      1
+    ],
+    "cosine_score": "0.6099857",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000O8WE66": {
+    "summary": [
+      "I love this sub-woofer, but I had to rate it one star less due to the automatic shutoff causes it to thump a lot.",
+      "The low price also makes it a very economical choice as an entry-level subwoofer for those who are ready to rumble.",
+      "Oh yeah, the sound is terrific."
+    ],
+    "rouge": 0.16842679832621285,
+    "counts": [
+      80,
+      68,
+      4,
+      3,
+      2
+    ],
+    "cosine_score": "0.92919654",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007B5YUMQ": {
+    "summary": [
+      "I have been running it non stop for a few months now w/o an issue.",
+      "No fan on it, so putting it in an entertainment center makes it run a little on the warm side, esp on a small form factor dell 745 (I ended up putting a couple of 80mm case fans on the computer and now the temps are nice and cool on the card, even when doing a burn test).",
+      "Easy to set up, and works fine!",
+      "Easy to install."
+    ],
+    "rouge": 0.14949469239300653,
+    "counts": [
+      131,
+      53,
+      2,
+      2,
+      2
+    ],
+    "cosine_score": "0.8823961",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002NGVY8G": {
+    "summary": [
+      "You have to be in front of the camera for it to work",
+      "Simple and easy to use remote.",
+      "Shipped quickly, and works right out of the box.",
+      "It works wonderfully."
+    ],
+    "rouge": 0.21869659230882585,
+    "counts": [
+      209,
+      169,
+      7,
+      5,
+      5
+    ],
+    "cosine_score": "0.8383395",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000WI9CIG": {
+    "summary": [
+      "I have used this so many times that it's all beat up, but it keeps on going, and the batteries last a long time.",
+      "I AM A MECHANIC AND WE HAVE THESE AT WORK FOR ALL THE MECHANICS.",
+      "This is a very convenient tool."
+    ],
+    "rouge": 0.1748956218226952,
+    "counts": [
+      208,
+      157,
+      7,
+      9,
+      6
+    ],
+    "cosine_score": "0.790673",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000LRMR26": {
+    "summary": [
+      "I switched from a pentium DC e5200 to this and after I sold the DC it cost me about 100 dollars for this chip so it was a good deal.",
+      "y lo mejor de todo es su precio, su relaci&oacute;n precio valor es increible!.",
+      "It is a very stable and tough processor."
+    ],
+    "rouge": 0.16273063491599168,
+    "counts": [
+      117,
+      51,
+      4,
+      5,
+      5
+    ],
+    "cosine_score": "0.6525319",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000234TYI": {
+    "summary": [
+      "I have my old cable that worked without this issue for more than two years!Update: on fifth day of the use, there was a burning smell coming out from the charger side end of the cord.",
+      "The cable I got was good, but not the flat cord as shown in the picture.",
+      "It was just what she needed."
+    ],
+    "rouge": 0.19511911246196972,
+    "counts": [
+      278,
+      129,
+      14,
+      10,
+      6
+    ],
+    "cosine_score": "0.9168785",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002NEG0VO": {
+    "summary": [
+      "This little speaker is easy to use, easy to store and the sound is wonderful.",
+      "Unbelievably great sound from such a small unit.",
+      "I purchased this for my wife."
+    ],
+    "rouge": 0.22620267089774665,
+    "counts": [
+      200,
+      177,
+      5,
+      4,
+      4
+    ],
+    "cosine_score": "0.8388727",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007HH95F0": {
+    "summary": [
+      "While it is not strictly necessary it's great to have for the connectivity.",
+      "Easy to setup and works perfectly.",
+      "It is a great device, I'm very pleased with it."
+    ],
+    "rouge": 0.19579731790588237,
+    "counts": [
+      190,
+      101,
+      10,
+      8,
+      6
+    ],
+    "cosine_score": "0.83368754",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EO302SO": {
+    "summary": [
+      "I'm glad because it makes it easy to travel with them and keep large amounts of data with me.",
+      "This is a great little drive - a real work-horse."
+    ],
+    "rouge": 0.15574508947520138,
+    "counts": [
+      152,
+      88,
+      7,
+      3,
+      3
+    ],
+    "cosine_score": "0.8440559",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003Y73Q3O": {
+    "summary": [
+      "It's not until you set this thing up that you realize that it cannot under any circumstances record both cameras at the same time.",
+      "Great picture quality for the price.",
+      "I AM VERY DISPLEASED WITH THIS SYSTEM AND THE COMPANY WHO BOOST THAT THEY TAKE QUALITY VERY SERIOUSLY ON THEIR WEB SITE."
+    ],
+    "rouge": 0.11891187370368154,
+    "counts": [
+      316,
+      258,
+      8,
+      8,
+      8
+    ],
+    "cosine_score": "0.66794086",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B001ASU1QO": {
+    "summary": [
+      "I purchased this adapter and quick release plate to use with my newly purchased Nikon D3100 digital camera and an old tripod that was given to me many, many years ago and is a favorite of mine: Quick Set Elevator Champ, Model C1.",
+      "The mounting plate snaps right in and you can lock it to prevent your camera from falling off.",
+      "As with all Manfrotto products that I have used, it is sturdy, well-crafted and does exactly what they say it will do.",
+      "They are secure and quick to use."
+    ],
+    "rouge": 0.21879972346551893,
+    "counts": [
+      132,
+      78,
+      6,
+      4,
+      3
+    ],
+    "cosine_score": "0.9211137",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008L2WS8Q": {
+    "summary": [
+      "This case fits perfectly, lines up with all the buttons and still allows use of the camera (other cases I tried covered the camera and buttons - extremely annoying).",
+      "But I bought one for my Mom's and she loves it so it was worth the money.",
+      "It does what it was made for and what it was advertised for."
+    ],
+    "rouge": 0.17523971165294636,
+    "counts": [
+      341,
+      249,
+      10,
+      5,
+      5
+    ],
+    "cosine_score": "0.8733142",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00126U0VA": {
+    "summary": [
+      "I wanted to a quick and easy way to swap boot drives on my development box.",
+      "Works very very well.",
+      "Easy to install, easy to use, and a great price!"
+    ],
+    "rouge": 0.15008399118525606,
+    "counts": [
+      114,
+      81,
+      3,
+      4,
+      3
+    ],
+    "cosine_score": "0.7942518",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00E435N1A": {
+    "summary": [
+      "Honestly it's a crap shoot as to whether you receive a good tablet or piece of junk.",
+      "Do not waste your money on this!!!!",
+      "DONT WASTE YOUR MONEY ON THIS PRODUCT!"
+    ],
+    "rouge": 0.10426716960845085,
+    "counts": [
+      623,
+      599,
+      30,
+      15,
+      7
+    ],
+    "cosine_score": "0.6557232",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00AK2MHEU": {
+    "summary": [
+      "and found it incredibly easy to install.",
+      "I really like this screen protector.",
+      "I would highly recommend it.",
+      "Well worth the money!"
+    ],
+    "rouge": 0.1921607311875322,
+    "counts": [
+      189,
+      142,
+      4,
+      4,
+      4
+    ],
+    "cosine_score": "0.85164964",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009923WIW": {
+    "summary": [
+      "My transaction was nice but I have to say that this brand of Bluetooth headphones is not good.",
+      "I love this headphone.",
+      "These headphones are awesome."
+    ],
+    "rouge": 0.161116848562683,
+    "counts": [
+      298,
+      232,
+      13,
+      13,
+      12
+    ],
+    "cosine_score": "0.793923",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000Q85WRC": {
+    "summary": [
+      "Bought this to replace the old HD that took a dump.",
+      "No problems.",
+      "I was surprised it was so quiet; I can barely hear it!"
+    ],
+    "rouge": 0.15614477713636307,
+    "counts": [
+      270,
+      118,
+      10,
+      4,
+      4
+    ],
+    "cosine_score": "0.7808515",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000LB7G00": {
+    "summary": [
+      "Eliminating the need to constantly scroll with a mouse wheel to zoom, or perform keyboard and mouse combos to pan and rotate, is a huge improvement.",
+      "I still love it and it works great.",
+      "This product is a must have!"
+    ],
+    "rouge": 0.17739188524684246,
+    "counts": [
+      237,
+      174,
+      8,
+      5,
+      4
+    ],
+    "cosine_score": "0.86793494",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001DAT0XE": {
+    "summary": [
+      "I think it is stupid that you can't just purchase this on your own, or at least couldn't when I ordered it, but it is what it is, you can't really get a &#34;faulty&#34; one when it's just a disc with some 3M tape.",
+      "Works as advertised.",
+      "Does its job."
+    ],
+    "rouge": 0.14684677795182635,
+    "counts": [
+      145,
+      61,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.8370617",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0064Z71T8": {
+    "summary": [
+      "If you format it with FAT32, however, it will work on almost every device I tested, even those which claim to support the SDHC (32GB max) standard.",
+      "I highly recommend it!!!",
+      "It works great and fast."
+    ],
+    "rouge": 0.14030328646880075,
+    "counts": [
+      190,
+      38,
+      6,
+      4,
+      4
+    ],
+    "cosine_score": "0.82000816",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002Q2M8KK": {
+    "summary": [
+      "I build my new pc with this case, is fantastic, comfortable, plenty of space to add everything you need, even things that you wont need too.",
+      "This case is sleek!",
+      "Awesome case for the money."
+    ],
+    "rouge": 0.1875120901300871,
+    "counts": [
+      150,
+      102,
+      8,
+      7,
+      1
+    ],
+    "cosine_score": "0.8419832",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008X9ZBVI": {
+    "summary": [
+      "I also love that it is easy to charge the kindle while int he case.",
+      "I love the color!",
+      "The aqua is my favorite color."
+    ],
+    "rouge": 0.20745103461496825,
+    "counts": [
+      168,
+      149,
+      5,
+      5,
+      4
+    ],
+    "cosine_score": "0.7630075",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008CQWOYY": {
+    "summary": [
+      "Turns out they are extremely flat when it comes to sound from what I can tell.",
+      "Yes, YOU WILL HEAR SOUNDS COMING FROM YOUR RECORDINGS THAT YOU HAVE NOT HEARD BEFORE!!!",
+      "I love them."
+    ],
+    "rouge": 0.10164880671895085,
+    "counts": [
+      358,
+      329,
+      21,
+      7,
+      5
+    ],
+    "cosine_score": "0.66542685",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00009R6K7": {
+    "summary": [
+      "This thing is so clear that you have to hold it at an angle to see the glass.",
+      "So clear, that if you hold it up it looks like a metal ring with nothing inside.",
+      "I was looking for a good quality filter at a decent price.",
+      "I am very pleased with this filter!"
+    ],
+    "rouge": 0.2240589346306341,
+    "counts": [
+      109,
+      51,
+      3,
+      3,
+      2
+    ],
+    "cosine_score": "0.9018337",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EOI2TD0": {
+    "summary": [
+      "This software can do just about anything the Adobe program can do, and it does it for a fraction of the price.",
+      "I recommend.",
+      "I use 64 bit software-- and this new version gives a 64-bit user a great edge, improving the power of PaintShop X6.",
+      "After the initial install, you download the PDF Users Guide separately, and there are three \"additional content\" modules you can download once you apply for a (free) Corel membership: KPT (Kai's Power Tools), Script Guide (with scripts) and Creative Content (brushes, etc)."
+    ],
+    "rouge": 0.1569100999477814,
+    "counts": [
+      126,
+      95,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.87224555",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0013MT5H8": {
+    "summary": [
+      "Compared to the ruined sealed box I had (also an atrend, I would NOT recommend it, blew apart on a hard hit) this thing is a monster.",
+      "GREAT box for the price.",
+      "this is a good constructed speaker box."
+    ],
+    "rouge": 0.17746266268820649,
+    "counts": [
+      181,
+      122,
+      7,
+      5,
+      4
+    ],
+    "cosine_score": "0.8485266",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B008D9DVVK": {
+    "summary": [
+      "Put it on my device with no problems and it looks really good.",
+      "I was so pleased with this product that I recommended it to three friends.",
+      "This is a great product!",
+      "Love this product would recommend it to everyone."
+    ],
+    "rouge": 0.21098467825002165,
+    "counts": [
+      270,
+      186,
+      6,
+      5,
+      5
+    ],
+    "cosine_score": "0.84067535",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008HO9D7M": {
+    "summary": [
+      "I have had no issues with dropped connections or drop in performance.",
+      "The only 2 cons I have is one if it is a AC band adapter my wifi says that it is Broadcast on the N Band which is weird but you do get the speeds advertised.",
+      "Very easy to install and use."
+    ],
+    "rouge": 0.2203410610851676,
+    "counts": [
+      208,
+      126,
+      7,
+      5,
+      4
+    ],
+    "cosine_score": "0.8904986",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00A6STCL4": {
+    "summary": [
+      "This little case is great - iPad mini fits perfectly and the case folds up nicely for travel.",
+      "I will be purchasing two more in different colors!"
+    ],
+    "rouge": 0.1904843740943096,
+    "counts": [
+      741,
+      650,
+      41,
+      14,
+      7
+    ],
+    "cosine_score": "0.8264556",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0017K6BD2": {
+    "summary": [
+      "I bought this at a very cheap price and I use it all the time.",
+      "Would recommend.",
+      "Works great!",
+      "It works great."
+    ],
+    "rouge": 0.18312376223706664,
+    "counts": [
+      206,
+      96,
+      8,
+      5,
+      5
+    ],
+    "cosine_score": "0.71403503",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001BPE3KQ": {
+    "summary": [
+      "I really like this product because it has the quick release plate which allows me to easily attach my Nikon camera to the slider.",
+      "I purchased this for the price but was surprised by the quality for it.",
+      "I purchased 5 of these ball heads to use out in the field for my photographers.",
+      "Adding the adapter or advertising it's 3/8 won't hurt at all, even advising the need of an adapter of 3/8 to 1/4 would be greatly thanked!"
+    ],
+    "rouge": 0.18282361190322974,
+    "counts": [
+      139,
+      90,
+      4,
+      4,
+      2
+    ],
+    "cosine_score": "0.8843032",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B00E9YIFKA": {
+    "summary": [
+      "This little speaker has lots of power, excellent sound quality and is so easy to travel with, all for a really good price.",
+      "I highly recommend this speaker.",
+      "Highly recommended."
+    ],
+    "rouge": 0.2037766833257483,
+    "counts": [
+      413,
+      353,
+      12,
+      11,
+      8
+    ],
+    "cosine_score": "0.7691726",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001963NZI": {
+    "summary": [
+      "No one has enough outlets, but we all have some that are hiding behind furniture and can't use because the cords will foce us to move the pieve of furniture away from the wall.",
+      "tHE ELECTRIC PLUG ON THE DEVICE DID NOT MATCH THE STANDARD 3 PRONG GROUNDED PLUGAND THEREFORE COULD NOT BE PLUGGED INTO THE WALL SOCKET",
+      "This is really awesome!"
+    ],
+    "rouge": 0.1337255570031744,
+    "counts": [
+      195,
+      113,
+      7,
+      8,
+      5
+    ],
+    "cosine_score": "0.67264616",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000HATNH4": {
+    "summary": [
+      "This is my first digital camera and I love it.",
+      "I love this camera.",
+      "Battery life is good and the quality of the lense is exceptional."
+    ],
+    "rouge": 0.1848333124993544,
+    "counts": [
+      255,
+      220,
+      19,
+      14,
+      8
+    ],
+    "cosine_score": "0.8060181",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000M5U9GI": {
+    "summary": [
+      "Only thing i dont like is everytime i boot up the system it opens up a box on the screen and it sort of is obnoxious, but other than those two things no complaints.",
+      "I am very impressed and it has worked flawlessly for me.",
+      "it work perfectly."
+    ],
+    "rouge": 0.17473051987558785,
+    "counts": [
+      211,
+      153,
+      10,
+      8,
+      6
+    ],
+    "cosine_score": "0.83437437",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00023JJV6": {
+    "summary": [
+      "It was surprisingly easy to setup and has performed flawlessly thus far.",
+      "This is awesome.",
+      "I am very pleased with this product."
+    ],
+    "rouge": 0.15007178889486494,
+    "counts": [
+      317,
+      298,
+      28,
+      14,
+      5
+    ],
+    "cosine_score": "0.7063813",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00CA9I1P0": {
+    "summary": [
+      "Great product.",
+      "I'm not new to putting screen protectors onto my technology, everything I own has a screen protector, but this was unusually difficult and it was impossible to use the pen with this because the screen would grab the tip and be pulled along.",
+      "I just bought the Dell Venue 8 and I wanted a screen protector."
+    ],
+    "rouge": 0.2021380506482436,
+    "counts": [
+      209,
+      120,
+      11,
+      4,
+      3
+    ],
+    "cosine_score": "0.87901044",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0040UBU3W": {
+    "summary": [
+      "used this in my benz so that I could hook up my iphone through the glove box and put the phone on the stand and it worked great.",
+      "i definitely would recommend it if you have a Jetta.",
+      "It works great."
+    ],
+    "rouge": 0.21233103814890417,
+    "counts": [
+      255,
+      188,
+      8,
+      5,
+      4
+    ],
+    "cosine_score": "0.89369607",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0090QJ9V6": {
+    "summary": [
+      "I don't know why but it was just dead, could it have been some freak thing, maybe, but seems tough to think it's a manufacturing defect after 10 months.",
+      "I have this hooked up between a Sony Bluray player and my Wii U console.",
+      "Did not work.",
+      "I use it to connect an apple TV and a Sony PS3 to my TV."
+    ],
+    "rouge": 0.16827508362047008,
+    "counts": [
+      189,
+      123,
+      3,
+      3,
+      3
+    ],
+    "cosine_score": "0.86924505",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0006I09LQ": {
+    "summary": [
+      "It had to be moved into place in front of the altar for the video and then taken away for the rest of the Mass.",
+      "good product, delivered on time at a great price.",
+      "I was pretty happy with the quality of the screen."
+    ],
+    "rouge": 0.21508857910359297,
+    "counts": [
+      269,
+      216,
+      6,
+      6,
+      6
+    ],
+    "cosine_score": "0.83985853",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0014Z5XMK": {
+    "summary": [
+      "The image is much more understandable and logical in video than if the shot was taken with a fish eye.",
+      "An amazing wide angle lens!",
+      "i love this lens"
+    ],
+    "rouge": 0.1786128123764167,
+    "counts": [
+      142,
+      107,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.80224097",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0045XV2CI": {
+    "summary": [
+      "Sound quality is decent.",
+      "I love this speaker!",
+      "I would strongly recommend this speaker to everyone"
+    ],
+    "rouge": 0.10695524016814235,
+    "counts": [
+      290,
+      222,
+      19,
+      13,
+      5
+    ],
+    "cosine_score": "0.7259419",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0040IO1RQ": {
+    "summary": [
+      "These are the two locations I use my phone and iPad 2 the most.",
+      "Works great.",
+      "I just received the new one and it does not work at all."
+    ],
+    "rouge": 0.17965955046555368,
+    "counts": [
+      213,
+      136,
+      7,
+      4,
+      4
+    ],
+    "cosine_score": "0.76352894",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003WJR694": {
+    "summary": [
+      "I was in the market for a camera with more user control and wide-angle/zoom capability than a digital compact camera but without the size/bulk characteristic of digital slr cameras.",
+      "Otherwise, I love this camera for the pictures I take.",
+      "Mientras tengas buena luz las fotos salen perfectas, nada que envidiarle a una Nikon Reflex en cuanto a calidad."
+    ],
+    "rouge": 0.16194772099768198,
+    "counts": [
+      226,
+      200,
+      11,
+      8,
+      4
+    ],
+    "cosine_score": "0.6825842",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001C48HTO": {
+    "summary": [
+      "Ok, it is true that there aren't many accessories for sansa fuze but that doesn't change the fact that this thing is pretty crappy.",
+      "Overall, this is a great deal.",
+      "I'm very satisfied with this package.",
+      "The price is excellent and the quality of the items is terrific."
+    ],
+    "rouge": 0.18968301039155508,
+    "counts": [
+      295,
+      166,
+      7,
+      6,
+      6
+    ],
+    "cosine_score": "0.83445454",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B005T63BJM": {
+    "summary": [
+      "I have had this hardware for about a month now and I cant complain my computer is faster and seams to be working at optimal performance for (3) 8 GB ddr3 I bought.",
+      "What can I say?",
+      "I went with 2 of these but not sure it was the best call."
+    ],
+    "rouge": 0.20277947502718277,
+    "counts": [
+      93,
+      15,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.9012336",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003D0WIQS": {
+    "summary": [
+      "I came across this by accident and thought it was an awesome product for a price that can't be beat.",
+      "DO NOT BUY!",
+      "This is a pretty impressive unit."
+    ],
+    "rouge": 0.157178833057607,
+    "counts": [
+      248,
+      194,
+      7,
+      13,
+      11
+    ],
+    "cosine_score": "0.7845398",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00E4LGTVU": {
+    "summary": [
+      "Great for the price.",
+      "for the money they are great.",
+      "These are fantastic!",
+      "Wirecutter's review made them sound like they are far more than they are regarding their sound&#34;The Panasonic won because they sounded the best."
+    ],
+    "rouge": 0.13526001972663237,
+    "counts": [
+      289,
+      241,
+      7,
+      5,
+      5
+    ],
+    "cosine_score": "0.7843574",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B006UH7974": {
+    "summary": [
+      "Its a very slim profile and the material feels nice to the touch, whatever it may be.",
+      "I am very pleased with this product.",
+      "It doesn't look or feel cheap at all.",
+      "Overall, this is an excellent buy and a excellent product."
+    ],
+    "rouge": 0.19705970604520956,
+    "counts": [
+      137,
+      102,
+      8,
+      4,
+      4
+    ],
+    "cosine_score": "0.87718993",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007ABIY4Q": {
+    "summary": [
+      "I put the camera in this then slip the whole thing in my larger knapsack.",
+      "I bought this case for my Canon EOS Rebel T4i camera.",
+      "But for price and what it is, it will work for my needs.",
+      "Great product."
+    ],
+    "rouge": 0.18790127729594516,
+    "counts": [
+      157,
+      134,
+      3,
+      3,
+      2
+    ],
+    "cosine_score": "0.81614196",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00G024X32": {
+    "summary": [
+      "On top of that, I don't ever want to look at them because it's too distracting.",
+      "Overall, this is a smart product that works exactly as it should.",
+      "Thank you!!",
+      "Stable and easy to use."
+    ],
+    "rouge": 0.16083704466981186,
+    "counts": [
+      128,
+      102,
+      4,
+      3,
+      2
+    ],
+    "cosine_score": "0.86033595",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00009RUCH": {
+    "summary": [
+      "This is a great product for the Money!",
+      "Compact enough that it fits in my pocket and allows me to attach in seconds with my digital compact camera for a good shot of the whole family.",
+      "One of those things that you find you need once you buy it.",
+      "Highly recommend!"
+    ],
+    "rouge": 0.21398027829096636,
+    "counts": [
+      176,
+      152,
+      10,
+      3,
+      4
+    ],
+    "cosine_score": "0.884712",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00FONBG1A": {
+    "summary": [
+      "this has actually exceeded my expectations, didn't get the rearview mount but that is okay i found one on ebay for 2 dolla, so bought 2 of them!bought a 32 gb class 10 micro sd card, no problems with it yet, had the camera for over 2 weeks now!i recommend you buy it, can't go wrong at this price",
+      "This thing is great.",
+      "So far, so good."
+    ],
+    "rouge": 0.17600678284078708,
+    "counts": [
+      308,
+      222,
+      7,
+      4,
+      4
+    ],
+    "cosine_score": "0.8483783",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00004TBLW": {
+    "summary": [
+      "You can spend more and get better I'm sure but these are very nice for most of us.",
+      "Good value for the money.",
+      "These are great.",
+      "I would use you again and recommend you!"
+    ],
+    "rouge": 0.18584585224878045,
+    "counts": [
+      291,
+      176,
+      12,
+      7,
+      7
+    ],
+    "cosine_score": "0.88020456",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004LTE5JI": {
+    "summary": [
+      "The other HDMI cables are so bulky and stiff so they don't really like bending to fit my needs.",
+      "This cable is fantastic!",
+      "Great product!"
+    ],
+    "rouge": 0.1587716963259784,
+    "counts": [
+      154,
+      77,
+      8,
+      6,
+      4
+    ],
+    "cosine_score": "0.81244624",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B006MBP7T0": {
+    "summary": [
+      "Using it is definitely a different experience from a regular mouse, and some people will love it and some will hate it.",
+      "This mouse is great: smooth, attractive, and intuitive.",
+      "The design is sleek and absolutely beautiful.",
+      "This product is amazing, ergonomic reliable and always is available quickly,low consuming of battery the cost is very good for the all features"
+    ],
+    "rouge": 0.16226440688620059,
+    "counts": [
+      209,
+      206,
+      4,
+      4,
+      4
+    ],
+    "cosine_score": "0.81249046",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B009IZ82DA": {
+    "summary": [
+      "It sucks it doesn't even work I will will be returned the charger  back I was very disappointed.",
+      "I really liked the design.",
+      "thank you  will  use you again!"
+    ],
+    "rouge": 0.13425061612547148,
+    "counts": [
+      435,
+      293,
+      16,
+      8,
+      7
+    ],
+    "cosine_score": "0.7953248",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B003UCESP8": {
+    "summary": [
+      "This get more confusing when you consider that my USA spec car stereo interface can go between my iPhone and iPod with no problems.",
+      "I use this to connect my retroMod mini iPod to my O2 Headphone amplifier.",
+      "My LOD worked fine for a couple of weeks and then it went silent.",
+      "Highly recommended."
+    ],
+    "rouge": 0.1948742871175645,
+    "counts": [
+      111,
+      63,
+      5,
+      5,
+      2
+    ],
+    "cosine_score": "0.8390025",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004GGUAUE": {
+    "summary": [
+      "I've been using this case for a few months now, and it is excellent!",
+      "I really like the look of this case.",
+      "This is a great case for HTPC applications.",
+      "Overall a pretty good case for the price."
+    ],
+    "rouge": 0.18938537561692476,
+    "counts": [
+      129,
+      118,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.8499017",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004Z57YJQ": {
+    "summary": [
+      "I bought these headphones about a week ago just cuz everyone had the Beats and I wanted something different.",
+      "Worth every penny.",
+      "My son loves them."
+    ],
+    "rouge": 0.13991608472382225,
+    "counts": [
+      404,
+      351,
+      28,
+      15,
+      3
+    ],
+    "cosine_score": "0.74064237",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001FWYLLG": {
+    "summary": [
+      "Unfortunately I am having to return this TV, it doesnt work, I bought this as a replacement for the same model I had for several years, but broke recently.",
+      "I would strongly recommend.",
+      "I HAVE CHECKED THIS ITEM OUT, WAS QUITE SURPRISED AS TO HOW NICE THE PICTURE QUALITY IS, AND EASE OF TUNING IN A CHANNEL."
+    ],
+    "rouge": 0.12389532221780011,
+    "counts": [
+      459,
+      379,
+      18,
+      15,
+      6
+    ],
+    "cosine_score": "0.64002776",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004GYVPGE": {
+    "summary": [
+      "However I do have some concern that the peg attaching it to the iPad feels a little loose and it would be easy to lose.",
+      "The stylus is sturdy and feels just right in your hand.",
+      "AMAZON IS THE PLACE OF CHOICE FOR THE PURCHASE OF MY SUPPORT ITEMS FOR THE MOTOROLA XOOM THAT I ALSO PURCHASED FROM AMAZON.."
+    ],
+    "rouge": 0.17966356325605626,
+    "counts": [
+      361,
+      330,
+      14,
+      5,
+      2
+    ],
+    "cosine_score": "0.7420732",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0076BNK30": {
+    "summary": [
+      "I thought I could make do with the 24-105mm but I found someone willing to take it off my hands.",
+      "The bokeh is very nice.",
+      "This lens is beautifully sharp - absolutely no question as to it being an improvement of what was already a wonderful lens.",
+      "I love this lens!"
+    ],
+    "rouge": 0.20553866086740077,
+    "counts": [
+      132,
+      97,
+      7,
+      6,
+      4
+    ],
+    "cosine_score": "0.8955556",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0096TK65A": {
+    "summary": [
+      "So glad I found this, it's perfect for my son and very well made.",
+      "The first thing I did when I got my Kindle Fire HD was order this.",
+      "OMG WHAT CAN I SAY,BUT LOVED IT."
+    ],
+    "rouge": 0.14576233117737844,
+    "counts": [
+      651,
+      608,
+      8,
+      16,
+      11
+    ],
+    "cosine_score": "0.71341467",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00387E5BM": {
+    "summary": [
+      "The sound quality was good and it was easy to use.",
+      "But so far, I love this thing!",
+      "Este es un muy buen producto, funciona muy bien en reuniones con mucha gente, la calidad de sonido es muy buena, no consume muchas baterias."
+    ],
+    "rouge": 0.13838947622534936,
+    "counts": [
+      207,
+      174,
+      14,
+      6,
+      3
+    ],
+    "cosine_score": "0.5490347",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003GSLU3E": {
+    "summary": [
+      "It only took a single day of multitasking, using Office Word, Excel, surfing on Firefox while ripping CD's into iTunes - all unplugged and I suddenly realized that I'd been working for over 5 hours without having to plug in to recharge.",
+      "I GOT IT FOR MY MOM AFTER PURCHASING ONE FOR MYSELF.",
+      "This is my first mac notebook."
+    ],
+    "rouge": 0.14196594027941323,
+    "counts": [
+      270,
+      247,
+      5,
+      12,
+      12
+    ],
+    "cosine_score": "0.71380204",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000EPRG6W": {
+    "summary": [
+      "I went to the store to buy hdmi and oh my was the wires alot I think for a 12  was like $60 man for a 25ft one would have cost me I dont even know and dont want to!",
+      "This is a great value.",
+      "It works well."
+    ],
+    "rouge": 0.18745079103079537,
+    "counts": [
+      193,
+      72,
+      15,
+      6,
+      5
+    ],
+    "cosine_score": "0.8563334",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B005HARR2W": {
+    "summary": [
+      "I like the fact that it is powered by the wall so I don't draw a lot of power through my computer port instead.",
+      "I've plugged both USB 2 & 3 devices in with no problem."
+    ],
+    "rouge": 0.20996793873308306,
+    "counts": [
+      102,
+      55,
+      8,
+      2,
+      2
+    ],
+    "cosine_score": "0.89283603",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004AL7B7K": {
+    "summary": [
+      "great product, the original charger as advertised, arrived on time, and in a very good condition, fits perfectly, meaning that it is original",
+      "It works fine, no problems.",
+      "I am very satisfied."
+    ],
+    "rouge": 0.20972938756561438,
+    "counts": [
+      228,
+      95,
+      10,
+      1,
+      5
+    ],
+    "cosine_score": "0.8255045",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00535CMEE": {
+    "summary": [
+      "I updated the firmware and the driver to the latest available from StarTech website.",
+      "I don't want to reboot the laptop every time I connect a USB3 drive.",
+      "Had I known it would be so much hassel, I wouldn't have purchased it.",
+      "I'm still using the drivers I found on the CD (under the 72021_2 folder)."
+    ],
+    "rouge": 0.15849135281876492,
+    "counts": [
+      162,
+      112,
+      3,
+      3,
+      3
+    ],
+    "cosine_score": "0.8890798",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0007U9KAY": {
+    "summary": [
+      "It was extremely simple to replace my old router using the wizard (even with encryption) and took less than 5 minutes.",
+      "This router works great!",
+      "I highly recommend this product!"
+    ],
+    "rouge": 0.1605227769739968,
+    "counts": [
+      271,
+      235,
+      14,
+      6,
+      4
+    ],
+    "cosine_score": "0.8240489",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000CRFI8A": {
+    "summary": [
+      "I've had this thing ever since my parents told me they were tired of the cables extended from my room to the router.",
+      "This is very easy to setup and use.",
+      "ANOTHER EXAMPLE OF BAD ADVERTISING."
+    ],
+    "rouge": 0.15058357125075977,
+    "counts": [
+      177,
+      112,
+      1,
+      5,
+      3
+    ],
+    "cosine_score": "0.79379296",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B005CG2AX2": {
+    "summary": [
+      "It's a little bit cheap quality but it does the job.",
+      "And when it works it's great.",
+      "I agree its cheaply made, but you get what you pay for."
+    ],
+    "rouge": 0.15796463808672667,
+    "counts": [
+      195,
+      101,
+      6,
+      4,
+      4
+    ],
+    "cosine_score": "0.8289399",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B002VFWY9M": {
+    "summary": [
+      "I got this to add wifi to the gaming desktop i built a few days ago.",
+      "I bought this for a Western Digital WD TV Live Plus media player so I can use the unit wirelessly.",
+      "It does work very well and is easy to use."
+    ],
+    "rouge": 0.2022447067516952,
+    "counts": [
+      156,
+      89,
+      13,
+      7,
+      6
+    ],
+    "cosine_score": "0.906915",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0002J2MSW": {
+    "summary": [
+      "The adapter is just a little bit thicker than my baseboard, but I'm able to push the bookcase as close as I was before adding the Toslink connection.",
+      "Works great.",
+      "The 360 degree head rotation is a nice touch as well.",
+      "Thank you !"
+    ],
+    "rouge": 0.16207706518024412,
+    "counts": [
+      82,
+      33,
+      2,
+      2,
+      2
+    ],
+    "cosine_score": "0.76737714",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0012MI7N2": {
+    "summary": [
+      "Initially I thought based on the picture that the quality of this case would be good.",
+      "I'd definitely recommend this product.",
+      "THIS CASE IS AWESOME FOR THE GARMIN 880."
+    ],
+    "rouge": 0.13608612512131518,
+    "counts": [
+      152,
+      95,
+      4,
+      5,
+      4
+    ],
+    "cosine_score": "0.75053006",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00337FY76": {
+    "summary": [
+      "When we received it there was a crack on the casing, however we kept it because we really needed an Ethernet  cord and thought it would be easily fixed with some tape.",
+      "lol Great price for the length.",
+      "Works great.",
+      "I needed a longer cable to reach from my router to the entertainment center after rearranging my room."
+    ],
+    "rouge": 0.17725108371683837,
+    "counts": [
+      133,
+      47,
+      4,
+      4,
+      4
+    ],
+    "cosine_score": "0.90912765",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003Z4TPPO": {
+    "summary": [
+      "After removing the center piece, I could put the GPS device, the traffice-radio-receiver/car charger, and the USB cable into the case.",
+      "Other than that it was a good choice.",
+      "I would recommend it."
+    ],
+    "rouge": 0.18463303005574166,
+    "counts": [
+      144,
+      76,
+      5,
+      3,
+      3
+    ],
+    "cosine_score": "0.8638431",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008BDBPTS": {
+    "summary": [
+      "You can watch Amazon video via the web, but there is no quick app to get there.",
+      "It is a really good stuff.",
+      "I love this device!"
+    ],
+    "rouge": 0.14549886193945688,
+    "counts": [
+      310,
+      281,
+      9,
+      9,
+      6
+    ],
+    "cosine_score": "0.8534341",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0027EMHM6": {
+    "summary": [
+      "I would recommend it to anyone looking for a product such as this.",
+      "So far, it works.",
+      "This product is terrible."
+    ],
+    "rouge": 0.17142444254894154,
+    "counts": [
+      297,
+      233,
+      13,
+      10,
+      3
+    ],
+    "cosine_score": "0.7585378",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0039NLS3I": {
+    "summary": [
+      "This bag is very small.",
+      "My hubby and I we love this bag.",
+      "The design is nice and the color is awesome too."
+    ],
+    "rouge": 0.15830565756553797,
+    "counts": [
+      227,
+      236,
+      16,
+      5,
+      4
+    ],
+    "cosine_score": "0.7890788",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00400NL02": {
+    "summary": [
+      "This is a fine player if you just want to watch discs.",
+      "I bought this for my parents to go with their new HD TV.",
+      "He comprado 3 de estos reproductores y han sido muy buenos lee desde simples avi hasta mkv desde usb con un disco de 2TB conectado",
+      "THIS BLU-RAY DVD PLAYER IS AWESOME IT HAS A GREAT PICTURE QUALITY IT IS WHAT I WAS EXPECTING."
+    ],
+    "rouge": 0.12570297280588777,
+    "counts": [
+      199,
+      137,
+      7,
+      3,
+      4
+    ],
+    "cosine_score": "0.61470133",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B002KDS2BY": {
+    "summary": [
+      "It feels a little cheap, but it was pretty cheap and have had no issues with it yet.",
+      "it's a good product, well built, solid and just works.",
+      "works as advertised.",
+      "I love it!!!"
+    ],
+    "rouge": 0.18358808370262925,
+    "counts": [
+      83,
+      32,
+      1,
+      3,
+      3
+    ],
+    "cosine_score": "0.8556328",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000BN94F8": {
+    "summary": [
+      "The thing you have to be most aware of are the internal dimensions.",
+      "Unfortunately, it is just a little bit too small for the Canon SX230HS camera which I just purchased.",
+      "El Lowepro Ridge 10, es un recomendable estuche impermeable (m&aacute;s no sumergible) para las c&aacute;maras ultra compactas, como la Nikon S6000, la cual entra sin ning&uacute;n problema y hasta dir&iacute;a con cierta holgura.",
+      "The Casio measures 3-3/4\" X 2-1/4\" X 3/4\"."
+    ],
+    "rouge": 0.15881216922839153,
+    "counts": [
+      101,
+      78,
+      5,
+      2,
+      3
+    ],
+    "cosine_score": "0.528792",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000LSZ0Q0": {
+    "summary": [
+      "My only regret is that it does not work with windows 7.",
+      "It should not be that difficult."
+    ],
+    "rouge": 0.11810792449281406,
+    "counts": [
+      222,
+      174,
+      8,
+      2,
+      5
+    ],
+    "cosine_score": "0.6898479",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00DQZQPNM": {
+    "summary": [
+      "This is the only thing I purchased from Amazon that I have been disappointed in.",
+      "This is a very nice cover.",
+      "Overall I'm very satisfied with this purchase."
+    ],
+    "rouge": 0.18424816712698402,
+    "counts": [
+      316,
+      237,
+      11,
+      7,
+      6
+    ],
+    "cosine_score": "0.82149607",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000RQHAUA": {
+    "summary": [
+      "Now the boxes do what i want - they play my movies, browse my videos, and even let me watch Hulu and other video services for free!",
+      "I think it is like mp3 players."
+    ],
+    "rouge": 0.12950675938269599,
+    "counts": [
+      164,
+      132,
+      12,
+      6,
+      2
+    ],
+    "cosine_score": "0.8230998",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009A6CZ26": {
+    "summary": [
+      "She has had no problem with them so far.",
+      "Really a great product.",
+      "I would highly recommend them."
+    ],
+    "rouge": 0.10643537451438419,
+    "counts": [
+      509,
+      385,
+      24,
+      13,
+      11
+    ],
+    "cosine_score": "0.81276554",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B007GJR7GS": {
+    "summary": [
+      "I like it and it is highly recommended.",
+      "Bought it for my TF101 - but it doesn't work at all."
+    ],
+    "rouge": 0.16010805785452534,
+    "counts": [
+      255,
+      109,
+      9,
+      6,
+      6
+    ],
+    "cosine_score": "0.7695621",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004F38Y7Y": {
+    "summary": [
+      "This mechanical keyboard is selling fairly cheap compared to the other brands, and so, there's got to be a catch, right?I got the keyboard and it worked fine.",
+      "I love this thing.",
+      "Sure, it's a little slower, but it never suddenly CRASHED."
+    ],
+    "rouge": 0.1787702607236223,
+    "counts": [
+      232,
+      213,
+      7,
+      5,
+      4
+    ],
+    "cosine_score": "0.89599645",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00CRQUKQ4": {
+    "summary": [
+      "I do not give them a 5 because would be perfect if the base had some flexibility.",
+      "WHAT MORE CAN I SAY.",
+      "Excellent product."
+    ],
+    "rouge": 0.10606487390193153,
+    "counts": [
+      216,
+      132,
+      11,
+      6,
+      3
+    ],
+    "cosine_score": "0.6599666",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002CMUKZY": {
+    "summary": [
+      "I'll give them 4 stars they sound good, was a direct fit, but these speakers are a cheap build.",
+      "These are super speakers.",
+      "I am not disappointed!"
+    ],
+    "rouge": 0.1616579202228164,
+    "counts": [
+      180,
+      112,
+      6,
+      3,
+      3
+    ],
+    "cosine_score": "0.76277155",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004COCMRO": {
+    "summary": [
+      "The end that fits the phone was too big to fit inside my phone, but i will keep it",
+      "I am very pleased with my purchase.",
+      "This cable works great!"
+    ],
+    "rouge": 0.19631521222550094,
+    "counts": [
+      291,
+      177,
+      13,
+      6,
+      5
+    ],
+    "cosine_score": "0.85658336",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003LVZO88": {
+    "summary": [
+      "Either at your end of the recipients end you can quickly snap a picture and that pic can be the photo of choice for the friend or family.",
+      "I do recommend this product."
+    ],
+    "rouge": 0.1705175353744046,
+    "counts": [
+      255,
+      186,
+      10,
+      8,
+      6
+    ],
+    "cosine_score": "0.8296437",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001415FIG": {
+    "summary": [
+      "I had it before Christmas and am overall happy with it so far.",
+      "Overall this was a great TV for the affordable price.",
+      "The picture is ridiculous."
+    ],
+    "rouge": 0.20258292982723913,
+    "counts": [
+      298,
+      251,
+      20,
+      16,
+      13
+    ],
+    "cosine_score": "0.8288809",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EZSUVHK": {
+    "summary": [
+      "Buy it for the picture and simply plan to buy speakers if you don't already have them.",
+      "Good monitor for the price.",
+      "I would NOT recommend this monitor to artists.",
+      "The display is great."
+    ],
+    "rouge": 0.20575831376156736,
+    "counts": [
+      209,
+      115,
+      8,
+      5,
+      5
+    ],
+    "cosine_score": "0.85543454",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B002LPV6LY": {
+    "summary": [
+      "I tried all of the recommended steps in getting this to work, and after many frustrating hours -- nothing.",
+      "Do not waste your time buying this product.",
+      "It just does not work as advertized."
+    ],
+    "rouge": 0.17401779045383833,
+    "counts": [
+      287,
+      259,
+      7,
+      6,
+      6
+    ],
+    "cosine_score": "0.84729993",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B009A6CZYY": {
+    "summary": [
+      "As the title says, these are the most comfortable headphones I have ever worn.",
+      "Good sound quality."
+    ],
+    "rouge": 0.12966352675214896,
+    "counts": [
+      176,
+      151,
+      6,
+      4,
+      1
+    ],
+    "cosine_score": "0.758743",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002HU65EQ": {
+    "summary": [
+      "I originally purchased this for a trip so that I could keep my phone charged, snapping photos, and taking notes all day long.",
+      "As for the design of the battery, it is alittle narrower than an iPhone but about 2-3 times as thick.",
+      "For the IMP71T (Trident Battery), This has been the best battery I have ever used."
+    ],
+    "rouge": 0.20653946038759638,
+    "counts": [
+      99,
+      80,
+      1,
+      3,
+      3
+    ],
+    "cosine_score": "0.9029567",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00489SLEQ": {
+    "summary": [
+      "I ordered this product, and it is exactly what I wanted.",
+      "Highly recommend!",
+      "I love this black kindle case."
+    ],
+    "rouge": 0.14726560034125957,
+    "counts": [
+      435,
+      381,
+      14,
+      10,
+      7
+    ],
+    "cosine_score": "0.7628546",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00DR0B31U": {
+    "summary": [
+      "I have the first version of kindle fire, it works very well, nevertheless I decided to try the HD just for the movies and a \"better resolution\"I am amazed!",
+      "I love this leather origami case for the Kindle Fire HDX.",
+      "i LIKE THE CASE AND THE WAY IT FOIDS UP INTO DIFFERENT POSITIONS BUT I WOULD LIKE  IT TO HAVE A BETTER WAY TO HOLD THE KINDLE TO READ WITH IT."
+    ],
+    "rouge": 0.16855332526643738,
+    "counts": [
+      473,
+      416,
+      12,
+      8,
+      6
+    ],
+    "cosine_score": "0.6513119",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00BG5M93Y": {
+    "summary": [
+      "The picture is great.",
+      "Great picture.",
+      "EXCELLENT PICTURE, VERY CLEAR YOU CAN SEE SCARS AND PIMPLES ON SOME OF THE FACES."
+    ],
+    "rouge": 0.05388306845720361,
+    "counts": [
+      286,
+      213,
+      7,
+      3,
+      7
+    ],
+    "cosine_score": "0.37408748",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B006PWGESY": {
+    "summary": [
+      "This is the first stand to actually stay in place when using the angled viewing!",
+      "Great product.",
+      "I would recommend this case to any tf700 owner!"
+    ],
+    "rouge": 0.16016746712626415,
+    "counts": [
+      231,
+      199,
+      5,
+      9,
+      4
+    ],
+    "cosine_score": "0.78551316",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009X3V8EW": {
+    "summary": [
+      "I've only had it a month and it already looks dirty.",
+      "Not happy with it, I did not know it did not have a back.",
+      "Works great!"
+    ],
+    "rouge": 0.1404554280033647,
+    "counts": [
+      221,
+      112,
+      5,
+      3,
+      3
+    ],
+    "cosine_score": "0.7766056",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00698ZWOG": {
+    "summary": [
+      "The card is good/fast and merits four or five stars, but my partner has problems with the SD reader (it won't show up on the Mac desktop unless you try several times).",
+      "We ordered a Samsung 16GB Class 10 MicroSDHC High Speed Memory Card with SD adapter and USB reader from Komputerbay.",
+      "The main thing is the Micro SD card works great and is super-fast!"
+    ],
+    "rouge": 0.16539900569293484,
+    "counts": [
+      350,
+      156,
+      9,
+      7,
+      7
+    ],
+    "cosine_score": "0.8106501",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009YGGKXC": {
+    "summary": [
+      "After that, the case moved too much and made it difficult to attach the power cord.",
+      "This case is an everyday case.",
+      "I was very disappointed because I have been looking for a case for my Surface Pro."
+    ],
+    "rouge": 0.22072012796035304,
+    "counts": [
+      294,
+      271,
+      7,
+      10,
+      7
+    ],
+    "cosine_score": "0.852996",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000F78582": {
+    "summary": [
+      "The other one I bought like this is routed through the dash of my jeep and didn't want to remove it.",
+      "It works great.",
+      "ALTHOUGH THE DESCRIPTION FOR THIS PRODUCT SPECIFIES THAT IT IS FOR THE 510 AND 550, IT IS ALSO DESIGNED FOR THE 760, WHICH I USED IT WITH."
+    ],
+    "rouge": 0.15541949192160837,
+    "counts": [
+      386,
+      197,
+      11,
+      12,
+      2
+    ],
+    "cosine_score": "0.57427126",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00721TUNS": {
+    "summary": [
+      "Has been faster and more reliable than the leased modem that I returned to the Comcast store.",
+      "The modem works great.",
+      "ARRIS TM822G THIS IS A GREAT PRODUCT THAT WON'T WORK ON COMCAST, NOT ON THE LIST, NOT ABLE TO ACTIVATE."
+    ],
+    "rouge": 0.12734097777617887,
+    "counts": [
+      380,
+      308,
+      16,
+      12,
+      5
+    ],
+    "cosine_score": "0.6169863",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00008Y1BX": {
+    "summary": [
+      "I figure it will pay for itself in less than four months.",
+      "Works great and was easy to set up."
+    ],
+    "rouge": 0.171256150968195,
+    "counts": [
+      281,
+      194,
+      9,
+      8,
+      2
+    ],
+    "cosine_score": "0.7871231",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000MQNMQ6": {
+    "summary": [
+      "However, it only wants to play content from iTunes connected computers on the network.",
+      "I'm very happy with this purchase."
+    ],
+    "rouge": 0.11962862727682624,
+    "counts": [
+      118,
+      109,
+      6,
+      1,
+      3
+    ],
+    "cosine_score": "0.8431709",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B006C2H8UU": {
+    "summary": [
+      "It does restrict movement and it is not as comfortable as I had expected, reason I did not give it a 5 star.",
+      "I'm a nightlife photographer - and do a lot of open shutter and camera movement with my wrist.",
+      "It doesn't work well with the Nikon D5100, since it doesn't fit the base of the Nikon camera."
+    ],
+    "rouge": 0.20239176474412646,
+    "counts": [
+      115,
+      101,
+      2,
+      2,
+      1
+    ],
+    "cosine_score": "0.8718804",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "0",
+    "sentiment_score": "1"
+  },
+  "B002Y27P6Y": {
+    "summary": [
+      "The Kindle DX cover is great.",
+      "DO NOT BUY!!!!!",
+      "I love this product.",
+      "It looks nice too."
+    ],
+    "rouge": 0.1561879834011058,
+    "counts": [
+      544,
+      544,
+      12,
+      16,
+      12
+    ],
+    "cosine_score": "0.7255642",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009WHV3I0": {
+    "summary": [
+      "I can now easily transfer photos and videos from my Nikon 5100 to my iPad in seconds.",
+      "Easy to use.",
+      "It works great."
+    ],
+    "rouge": 0.17184374359387772,
+    "counts": [
+      227,
+      113,
+      9,
+      8,
+      4
+    ],
+    "cosine_score": "0.7834607",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00DLZOG2E": {
+    "summary": [
+      "My primary reason for buying this adapter was to allow using my Bluetooth headphones with my guitar amp so I could practice late at night and not disturb anyone (corded headphones are kind of a pain when playing the guitar).",
+      "I love this thing.",
+      "This product is amazing."
+    ],
+    "rouge": 0.1811069337071036,
+    "counts": [
+      240,
+      133,
+      11,
+      8,
+      7
+    ],
+    "cosine_score": "0.843941",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00005QBUU": {
+    "summary": [
+      "I ordered it one year ago, I have been using it almost every day and its just good as new!Low price, Wonderful manufacturing quality and sound as well!",
+      "Decent sound quality, lightweight, and inexpensive.",
+      "I love these Sony earphones."
+    ],
+    "rouge": 0.12075328587965231,
+    "counts": [
+      192,
+      160,
+      10,
+      5,
+      5
+    ],
+    "cosine_score": "0.8115038",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002LITG7M": {
+    "summary": [
+      "(note that my room isn't exactly silent -- I have it running in an A/V rack with a number of other components)  Over firewire 800, it's decently fast.",
+      "I'm very satisfied.",
+      "Highly recommended"
+    ],
+    "rouge": 0.13508447186036113,
+    "counts": [
+      247,
+      160,
+      4,
+      4,
+      3
+    ],
+    "cosine_score": "0.7469949",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00009R6WU": {
+    "summary": [
+      "If you're looking for a reasonably wide prime lens for indoor shooting on an APS-C sensor, this will give you a lot of bang for your buck.",
+      "I love this lens.",
+      "This is a great lens.",
+      "I would recommend this lens to even the beginner photographer."
+    ],
+    "rouge": 0.20842782362385864,
+    "counts": [
+      138,
+      115,
+      6,
+      4,
+      3
+    ],
+    "cosine_score": "0.8578403",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001AHALEC": {
+    "summary": [
+      "Be careful not to overfill or you'll have sand in places you don't want it.",
+      "The double zipper is nice.",
+      "I am very happy with this purchase."
+    ],
+    "rouge": 0.15267800233444992,
+    "counts": [
+      176,
+      120,
+      7,
+      4,
+      4
+    ],
+    "cosine_score": "0.85011494",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00CRB9CK4": {
+    "summary": [
+      "Just identify a folder on the diskstation that you want to share and it will give you a web link and allow you to set a password.",
+      "This is a great NAS!",
+      "The software/web interface very easy to use."
+    ],
+    "rouge": 0.16484455342805437,
+    "counts": [
+      226,
+      152,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.83227324",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003Y2KC7W": {
+    "summary": [
+      "This is the arrangement that would make sense to me:- inner silk- silver and gold shiny in one arrangement (you want a shiny reflector, but want to choose the color as you try it out)- black and white reflector -- you either want to flag or reflect -- when you flip the outside cover-inside outThis is not the case.",
+      "It reflects nicely, and I use it for baby photography.",
+      "I used both the white and the gold.",
+      "This kit is great."
+    ],
+    "rouge": 0.1887579714190986,
+    "counts": [
+      156,
+      91,
+      9,
+      8,
+      3
+    ],
+    "cosine_score": "0.8963771",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009LVPYDM": {
+    "summary": [
+      "I loved the look of the &#34;earthy&#34; leather in the the photo, but I was hung up on the name of the color -- Vintage Red.",
+      "Perfect fit for the iPad mini.",
+      "Highly recommended."
+    ],
+    "rouge": 0.15003660677263556,
+    "counts": [
+      364,
+      366,
+      20,
+      11,
+      10
+    ],
+    "cosine_score": "0.70543045",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000BVCSMG": {
+    "summary": [
+      "Then decided to try it just to see if it made any difference in quality of picture on my flat screen.",
+      "This is a great product.",
+      "I can't speak to if the sound is any better, because I didn't hook up the new speakers without the Monster unit."
+    ],
+    "rouge": 0.18551382181163262,
+    "counts": [
+      142,
+      81,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.92260367",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009VKON0S": {
+    "summary": [
+      "I've been so good to you.",
+      "Works great!",
+      "It worked out of the box.",
+      "Easy to install."
+    ],
+    "rouge": 0.10990459331255541,
+    "counts": [
+      124,
+      51,
+      4,
+      4,
+      4
+    ],
+    "cosine_score": "0.7453277",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0039NLS4C": {
+    "summary": [
+      "If you want you can use it as a handbag after removing the camera block.",
+      "This bag is wonderful.",
+      "I would recommend this to anyone."
+    ],
+    "rouge": 0.20760011373460235,
+    "counts": [
+      247,
+      231,
+      18,
+      10,
+      11
+    ],
+    "cosine_score": "0.8408911",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00FFF7DAK": {
+    "summary": [
+      "Second replacement came and there's a dent in the case and still the same connection issues with the dock.",
+      "If you like ASUS, you will love this tablet.",
+      "I am very happy with this product.",
+      "This is my 2nd tablet which the other was also an Asus."
+    ],
+    "rouge": 0.1896025589942284,
+    "counts": [
+      172,
+      134,
+      9,
+      6,
+      5
+    ],
+    "cosine_score": "0.87967134",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B005OGQXJW": {
+    "summary": [
+      "I believe these issues could be corrected by dialing in some adjustments and then leaving them alone.",
+      "This camera takes amazing motion shots.",
+      "I love this camera."
+    ],
+    "rouge": 0.10989455520847481,
+    "counts": [
+      211,
+      168,
+      11,
+      10,
+      7
+    ],
+    "cosine_score": "0.7976109",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00ANDHBNS": {
+    "summary": [
+      "While my vehicle came with Bluetooth it was not A2DP so it only gave me the ability to use it for phone calls.",
+      "This works great!",
+      "Works great ."
+    ],
+    "rouge": 0.17369351088914656,
+    "counts": [
+      226,
+      187,
+      6,
+      6,
+      5
+    ],
+    "cosine_score": "0.746877",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B001LDRNY6": {
+    "summary": [
+      "Screws are really really tiny but they provided a spare coz there's a good chance you would lose one.",
+      "A few tricks to using the enclosure:1) You don't need the USB power supply cable.",
+      "The enclosure is very compact and nice looking.",
+      "I was so happy with this design I purchased another."
+    ],
+    "rouge": 0.20455045619649762,
+    "counts": [
+      120,
+      96,
+      4,
+      3,
+      1
+    ],
+    "cosine_score": "0.89972067",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000H7GFWS": {
+    "summary": [
+      "I own several cameras, but I have never ever been in situation where I had to detach straps and reattach them back to another camera.",
+      "Highly recommended.",
+      "I am very satisfied with it."
+    ],
+    "rouge": 0.14638365335816506,
+    "counts": [
+      87,
+      81,
+      3,
+      2,
+      2
+    ],
+    "cosine_score": "0.8164441",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00009ZWC8": {
+    "summary": [
+      "I bought this inexpensive cable in hopes that I could have one of my Bose speakers on either side of my bed.",
+      "I would not recommend this to a friend.",
+      "No problems yet."
+    ],
+    "rouge": 0.16909942369038344,
+    "counts": [
+      180,
+      107,
+      7,
+      3,
+      3
+    ],
+    "cosine_score": "0.83463776",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B003U8CRGY": {
+    "summary": [
+      "I was dubious when I opened the package.",
+      "No issues so far.",
+      "HOW DO I BEGIN TO GET MY MONEY BACK ON THIS ONE?"
+    ],
+    "rouge": 0.07795097063373796,
+    "counts": [
+      521,
+      443,
+      27,
+      5,
+      6
+    ],
+    "cosine_score": "0.5941567",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B004Q81CKY": {
+    "summary": [
+      "I then tried switching it to my Marvell SATA III port, which I never was able to get working for conventional hard drives.",
+      "This is a most have if you have a laptop.",
+      "This solid state drive is very fast."
+    ],
+    "rouge": 0.1646394519905517,
+    "counts": [
+      242,
+      169,
+      7,
+      4,
+      3
+    ],
+    "cosine_score": "0.8624339",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00BB0ZTMM": {
+    "summary": [
+      "But i'm sure it would do well.",
+      "He loves it.",
+      "I HAD TO BUY A ENTIRELY DIFFERENT BRAND BECAUSE I WENT THROUGH 2 OF THESE TELEVISIONS AND TECH SUPPORT THROUGH AMAZON AND LG COULDN'T FIX THE PROBLEM OF  THE HDMI PORTS.",
+      "I bought this for my sons game room and I love it!!"
+    ],
+    "rouge": 0.10629888905659082,
+    "counts": [
+      275,
+      192,
+      3,
+      9,
+      5
+    ],
+    "cosine_score": "0.61365193",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B005RG99OU": {
+    "summary": [
+      "I can now let the camera hang at a natural balanced point, and not worry about banging it around, or dropping it.",
+      "kinda like rethreading it.",
+      "So I decided to get this one and it is great!",
+      "Also, the general look and quality of the item is not the same as what is pictured."
+    ],
+    "rouge": 0.18794403354831293,
+    "counts": [
+      99,
+      38,
+      2,
+      2,
+      2
+    ],
+    "cosine_score": "0.8949897",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0065DUJ0C": {
+    "summary": [
+      "once the drive is installed it is very sturdy.",
+      "I am very pleased with this enclosure.",
+      "Very easy to install.",
+      "It works and will do what I want it to do, but nothing extra."
+    ],
+    "rouge": 0.2101443542793474,
+    "counts": [
+      151,
+      75,
+      4,
+      3,
+      3
+    ],
+    "cosine_score": "0.8371928",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EDSI8HW": {
+    "summary": [
+      "The biggest user interface change is the return --sort of-- of the Start button.",
+      "It is rather non-intuitive in that you have to right mouse click to reveal it.",
+      "I performed a clean install and it went smoothly so I performed updates.",
+      "I absolutely hate it."
+    ],
+    "rouge": 0.16328544980844653,
+    "counts": [
+      119,
+      94,
+      4,
+      1,
+      2
+    ],
+    "cosine_score": "0.856686",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00HHRP11C": {
+    "summary": [
+      "Great signal to  the devices logged in to it but poor communication to the main router.",
+      "It really works!",
+      "Works great!"
+    ],
+    "rouge": 0.12675400464788783,
+    "counts": [
+      162,
+      109,
+      5,
+      4,
+      3
+    ],
+    "cosine_score": "0.7024276",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0064P5I1G": {
+    "summary": [
+      "I have not been able to see any difference in the charging time or duribility of this batter from the OEM.",
+      "Glad to have a extra battery and to find one at this cost is wonderful.",
+      "This battery life is shorter than the original Nikon.",
+      "If I actually cared, then I'd be coming for you."
+    ],
+    "rouge": 0.2310708247225743,
+    "counts": [
+      126,
+      58,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.9250078",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B005INJ4ZG": {
+    "summary": [
+      "First, it worked, but was a little 'cheesy' (tinny) sounding, especially when the headset 'volume' was turned up high.",
+      "these phones are really great.",
+      "DO NOT BUY THEM!"
+    ],
+    "rouge": 0.10297093661437948,
+    "counts": [
+      665,
+      622,
+      31,
+      9,
+      12
+    ],
+    "cosine_score": "0.75000507",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0013A1XDE": {
+    "summary": [
+      "The colors are very vivid and portrayed nicely.",
+      "This is a sharp lens with a great focal range.",
+      "HAVING THIS LENS ON THE D7100 MAKES THIS AN AWESOME COMBO AND I HIGHLY RECOMMEND THIS SYSTEM."
+    ],
+    "rouge": 0.14136269568603746,
+    "counts": [
+      150,
+      107,
+      2,
+      3,
+      3
+    ],
+    "cosine_score": "0.6284957",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00DULMXTW": {
+    "summary": [
+      "I like the power/volume buttons on the case - they are easily accessible while holding the device.",
+      "It was very heavy.",
+      "DOES NOT COME WITH VERIZON 4G ONLY AT&T BECAUSE OF SOME KIND OF DISPUTE BETWEEN AMAZON AND VERIZON THAT IS BAD"
+    ],
+    "rouge": 0.09550931652091789,
+    "counts": [
+      302,
+      239,
+      11,
+      6,
+      8
+    ],
+    "cosine_score": "0.6274228",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B00DM8R866": {
+    "summary": [
+      "It is really not a point-and-shoot camera, since in order to get the best possible results some human intervention is required.",
+      "Yes, this is a very good compact camera!",
+      "The pictures are incredible."
+    ],
+    "rouge": 0.1410881141012406,
+    "counts": [
+      144,
+      118,
+      6,
+      6,
+      5
+    ],
+    "cosine_score": "0.86083794",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00A4LAZMS": {
+    "summary": [
+      "Will buy again",
+      "I am certain they where shipped out like this because they came in a thick package that had no damage on it.",
+      "I would recommend this product to everyone."
+    ],
+    "rouge": 0.1493155303039268,
+    "counts": [
+      291,
+      176,
+      11,
+      6,
+      6
+    ],
+    "cosine_score": "0.8595506",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004H1MCKY": {
+    "summary": [
+      "If you have a Mac sometimes the feedback will be dark and red, sometimes have to restart computer to fix.",
+      "I would still recommend it.",
+      "This webcam is decent.",
+      "We're using this with a Mac Mini."
+    ],
+    "rouge": 0.21371016753220962,
+    "counts": [
+      175,
+      133,
+      4,
+      4,
+      4
+    ],
+    "cosine_score": "0.86818445",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B007FH1FZ0": {
+    "summary": [
+      "I'll let you judge the price, but it's one of those things that's hard to ever be without once you try one.",
+      "Two things - first, the construction - this grip is made of the same magnesium alloy as the 5D's body where the previous ones were made of plastic.",
+      "Now, I feel like a pro, plus I never run out of battery power.",
+      "Works great."
+    ],
+    "rouge": 0.16966871848775802,
+    "counts": [
+      96,
+      50,
+      2,
+      2,
+      2
+    ],
+    "cosine_score": "0.88747376",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0027Q4HXG": {
+    "summary": [
+      "It has another plug in between the two usb ports and it comes with a cable that fits in there and in another usb on the computer.",
+      "Would definitely buy it again.",
+      "I opened it, plugged it in, WinXP SP3 found it, installed drivers, and voila!"
+    ],
+    "rouge": 0.17041792169629835,
+    "counts": [
+      178,
+      110,
+      9,
+      4,
+      3
+    ],
+    "cosine_score": "0.836375",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B001QKZ3OQ": {
+    "summary": [
+      "This is a nice little hard case that fits my Garmin 255 perfectly.",
+      "This is perfect for my new Garmin."
+    ],
+    "rouge": 0.17149358001073436,
+    "counts": [
+      163,
+      107,
+      9,
+      6,
+      3
+    ],
+    "cosine_score": "0.7390148",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001D9IWIY": {
+    "summary": [
+      "After it powers up you can usually get through a movie or 2, but after sitting idle or powering off, the same sequence is required yet again.",
+      "Simply change the aspect ratio setting on your HDTV from 16 X 9 to 4:3.",
+      "!I highly recommend the Toshiba XDE!!"
+    ],
+    "rouge": 0.13606839722535646,
+    "counts": [
+      156,
+      134,
+      3,
+      3,
+      2
+    ],
+    "cosine_score": "0.8492713",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004BFZHO4": {
+    "summary": [
+      "Half the cost of the Honlphoto version, but decidedly very cheap construction (note the faint seams on either side of the grid head delineating the cheap molding; the grid is unattached within).",
+      "The build quality seems good for the money.",
+      "I don't remember the description of this product, but the point of using this product is to concentrate the light from a flash into one location.",
+      "Keep in mind that the difference between the 1/4 and 1/8 inch grids are noticeable."
+    ],
+    "rouge": 0.20110273481600568,
+    "counts": [
+      70,
+      47,
+      4,
+      3,
+      2
+    ],
+    "cosine_score": "0.85404587",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004FEEY9A": {
+    "summary": [
+      "How good are these headphones you ask?",
+      "Great sound and very comfortable headset.",
+      "These are seriously good headphones."
+    ],
+    "rouge": 0.11690043955160655,
+    "counts": [
+      259,
+      253,
+      8,
+      7,
+      5
+    ],
+    "cosine_score": "0.7606649",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00198F89A": {
+    "summary": [
+      "This receiver seems to have plenty of power to run these speakers and I like the fact of the preset stations with the remote.",
+      "The connectivity is great."
+    ],
+    "rouge": 0.17764058149524495,
+    "counts": [
+      275,
+      216,
+      3,
+      11,
+      7
+    ],
+    "cosine_score": "0.80934644",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008CBQSKU": {
+    "summary": [
+      "It has been able to decode everything that I have thrown at it.",
+      "This is truly a great product.",
+      "***********************************************************************"
+    ],
+    "rouge": 0.14445328222457174,
+    "counts": [
+      265,
+      252,
+      12,
+      9,
+      1
+    ],
+    "cosine_score": "0.58272606",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B005KBB79C": {
+    "summary": [
+      "Perfect for people that do not want to carry a big camera around everywhere but expect quality.",
+      "This is a fantastic camera.",
+      "Not pocketable, except maybe in a jacket pocket.",
+      "The camera is fun, powerful, and the images it produces are fantastic."
+    ],
+    "rouge": 0.16178536300602608,
+    "counts": [
+      165,
+      152,
+      6,
+      5,
+      4
+    ],
+    "cosine_score": "0.8613244",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003OBHE60": {
+    "summary": [
+      "It was simply plug and play.",
+      "I've seen others say that it has worked for them with Linux (that's why I got it), so I may have gotten a faulty one or missed a step.",
+      "The card was easy to install, easy to configure, and works great with windows vista."
+    ],
+    "rouge": 0.18061196177684102,
+    "counts": [
+      177,
+      108,
+      5,
+      3,
+      3
+    ],
+    "cosine_score": "0.9065509",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000EWHH7I": {
+    "summary": [
+      "Works very well and is very rugged.",
+      "U3 is a great benefit of this drive.",
+      "Highly recommended."
+    ],
+    "rouge": 0.14622723239913138,
+    "counts": [
+      213,
+      164,
+      4,
+      5,
+      4
+    ],
+    "cosine_score": "0.63752985",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0081UUYWA": {
+    "summary": [
+      "We have had a glass tube tv for almost 15 years and only decided to get a new one since the screen was really starting to dim and loose color.",
+      "I would recommend this to anyone.",
+      "So far I am extremely pleased I bought this tv."
+    ],
+    "rouge": 0.17191747773418908,
+    "counts": [
+      349,
+      310,
+      15,
+      15,
+      8
+    ],
+    "cosine_score": "0.86876285",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00DR9V1T0": {
+    "summary": [
+      "I gave it a four star only because I wanted a backlit keyboard and the missing star is my voice to let Logitech know how crazy it is in this burgeoning media PC market to not have a version of this keyboard that's backlit.",
+      "The touchpad is horrible.",
+      "this is a very beautiful product."
+    ],
+    "rouge": 0.20639645387904898,
+    "counts": [
+      128,
+      109,
+      4,
+      7,
+      6
+    ],
+    "cosine_score": "0.84109455",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0018YHZHI": {
+    "summary": [
+      "I tried everything I could, from reformatting the drive, to erasing the \"password\" that didn't exist.",
+      "It is the best flash drive I have ever got.",
+      "THE FLASH DRIVE WORKS FINE BUT I DON'T THINK THAT IT HAS OR HAD THE 8 GB."
+    ],
+    "rouge": 0.11276402560860949,
+    "counts": [
+      286,
+      167,
+      8,
+      8,
+      4
+    ],
+    "cosine_score": "0.7171098",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B0018CWY3A": {
+    "summary": [
+      "This is a great product!",
+      "You don't need to be around a computer and you can charge up more than one ipod at a time.",
+      "My husband and I both have the itouch.",
+      "It works great and looks great."
+    ],
+    "rouge": 0.20848214574770443,
+    "counts": [
+      192,
+      135,
+      9,
+      8,
+      6
+    ],
+    "cosine_score": "0.8616625",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00CS43I4Q": {
+    "summary": [
+      "This would be a great cable for some kind of 'industrial' application but not so great for casual home use.",
+      "I recommend this!",
+      "Very disappointing."
+    ],
+    "rouge": 0.1444438201987766,
+    "counts": [
+      310,
+      202,
+      14,
+      8,
+      8
+    ],
+    "cosine_score": "0.79953516",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000OEV88K": {
+    "summary": [
+      "while the drivers in the headset seemed to be of good quality, there is an incredible amount of interference and static in the signal, not just the faint hiss that disappears whenever sound is playing, but a very loud hissing, crackling, and popping that can get as loud as the audio of whatever you're listening to.",
+      "I WOULD HIGHLY RECOMMEND THIS HEADSET.",
+      "I have been through many wireless headphones, this is the latest try."
+    ],
+    "rouge": 0.17814014777772666,
+    "counts": [
+      448,
+      388,
+      20,
+      7,
+      6
+    ],
+    "cosine_score": "0.85508645",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00ATTVKFQ": {
+    "summary": [
+      "I will buy more.",
+      "This battery will last a very long time and out perform the standard battery that comes with the radio.",
+      "This thing lasts forever!"
+    ],
+    "rouge": 0.19219173750805119,
+    "counts": [
+      206,
+      117,
+      10,
+      2,
+      2
+    ],
+    "cosine_score": "0.83912814",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007KTY4A6": {
+    "summary": [
+      "Pros:Cost effectivehigh to average gaming PC rigs supportSLI/Crossfire support32GB RAM slots (much more than you'll ever need)ample fans and other connectorsCons:none so farI've assembled my PC a while ago with this motherboard, I've included a couple of high-end hardware, this motherboard is working perfectly fine",
+      "which is really a compliment for a a motherboard if you think about it.",
+      "Install and setup a piece of cake and, board runs very well."
+    ],
+    "rouge": 0.1633991957904464,
+    "counts": [
+      139,
+      74,
+      3,
+      1,
+      2
+    ],
+    "cosine_score": "0.89950746",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B005NFG1MS": {
+    "summary": [
+      "It does exactly what it is supposed to.",
+      "This is a great product!",
+      "I love this product!"
+    ],
+    "rouge": 0.1600221292999121,
+    "counts": [
+      227,
+      196,
+      12,
+      9,
+      4
+    ],
+    "cosine_score": "0.725664",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001H0REVK": {
+    "summary": [
+      "HDMI cable is not an issue at all, but I still need a reliable Mini-DVI to HDMI adapter, and apparently I will have to shop elsewhere and avoid PTC products.",
+      "Guess you get what you pay for.",
+      "Great quality at cheap price!"
+    ],
+    "rouge": 0.17022776615405782,
+    "counts": [
+      362,
+      250,
+      7,
+      6,
+      6
+    ],
+    "cosine_score": "0.80565786",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004RB7ATC": {
+    "summary": [
+      "If you can get at least two of the lag bolts in a stud, top and bottom bolts you will be fine with the wall inserts on the other side, but the bracket isnt wide enough to catch a stud on both sides.",
+      "Easy to install, very sturdy!",
+      "The built-in level was a nice touch."
+    ],
+    "rouge": 0.16965694283230276,
+    "counts": [
+      180,
+      90,
+      5,
+      4,
+      4
+    ],
+    "cosine_score": "0.8758993",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B005KJH8WO": {
+    "summary": [
+      "Obviously plastic mounts aren't quite as good as metal mounts, but on the upside, it aids in making the lens that much lighter.",
+      "Great buy for the price.",
+      "No much larger than the lens that came with the camera.",
+      "A very good lens for my PEN camera at a quite good price."
+    ],
+    "rouge": 0.19498189865192891,
+    "counts": [
+      110,
+      50,
+      5,
+      3,
+      2
+    ],
+    "cosine_score": "0.8549781",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007SYKBL4": {
+    "summary": [
+      "but for what you use them for it was cheap and was fine to wait for them",
+      "THEY ARE JUST OK.",
+      "I keep one in my purse, one in my bedroom, and one in another part of the house."
+    ],
+    "rouge": 0.19257774341181508,
+    "counts": [
+      307,
+      200,
+      15,
+      7,
+      11
+    ],
+    "cosine_score": "0.8293566",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B00D68ZVY8": {
+    "summary": [
+      "I am not a computer geek, and thought I will never need/use a mouse for my laptop.",
+      "I have not had to do anything with it since installed.",
+      "This is the most uncomfortable mouse I've ever used."
+    ],
+    "rouge": 0.21064742292366273,
+    "counts": [
+      106,
+      96,
+      3,
+      3,
+      3
+    ],
+    "cosine_score": "0.86591595",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0026SKZO0": {
+    "summary": [
+      "I had a fit of cursing after loading the drivers and then could not get my Wifi adapter to work.",
+      "You get what you pay for I suppose.",
+      "I GOT IT IN THE MAIL IN THREE DAYS!THIS IS THE EASIEST THING TO INSTALL TOO!!"
+    ],
+    "rouge": 0.16357803128749507,
+    "counts": [
+      146,
+      116,
+      2,
+      7,
+      6
+    ],
+    "cosine_score": "0.7150351",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
   }
 }
