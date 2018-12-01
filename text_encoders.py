@@ -58,7 +58,7 @@ class USE(BaseHubModel):
     
     def __call__(self, inp):
         inp= [' '.join(word_tokenize(sentence)[:self.max_seq_len]) for sentence in inp]
-        num_splits= len(inp)//self.batch_size
+        num_splits= max(1, len(inp)//self.batch_size)
         inp_split= np.array_split(inp, num_splits)
         ret_list= []
         for inp_chunk in inp_split:
