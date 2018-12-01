@@ -62,7 +62,7 @@ class USE(BaseHubModel):
 
 class ELMO(BaseHubModel):
     max_seq_len= 600
-    batch_size= 8
+    batch_size= 20
     def __init__(self, path= ENCODER_PATH_DICT['elmo'],
                  trainable= False):
         self.model= hub.Module(path, trainable= trainable)
