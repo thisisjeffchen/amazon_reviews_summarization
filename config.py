@@ -78,7 +78,7 @@ parser.add_argument('--tie_in_out_embeddings', type=ast.literal_eval,
                     help='whether to initialize vocab projection layer with transpose of embedding matrix')
 
 parser.add_argument('--cold_start', type=ast.literal_eval, 
-                    default=False,
+                    default=True,
                     help='whether to overwrite existing model_dir')
 
 args = parser.parse_args()

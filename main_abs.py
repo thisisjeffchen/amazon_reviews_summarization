@@ -93,7 +93,7 @@ def run_model():
     train_filename, test_filename= 'abs_train_set_{}.csv'.format(num_reviews), 'abs_test_set_{}.csv'.format(num_reviews)
     model_dir= '../abs_model_dir'
     if args.cold_start:
-        os.makedirs(directory, exist_ok=True)
+        os.makedirs(model_dir, exist_ok=True)
     else:
         safe_mkdir(model_dir)
     model_config= tf.estimator.RunConfig(model_dir=model_dir,
