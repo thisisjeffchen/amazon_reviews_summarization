@@ -63,7 +63,6 @@ def test_model(classifier, params, test_filename):
             break
         elif i == 100:
             break
-            
         asin_list.append(pred_dict['asin'])
         summary_id_list.append(pred_dict['summary_ids'].tolist())
 
@@ -110,6 +109,7 @@ def run_model():
         params= params,
         config= model_config)
     
+
    # train_model(classifier, params, train_filename)
     pdb.set_trace()
     test_model(classifier, params, test_filename)
@@ -122,3 +122,4 @@ if args.debug == False:
 if __name__ == "__main__":
     with slaunch_ipdb_on_exception():
         run_model()
+
