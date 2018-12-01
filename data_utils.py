@@ -25,7 +25,7 @@ import json
 import ast
 import config
 import time
-import matplotlib.pyplot as plt
+
 from nltk.tokenize import word_tokenize
 from nltk.tokenize.treebank import TreebankWordTokenizer, TreebankWordDetokenizer
 
@@ -83,6 +83,7 @@ def insert(cur, asin, reviewText, reviewShort, rating, ratingShort):
                 (str(asin), str(reviewText), str(reviewShort), str(rating), str(ratingShort)))
 
 def data_analysis (data_dir, raw_review_file):
+    import matplotlib.pyplot as plt
     t = TreebankWordTokenizer()
     asin_counts = defaultdict(int)
     review_lengths = []

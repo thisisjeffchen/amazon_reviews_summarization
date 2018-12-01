@@ -345,8 +345,8 @@ def decode_id_to_string(word_ids, params):
 def summarizer(features, mode, params, layers_dict):
     is_train= mode == tf.contrib.learn.ModeKeys.TRAIN
     
-    ae_encoder_output= features['ae_encoder_output']
-    decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True)
+    ae_encoder_output= features['ae_encoder_output'] # (batch_size x word_emb_size)
+    decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True) # grouby mean asin
     if not is_train:
         decoder= InferenceDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
                            layers_dict['vocab_softmax_layer'])
