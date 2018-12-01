@@ -92,6 +92,8 @@ def main(kwargs):
     # pdb.set_trace()
     if kwargs['extractive_model'] == "all":
         models = ["kmeans", "affinity", "dbscan", "pagerank", "pagerank_slow"]
+    elif kwargs['extractive_model'] == "three":
+        models = ["affinity", "kmeans", "pagerank"]
     else:
         models = [kwargs['extractive_model']]
 
