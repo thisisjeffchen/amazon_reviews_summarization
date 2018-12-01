@@ -58,8 +58,12 @@ def test_model(classifier, params, test_filename):
     asin_list, summary_id_list=[], []
     for i, pred_dict in enumerate(predictions):
         # pdb.set_trace()
+        print ("Processing {}".format(i))
         if args.debug == True and i > 10:
             break
+        elif i == 100:
+            break
+            
         asin_list.append(pred_dict['asin'])
         summary_id_list.append(pred_dict['summary_ids'].tolist())
 
@@ -106,7 +110,7 @@ def run_model():
         params= params,
         config= model_config)
     
-    train_model(classifier, params, train_filename)
+   # train_model(classifier, params, train_filename)
     pdb.set_trace()
     test_model(classifier, params, test_filename)
 
