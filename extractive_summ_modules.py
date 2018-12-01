@@ -25,7 +25,7 @@ import igraph
 class BaseExtract(object):
     def __init__(self, summary_length):
         self.summary_length= summary_length
-        
+
 
     def reset (self, encoder):
         self.sentence_parent = []
@@ -55,12 +55,12 @@ class BaseExtract(object):
                     reviews_for_label.append (self.sentence_parent[idx])
             count = len ( set (reviews_for_label))
             self.counts.append (count)
-    
+
     def sematic_similarity(self, product_embs, summary_embs):
         product_mean= product_embs.mean(axis= 0, keepdims=True)
         summary_mean= summary_embs.mean(axis= 0, keepdims=True)
         cosine= cosine_similarity(product_mean, summary_mean)[0][0]
-        return cosine        
+        return cosine
 
 
 class KMeansExtract(BaseExtract):
@@ -70,20 +70,20 @@ class KMeansExtract(BaseExtract):
 
         print ("Running kmeans...")
         cluster_obj = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
-        
+
         dist= cluster_obj.transform(self.product_embs)
         product_reviews_np= np.array(self.product_sentences)
         summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
         centroid_labels = range(self.summary_length)
 
         self.compute_counts (cluster_obj, centroid_labels)
-        
+
         summary_embs= self.encoder(summary_reviews)
         cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
         return summary_reviews, self.counts, cosine_score
 
 
-class AffinityExtract(BaseExtract):   
+class AffinityExtract(BaseExtract):
     def __call__(self, product_reviews, encoder):
         self.reset (encoder)
         self.encoder = encoder
@@ -108,13 +108,13 @@ class AffinityExtract(BaseExtract):
         summary_reviews = product_reviews_np[summary_indicies].tolist()
         centroid_labels = top_center_indicies
         self.compute_counts (cluster_obj, centroid_labels)
-        
+
         summary_embs= self.encoder(summary_reviews)
         cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
         return summary_reviews, self.counts, cosine_score
 
 
-class DBSCANExtract(BaseExtract):  
+class DBSCANExtract(BaseExtract):
     def __call__(self, product_reviews, encoder):
         self.reset (encoder)
         self.tokenize_and_embed (product_reviews)
@@ -150,7 +150,7 @@ class DBSCANExtract(BaseExtract):
         cosine_score= self.sematic_similarity(self.product_embs, summary_embs)
         return summary_reviews, self.counts, cosine_score
 
-        
+
 
 class PageRankExtract_slow(BaseExtract):
     def __init__(self, *args, **kwargs):
@@ -164,7 +164,7 @@ class PageRankExtract_slow(BaseExtract):
         summary_reviews = []
 
         print("Running pagerank...")
-        
+
         sim_mat= cosine_similarity(self.product_embs)
         # sim_mat= (cosine_similarity(self.product_embs) + 1)/2
         graph= nx.from_numpy_array(sim_mat)
@@ -175,7 +175,7 @@ class PageRankExtract_slow(BaseExtract):
         ranked_sentences= sorted(((scores[i],s) for i, s in enumerate(self.product_sentences)), reverse=True)
 
         # loop through the ranked sentences; if the word length is less than threshold add to the summary
-        
+
         summary_len= 0
         ranked_meta= [(len(ranked_sentences), )] #to record the number of sentences to better interpret the rank
         for i in range(len(ranked_sentences)):
@@ -190,7 +190,7 @@ class PageRankExtract_slow(BaseExtract):
             if summary_len == self.summary_length:
                 break
 
-        # this should rarely if ever be called; but it will make sure that there are self.summary_length 
+        # this should rarely if ever be called; but it will make sure that there are self.summary_length
         # number of sentences output as summary if the above for loop doesnt do it
         i=0
         while summary_len < self.summary_length:
@@ -225,13 +225,13 @@ class PageRankExtract(BaseExtract):
         summary_reviews = []
 
         print("Running pagerank...")
-        
+
         # sim_mat= cosine_similarity(self.product_embs)
         sim_mat= (cosine_similarity(self.product_embs) + 1)/2
         if True:
             sim_mat = sim_mat * (1. - np.eye(len(sim_mat))) # remove self connection
         graph= igraph.Graph.Adjacency((sim_mat > 0).tolist())
-        
+
 
         try:
             scores= graph.pagerank(weights= sim_mat[sim_mat.nonzero()].tolist(), niter=100)
@@ -240,7 +240,7 @@ class PageRankExtract(BaseExtract):
         ranked_sentences= sorted(((scores[i],s) for i, s in enumerate(self.product_sentences)), reverse=True)
 
         # loop through the ranked sentences; if the word length is less than threshold add to the summary
-        
+
         summary_len= 0
         ranked_meta= [(len(ranked_sentences), )] #to record the number of sentences to better interpret the rank
         for i in range(len(ranked_sentences)):
@@ -255,7 +255,7 @@ class PageRankExtract(BaseExtract):
             if summary_len == self.summary_length:
                 break
 
-        # this should rarely if ever be called; but it will make sure that there are self.summary_length 
+        # this should rarely if ever be called; but it will make sure that there are self.summary_length
         # number of sentences output as summary if the above for loop doesnt do it
         i=0
         while summary_len < self.summary_length:
@@ -277,6 +277,17 @@ class PageRankExtract(BaseExtract):
         # pdb.set_trace()
         return summary_reviews, self.counts, cosine_score
 
+class RandomExtract(BaseExtract):
+    def __call__(self, product_reviews, encoder):
+        self.reset(encoder)
+        self.tokenize_and_embed(product_reviews)
+        cluster_obj = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
+        centroid_labels = range(self.summary_length)
+        self.compute_counts(cluster_obj, centroid_labels)
+        summary_reviews = random.sample(self.product_sentences, 5)
+        summary_embs = self.encoder(summary_reviews)
+        cosine_score = self.sematic_similarity(self.product_embs, summary_embs)
+        return summary_reviews, self.counts, cosine_score
 
 def get_ex_summarizer(model_type, summary_length= 5):
     if model_type == 'kmeans':
@@ -289,6 +300,8 @@ def get_ex_summarizer(model_type, summary_length= 5):
         return PageRankExtract(summary_length)
     elif model_type == "pagerank_slow":
         return PageRankExtract_slow(summary_length)
+    elif model_type == "random":
+        return RandomExtract(summary_length)
     else:
         raise ValueError("Invalid model type supplied")
 
@@ -296,7 +309,7 @@ def get_ex_summarizer(model_type, summary_length= 5):
 class MyRouge(object):
     def __init__(self):
         self.rouge= Rouge()
-    
+
     def __call__(self, summary_list, reviewTexts):
         summariesConcat= ". ".join (summary_list)
         total = 0
@@ -313,7 +326,7 @@ class MyRouge(object):
 # def get_pg_summary(product_reviews, encoder):
 #     product_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
 #     product_embs= encoder(product_sentences)
-    
+
 #     sim_mat= cosine_similarity(product_embs)
 #     graph= nx.from_numpy_array(sim_mat)
 #     try:
@@ -324,7 +337,7 @@ class MyRouge(object):
 #     summary_reviews= []
 #     for i in range(5):
 #         summary_reviews.append(ranked_sentences[i][1])
-    
+
 #     score= get_norm_rouge2(summary_reviews, product_reviews)
 #     return summary_reviews, score
 
@@ -372,6 +385,6 @@ class MyRouge(object):
 #            score= get_norm_rouge2(human_summaries, ground_truth_sentences)
 #            rouge_list.append(score)
 #            print(i)
-#    
+#
 #    print(np.mean(rouge_list))
 #    print(pd.Series(rouge_list).describe())
