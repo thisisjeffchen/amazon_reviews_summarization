@@ -93,6 +93,7 @@ def data_analysis (data_dir, raw_review_file):
         review_lengths.append (len(t.tokenize(dd["reviewText"])))
         if i > 0 and i % 100000 == 0:
             print ("Processed {}".format (i))
+            #break
 
     review_lengths.sort()
     idx = review_lengths.index(WORD_CUTOFF)
@@ -100,10 +101,11 @@ def data_analysis (data_dir, raw_review_file):
     print ("{} Word cutoff represents {} percent of the data".format
         (WORD_CUTOFF, percent))
 
-    n, bins, patches = plt.hist (review_lengths, 50, (0,1000))
+    n, bins, patches = plt.hist (review_lengths, 50, (0,500))
     plt.ylabel('Frequency')
     plt.xlabel('Words / Review')
-    plt.savefig("frequency.png")
+    #plt.savefig("frequency.png")
+    plt.show ()
 
 
 
