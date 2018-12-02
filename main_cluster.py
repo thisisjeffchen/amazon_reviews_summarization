@@ -5,7 +5,7 @@ Created on Sun Oct 21 14:47:39 2018
 
 @author: hanozbhathena
 """
-
+import gc
 import sys
 import os
 import pandas as pd
@@ -26,7 +26,7 @@ import sqlite3
 import config
 from config import args
 from main_encode import get_encoder
-from data_utils import SQLLiteBatchIterator, SQLLiteIndexer, SQLLiteEmbeddingsIndexer
+from data_utils import SQLLiteBatchIterator, SQLLiteIndexer, SQLLiteEmbeddingsIndexer, SQLLiteAsinAttrIterator
 from extractive_summ_modules import get_ex_summarizer, MyRouge, PreprocessEncoder
 from sentiment_analysis.sentiment_model import CNN
 from keras.models import load_model
@@ -89,9 +89,21 @@ def insert_emb(cur, asin, product_embs, product_sentences, sentence_parent):
                 (str(asin), str(product_embs), str(product_sentences), str(sentence_parent)))
 
 
+def insert_emb_many(cur, values_to_insert):
+    cur.executemany("insert into reviews_embeddings (asin, product_embs, product_sentences, sentence_parent) values (?, ?, ?, ?)", values_to_insert)
+
+
+def insert_emb_csv(cur, values_to_insert, write):
+    pdb.set_trace()
+    temp_df= pd.DataFram(values_to_insert)
+    if write == True:
+        temp_df.to_csv('test_db.csv', index= False)
+    cur.executemany("insert into reviews_embeddings (asin, product_embs, product_sentences, sentence_parent) values (?, ?, ?, ?)", values_to_insert)
+
+
 def main_preprocess_embeddings(kwargs):
     pdb.set_trace()
-    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}.s3db".format(args.encoder_name))
+    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}_1.s3db".format(args.encoder_name))
     conn= sqlite3.connect(db_file)
     cur= conn.cursor()
     cur.execute("drop table if exists reviews_embeddings;")
@@ -113,21 +125,47 @@ def main_preprocess_embeddings(kwargs):
         asin_list = asin_list[0:1000]
     else:
         raise Exception ("Product group not recognized")
-    reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
+    # reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
     try:
-        for i, asin in enumerate(asin_list):
-            product_reviews= reviews_indexer[asin]
+        reviews_iterator= SQLLiteAsinAttrIterator(asin_list)
+        values_to_insert= []
+        ddict= defaultdict(list)
+        write= True
+        for i, row_tup in enumerate(reviews_iterator):
+            asin, product_reviews= row_tup
             product_sentences, product_embs, sentence_parent= preprocess_module(asin, product_reviews, encoder)
-            insert_emb(cur, asin, product_embs.tolist(), product_sentences, sentence_parent)
+            # product_sentences, product_embs, sentence_parent= product_reviews, np.random.rand(len(product_reviews)*100, 500), np.random.randint(0,1000, 100*len(product_reviews))
+            # insert_emb(cur, asin, product_embs.tolist(), product_sentences, sentence_parent)
+            values_to_insert.append((str(asin), str(product_embs.tolist()), str(product_sentences), str(sentence_parent)))
             
-            if i > 0 and i+1 % 50 == 0:
+            # ddict['asin'].append(asin)
+            # ddict['product_embs'].append(product_embs.tolist())
+            # ddict['product_sentences'].append(product_sentences)
+            # ddict['sentence_parent'].append(sentence_parent)
+            logging.info(i)
+            gc.collect()
+
+            if i > 0 and i % 50 == 0:
+                insert_emb_many(cur, values_to_insert)
+                # insert_emb_csv(cur, values_to_insert, write)
+                write= False
+                ddict= defaultdict(list)
+                logging.info("Inserted {} total products to embeddings_db".format(i+1))
+                values_to_insert= []
+
+            if i > 0 and i % 500 == 0:
                 conn.commit()
-                print("Commited {} total products to embeddings_db".format(i+1))
+                logging.info("Commited {} total products to embeddings_db".format(i+1))
+                cur.execute('select count(*) from reviews_embeddings')
+                logging.info(cur.fetchone())
+                gc.collect()
             sys.stdout.flush()
+        pdb.set_trace()
+        insert_emb_many(cur, values_to_insert)
         conn.commit()
-        print("Finished {} total products to embeddings_db".format(i+1))
+        logging.info("Finished {} total products to embeddings_db".format(i+1))
         cur.execute('select count(*) from reviews_embeddings')
-        print(cur.fetchone())
+        logging.info(cur.fetchone())
         pdb.set_trace()
         test_indexer= SQLLiteEmbeddingsIndexer(args.encoder_name)
         ddict= test_indexer[asin]
@@ -135,7 +173,9 @@ def main_preprocess_embeddings(kwargs):
         assert ddict['product_sentences'] == product_sentences
         assert ddict['sentence_parent'] == sentence_parent
         np.testing.assert_equal(ddict['product_embs'], product_embs)
-
+    except KeyboardInterrupt:
+        logging.info("Keyboard interrup, commiting remaining")
+        conn.commit()
     except Exception as e:
         logging.info("Error type: {}".format(type(e).__name__))
         conn.rollback()

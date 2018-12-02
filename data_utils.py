@@ -276,3 +276,35 @@ class SQLLiteBatchIterator(object):
         self.cur.close()
         self.conn.close()
 
+
+class SQLLiteAsinAttrIterator(object):
+    def __init__(self, asin_list, data_dir= config.DATA_PATH, attribute= "reviewText", table_name= "reviews_dict", 
+                 db_file= "reviews.s3db", asin_chunksize= 1000):
+#        pdb.set_trace()
+        db_file= os.path.join(data_dir, db_file)
+        self.conn= sqlite3.connect(db_file, check_same_thread=False)
+        self.cur= self.conn.cursor()
+        self.attribute= attribute
+        self.table_name= table_name
+        self.asin_list= asin_list
+        self.asin_chunksize= asin_chunksize
+        num_chunks= max(1, len(asin_list)//asin_chunksize)
+        self.asin_chunks= np.array_split(asin_list, num_chunks)
+
+    
+    def __iter__(self):
+        # pdb.set_trace()
+        for i, asin_array in enumerate(self.asin_chunks):
+            asin_list= asin_array.tolist()
+            self.cur.execute("""
+                     SELECT asin, {attribute} from {table_name} 
+                     where asin in ({num_qs})
+                     """.format(attribute= self.attribute, 
+                     table_name= self.table_name, num_qs=','.join('?'*len(asin_list))), asin_list)
+            for row in self.cur:
+                yield row[0], ast.literal_eval(row[1])
+    
+    def __del__(self):
+        print("Closing SQLLite connection")
+        self.cur.close()
+        self.conn.close()
