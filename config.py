@@ -81,6 +81,15 @@ parser.add_argument('--cold_start', type=ast.literal_eval,
                     default=True,
                     help='whether to overwrite existing model_dir')
 
+parser.add_argument('--prepare_embeddings', type=ast.literal_eval, 
+                    default=False,
+                    help='whether to run sentence encoders')
+
+parser.add_argument('--embeddings_preprocessed', type=ast.literal_eval, 
+                    default=True,
+                    help='whether embeddings have been preprocessed and dont need to be extracted again for all reviews')
+
+
 args = parser.parse_args()
 
 

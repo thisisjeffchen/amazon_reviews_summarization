@@ -21,11 +21,13 @@ import time
 import dill as pickle
 import json
 from nltk.tokenize import sent_tokenize
+import sqlite3
 
 import config
+from config import args
 from main_encode import get_encoder
-from data_utils import SQLLiteBatchIterator, SQLLiteIndexer
-from extractive_summ_modules import get_ex_summarizer, MyRouge
+from data_utils import SQLLiteBatchIterator, SQLLiteIndexer, SQLLiteEmbeddingsIndexer
+from extractive_summ_modules import get_ex_summarizer, MyRouge, PreprocessEncoder
 from sentiment_analysis.sentiment_model import CNN
 from keras.models import load_model
 from sentiment_analysis.data.util import pad_sentence
@@ -35,7 +37,7 @@ SENTENCE_LENGTH = 600
 
 def write_json(kwargs, summary_dict, model):
     file_id = model if kwargs["products"] == "three" else model + "-1000"
-    with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(file_id), 'w') as fo:
+    with open(config.RESULTS_PATH + 'summary_dict_proposal_{}_{}.json'.format(file_id, args.encoder_name), 'w') as fo:
         json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
 
 def load_sentiment_evaluator ():
@@ -82,16 +84,70 @@ def evaluate_sentiment (reviews_short, summary, sent_model, sent_tokenizer):
     return reviews_short_avg, summary_score, int (reviews_short_avg == summary_score)
 
 
-def write_json(kwargs, summary_dict, model):
-    file_id = model if kwargs["products"] == "three" else model + "-1000"
-    with open(config.RESULTS_PATH + 'summary_dict_proposal_{}.json'.format(file_id), 'w') as fo:
-        json.dump(summary_dict, fo, ensure_ascii=False, indent=2)
+def insert_emb(cur, asin, product_embs, product_sentences, sentence_parent):
+    cur.execute("insert into reviews_embeddings (asin, product_embs, product_sentences, sentence_parent) values (?, ?, ?, ?)", 
+                (str(asin), str(product_embs), str(product_sentences), str(sentence_parent)))
+
+
+def main_preprocess_embeddings(kwargs):
+    pdb.set_trace()
+    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}.s3db".format(args.encoder_name))
+    conn= sqlite3.connect(db_file)
+    cur= conn.cursor()
+    cur.execute("drop table if exists reviews_embeddings;")
+    cur.execute("CREATE TABLE IF NOT EXISTS reviews_embeddings ("
+      "asin VARCHAR(255) PRIMARY KEY NOT NULL, "
+      "product_embs VARCHAR(255),"
+      "product_sentences VARCHAR(255),"
+      "sentence_parent VARCHAR(255))")
+
+    preprocess_module= PreprocessEncoder(kwargs['summary_length'], embeddings_preprocessed=False)
+    encoder= get_encoder()
+    df= pd.read_csv('df2use_train.csv', encoding='latin1')
+    df_filt= df[df.num_reviews<=100].reset_index(drop=True)
+    if kwargs["products"] == "three":
+        asin_list= ['B00008OE43', 'B0007OWASE', 'B000EI0EB8']
+    elif kwargs["products"] == "all":
+        asin_list= df_filt.asin.tolist()[:]
+        # Cap at 1000 products
+        asin_list = asin_list[0:1000]
+    else:
+        raise Exception ("Product group not recognized")
+    reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
+    try:
+        for i, asin in enumerate(asin_list):
+            product_reviews= reviews_indexer[asin]
+            product_sentences, product_embs, sentence_parent= preprocess_module(asin, product_reviews, encoder)
+            insert_emb(cur, asin, product_embs.tolist(), product_sentences, sentence_parent)
+            
+            if i > 0 and i+1 % 50 == 0:
+                conn.commit()
+                print("Commited {} total products to embeddings_db".format(i+1))
+            sys.stdout.flush()
+        conn.commit()
+        print("Finished {} total products to embeddings_db".format(i+1))
+        cur.execute('select count(*) from reviews_embeddings')
+        print(cur.fetchone())
+        pdb.set_trace()
+        test_indexer= SQLLiteEmbeddingsIndexer(args.encoder_name)
+        ddict= test_indexer[asin]
+        assert ddict['asin'] == asin
+        assert ddict['product_sentences'] == product_sentences
+        assert ddict['sentence_parent'] == sentence_parent
+        np.testing.assert_equal(ddict['product_embs'], product_embs)
+
+    except Exception as e:
+        logging.info("Error type: {}".format(type(e).__name__))
+        conn.rollback()
+    finally:
+        cur.close()
+        conn.close()
 
 
 def main(kwargs):
-    # pdb.set_trace()
+    pdb.set_trace()
     if kwargs['extractive_model'] == "all":
-        models = ["kmeans", "affinity", "dbscan", "pagerank", "pagerank_slow"]
+        models = ["kmeans", "affinity", "dbscan", "pagerank"]
     elif kwargs['extractive_model'] == "three":
         models = ["affinity", "kmeans", "pagerank"]
     else:
@@ -102,7 +158,8 @@ def main(kwargs):
     products_skipped= 0
     for model in models:
         summarization_module= get_ex_summarizer(model_type= model,
-                                                summary_length= kwargs['summary_length'])
+                                                summary_length= kwargs['summary_length'],
+                                                embeddings_preprocessed= kwargs['embeddings_preprocessed'])
         rouge_module= MyRouge()
         encoder= get_encoder()
         reviews_indexer= SQLLiteIndexer(config.DATA_PATH)
@@ -121,7 +178,7 @@ def main(kwargs):
         for i, asin in enumerate(asin_list):
             summary_dict[asin] = {}
             product_reviews= reviews_indexer[asin]
-            summary, counts, cosine_score= summarization_module(product_reviews, encoder)
+            summary, counts, cosine_score= summarization_module(asin, product_reviews, encoder)
             if len(summary) == 0:
                 products_skipped+= 1
                 continue
@@ -166,7 +223,13 @@ def main(kwargs):
         print("Finished run, {} products were skipped due to run-time exceptions".format(products_skipped))
         write_json(kwargs, summary_dict, model)
 
+if args.debug == False:
+    pdb.set_trace= lambda:None
+
 
 if __name__ == "__main__":
    with slaunch_ipdb_on_exception():
-       main(vars(config.args))
+       if args.prepare_embeddings == True:
+           main_preprocess_embeddings(vars(args))
+       else:
+           main(vars(args))

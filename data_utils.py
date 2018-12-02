@@ -175,6 +175,32 @@ def create_review_db(data_dir, raw_review_file):
         conn.close()
 
 
+class SQLLiteEmbeddingsIndexer(object):
+    def __init__(self, encoder_name, data_dir = config.DATA_PATH, table_name= "reviews_embeddings"):
+        db_file= os.path.join(data_dir, "embedding_db-{}.s3db".format(encoder_name))
+        self.conn= sqlite3.connect(db_file)
+        self.cur= self.conn.cursor()
+        self.table_name= table_name
+    
+    def __getitem__(self, asin):
+        self.cur.execute("""
+                 SELECT * from {table_name} 
+                 where asin=?
+                 """.format(table_name= self.table_name), (asin,))
+        cols= [elem[0] for elem in self.cur.description]
+        asin, product_embs, product_sentences, sentence_parent= self.cur.fetchone()
+        product_embs= np.array(ast.literal_eval(product_embs))
+        product_sentences= ast.literal_eval(product_sentences)
+        sentence_parent= ast.literal_eval(sentence_parent)
+        ret_dict= dict(zip(cols, [asin, product_embs, product_sentences, sentence_parent]))
+        return ret_dict
+    
+    def __del__(self):
+        print("Closing SQLLite connection")
+        self.cur.close()
+        self.conn.close()
+
+
 class SQLLiteIndexer(object):
     def __init__(self, data_dir = config.DATA_PATH, attribute= "reviewText", table_name= "reviews_dict", 
                  db_file= "reviews.s3db"):

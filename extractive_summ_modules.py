@@ -20,11 +20,19 @@ from collections import defaultdict
 import ipdb as pdb
 from ipdb import slaunch_ipdb_on_exception
 import igraph
-
+from data_utils import SQLLiteEmbeddingsIndexer
+from config import args
+import random
 
 class BaseExtract(object):
-    def __init__(self, summary_length):
+    def __init__(self, summary_length, embeddings_preprocessed= False):
         self.summary_length= summary_length
+        self.embeddings_preprocessed= embeddings_preprocessed
+        if self.embeddings_preprocessed:
+            self.tokenize_and_embed= self.tokenize_and_embed_from_db
+            self.embeddings_indexer= SQLLiteEmbeddingsIndexer(args.encoder_name)
+        else:
+            self.tokenize_and_embed= self.tokenize_and_embed_from_scratch
 
 
     def reset (self, encoder):
@@ -35,7 +43,7 @@ class BaseExtract(object):
         self.product_embs = None
 
 
-    def tokenize_and_embed (self, product_reviews):
+    def tokenize_and_embed_from_scratch(self, asin, product_reviews):
         for idx, review in enumerate(product_reviews):
             for sent in sent_tokenize(review):
                 self.product_sentences.append(sent)
@@ -45,6 +53,13 @@ class BaseExtract(object):
 
         # print ("Embedding...")
         self.product_embs = self.encoder(self.product_sentences)
+    
+    def tokenize_and_embed_from_db(self, asin, product_reviews):
+        ddict= self.embeddings_indexer[asin]
+        assert asin == ddict['asin'], "Something wrong, wrong asin queried, CHECK!!!"
+        self.product_sentences= ddict['product_sentences']
+        self.sentence_parent= ddict['sentence_parent']
+        self.product_embs= ddict['product_embs']
 
     def compute_counts (self, cluster_obj, centroid_labels):
         # pdb.set_trace()
@@ -64,9 +79,9 @@ class BaseExtract(object):
 
 
 class KMeansExtract(BaseExtract):
-    def __call__(self, product_reviews, encoder):
+    def __call__(self, asin, product_reviews, encoder):
         self.reset (encoder)
-        self.tokenize_and_embed (product_reviews)
+        self.tokenize_and_embed(asin, product_reviews)
 
         print ("Running kmeans...")
         cluster_obj = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
@@ -84,10 +99,10 @@ class KMeansExtract(BaseExtract):
 
 
 class AffinityExtract(BaseExtract):
-    def __call__(self, product_reviews, encoder):
+    def __call__(self, asin, product_reviews, encoder):
         self.reset (encoder)
         self.encoder = encoder
-        self.tokenize_and_embed (product_reviews)
+        self.tokenize_and_embed(asin, product_reviews)
 
         print("Running affinity...")
         cluster_obj = AffinityPropagation().fit(self.product_embs)
@@ -115,9 +130,9 @@ class AffinityExtract(BaseExtract):
 
 
 class DBSCANExtract(BaseExtract):
-    def __call__(self, product_reviews, encoder):
+    def __call__(self, asin, product_reviews, encoder):
         self.reset (encoder)
-        self.tokenize_and_embed (product_reviews)
+        self.tokenize_and_embed(asin, product_reviews)
 
         print("Running dbscan...")
         eps = 0.20131
@@ -158,9 +173,9 @@ class PageRankExtract_slow(BaseExtract):
         self.max_summ_sent_len= kwargs.pop('max_summ_sent_len', 30)
         super().__init__(*args, **kwargs)
 
-    def __call__(self, product_reviews, encoder):
+    def __call__(self, asin, product_reviews, encoder):
         self.reset (encoder)
-        self.tokenize_and_embed (product_reviews)
+        self.tokenize_and_embed(asin, product_reviews)
         summary_reviews = []
 
         print("Running pagerank...")
@@ -219,9 +234,9 @@ class PageRankExtract(BaseExtract):
         self.max_summ_sent_len= kwargs.pop('max_summ_sent_len', 30)
         super().__init__(*args, **kwargs)
 
-    def __call__(self, product_reviews, encoder):
+    def __call__(self, asin, product_reviews, encoder):
         self.reset (encoder)
-        self.tokenize_and_embed (product_reviews)
+        self.tokenize_and_embed(asin, product_reviews)
         summary_reviews = []
 
         print("Running pagerank...")
@@ -278,9 +293,9 @@ class PageRankExtract(BaseExtract):
         return summary_reviews, self.counts, cosine_score
 
 class RandomExtract(BaseExtract):
-    def __call__(self, product_reviews, encoder):
+    def __call__(self, asin, product_reviews, encoder):
         self.reset(encoder)
-        self.tokenize_and_embed(product_reviews)
+        self.tokenize_and_embed(asin, product_reviews)
         cluster_obj = KMeans(n_clusters=self.summary_length, random_state=0).fit(self.product_embs)
         centroid_labels = range(self.summary_length)
         self.compute_counts(cluster_obj, centroid_labels)
@@ -289,19 +304,29 @@ class RandomExtract(BaseExtract):
         cosine_score = self.sematic_similarity(self.product_embs, summary_embs)
         return summary_reviews, self.counts, cosine_score
 
-def get_ex_summarizer(model_type, summary_length= 5):
+
+class PreprocessEncoder(BaseExtract):
+    def __call__(self, asin, product_reviews, encoder):
+        if self.embeddings_preprocessed == True:
+            raise ValueError("embeddings_preprocessed cant be false as this has to create the embeddings")
+        self.reset(encoder)
+        self.tokenize_and_embed(asin, product_reviews)
+        return self.product_sentences, self.product_embs, self.sentence_parent
+
+
+def get_ex_summarizer(model_type, summary_length= 5, embeddings_preprocessed= False):
     if model_type == 'kmeans':
-        return KMeansExtract(summary_length)
+        return KMeansExtract(summary_length, embeddings_preprocessed= embeddings_preprocessed)
     elif model_type == 'affinity':
-        return AffinityExtract(summary_length)
+        return AffinityExtract(summary_length, embeddings_preprocessed= embeddings_preprocessed)
     elif model_type == 'dbscan':
-        return DBSCANExtract(summary_length)
+        return DBSCANExtract(summary_length, embeddings_preprocessed= embeddings_preprocessed)
     elif model_type == 'pagerank':
-        return PageRankExtract(summary_length)
+        return PageRankExtract(summary_length, embeddings_preprocessed= embeddings_preprocessed)
     elif model_type == "pagerank_slow":
-        return PageRankExtract_slow(summary_length)
+        return PageRankExtract_slow(summary_length, embeddings_preprocessed= embeddings_preprocessed)
     elif model_type == "random":
-        return RandomExtract(summary_length)
+        return RandomExtract(summary_length, embeddings_preprocessed= embeddings_preprocessed)
     else:
         raise ValueError("Invalid model type supplied")
 
@@ -321,70 +346,3 @@ class MyRouge(object):
                 skipped += 1
         rougeAvg = total / (len(reviewTexts) - skipped)
         return rougeAvg
-
-
-# def get_pg_summary(product_reviews, encoder):
-#     product_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
-#     product_embs= encoder(product_sentences)
-
-#     sim_mat= cosine_similarity(product_embs)
-#     graph= nx.from_numpy_array(sim_mat)
-#     try:
-#         scores= nx.pagerank(graph)
-#     except nx.exception.PowerIterationFailedConvergence:
-#         return [], 0.0
-#     ranked_sentences= sorted(((scores[i],s) for i, s in enumerate(product_sentences)), reverse=True)
-#     summary_reviews= []
-#     for i in range(5):
-#         summary_reviews.append(ranked_sentences[i][1])
-
-#     score= get_norm_rouge2(summary_reviews, product_reviews)
-#     return summary_reviews, score
-
-
-# def get_kmeans_summary(product_reviews, encoder):
-#     product_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
-#     product_embs= encoder(product_sentences)
-#     kmeans= KMeans(n_clusters=5, random_state=0).fit(product_embs)
-#     dist= kmeans.transform(product_embs)
-#     product_reviews_np= np.array(product_sentences)
-#     summary_reviews= product_reviews_np[np.argmin(dist, axis=0)].tolist()
-#     score= get_norm_rouge2(summary_reviews, product_reviews)
-#     return summary_reviews, score
-
-
-#def read_file(filename, num_products= 3, num_sents= 5):
-#    sentences= []
-#    count= 0
-#    asins= []
-#    ret_dict= {}
-#    with open(filename, 'r') as f:
-#        for i in range(num_products):
-#            asin= f.readline().replace('\n', '')
-#            asins.append(asin)
-#            for j in range(num_sents):
-#                sentences.append(f.readline().replace('\n', ''))
-#            _= f.readline()
-#            ret_dict[asin]= sentences
-#            sentences= []
-#    return ret_dict
-#
-#
-#def oracle():
-#    reviews_indexer= SQLLiteIndexer(DATA_PATH)
-#    path= '../github/cs221_project/data/oracle'
-#    files= ['will.txt', 'jeff.txt']
-#    review_counts= [3,3]
-#    rouge_list= []
-#    for i, file in enumerate(files):
-#        full_name= os.path.join(path, file)
-#        asin_dict= read_file(full_name)
-#        for asin, human_summaries in asin_dict.items():
-#            product_reviews= reviews_indexer[asin]
-#            ground_truth_sentences= [sent for review in product_reviews for sent in sent_tokenize(review)]
-#            score= get_norm_rouge2(human_summaries, ground_truth_sentences)
-#            rouge_list.append(score)
-#            print(i)
-#
-#    print(np.mean(rouge_list))
-#    print(pd.Series(rouge_list).describe())
