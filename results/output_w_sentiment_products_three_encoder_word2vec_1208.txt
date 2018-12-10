@@ -1,0 +1,119 @@
+Loading Models...
+Models loaded...
+Running affinity...
+0
+Running affinity...
+1
+Running affinity...
+2
+0.21574212416125813
+Rouge metrics
+count    6.000000
+mean     0.215742
+std      0.025012
+min      0.187297
+25%      0.194655
+50%      0.216732
+75%      0.236581
+max      0.243198
+dtype: float64
+Semantic score metrics
+count    6.000000
+mean     0.989300
+std      0.004253
+min      0.985787
+25%      0.986191
+50%      0.987403
+75%      0.992884
+max      0.994711
+dtype: float64
+Sentiment score metrics
+count    3.000000
+mean     0.333333
+std      0.577350
+min      0.000000
+25%      0.000000
+50%      0.000000
+75%      0.500000
+max      1.000000
+dtype: float64
+Finished run, 0 products were skipped due to run-time exceptions
+Closing SQLLite connection
+Running kmeans...
+0
+Running kmeans...
+1
+Running kmeans...
+2
+0.21379986908526213
+Rouge metrics
+count    6.000000
+mean     0.213800
+std      0.025497
+min      0.190526
+25%      0.194214
+50%      0.205278
+75%      0.235516
+max      0.245595
+dtype: float64
+Semantic score metrics
+count    6.000000
+mean     0.983776
+std      0.015071
+min      0.964398
+25%      0.971285
+50%      0.991944
+75%      0.994225
+max      0.994985
+dtype: float64
+Sentiment score metrics
+count    3.000000
+mean     0.333333
+std      0.577350
+min      0.000000
+25%      0.000000
+50%      0.000000
+75%      0.500000
+max      1.000000
+dtype: float64
+Finished run, 0 products were skipped due to run-time exceptions
+Closing SQLLite connection
+Running pagerank...
+0
+Running pagerank...
+1
+Running pagerank...
+2
+0.24059846961089928
+Rouge metrics
+count    6.000000
+mean     0.240598
+std      0.014787
+min      0.223437
+25%      0.228062
+50%      0.241937
+75%      0.252800
+max      0.256421
+dtype: float64
+Semantic score metrics
+count    6.000000
+mean     0.993712
+std      0.001017
+min      0.992919
+25%      0.992990
+50%      0.993202
+75%      0.994562
+max      0.995015
+dtype: float64
+Sentiment score metrics
+count    3.0
+mean     1.0
+std      0.0
+min      1.0
+25%      1.0
+50%      1.0
+75%      1.0
+max      1.0
+dtype: float64
+Finished run, 0 products were skipped due to run-time exceptions
+Closing SQLLite connection

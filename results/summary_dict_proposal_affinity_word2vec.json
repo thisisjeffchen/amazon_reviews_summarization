@@ -1,0 +1,65 @@
+{
+  "B00008OE43": {
+    "summary": [
+      "I would either purchase a set of rechargable batteries or try another camera.The pictures that we have taken do turn out very well.",
+      "(Hadn't so much as TRIED to take a picture!)",
+      "I bought this camera for 200 bucks and can say that I am quite satisfied, and somewhat surprised at the quality.",
+      "The camera has a good zoom on it, and is very easy to use.",
+      "Aside from the card problem, I found the camera not particularly user friendly."
+    ],
+    "rouge": 0.24319803373096965,
+    "counts": [
+      27,
+      21,
+      21,
+      23,
+      20
+    ],
+    "cosine_score": "0.99471056",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0007OWASE": {
+    "summary": [
+      "It has been very easy to do so with the bundled Nero software.",
+      "This dvd drive is not compatible with USB1.1.",
+      "I tried the memorex 3203288 that only cost me around US$80.",
+      "!",
+      "I can make CD's again and make value and worth out of my computer again!"
+    ],
+    "rouge": 0.18729650973364362,
+    "counts": [
+      19,
+      18,
+      17,
+      18,
+      15
+    ],
+    "cosine_score": "0.9874034",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000EI0EB8": {
+    "summary": [
+      "!",
+      "sound 100% better than the psb.",
+      "I feel that for the money a better center couldn't be found.",
+      "I am very happy with the purchase.",
+      "I run 100 watts to this speaker and it handles it well."
+    ],
+    "rouge": 0.21673182901916102,
+    "counts": [
+      25,
+      24,
+      23,
+      17,
+      17
+    ],
+    "cosine_score": "0.98578686",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  }
+}

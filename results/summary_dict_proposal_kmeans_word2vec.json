@@ -1,0 +1,65 @@
+{
+  "B00008OE43": {
+    "summary": [
+      "Aside from the card problem, I found the camera not particularly user friendly.",
+      "A Warrenty in case something goes wrong (the camera comes with a one year warrenty through canon already, but I suggest one through the store you buy the camera too)I'm very lucky to have had all these things from my CD player, so I my dad only paid for the camera and warrenty, which was an excellent price for 3.2 MegaPixels.",
+      "I do not enjoy carrying the larger movie cameras and this is just right for me.",
+      "I would either purchase a set of rechargable batteries or try another camera.The pictures that we have taken do turn out very well.",
+      "Love it."
+    ],
+    "rouge": 0.2455954292252404,
+    "counts": [
+      64,
+      24,
+      60,
+      59,
+      52
+    ],
+    "cosine_score": "0.9949846",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0007OWASE": {
+    "summary": [
+      "!",
+      "Not bad compared to what I have heard for some people.1)The burner is sleek, stable, and nicely built.2)It gives you step by step instructions on how to set it up, which is especially helpful if you are not computer savvy.3)If you open the NeroSmart Start, it's a user-friendly interface that helps you fine exactly what you want to do.HOWEVER there are a few things I dislike about the DVD burner, nothing major however.1)The tray seemed a tad wobbly.2)The software is a trial, it is really nice software but it's only a trail version and It costs $60 to get the full program, kind of upsetting...So far I think this is a great investment and I am very happy with it.",
+      "My guess is that this would take a lot less time on a faster system.",
+      "I tried the memorex 3203288 that only cost me around US$80.",
+      "Sweet.I haven't experienced any significant noise from the unit or any other flaws.So for the burner its 5 stars - maybe the software will work with my old Windows ME box when I get around to trying it out... :)"
+    ],
+    "rouge": 0.19052639941207988,
+    "counts": [
+      33,
+      6,
+      52,
+      53,
+      43
+    ],
+    "cosine_score": "0.9919443",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000EI0EB8": {
+    "summary": [
+      "I feel that for the money a better center couldn't be found.",
+      "sound 100% better than the psb.",
+      "I run 100 watts to this speaker and it handles it well.",
+      "MATCHED THIS WITH THE ENTIRE VE SERIS AND THIS WAS TRUELY THE MISSING GEM.",
+      "There are several similar center speaker systems out there that I have not heard, but I bought this to replace my custom 2-way speaker box (which was part of a pair that I need to use elsewhere)."
+    ],
+    "rouge": 0.20527777861846616,
+    "counts": [
+      49,
+      46,
+      55,
+      5,
+      19
+    ],
+    "cosine_score": "0.96439844",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  }
+}
