@@ -3169,5 +3169,1055 @@
     "reviews_sentiment": "1",
     "summary_sentiment": "1",
     "sentiment_score": "1"
+  },
+  "B00K91DB7Y": {
+    "summary": [
+      "I was very excited to try this router out as a replacement to an under-performing cisco router.",
+      "The price point is high on this router to be sure, but you know the old adage you get what you pay for, in this case it does apply.If you want one of the best router on the market right now... this is the one.",
+      "After that, assign this device its own Local IP address (not the Internet Address...that is for your WAN address).This router supports Guest networking, which I have used on old D-Links and My Asus routers.",
+      "However, if wider wi-fi coverage is what you're looking for, the Linksys is hands down the best I've seen in a home router (so far).",
+      "I'm very pleased with this router so far!"
+    ],
+    "rouge": 0.1971886946935776,
+    "counts": [
+      32,
+      33,
+      36,
+      24,
+      33
+    ],
+    "cosine_score": "0.9055965",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009WNR13U": {
+    "summary": [
+      "Works great!",
+      "The  A2DP Bluetooth works great with the Bose Portable SoundDock.",
+      "I recomended this very nice device for the bose sound sistem users.",
+      "The adapter brought new life to my bose  sound dock.",
+      "I bought this bluetooth device after my husband and I upgraded our iPhones from the 4/4s to the 5 and could no longer dock our phones to our Bose SoundDock portable speaker."
+    ],
+    "rouge": 0.1903049794169888,
+    "counts": [
+      39,
+      38,
+      37,
+      37,
+      31
+    ],
+    "cosine_score": "0.9313127",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0012XFDWO": {
+    "summary": [
+      "This headset is the best i have ever owned amazing sound quality, comfort is pretty well built, and is overall a fine made set of cans, the bass is pretty much non-existent but..these are by far better than my ASTROs.Sennheiser  PC 350 Collapsible Gaming Headset with Vol Control & Microphone Mute",
+      "I know other reviews say \"You have to get use to the Sennheiser sound\" but there is no way these sound as nice as even my cheapo ear buds.The sound was all in the treble.",
+      "The price does seem steep for gaming headphones but after spending the money for the baracuda headphones and they breaking within six months of regular use I decided to try Sennheiser.",
+      "I can safely say that these headphones are among the very best for great sound, comfortably long extended wear, and I won't allow another pair over my ears.",
+      "The headset actually goes around your ears and covers them completely, and not on top of them, which most headsets do (and often times begins to hurt after a short while).The sound quality is also top notch."
+    ],
+    "rouge": 0.22870531451839832,
+    "counts": [
+      48,
+      50,
+      54,
+      44,
+      40
+    ],
+    "cosine_score": "0.9389769",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001XILMEG": {
+    "summary": [
+      "Must better than purchansing HDMI cable at the store where it is super expensive...This works fine for my Roku streaming TV",
+      "this is a 3 foot HDMI cable, that I paid a fraction of what Best Buy wanted for when I got a new TV.",
+      "This cable works great!",
+      "HDMI 3' cable is working fine.",
+      "Buying a cable like this ought not be a crap shoot.For those who think that those of us who are experiencing this might have problems with other things besides the cables and are wrongly suggesting that these cables are the problem, I swapped these cables out and put two of a different brand in and they worked fine."
+    ],
+    "rouge": 0.1845228747525958,
+    "counts": [
+      25,
+      28,
+      19,
+      20,
+      16
+    ],
+    "cosine_score": "0.91482586",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004M8SVGQ": {
+    "summary": [
+      "The zoom is great and fast on this camera so you don't miss shots.The only drawback too this camera is the fact that it needs batteries.",
+      "The only camera I've worked closely with is a Kodak Easyshare point and shoot.",
+      "I have bought this Camera because I love photography and started with the regular automatic small cameras, but wanted something else.",
+      "i think this camera is a good choice, i am really sastified for my purchased, this camera is a good option for take photos like a profesional",
+      "This camera is great!"
+    ],
+    "rouge": 0.21733477903582524,
+    "counts": [
+      49,
+      34,
+      38,
+      38,
+      38
+    ],
+    "cosine_score": "0.9413456",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EZ9XG62": {
+    "summary": [
+      "With this keyboard, the iPad easily detaches for the full iPad user experience that Apple intended.But when you get down to some serious writing, the keys feel great.",
+      "The magnetic strip that holds the Ipad to the keyboard is strong and allows for an easy quick cover of the screen.",
+      "The Logitech Ultrathin Keyboard for the iPad Air is doing just the job I need.The functionality of this keyboard is awesome.",
+      "The iPad does stay nicely closed due to a couple of magnets.The keyboard and case almost doubles the weight and thickness of the iPad Air.",
+      "The keyboard has a good \"feel\" while touch-typing and is only only 1.3 inches narrower than than a full-sized iMac/MacBook/MacBookAir keyboard."
+    ],
+    "rouge": 0.1859833911514445,
+    "counts": [
+      43,
+      38,
+      29,
+      28,
+      32
+    ],
+    "cosine_score": "0.89767766",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00906DHLE": {
+    "summary": [
+      "very solid motherboard and would recommend to anyone!",
+      "Great Quality, Running FX-8350 on it.Also running Nvidia GTX SLI on it.Only one USB 3.0 motherboard socket, kind of a bummer but not a big deal.",
+      "Best Motherboard I have ever had and this is probably my 9th personal build.",
+      "BIOS setup is really simple, connectors supplied are all top notch.",
+      "I run the AMD 8350 cpu in this board and together with 2 EVGA classified GTX680's my gaming performance went way up with 10 to 15 fps gains over the old motherboard with 1 X16 and 1 X8 pci slot."
+    ],
+    "rouge": 0.17667714923965125,
+    "counts": [
+      24,
+      26,
+      26,
+      23,
+      22
+    ],
+    "cosine_score": "0.9163437",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008YD80KC": {
+    "summary": [
+      "You can also set the program up for the web so that you can log into your network remotely and view your cameras.",
+      "This is the software that should come with the Foscam cameras, and is probably suitable for other cameras as well.",
+      "The interface is well thought out with tons of features that provide control over when and how each camera is recorded.",
+      "This is great remote viewing and recording software for the Foscam IP cameras.",
+      "This software is well worth the price!!"
+    ],
+    "rouge": 0.17757401085555105,
+    "counts": [
+      29,
+      29,
+      25,
+      27,
+      23
+    ],
+    "cosine_score": "0.86158025",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001LYPIIS": {
+    "summary": [
+      "Overall, the monitor is adequate for being under $200, but I would probably choose a different monitor if I had to do it all over again.",
+      "I bought this to replace my old 19\" 4:3 monitor.",
+      "This monitor is awesome, especially for the price.",
+      "This monitor has a great picture and features, but mine just stopped functioning properly.",
+      "If you want a really good looking monitor that holds up and is really easy on the eyes at a killer price, get any one of the Asus in this style and you can't go wrong."
+    ],
+    "rouge": 0.22633006972917635,
+    "counts": [
+      35,
+      30,
+      28,
+      23,
+      23
+    ],
+    "cosine_score": "0.92084146",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "0",
+    "sentiment_score": "1"
+  },
+  "B00DQZSEWM": {
+    "summary": [
+      "I followed the directions, and when I tried to pull off the outer protective cover, it pulled off the screen protector with it.",
+      "The screen protector keeps fingerprints off, and I like knowing it is protecting the surface.",
+      "This product is decent.",
+      "When applying the screen protector, it is a little hard to avoid bubbles, but works well despite that!",
+      "The MarBlue Clear Screen Protector Kit is a very good protection for the Kindle Fire HD screen."
+    ],
+    "rouge": 0.19306085949096538,
+    "counts": [
+      24,
+      20,
+      19,
+      18,
+      19
+    ],
+    "cosine_score": "0.91142476",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004IZN3YI": {
+    "summary": [
+      "After running Seagate's SeaTools for Windows, it said \"Smart - Fail\" and told me I need to replace the drive.",
+      "i use this for storage, so i dont really worry about the speed more happy with my ssd that thing is fast even on sata 2",
+      "I bought this HDD as part of my desktop build.",
+      "This drive began failing it's SMART checks within a month of my receiving it, but I didn't have any spare drives to back it up on so I could send it in for a replacement.",
+      "I used to use Seagate drives exclusively for their reliability and longevity."
+    ],
+    "rouge": 0.20291941811827546,
+    "counts": [
+      30,
+      31,
+      30,
+      24,
+      22
+    ],
+    "cosine_score": "0.9273534",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B004YTCNJY": {
+    "summary": [
+      "These Yongnuo's are about the same price but made very well and work great.",
+      "Although there is no iTTL functionality the triggers work great for manual flash work, plus you can use them as a remoter shutter release for your DSLR (if you get the right cable).",
+      "I had a D200 with a RF-603 mounted on it to work as both the shutter release and the flash trigger.",
+      "Great product for the price.",
+      "I purchased two sets of these for use with my Nikon D700 and D200 cameras with SB-800 flashes.PROs:- The range is pretty close to advertised, and compensates for Nikon's CLS when line-of-sight is not possible or you're using diffusers/bouncers that block the infrared sensors.- Once the devices have sync'd up, I'd estimate a non-fire about one out of every 100 shots (assuming lack of strong interference)."
+    ],
+    "rouge": 0.22512288188893573,
+    "counts": [
+      26,
+      24,
+      26,
+      22,
+      23
+    ],
+    "cosine_score": "0.91128564",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0064FS7HI": {
+    "summary": [
+      "Price is so much lower than the Canon OEM battery, but works just as well.",
+      "It charged up quickly with the charger I received with my camera and it seems to last for picture taking.",
+      "The battery charged up with no problems in the Canon battery charger.",
+      "This battery is better (larger capacity) than the original Canon battery, and so much cheaper!",
+      "My intent on purchasing this battery was to use it as a secondary battery but I've used this as a primary battery for my Canon T3i for over a week now."
+    ],
+    "rouge": 0.24301510914805277,
+    "counts": [
+      36,
+      27,
+      28,
+      22,
+      23
+    ],
+    "cosine_score": "0.93381786",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "0",
+    "sentiment_score": "0"
+  },
+  "B0000E6I1N": {
+    "summary": [
+      "I plugged it into my PC, tuned my stereo receiver to an unoccupied FM frequency, tuned the FM transmitter to the same frequency, and a nice stereo signal was received.",
+      "I bought this to replace a LineX transmitter that has only 7 frequency settings, none of which are very usable in my area.",
+      "Using the AC adaptor did not expand the range, nor did adjusting either of the transmitter and receiver antennas, nor did adjusting the input levels.So, I popped the box open and set the variable resister as other reviewers have noted.",
+      "NOTE: your FM receivers must be capable of tuning \"off channel\" for this to work for you.Another reviewer notes that the antenna on the Crane is too short for the frequencies involved.",
+      "Once adjusted, the transmitter provides a strong signal throughout my house."
+    ],
+    "rouge": 0.20089993739489664,
+    "counts": [
+      39,
+      31,
+      28,
+      30,
+      29
+    ],
+    "cosine_score": "0.9052619",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0073ESZ58": {
+    "summary": [
+      "This grip is comfortable and that outter rubber layer grips your hand well.",
+      "The shape is decent, and it makes your vita fit in your hands better.",
+      "The Vita also wiggles around in the grip more than I'd like, but overall it's saved me the pain of cramping hands, and is fairly easy to hold.",
+      "This hand grip makes the vita much more comfortable to hold while playing.",
+      "Having this grip slightly improves my gaming experience with the PS Vita, as my large hands get cramped within 10 minutes of playing any game."
+    ],
+    "rouge": 0.22321624648920885,
+    "counts": [
+      42,
+      33,
+      33,
+      31,
+      31
+    ],
+    "cosine_score": "0.93149334",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000BSJFJS": {
+    "summary": [
+      "I purchased this product to get an old IBM Model M keyboard to work on a computer with no PS/2 ports.",
+      "This adapter worked right out of the box.",
+      "I did get a mini A to A m/f extension cable as the USB ports on PCs these day are jammed together and this adapter is just a bit thick and will block your other USB ports.",
+      "I needed this adapter in order to use my old Dell SK-8110 keyboard, which I couldn't use with my new HP tower.",
+      "This adapter works great with an IBM Model M keyboard."
+    ],
+    "rouge": 0.24723937041894056,
+    "counts": [
+      32,
+      32,
+      35,
+      32,
+      29
+    ],
+    "cosine_score": "0.94439405",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B0092S2TPA": {
+    "summary": [
+      "I love my Roku, I am able to access my Hulu, Netflix, and Amazon Prime with just a click of the remote provided.",
+      "We have another ROKU 2 and were buying this one for our bedroom.",
+      "The Roku is a great alternative to cable tv.",
+      "Previously to purchasing my Roku, I had a different streaming player that gave me problems from the day I set it up.",
+      "I'm giving up cable TV and going with just the Roku box."
+    ],
+    "rouge": 0.21425752592096436,
+    "counts": [
+      29,
+      30,
+      28,
+      28,
+      28
+    ],
+    "cosine_score": "0.89040077",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008BMWPKW": {
+    "summary": [
+      "I use it to watch my movies in my iPhone on my hd tv.",
+      "Great to use to connect ipad to tv to watch videos.",
+      "I purchased this cable so I could watch Netflix on my television from my ipad.",
+      "I bought this adapter along with an hdmi cord for my tv.",
+      "iPhone4 and iPad is only possible to see pictures, movies or listen to music through TV using this cable and HDMI cable.iPad 2 gives mirroring through TV."
+    ],
+    "rouge": 0.20561142233500465,
+    "counts": [
+      32,
+      29,
+      29,
+      29,
+      24
+    ],
+    "cosine_score": "0.86934793",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000PDR1LS": {
+    "summary": [
+      "Garmin GPSes can utilize only Garmin's proprietary maps.",
+      "After doing quite a bit of research, I decided to buy the Garmin eTrex Vista HcX,which basically seemed like the top of the line for a hiking/handheld GPS.Although all the features are there, not all of them work as effectively as one would hope.I bought also a topo map of Germany.Negatives:Transfer time for about 10% of the map from my computer to the GPS took over 3 hours!So VERY slow data transfer.Also scrolling on a highly detailed map is very slow.",
+      "I didnt actually buy the system for this routingfunction, but including it with the GPS when it functions so badly, is just embarrassing.Positives:Otherwise the etrex Vista does what it says.",
+      "I bought a 1GB microSD card and downloaded the maps, which makes the GPS even more of a really good general navigation tool.I've had the eTrex Vista HCX now about month and am at the point where it's intuitive for me to configure, adjust and use in different modes.",
+      "After looking at many reviews, I settled on the Garmin Vista HCx."
+    ],
+    "rouge": 0.20710670642533452,
+    "counts": [
+      53,
+      41,
+      38,
+      34,
+      28
+    ],
+    "cosine_score": "0.87969387",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003307BYW": {
+    "summary": [
+      "the picture quality is good but not great.",
+      "I had about 30 pictures loaded on my SD Card, but for some reason- only ten pictures were showing up!I took the SD Card out and tried to re-adjust the photos, and when I put the card back in- pictures which had shown up before were suddenly not showing up now.",
+      "I bought this for my Grandmom for Christmas this year.",
+      "We got this as a gift for Christmas.",
+      "I was setting it up and it only loaded one photo out of the 6 photos on the memory card."
+    ],
+    "rouge": 0.21975584369323828,
+    "counts": [
+      40,
+      37,
+      36,
+      30,
+      28
+    ],
+    "cosine_score": "0.86742204",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B0001GZ87I": {
+    "summary": [
+      "Lots of room for your computer and very stylish.The one reason I choose this bag is that it does the job of a laptop bag without looking too much like a laptop bag.",
+      "This bag is decent for holding a laptop and a couple of other items.",
+      "This is very roomy, with plenty of pockets and nicely padded for the laptop.",
+      "This is a great bag.",
+      "My laptop fits in it perfectly and the padded sides eliminate worry about banging it on anything."
+    ],
+    "rouge": 0.22846547812677148,
+    "counts": [
+      36,
+      28,
+      29,
+      24,
+      25
+    ],
+    "cosine_score": "0.9286314",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B004O0TRDI": {
+    "summary": [
+      "Unfortunately this unit also developed the same issue after only 1 week.This time i called Onkyo product support.",
+      "Onkyo makes quality stuff with very reasonable price tags & this HTIB is no exception.It had every feature I was looking for in an amp (High def audio support,4 HDMI in's & 1 HDMI out, 3D video support, etc.",
+      "The Onkyo HT-3400 works great, but I was less than impressed with the speakers.",
+      "A handy feature is being able to use the HDMI pass thru for a main video/audio feed to the TV with the receiver off.",
+      "I called Onkyo, and after waiting over an hour to speak to someone, they informed me that the receiver was not working properly and that I would either need to mail it off for repair, or talk to Amazon about a return."
+    ],
+    "rouge": 0.2040466315222903,
+    "counts": [
+      41,
+      27,
+      37,
+      25,
+      30
+    ],
+    "cosine_score": "0.8832263",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B008Y8PON8": {
+    "summary": [
+      "Note that the HDMI output is a MINI HDMI connector.",
+      "I spent perhaps even more for the video card 3 or 4 years ago but this card outclasses my old board in performance and compatibility with windows 8 and the newer games, all without breaking the bank.",
+      "This card replace Geforce 9600 and it's not only better but use less power...",
+      "The fan is not much louder than my PC fan; most of the time, I don't even notice it; just white noise.",
+      "I was using a Dell Optiplex 320 mini-tower with an ATI Radeon X600 and it enhanced my gaming experience tenfold."
+    ],
+    "rouge": 0.20551347640673132,
+    "counts": [
+      32,
+      14,
+      18,
+      17,
+      15
+    ],
+    "cosine_score": "0.93689525",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003EEMDMC": {
+    "summary": [
+      "i used this in my bluray player it wasnt reading disks anymore after running this my bluray played like it was new again",
+      "My sony blu-ray player would not play blu-rays but it would play dvds.",
+      "My DVD player was not working very good.",
+      "I used this cleaner on my ps3 to fix a disc read error, dust on the bluray lens.",
+      "I originally purchased this because my blu-ray player was skipping."
+    ],
+    "rouge": 0.2116106553436269,
+    "counts": [
+      36,
+      21,
+      23,
+      24,
+      19
+    ],
+    "cosine_score": "0.85399866",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B001LYWBOM": {
+    "summary": [
+      "I'm using this as a 2nd monitor with the ASUS VK246H 24\" LCD Monitor.",
+      "I am very happy with this monitor.",
+      "The display speakers actually sound pretty good, but they're not quite loud enough.",
+      "If you're in need of a reasonably priced monitor that has great visuals and size, you can't go wrong with this ASUS monitor.Edit: I've been using this monitor for quite awhile now and it's stunning.",
+      "This is the second Asus monitor of this type I've bought, works great, no disappointments."
+    ],
+    "rouge": 0.20668402898456045,
+    "counts": [
+      42,
+      41,
+      36,
+      32,
+      26
+    ],
+    "cosine_score": "0.9146502",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001AYCNIW": {
+    "summary": [
+      "For the price it's a great monitor.",
+      "The included remote is serviceable and I liked that they included a DVI cable inside the packaging.The built-in TV tuner is definitely a plus.",
+      "Other people complain about the Samsung functioning better as a monitor than a HDTV, and vice-versa...but I am completely satisfied with color, clarity(1920x1200), big screen, ease of switching between monitor and HDTV.",
+      "The picture quality for HD channel is just stunning, better than my sony 1080p TV---smaller screens typically have better picture for similar resolution.",
+      "I bought this monitor a month ago..and so far so good.I like the huge size and the picture clarity."
+    ],
+    "rouge": 0.2061239310870995,
+    "counts": [
+      34,
+      36,
+      35,
+      24,
+      32
+    ],
+    "cosine_score": "0.9126418",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001U0OFKU": {
+    "summary": [
+      "For anyone who wants an everyday computer that is easy to use that isn't very expensive, I would definitely consider the Mac Mini.",
+      "I heard MAC was suppose to be the superior computer so I made the leap and purchased this MAC Mini with high expectations.",
+      "The low-end Mac Mini with 1GB of RAM is a great little computer.",
+      "Best of all, the machine is silent.I run my Mac Mini with dual displays, a new capability for this model, and a massive improvement over its predecessor.",
+      "I've also used a newer powerbook and this mac mini for work."
+    ],
+    "rouge": 0.20906939206271308,
+    "counts": [
+      24,
+      23,
+      21,
+      19,
+      16
+    ],
+    "cosine_score": "0.8948718",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00GZNCP3G": {
+    "summary": [
+      "This case is fantastic!",
+      "This case is perfect from the color to the fit and the way it protects the tablet!",
+      "Great value and quality especially for the cost!",
+      "The case is sturdy, securely holds the tablet but it is still easy to remove if necessary.",
+      "This is a inexpensive case that looks good (especially for the price) and fits my Dell Venue 8 Pro perfectly."
+    ],
+    "rouge": 0.21550767711368335,
+    "counts": [
+      30,
+      29,
+      28,
+      29,
+      28
+    ],
+    "cosine_score": "0.90724444",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002VFVQWS": {
+    "summary": [
+      "The speakers on this system only have keyhole mounts (the type that require a screw head to mount).",
+      "I wouldn't use these for any speakers close to the &#34;max&#34; suggested weight, but my speakers seem pretty secure.",
+      "I bought these for my ONKYO speakers.",
+      "These mounts work really well for small speakers.",
+      "I had these two Bose speakers that I needed to take off the floor and sure enough these mounts did the job."
+    ],
+    "rouge": 0.20994750899564993,
+    "counts": [
+      38,
+      26,
+      24,
+      27,
+      25
+    ],
+    "cosine_score": "0.9097223",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B003VAK1G4": {
+    "summary": [
+      "The whole point of buying this headset was to lose the wires, so I'm not going to go out and add wires with a wired mouse just to compensate for the wireless headset.Pros:- Very easy to setup.- I like the button interface on the headset itself.- The mic transmission is decent.Cons:- Too small for people who have a slightly larger than average head.- Very uncomfortable.- Sound will probably be distorted if you use any other wireless products.- Feels very cheap.If I could go back, I wouldn't have purchased this headset.",
+      "It may not sound as good as a set of high-dollar wired headphone, but then again, what wireless headset does?",
+      "The experience with these headphones is amazing, I found the sound quality to be excellent and the microphone picked up my voice really well.",
+      "I think this headset is awesome and for anyone looking for a great wireless headset for the price, then look no further than the Logitech H760.",
+      "Honestly, I loved this headset just because I prefer the behind-the-head design (like the G330 wired Headset) for talking on Skype and Vent for hours on end, but it has one major flaw...There's a hardware problem with the mic where there's a static/distortion noise every 5 to 15 minutes, and lasts for about 30 seconds."
+    ],
+    "rouge": 0.19925286486859484,
+    "counts": [
+      50,
+      33,
+      33,
+      26,
+      31
+    ],
+    "cosine_score": "0.8774586",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000O8WE66": {
+    "summary": [
+      "The low price also makes it a very economical choice as an entry-level subwoofer for those who are ready to rumble.",
+      "It is much bigger than I expected for a single 10\" subwoofer but still comfortably fits in next to my entertainment center.As for the sound, I would consider this subwoofer very good but not great.",
+      "My system was lacking mid-bass and this subwoofer reproduces those frequencies accurately while providing a nice, smooth, low end rumble.",
+      "The subwoofer hooks up easily to systems that have a dedicated LFE out connection, or RCA line-out jacks.",
+      "I was really impressed with the bass from this sub-woofer."
+    ],
+    "rouge": 0.23112909074774846,
+    "counts": [
+      20,
+      25,
+      21,
+      23,
+      25
+    ],
+    "cosine_score": "0.9435606",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007B5YUMQ": {
+    "summary": [
+      "The software CD didn't load, so I wasn't able to load the driver.",
+      "Great price for a decent video card.",
+      "The HD5450 is a decent GPU for HTPC or office workstation use.I bought it for the latter use to upgrade a customers' aging Dell Dimension E521 to properly run Windows 7.",
+      "bought this to replace the built on video card on my Compaq.",
+      "Before installing this card, the graphics were all on the lowest settings and the system seemed to have trouble keeping up all the time."
+    ],
+    "rouge": 0.18338771324377923,
+    "counts": [
+      24,
+      22,
+      18,
+      19,
+      18
+    ],
+    "cosine_score": "0.9331656",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002NGVY8G": {
+    "summary": [
+      "When I got it, I changed the shutter setting to remote, and it worked the first time.",
+      "I bought this to use with my Nikon D50.",
+      "This remote is as good as the nikon remote (which I tried), and costs less.",
+      "Works perfectly with my Nikon D60, and for a great price!",
+      "The product listing says that it is compatible with my camera nikon D3000 but then when it came the product directions said that it was not compatible with the D3000 and sure enough it doesn't work."
+    ],
+    "rouge": 0.2557280820649436,
+    "counts": [
+      38,
+      38,
+      30,
+      33,
+      32
+    ],
+    "cosine_score": "0.9005085",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000WI9CIG": {
+    "summary": [
+      "I used it on 3 inch deck screws on a shelving project.",
+      "This tool meets 90% of drill needs.. for the big tasks I break out the DeWalt hammer drill.",
+      "Battery life is good and the batteries charge quickly.",
+      "Though it has enough gentle torque to put together the smallest screws with fixtures.",
+      "It's a great tool to have right next to my Craftsman 19.2 drill."
+    ],
+    "rouge": 0.20522166101570632,
+    "counts": [
+      40,
+      38,
+      36,
+      31,
+      28
+    ],
+    "cosine_score": "0.91946495",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B000LRMR26": {
+    "summary": [
+      "The Q6600 is essentially TWO Intel E6600 processors, for only a few dollars more.",
+      "I overclocked this processor up to 3.6ghz using Gigabyte GA-P35-DS3 motherboard.",
+      "This processor is great for overclocking.",
+      "If you are looking for a CPU and won't buy the new architecture (i7) then this is it.",
+      "Overclock and you max those settings out but even without overclocking this processor is very satisfactory."
+    ],
+    "rouge": 0.18348472649730752,
+    "counts": [
+      23,
+      20,
+      25,
+      19,
+      23
+    ],
+    "cosine_score": "0.924605",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000234TYI": {
+    "summary": [
+      "The cord works perfectly and was only a few bucks!",
+      "The cable fits perfectly into my HP laptop charger.",
+      "I ordered a refurbished computer and I was dismayed to find that the wrong power cord had been included.",
+      "The cable worked fine for a few days, then the sheathing started to pull away from one end and  it stopped working.",
+      "This cord serves as a terrific replacement for the original cord that came with my laptop."
+    ],
+    "rouge": 0.21367274831873004,
+    "counts": [
+      32,
+      32,
+      25,
+      25,
+      21
+    ],
+    "cosine_score": "0.9114264",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B002NEG0VO": {
+    "summary": [
+      "It has great sound for a little speaker.",
+      "I purchased this speaker based on some of the reviews, and to replace a JLabs Audio USB speaker which finally gave out.",
+      "My laptop volume was only for listening in a quiet space...not too good.",
+      "This little speaker is great for my laptop.",
+      "The sound quality is great and a huge step up from the internal speakers in my laptop."
+    ],
+    "rouge": 0.2613426442459774,
+    "counts": [
+      38,
+      32,
+      29,
+      30,
+      27
+    ],
+    "cosine_score": "0.9275018",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B007HH95F0": {
+    "summary": [
+      "I bought this adapter to utilize the wifi on my new Panasonic 2012 wifi capable TV.",
+      "the TV does not accept any  standard wifi USB adapter, it must be this overpriced item.Not only that, the signal strength is not so good and from time to time it is loosing connectivity to the wifi network.Instead consider buying a wifi DVD player, i got one and it works perfectly",
+      "This device does exactly what it is suppose to do.I had tried other wireless adapters but only this oneworked with Panasonic.",
+      "The wireless connection was unstable, sometimes my TV was connected, sometimes not, so I removed it and connected the TV to my internet modem via an ethernet cable.",
+      "I connected the adapter directly to the USB port on the TV."
+    ],
+    "rouge": 0.19584926732088917,
+    "counts": [
+      40,
+      34,
+      26,
+      22,
+      24
+    ],
+    "cosine_score": "0.8939943",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00EO302SO": {
+    "summary": [
+      "Other than that this is a pretty standard 1TB external hdd, it is USB 3.0 and has me very much impressed with read and write speeds.",
+      "I've owned several other WD My Passport portable drives and have always been pleased with the performance and durability.I have designated this new drive as my primary portable drive to replace my existingWD My Passport 2TB Portable External USB 3.0 Hard Drive Storage Black (WDBY8L0020BBK-NESN)-- a drive that has survived several drops and continues to serve me well.This new drive combines the speed and performance of its predecessors with a stylish and more durable metal design, as well as auto/cloud backup features.The drive works best when plugged into a USB 3.0 slot on the computer, but will still work on USB 2 (at a slower speed).",
+      "The WD MY PASSPORT has 1TB of storage with a USB 3.0 interface that is only about  of an inch deep and easily fits in your pocket.",
+      "The backup to DropBox is nice and easy to use and the drive even includes encryption which is nice to have for sensitive data (be careful though, if you lose your password you might as well throw away the hard drive).",
+      "The drive is SMALL and is powered by the same USB cord that transfer the data to it!!"
+    ],
+    "rouge": 0.18118285167232573,
+    "counts": [
+      28,
+      21,
+      17,
+      18,
+      18
+    ],
+    "cosine_score": "0.90371037",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B003Y73Q3O": {
+    "summary": [
+      "Once we found a good position for the receiver where it would consistently get at least 2 bars of signal strength, the camera operated well, doing what was expected of it, seeing through the night, detecting and recording motion until... we closed the garage door at which time the receiver could no longer communicate with our camera, located about 50 ft. away, outside.",
+      "The camera has a good range of angle and distance even at night.",
+      "The system only will record from one camera.",
+      "The camera works well and is easy to use.",
+      "I purchased one of these set-ups and found everything satisfactory except the camera.It was so blurry I could not distinguish anything.If the camera's were clearer I would have no problem.Find one with a better camera."
+    ],
+    "rouge": 0.19034731063975813,
+    "counts": [
+      30,
+      26,
+      28,
+      26,
+      28
+    ],
+    "cosine_score": "0.8749784",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B001ASU1QO": {
+    "summary": [
+      "The adapter fit perfectly to the top of the tripod and is fastened using the tripod's machine screw.",
+      "I decided to purchase the Manfrotto 323 RC2 quick release plate and adapter solely to keep my camera secure and wiggle-free.",
+      "I bought this to use on my Manfrotto 7322YB tripod.",
+      "If Manfrotto had just made the adapter about an eighth-inch thicker, so that the locking lever clears the top surface of the tripod (all tripods), none of these complaints would have occurred.The adapter does fit properly on a Velbon Neo Pod 6 monopod.",
+      "This fits the bill perfectly now that I do not have to remove the mount from the camera when I want to switch between my tripod and the monopod!"
+    ],
+    "rouge": 0.22181982163857386,
+    "counts": [
+      45,
+      25,
+      17,
+      22,
+      16
+    ],
+    "cosine_score": "0.9152688",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B008L2WS8Q": {
+    "summary": [
+      "I like the case EXCEPT for one thing...you need to have the case flipped open to charge the tablet.",
+      "The case has an elastic sleeve for the S-Pen, which is convenient enough, but I'd prefer to keep it in the tablet.",
+      "The case fits well and can act as a stand when folded back.",
+      "It fits tightly and protects the tablet.",
+      "This case is great!"
+    ],
+    "rouge": 0.21577429570750153,
+    "counts": [
+      46,
+      34,
+      30,
+      28,
+      25
+    ],
+    "cosine_score": "0.8870666",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00126U0VA": {
+    "summary": [
+      "I bought two KingWin KF-1000-BK SATA Tray and I must say that it is easy to install and works great.",
+      "It works great!",
+      "Drives are easy to pop in or out.I purchased this to swap between 2 hard drives, keeping 1 at a remote location as a backup.",
+      "The rack's hot-swap connector has a standard SATA power connector, but the drive includes a necessary pigtail to power the LEDs, and that pigtail ends at a 4-pin Molex connector for power.",
+      "I then pushed in the drive, went to disk management and rescanned the drives so it would show up."
+    ],
+    "rouge": 0.20973185580391457,
+    "counts": [
+      16,
+      21,
+      22,
+      19,
+      24
+    ],
+    "cosine_score": "0.93825006",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B00E435N1A": {
+    "summary": [
+      "The tablet held a charge for 4-5 hours of use but then the USB stopped charging the unit as well....Not the best screen and a little slow for processing.",
+      "If you just want a cheap tablet, this is a good choice.",
+      "The battery life last for 18 hours if not more.",
+      "Its a great tablet for the price.",
+      "This device is a wonderful tablet."
+    ],
+    "rouge": 0.17152773839017288,
+    "counts": [
+      56,
+      44,
+      39,
+      38,
+      35
+    ],
+    "cosine_score": "0.85301304",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B00AK2MHEU": {
+    "summary": [
+      "The screen protector itself is perfect.",
+      "The screen protector for the nook fits well, the cut-outs line up perfectly and the application directions are simple, if followed correctly.",
+      "I had previously purchased a screen protector for another tablet and was completely satisfied with the protector.",
+      "After a week or so, my Nook HD+ hardly looked like it had a screen protector.",
+      "I've installed a lot of screen protectors, but this did not go well, mostly because they didn't provide enough solution to cover both the front of the protector, back of the protector, and fingers too, especially if you have to remove the protector and try again, as I did."
+    ],
+    "rouge": 0.21308133924239736,
+    "counts": [
+      32,
+      29,
+      27,
+      30,
+      28
+    ],
+    "cosine_score": "0.8573812",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B009923WIW": {
+    "summary": [
+      "This is my first purchase for Bluetooth headphones.",
+      "I had the headphones for about a month and they stopped working.",
+      "These headphones have very good sound quality for the price paid ($24.99) I was quite surprised.",
+      "They are excellent bluetooth stereo headphones, good response and good battery life.",
+      "The bass seems good, and they don't sound tinny as one might expect from such a low cost product.I would have preferred headphones that fit over the ear rather than ones that sit on the ear as these do, but even considering that, they are reasonably comfortable."
+    ],
+    "rouge": 0.19514638981960913,
+    "counts": [
+      43,
+      34,
+      37,
+      33,
+      32
+    ],
+    "cosine_score": "0.8975321",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B000Q85WRC": {
+    "summary": [
+      "We used Acronis to copy the old drive to the new drive.",
+      "I bought this drive as a replacement for a small capacity drive in one of my Windows XP machines.",
+      "This drive has a PATA / IDE interface which was the standard for PC hard drives several years ago.",
+      "I bought this drive to replace another that failed.",
+      "This hard drive installed easily in my older PCI/EIDE HP desktop PC, accepted the reinstall of the Windows XP Home Edition operating system without any problems, and runs quietly."
+    ],
+    "rouge": 0.18757584121470816,
+    "counts": [
+      36,
+      30,
+      26,
+      24,
+      24
+    ],
+    "cosine_score": "0.89174026",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "-1",
+    "sentiment_score": "0"
+  },
+  "B000LB7G00": {
+    "summary": [
+      "It takes a bit of getting used to, but once mastered it is very handy.",
+      "Comes in handy when you want to multitask , as in rotate the 3d model into the next orientation as ur mouse is selected the next tool you need.",
+      "This is a great tool for use with Solidworks.",
+      "In all honesty this 3d mouse was easy to use and DRAMATICALLY increases your ability to do 3d modeling!",
+      "I'm using it for SketchUp but it works in Photoshop too."
+    ],
+    "rouge": 0.21479581568134037,
+    "counts": [
+      36,
+      29,
+      29,
+      31,
+      27
+    ],
+    "cosine_score": "0.89478374",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  },
+  "B001DAT0XE": {
+    "summary": [
+      "Contrary to what you might expect the adhesive disk used to attach this did not come off my dashboard... instead the plastic disk is coming off the adhesive while remaining firmly attached to the dash.",
+      "The adhesive works fine and the suction cup on my mount sticks well to the disk.",
+      "it works perfectly.",
+      "The adhesive disk was still attached to the dash where I had prepped the surface.",
+      "This works great for mounting my Garmin GPS unit unobtrusively in my car."
+    ],
+    "rouge": 0.21304272272794536,
+    "counts": [
+      20,
+      26,
+      16,
+      18,
+      16
+    ],
+    "cosine_score": "0.9268951",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "1",
+    "sentiment_score": "0"
+  },
+  "B0064Z71T8": {
+    "summary": [
+      "I was previously using a class4 sandisk card for my camera (which runs decently).Recently got the class10 kingston card as a backup card, as of course an upgrade.I cranked up my resolution to the max to test the speed, and it writes fast!What's even better, its half the price of the sandisk one.",
+      "After reformatting it, it still resulted in continuous I/O errors.",
+      "I buy this for my Canon T1i DSLR camera.",
+      "I got this second memory card for a DSLR camera.",
+      "It works great!"
+    ],
+    "rouge": 0.1753999029712018,
+    "counts": [
+      25,
+      22,
+      19,
+      11,
+      19
+    ],
+    "cosine_score": "0.91548884",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
   }
 }

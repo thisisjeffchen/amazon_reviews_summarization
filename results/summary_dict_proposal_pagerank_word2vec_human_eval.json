@@ -1,0 +1,120 @@
+avg 6
+{
+  "B00008OE43": {
+    "summary": [
+      "This is my first digital camera and while I was camera searching there are two very important things that you have to take into consideration.",
+      "I would either purchase a set of rechargable batteries or try another camera.The pictures that we have taken do turn out very well.", +2
+      "Try experimenting with the features to find something that suits you.For the money, its a great camera, but dont expect miracles out of it.", +2
+      "Although it is a bargain and not a bad camera, I found it too frustrating for regular use.", +2
+      "In short, buy an Olympus, this camera was intended to replace the same and except for it's ability to shoot movies, it doesn't."
+    ],
+    "rouge": 0.25642136400442167,
+    "counts": [
+      [
+        620
+      ],
+      [
+        3,
+        26
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        29,
+        27
+      ],
+      [
+        34,
+        20
+      ],
+      [
+        38,
+        29
+      ]
+    ],
+    "cosine_score": "0.9950147",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "0",
+    "sentiment_score": "1"
+  },
+  "B0007OWASE": {
+    "summary": [
+      "It has a quirk in that if you don't have the machine on before booting up, it will only appear as a CD recorder.",
+      "But so far, I've been unable to burn a DVD in any of the packaged Nero applications, not as backup, not as a data disc.", +2
+      "My guess is that this would take a lot less time on a faster system.",
+      "This burner took me a little getting used to, but now that I am, it works just great, with minimal sound when compared to other burners.",
+      "I haven't used the double layer feature yet, but I am quite pleased with the speed and accuracy of this burner." +2
+    ],
+    "rouge": 0.22343733504058277,
+    "counts": [
+      [
+        407
+      ],
+      [
+        7,
+        27
+      ],
+      [
+        16,
+        30
+      ],
+      [
+        20,
+        16
+      ],
+      [
+        23,
+        30
+      ],
+      [
+        24,
+        24
+      ]
+    ],
+    "cosine_score": "0.99291927",
+    "reviews_sentiment": "0",
+    "summary_sentiment": "0",
+    "sentiment_score": "1"
+  },
+  "B000EI0EB8": {
+    "summary": [
+      "I even lowered the master volume on my Pioneer AV system since the sound coming out of this speaker is so much better than my speaker in a box.", +2
+      "This is so well matched with my CV tower speakers that you can't pinpoint the source of the sound when watching movies in digital format.", +2
+      "It has really enhanced my sound system for the money I paid for it, It is a great little speaker for it's price.",+2
+      "I am using two ve-12's as my fronts and wanted a center to be voice matched.",
+      "The sound is so clear and crisp, don't have to have the sound turned up so loud now to hear the voices." +2
+    ],
+    "rouge": 0.24193670978769352,
+    "counts": [
+      [
+        359
+      ],
+      [
+        0,
+        30
+      ],
+      [
+        9,
+        27
+      ],
+      [
+        13,
+        26
+      ],
+      [
+        14,
+        18
+      ],
+      [
+        17,
+        25
+      ]
+    ],
+    "cosine_score": "0.99320185",
+    "reviews_sentiment": "1",
+    "summary_sentiment": "1",
+    "sentiment_score": "1"
+  }
+}
