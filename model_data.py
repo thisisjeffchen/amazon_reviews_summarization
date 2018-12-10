@@ -30,9 +30,9 @@ MAX_SEQUENCE_LENGTH = 100
 MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 300
 OOV_TOKEN= '<OOV>'
-BATCH_SIZE= 16
+BATCH_SIZE= args.num_products_per_batch #number of products per batch
 NUM_EPOCHS= 5
-NUM_REVIEWS_K= args.abs_num_reviews
+NUM_REVIEWS_K= args.abs_num_reviews #number of reviews per product
 
 
 def db_cur_gen(cur):
@@ -114,8 +114,8 @@ def train_input_fn_gen(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_
     return dataset
 
 
-def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
-    
+
+def prepare_df(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
     with open('cache/tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
@@ -146,11 +146,15 @@ def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file
         ret_df= pd.DataFrame(ddict)
         word_ids= np.vstack(data_batch_list)
         return ret_df, word_ids
-        
-    # pdb.set_trace()
+    
     features_df, word_ids= tf_data_df()
     print("Features Dataframe shape: {}".format(features_df.shape))
     print("Word IDs data batch Dataframe shape: {}".format(word_ids.shape))
+    return features_df, word_ids
+
+
+def train_input_fn(features_df, word_ids):       
+    pdb.set_trace()
     features= dict(features_df)
     features['data_batch']= word_ids
     # pdb.set_trace()

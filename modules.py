@@ -21,7 +21,7 @@ import tensorflow as tf
 import dill as pickle
 import json
 
-from model_data import train_input_fn
+from model_data import train_input_fn, MAX_SEQUENCE_LENGTH
 from sequence_modules import summarization_model
 from config import args
 from model_data import BATCH_SIZE
@@ -43,22 +43,23 @@ def seq_ae_loss(logits, targets, real_lens):
                 tf.to_int32(targets),
                 weights,
                 average_across_timesteps=True,
-                average_across_batch=True)
-    return seq_loss
+                average_across_batch=False)
+    return tf.reduce_sum(seq_loss)
 
 
 def cosine_loss(a, b):
     """
-    a: (batch_size*num_products x hidden_size*num_lstm_layers)
-    b: (num_products x hidden_size*num_lstm_layers)
+    a: (num_products, num_reviews, combined_hidden_size)
+    b: (num_products, combined_hidden_size)
     """
-    # pdb.set_trace()
-    normalize_a = tf.nn.l2_normalize(a, 1)
-    normalize_b = tf.nn.l2_normalize(b, 1)
-    cosine_similarities= tf.matmul(normalize_a, normalize_b, transpose_b= True) #(batch_size*num_products x num_products)
-    cosine_similarities= tf.reshape(cosine_similarities, [-1]) #(batch_size*num_products*num_products, )
-    cos_distance= tf.reduce_mean(1. - cosine_similarities) #scalar --> ()
-    return cos_distance
+    pdb.set_trace()
+    b= tf.expand_dims(b, axis= 1)
+    normalize_a = tf.nn.l2_normalize(a, 2)
+    normalize_b = tf.nn.l2_normalize(b, 2)
+    cosine_similarities= tf.matmul(normalize_a, normalize_b, transpose_b= True) #(num_products x num_reviews)
+    cosine_distances= 1. - cosine_similarities
+    cosine_loss= tf.reduce_sum(tf.reduce_mean(cosine_distances, axis= 1))
+    return cosine_loss
 
 
 def my_model(features, labels, mode, params):
@@ -79,17 +80,18 @@ def my_model(features, labels, mode, params):
         # batch_size= tf.shape(features['asin_list'])[0]
         # summar_id_list= tf.tile(summar_id_list, [batch_size, 1])
         # summar_id_list= tf.tile(summar_id_list, [params['abs_num_reviews'], 1])
-        product_reviews= tf.split(summar_id_list, params['abs_num_reviews'], axis=0)
-        padded_summar_id_list= tf.concat([tf.concat([p]*BATCH_SIZE, axis=0) for p in product_reviews], axis= 0)
+        # product_reviews= tf.split(summar_id_list, params['abs_num_reviews'], axis=0)
+        # padded_summar_id_list= tf.concat([tf.concat([p]*BATCH_SIZE, axis=0) for p in product_reviews], axis= 0)
 
         ae_word_ids= ae_decoder_output['decoder_word_ids']
         predictions = {
-            'summary_ids': padded_summar_id_list,
-            'asin': features['asin_list'],
-            'text_list': features['data_batch'],
-            'ae_word_ids': ae_word_ids,
-            'real_lens': features['real_lens'],
-            'ae_logits': ae_decoder_output['decoder_logits'],
+            'summary_ids': ret['summar_id_list'],
+            'asin': tf.reshape(features['asin_list'], [-1, params['abs_num_reviews']]),
+            'asin_num_list': tf.reshape(features['asin_num_list'], [-1, params['abs_num_reviews']]),
+            'input_word_ids': tf.reshape(features['data_batch'], [-1, params['abs_num_reviews'], MAX_SEQUENCE_LENGTH]),
+            'ae_word_ids': tf.reshape(ae_word_ids, [-1, params['abs_num_reviews'], MAX_SEQUENCE_LENGTH]),
+            'real_lens': tf.reshape(features['real_lens'], [-1, params['abs_num_reviews']]),
+            # 'ae_logits': ae_decoder_output['decoder_logits'],
         }
         return tf.estimator.EstimatorSpec(mode, predictions=predictions)
     pdb.set_trace()
@@ -97,8 +99,10 @@ def my_model(features, labels, mode, params):
     ae_loss= seq_ae_loss(logits= ae_decoder_output['decoder_logits'], 
                          targets= features['data_batch'], real_lens= features['real_lens'])
     # pdb.set_trace()
-    ae_encoder_output_c= tf.concat(ae_encoder_output, axis=1) #(batch_size*num_products x hidden_size*num_lstm_layers)
+    ae_encoder_output_c= tf.concat(ae_encoder_output, axis=1) #(num_reviews*num_products x hidden_size*num_lstm_layers)
     summ_encoder_output_c= tf.concat(summ_encoder_output, axis=1) #(num_products x hidden_size*num_lstm_layers)
+    last_dim= ae_encoder_output_c.get_shape().as_list()[-1]
+    ae_encoder_output_c= tf.reshape(ae_encoder_output_c, [-1, params['abs_num_reviews'], last_dim])
     cos_loss= cosine_loss(ae_encoder_output_c, summ_encoder_output_c)
     
     loss= ae_loss + cos_loss

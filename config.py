@@ -82,7 +82,7 @@ parser.add_argument('--use_pretrained_embeddings', type=ast.literal_eval,
                     help='whether to initialize from a pretrained embedding matrix')
 
 parser.add_argument('--cold_start', type=ast.literal_eval, 
-                    default=True,
+                    default=False,
                     help='whether to overwrite existing model_dir')
 
 parser.add_argument('--prepare_embeddings', type=ast.literal_eval, 
@@ -93,6 +93,9 @@ parser.add_argument('--embeddings_preprocessed', type=ast.literal_eval,
                     default=True,
                     help='whether embeddings have been preprocessed and dont need to be extracted again for all reviews')
 
+parser.add_argument('--num_products_per_batch', type=int, 
+                    default=32,
+                    help='the number of products per batch for ABS; actual batch size will be num_products_per_batch*abs_num_reviews')
 
 args = parser.parse_args()
 
