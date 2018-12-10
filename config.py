@@ -70,12 +70,16 @@ parser.add_argument('--abs_num_reviews', type=int,
                     help='the minimum number of reviews a product must have for ABS')
 
 parser.add_argument('--learning_rate', type=float, 
-                    default=0.001,
+                    default=0.005,
                     help='learning_rate')
 
 parser.add_argument('--tie_in_out_embeddings', type=ast.literal_eval, 
                     default=False,
                     help='whether to initialize vocab projection layer with transpose of embedding matrix')
+
+parser.add_argument('--use_pretrained_embeddings', type=ast.literal_eval, 
+                    default=False,
+                    help='whether to initialize from a pretrained embedding matrix')
 
 parser.add_argument('--cold_start', type=ast.literal_eval, 
                     default=True,

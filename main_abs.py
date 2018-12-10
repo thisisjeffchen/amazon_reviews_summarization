@@ -1,4 +1,4 @@
-import os
+import os, shutil
 import pandas as pd
 import numpy as np
 import logging
@@ -16,7 +16,7 @@ import json
 from model_data import train_input_fn
 from modules import my_model
 from config import args
-
+os.environ['CUDA_VISIBLE_DEVICES']= "-1"
 
 def make_config():
     with open('cache/tokenizer.pkl', 'rb') as fi:
@@ -26,12 +26,15 @@ def make_config():
     params['tokenizer']= tokenizer
     params['token2id']= tokenizer.word_index
     params['vocab_size']= tokenizer.num_words
-    params['word_embeddings']= np.load('cache/pretrained_embeddings.npy')
+    if args.use_pretrained_embeddings:
+        params['word_embeddings']= np.load('cache/pretrained_embeddings.npy')
     params['word_embeddings_dim']= word_emb_size
     params['encoder_output_size']= 512
     params['pretrained_encoder']= False
     params['learning_rate']= args.learning_rate
     params['tie_in_out_embeddings']= args.tie_in_out_embeddings
+    params['init_temperature']= 2
+    params['abs_num_reviews']= args.abs_num_reviews
     
     config= {}
     config['num_layers']= 1
@@ -44,7 +47,7 @@ def make_config():
 def train_model(classifier, params, train_filename):
     # Train the Model.
     if args.debug == True:
-        maxsteps= 50
+        maxsteps= None
     else:
         maxsteps= None
     classifier.train(
@@ -57,9 +60,9 @@ def test_model(classifier, params, test_filename):
     predictions = classifier.predict(input_fn=lambda: train_input_fn(asins2use_file= test_filename))
     asin_list, summary_id_list=[], []
     for i, pred_dict in enumerate(predictions):
-        # pdb.set_trace()
+        pdb.set_trace()
         print ("Processing {}".format(i))
-        if args.debug == True and i > 10:
+        if args.debug == True and i > 50:
             break
         elif i == 100:
             break
@@ -90,29 +93,29 @@ def safe_mkdir(directory):
 
 
 def run_model():
-    # pdb.set_trace()
+    pdb.set_trace()
     params= make_config()
     num_reviews= args.abs_num_reviews
     train_filename, test_filename= 'abs_train_set_{}.csv'.format(num_reviews), 'abs_test_set_{}.csv'.format(num_reviews)
-    model_dir= '../abs_model_dir'
+    model_dir= 'cache/checkpoints'
     if args.cold_start:
+        shutil.rmtree(model_dir, ignore_errors=True)
         os.makedirs(model_dir, exist_ok=True)
     else:
         safe_mkdir(model_dir)
     model_config= tf.estimator.RunConfig(model_dir=model_dir,
                                         tf_random_seed=42,
                                         log_step_count_steps=10,
-                                        save_checkpoints_steps=100,
+                                        save_checkpoints_steps=10,
                                         keep_checkpoint_max=3)
     classifier = tf.estimator.Estimator(
         model_fn= my_model,
         params= params,
         config= model_config)
-    
 
-   # train_model(classifier, params, train_filename)
+    train_model(classifier, params, train_filename)
     pdb.set_trace()
-    test_model(classifier, params, test_filename)
+    # test_model(classifier, params, train_filename)
 
 
 if args.debug == False:
