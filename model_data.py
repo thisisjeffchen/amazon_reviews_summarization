@@ -23,15 +23,16 @@ import random
 import tensorflow as tf
 import ipdb as pdb
 from ipdb import slaunch_ipdb_on_exception
+from collections import defaultdict
 
 from config import DATA_PATH, args
 MAX_SEQUENCE_LENGTH = 100
 MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 300
 OOV_TOKEN= '<OOV>'
-BATCH_SIZE= 32
-NUM_EPOCHS= 1
-NUM_REVIEWS_K= 8
+BATCH_SIZE= 16
+NUM_EPOCHS= 5
+NUM_REVIEWS_K= args.abs_num_reviews
 
 
 def db_cur_gen(cur):
@@ -78,7 +79,7 @@ class TFReviewIterator(object):
 
 
 
-def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
+def train_input_fn_gen(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
     with open('cache/tokenizer.pkl', 'rb') as fi:
         tokenizer= pickle.load(fi)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
@@ -100,14 +101,7 @@ def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file
                        'data_batch': data_batch,
                        'real_lens': real_lens,
                        }
-#            yield asin_list, text_list, data_batch, real_lens
             yield ret_dict
-    
-#    ds= tf.data.Dataset.from_generator(
-#        tf_data_gen, (tf.string, tf.string, tf.int32, tf.int32), 
-#        (tf.TensorShape([None]), tf.TensorShape([None]), 
-#         tf.TensorShape([None, MAX_SEQUENCE_LENGTH]), tf.TensorShape([None]))
-#        )
     
     ds= tf.data.Dataset.from_generator(
     tf_data_gen, {'asin_list': tf.string, 'text_list': tf.string, 'data_batch': tf.int32, 'real_lens': tf.int32}, 
@@ -116,7 +110,52 @@ def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file
     )
     
     dataset= ds.shuffle(1000).repeat(NUM_EPOCHS)
-#    dataset= dataset.batch(BATCH_SIZE)
+    dataset= dataset.batch(BATCH_SIZE)
+    return dataset
+
+
+def train_input_fn(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
+    
+    with open('cache/tokenizer.pkl', 'rb') as fi:
+        tokenizer= pickle.load(fi)
+    review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
+    
+    def tf_data_df(K= NUM_REVIEWS_K, maxlen= MAX_SEQUENCE_LENGTH):
+        # pdb.set_trace()
+        ddict= defaultdict(list)
+        data_batch_list= []
+        for i, (asin, review_str_list) in enumerate(review_iterator):
+            review_list= ast.literal_eval(review_str_list)
+            random.shuffle(review_list)
+            review_list= review_list[:K]
+            asin_list= [asin]*len(review_list)
+            asin_num_list= [i]*len(review_list)
+            id_list= tokenizer.texts_to_sequences(review_list)
+            data_batch= pad_sequences(id_list, maxlen=maxlen, dtype= np.int32, 
+                                      padding='post', truncating='post')
+            text_list= tokenizer.sequences_to_texts([ids[:maxlen] for ids in id_list])
+            real_lens= np.array([len(text.split()) for text in text_list]).astype(np.int32)
+            ddict['asin_list'].extend(asin_list)
+            ddict['asin_num_list'].extend(asin_num_list)
+            ddict['text_list'].extend(text_list)
+            ddict['real_lens'].extend(real_lens)
+
+            data_batch_list.append(data_batch)
+            if i > 10000:
+                break
+        ret_df= pd.DataFrame(ddict)
+        word_ids= np.vstack(data_batch_list)
+        return ret_df, word_ids
+        
+    # pdb.set_trace()
+    features_df, word_ids= tf_data_df()
+    print("Features Dataframe shape: {}".format(features_df.shape))
+    print("Word IDs data batch Dataframe shape: {}".format(word_ids.shape))
+    features= dict(features_df)
+    features['data_batch']= word_ids
+    # pdb.set_trace()
+    ds = tf.data.Dataset.from_tensor_slices(features)
+    dataset= ds.prefetch(1000).repeat(NUM_EPOCHS).batch(NUM_REVIEWS_K*BATCH_SIZE)
     return dataset
 
 

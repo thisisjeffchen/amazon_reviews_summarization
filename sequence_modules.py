@@ -30,11 +30,44 @@ from model_data import MAX_SEQUENCE_LENGTH
 # Globally load the encoder to prevent multiple reloads
 # =============================================================================
 
+# https://github.com/ericjang/gumbel-softmax/blob/master/Categorical%20VAE.ipynb
+def sample_gumbel(shape, eps=1e-20): 
+    """Sample from Gumbel(0, 1)"""
+    U = tf.random_uniform(shape,minval=0,maxval=1)
+    return -tf.log(-tf.log(U + eps) + eps)
+
+
+def gumbel_softmax_sample(logits, temperature): 
+    """ Draw a sample from the Gumbel-Softmax distribution"""
+    y = logits + sample_gumbel(tf.shape(logits))
+    return tf.nn.softmax( y / temperature)
+
+def gumbel_softmax(logits, temperature, hard=False):
+    """Sample from the Gumbel-Softmax distribution and optionally discretize.
+    Args:
+        logits: [batch_size, n_class] unnormalized log-probs
+        temperature: non-negative scalar
+        hard: if True, take argmax, but differentiate w.r.t. soft sample y
+    Returns:
+        [batch_size, n_class] sample from the Gumbel-Softmax distribution.
+        If hard=True, then the returned sample will be one-hot, otherwise it will
+        be a probabilitiy distribution that sums to 1 across classes
+    """
+    y = gumbel_softmax_sample(logits, temperature)
+    if hard:
+        k = tf.shape(logits)[-1]
+        #y_hard = tf.cast(tf.one_hot(tf.argmax(y,1),k), y.dtype)
+        y_hard = tf.cast(tf.equal(y,tf.reduce_max(y,1,keep_dims=True)),y.dtype)
+        y = tf.stop_gradient(y_hard - y) + y
+    return y
+
+
 def construct_cells(config, basic_cell, bidirectional= False):
     def cell():
-        return tf.nn.rnn_cell.DropoutWrapper(basic_cell(config['hidden_size']),
-                       output_keep_prob=config['dropout_keep'],
-                       dtype= tf.float32)
+        return basic_cell(config['hidden_size'])
+        # return tf.nn.rnn_cell.DropoutWrapper(basic_cell(config['hidden_size']),
+        #                output_keep_prob=config['dropout_keep'],
+        #                dtype= tf.float32)
     if bidirectional == True:
         multi_cell_f= tf.contrib.rnn.MultiRNNCell(
                 [cell() for _ in range(config['num_layers'])],
@@ -74,57 +107,9 @@ class custom_init(tf.keras.initializers.Initializer):
     def __call__(self, shape, dtype=None, partition_info=None):
         return self.weight
 
-
-class EmbeddingLayer1(object):
-    def __init__(self, input_dim= None, output_dim= None, embedding_matrix= None):
-        if embedding_matrix is None:
-            if input_dim is None or output_dim is None:
-                raise ValueError("If emb_wt is None then vocab size and emb dim is needed for shape")
-            self.emb_wt= tf.get_variable("embedding_weight", dtype= tf.float32, shape=[input_dim, output_dim],
-                                        initializer= tf.contrib.layers.xavier_initializer())
-            self.input_dim= input_dim
-            self.output_dim= output_dim
-        else:
-            self.emb_wt= tf.get_variable("embedding_weight", dtype= tf.float32, initializer= embedding_matrix)
-            self.input_dim= embedding_matrix.shape[0]
-            self.output_dim= embedding_matrix.shape[1]
-    
-    def __call__(self, word_ids):
-        return tf.nn.embedding_lookup(self.emb_wt, word_ids)
-
-
-class EmbeddingLayer(tf.keras.layers.Layer):
-    def __init__(self, input_dim= None, output_dim= None, embedding_matrix= None):
-        super(EmbeddingLayer, self).__init__()
-        self.embedding_matrix= embedding_matrix
-#        def init_f(shape, dtype=None, partition_info=None):
-#            return tf.convert_to_tensor(self.embedding_matrix, dtype= tf.float32)
-        
-        if self.embedding_matrix is not None:
-            print("Inferring dimensions from embedding matrix")
-            self.input_dim= self.embedding_matrix.shape[0]
-            self.output_dim= self.embedding_matrix.shape[1]
-            self.initializer= custom_init(embedding_matrix)
-        else:
-            self.input_dim= input_dim
-            self.output_dim= output_dim
-            self.initializer= 'uniform'
-    
-    def build(self, input_shape):
-        self.emb_wt = self.add_weight(
-          shape=(self.input_dim, self.output_dim),
-          initializer=self.initializer,
-          name='embeddings',
-          dtype= tf.float32)
-        self.built= True
-    
-    def call(self, word_ids):
-        return tf.nn.embedding_lookup(self.emb_wt, word_ids)
-
-
 class BaseEncoder(object):
     def __init__(self, embedding_layer, projection_layer, config, 
-                 enc_cell= None, emb_wts= None, hstate_max= True):
+                 enc_cell= None, emb_wts= None, hstate_max= False):
         self.enc_cell= enc_cell
         self.embedding_layer= embedding_layer
         self.projection_layer= projection_layer
@@ -137,7 +122,7 @@ class BaseEncoder(object):
 
 class SeqEncoder(BaseEncoder):
     def __call__(self, inputs, real_seq_lens, apply_embedding_layer= True):
-        #pdb.set_trace()
+        pdb.set_trace()
         if apply_embedding_layer:
             enc_inputs= self.embedding_layer(inputs)
         else:
@@ -152,18 +137,16 @@ class SeqEncoder(BaseEncoder):
                                                 initial_state_fw= init_fwd, initial_state_bw= init_bwd,
                                                 scope= "encoder")
             out= tf.concat([outf, outb], axis= 2)
-            fstate= tf.concat([statef, stateb], axis= 1)
+            # fstate= tf.concat([statef, stateb], axis= 1)
+            num_layers= len(statef)
+            fstate= tuple(tf.concat([statef[i], stateb[i]], axis= 1) for i in range(num_layers))
         else:
             init_enc_state= self.enc_cell['fwd'].zero_state(tf.shape(enc_inputs)[0], tf.float32)
             out, fstate= tf.nn.dynamic_rnn(self.enc_cell['fwd'], enc_inputs, 
                                           sequence_length= real_seq_lens,
                                           initial_state= init_enc_state,
                                           scope= "encoder")
-        if self.hstate_max == True:
-            out_max= tf.reduce_max(out, axis= 1)
-            enc_output= self.projection_layer(out_max)
-        else:
-            enc_output= self.projection_layer(fstate)
+        enc_output= tuple(self.projection_layer(s) for s in fstate)
         return enc_output
 
 
@@ -180,11 +163,12 @@ class PretrainedEncoder(BaseEncoder):
 
 
 class BaseDecoder(object):
-    def __init__(self, dec_cell, embedding_layer, vocab_softmax_layer, emb_wts= None):
+    def __init__(self, dec_cell, embedding_layer, vocab_softmax_layer, temperature= None):
         self.dec_cell= dec_cell
         self.vocab_softmax= vocab_softmax_layer
         self.embedding_layer= embedding_layer
         self.embedding_layer_wt= embedding_layer.weights[0]
+        self.temperature= temperature
     
     def __call__(self, final_encoder_state, targets_wids):
         raise NotImplementedError("Overload with teacher forcing or inference mode")
@@ -195,11 +179,11 @@ class BaseDecoder(object):
     
     def argmax_output_word(self, state_vector):
         vocab_vector= self.vocab_softmax(state_vector)
-        word_ids= tf.argmax(vocab_vector, axis= 1, output_type= tf.int32)
+        word_ids= tf.argmax(vocab_vector, axis= -1, output_type= tf.int32)
         return word_ids
 
 
-class TeacherForcingDecoder(BaseDecoder):
+class TeacherForcingDecoder_old(BaseDecoder):
     def __call__(self, init_decoder_input, targets_wids):
         #pdb.set_trace()
         dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
@@ -220,15 +204,37 @@ class TeacherForcingDecoder(BaseDecoder):
         return ret_dict
 
 
+class TeacherForcingDecoder(BaseDecoder):
+    def __call__(self, init_decoder_input, targets_wids, real_seq_lens= None):
+        pdb.set_trace()
+        # dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
+        go_tokens= tf.expand_dims(tf.tile([0], [tf.shape(targets_wids)[0]]), 1)
+        decoder_input_ids= tf.concat([go_tokens, targets_wids[:,:-1]], axis= 1)
+        decoder_input_embs= self.embedding_layer(decoder_input_ids)
+        init_dec_state= init_decoder_input
+        out, _= tf.nn.dynamic_rnn(self.dec_cell, decoder_input_embs, 
+                                        sequence_length= real_seq_lens,
+                                        initial_state= init_dec_state,
+                                        scope= "decoder")
+        teacher_forcing_logits= self.vocab_softmax(out)
+        decoder_word_ids= tf.argmax(teacher_forcing_logits, axis= -1, output_type=tf.int32)
+        ret_dict= {'decoder_logits': teacher_forcing_logits,
+                   'decoder_word_ids': decoder_word_ids}
+        return ret_dict
+
+
 class InferenceDecoder(BaseDecoder):
     def __call__(self, init_decoder_input, seq_len= 100):
         #pdb.set_trace()
-        dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
+        # dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
+        dec_state= init_decoder_input #TODO: correct naming to state once finalized
+        inp_emb= tf.zeros([tf.shape(init_decoder_input[0])[0], self.embedding_layer_wt.shape[1]])
         dec_inp_id= None
         logits_list, word_id_list= [], []
         for step in range(seq_len):
             if step == 0:
-                inp_emb= init_decoder_input
+                pass
+                # inp_emb= init_decoder_input
             else:
                 inp_emb= self.embedding_layer(dec_inp_id)
             cell_output, dec_state= self.dec_cell(inp_emb, dec_state)
@@ -242,49 +248,18 @@ class InferenceDecoder(BaseDecoder):
         return ret_dict
 
 
-# https://github.com/ericjang/gumbel-softmax/blob/master/Categorical%20VAE.ipynb
-def sample_gumbel(shape, eps=1e-20): 
-    """Sample from Gumbel(0, 1)"""
-    U = tf.random_uniform(shape,minval=0,maxval=1)
-    return -tf.log(-tf.log(U + eps) + eps)
-
-
-def gumbel_softmax_sample(logits, temperature): 
-    """ Draw a sample from the Gumbel-Softmax distribution"""
-    y = logits + sample_gumbel(tf.shape(logits))
-    return tf.nn.softmax( y / temperature)
-
-def gumbel_softmax(logits, temperature, hard=False):
-    """Sample from the Gumbel-Softmax distribution and optionally discretize.
-    Args:
-        logits: [batch_size, n_class] unnormalized log-probs
-        temperature: non-negative scalar
-        hard: if True, take argmax, but differentiate w.r.t. soft sample y
-    Returns:
-        [batch_size, n_class] sample from the Gumbel-Softmax distribution.
-        If hard=True, then the returned sample will be one-hot, otherwise it will
-        be a probabilitiy distribution that sums to 1 across classes
-    """
-    y = gumbel_softmax_sample(logits, temperature)
-    if hard:
-        k = tf.shape(logits)[-1]
-        #y_hard = tf.cast(tf.one_hot(tf.argmax(y,1),k), y.dtype)
-        y_hard = tf.cast(tf.equal(y,tf.reduce_max(y,1,keep_dims=True)),y.dtype)
-        y = tf.stop_gradient(y_hard - y) + y
-    return y
-  
-
 class GumbelSoftmaxDecoder(BaseDecoder):
-    temperature= 2
 
     def __call__(self, init_decoder_input, seq_len= 100):
         """
         Must return a dictionary ret_dict with keys 'decoder_logits' and 'decoder_word_ids'
         of size (?, L, vocab_size) and (?, L) and types tf.float32 and tf.int32 respectively
         """
-        #pdb.set_trace()
-        dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
-        next_word_embedding= tf.identity(init_decoder_input)
+        pdb.set_trace()
+        # dec_state= self.dec_cell.zero_state(tf.shape(init_decoder_input)[0], tf.float32)
+        dec_state= init_decoder_input #TODO: correct naming to state once finalized
+        next_word_embedding= tf.zeros([tf.shape(init_decoder_input[0])[0], self.embedding_layer_wt.shape[1]])
+        # next_word_embedding= tf.identity(init_decoder_input)
         gumbel_softmax_logits= None
         logits_list, word_id_list, word_emb_list= [], [], []
         for step in range(seq_len):
@@ -318,12 +293,12 @@ def seq2seq_ae(features, mode, params, layers_dict):
     else:
         ae_encoder_output= encoder(features['data_batch'], features['real_lens']) #(batch_size x encoder_emb_size)
     
-    if is_train == True:
+    ae_decoder_output= None
+    # if is_train == True:
+    if True: #TODO: Potentially remove this for inference when model is finalized, right now test time inference calls this AE word output
         decoder= TeacherForcingDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
                            layers_dict['vocab_softmax_layer'])
-        ae_decoder_output= decoder(init_decoder_input= ae_encoder_output, targets_wids= features['data_batch'])
-    else:
-        ae_decoder_output= None
+        ae_decoder_output= decoder(init_decoder_input= ae_encoder_output, targets_wids= features['data_batch'], real_seq_lens= features['real_lens'])
     
     return ae_encoder_output, ae_decoder_output
 
@@ -342,32 +317,45 @@ def decode_id_to_string(word_ids, params):
 
 
 def summarizer(features, mode, params, layers_dict):
+    pdb.set_trace()
     is_train= mode == tf.contrib.learn.ModeKeys.TRAIN
     
     ae_encoder_output= features['ae_encoder_output'] # (batch_size x word_emb_size)
-    decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True) # TODO: grouby mean asin using tf.math.segment_mean
+    # decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True) # TODO: grouby mean asin using tf.math.segment_mean
+    decoder_input= tuple(tf.math.segment_mean(s, features['asin_num_list']) for s in ae_encoder_output)
+
     if not is_train:
         # TODO: check problem with InferenceDecoder and change back from GumbelSoftmaxDecoder now
+        # decoder= InferenceDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
+        #                    layers_dict['vocab_softmax_layer'])
+        # summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
         decoder= GumbelSoftmaxDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
-                           layers_dict['vocab_softmax_layer'])
+                           layers_dict['vocab_softmax_layer'], temperature= layers_dict['temperature'])
         summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
     else:
         decoder= GumbelSoftmaxDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
-                           layers_dict['vocab_softmax_layer'])
+                           layers_dict['vocab_softmax_layer'], temperature= layers_dict['temperature'])
         summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
     
-    #pdb.set_trace()
+    pdb.set_trace()
     encoder= layers_dict['encoder']
     summary_wids= summ_decoder_output['decoder_word_ids']
-    if is_train:
+    summ_encoder_output= None
+    if is_train: #TODO: bring back when finalizing
+    # if True:
         if params['pretrained_encoder'] == True:
             raise ValueError("Cant use pretrained encoder for this as input to encoder is in word embeddings ONLY!")
         else:
             encoder_inputs= summ_decoder_output['decoder_word_embeddings']
             summ_encoder_output= encoder(encoder_inputs, None, apply_embedding_layer= False)
-    else:
-        summ_encoder_output= None
+    # else:
+    #     if False:
+    #         encoder_inputs= summ_decoder_output['decoder_word_embeddings']
+    #         summ_encoder_output= encoder(encoder_inputs, None, apply_embedding_layer= False)
+    #     else:
+    #         summ_encoder_output= None
         # summar_text_list= decode_id_to_string(tf.reshape(summary_wids, (-1,)), params) #length 1 list
+    
     return summ_encoder_output, summary_wids
 
 
@@ -377,7 +365,7 @@ def get_available_gpus():
 
 
 def build_layers(features, mode, params):
-    # pdb.set_trace()
+    pdb.set_trace()
     def get_cell():
         if len(get_available_gpus()) > 0:
             return tf.nn.rnn_cell.GRUCell
@@ -400,11 +388,11 @@ def build_layers(features, mode, params):
         init_projection= tf.keras.initializers.Constant(params['word_embeddings'].T)
     else:
         init_projection= 'glorot_uniform'
-    vocab_softmax_layer= tf.keras.layers.Dense(embedding_layer.input_dim, activation=None, use_bias=False,
+    vocab_softmax_layer= tf.keras.layers.Dense(embedding_layer.input_dim, activation=None, use_bias=True,
                                          kernel_initializer=init_projection)
     layers_dict['vocab_softmax_layer']= vocab_softmax_layer
     
-    encoder_projection_layer= tf.keras.layers.Dense(params['word_embeddings_dim'], activation=None, 
+    encoder_projection_layer= tf.keras.layers.Dense(params['config']['hidden_size'], activation=None, 
                                          use_bias=True, kernel_initializer='glorot_uniform')
     layers_dict['encoder_projection_layer']= encoder_projection_layer
     
@@ -419,6 +407,9 @@ def build_layers(features, mode, params):
     dec_cell= construct_cells(params['config'], get_cell(), bidirectional=False)['fwd']
     
     layers_dict['dec_cell']= dec_cell
+    layers_dict['global_step'] = tf.train.get_global_step()
+    layers_dict['temperature'] = tf.train.exponential_decay(tf.convert_to_tensor(params['init_temperature'], dtype=tf.float32),
+                                            layers_dict['global_step'], 100, 0.96, staircase=True)
     
     return layers_dict
 
@@ -433,7 +424,8 @@ def summarization_model(features, mode, params):
     output_dict= {'ae_encoder_output': ae_encoder_output,
                   'ae_decoder_output': ae_decoder_output,
                   'summ_encoder_output': summ_encoder_output,
-                  'summar_id_list': summar_id_list,}
+                  'summar_id_list': summar_id_list,
+                  'layers_dict': layers_dict,}
     return output_dict
 
 
