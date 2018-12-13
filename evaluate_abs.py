@@ -56,6 +56,7 @@ def evaluate_rouge(input_file):
     df['rouge_scores']= df.apply(lambda x: rouge_module(x['range'], [x['summary']], x['input_words_list']), axis=1)
     logging.info(df['rouge_scores'].describe())
 
+# Train
 # INFO 2018-12-12 23:20:30,018 : count    500.000000
 # mean       0.300872
 # std        0.036273
@@ -66,8 +67,31 @@ def evaluate_rouge(input_file):
 # max        0.415011
 # Name: rouge_scores, dtype: float64
 
+# INFO 2018-12-13 00:48:57,010 : count    1500.000000
+# mean        0.301163
+# std         0.035615
+# min         0.090938
+# 25%         0.279294
+# 50%         0.302957
+# 75%         0.323610
+# max         0.435382
+# Name: rouge_scores, dtype: float64
+
+#Test
+# INFO 2018-12-13 00:36:04,223 : count    1500.000000
+# mean        0.300861
+# std         0.035705
+# min         0.107876
+# 25%         0.279168
+# 50%         0.303211
+# 75%         0.325029
+# max         0.392840
+# Name: rouge_scores, dtype: float64
+
+
+
 def evaluate_semantic(input_file):
-    df= pd.read_csv(input_file, encoding='latin1')
+    df= pd.read_csv(input_file, encoding='latin1')#.iloc[:100,:]
     df['input_words_list']= df['input_words_list'].apply(lambda x: ast.literal_eval(x))
     df['range']= range(len(df))
     semantic_module= SemanticEval()
@@ -75,15 +99,17 @@ def evaluate_semantic(input_file):
     logging.info(df['cosine_scores'].describe())
 
 
-# INFO 2018-12-12 23:57:19,707 : count    5.000000e+02
-# mean     7.378698e+17
-# std      1.547557e+19
-# min     -3.689349e+19
-# 25%     -1.084202e-19
-# 50%      0.000000e+00
-# 75%      2.000000e+00
-# max      3.689349e+19
+# INFO 2018-12-13 01:00:02,925 : count    100.000000
+# mean       0.679776
+# std        0.219914
+# min       -0.016451
+# 25%        0.711308
+# 50%        0.755974
+# 75%        0.784733
+# max        0.844502
 # Name: cosine_scores, dtype: float64
+
+
 
 if __name__ == "__main__":
     input_file= 'results/abstractive_summaries_500_1prod_train.csv'
