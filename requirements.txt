@@ -10,3 +10,4 @@ keras==2.2.4
 tokenizer==1.0.8
 networkx==2.2
 matplotlib
+igraph==0.1.9
