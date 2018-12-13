@@ -87,6 +87,7 @@ def my_model(features, labels, mode, params):
         predictions = {
             'summary_ids': ret['summar_id_list'],
             'asin': tf.reshape(features['asin_list'], [-1, params['abs_num_reviews']]),
+            'text_list': tf.reshape(features['text_list'], [-1, params['abs_num_reviews']]),
             'asin_num_list': tf.reshape(features['asin_num_list'], [-1, params['abs_num_reviews']]),
             'input_word_ids': tf.reshape(features['data_batch'], [-1, params['abs_num_reviews'], MAX_SEQUENCE_LENGTH]),
             'ae_word_ids': tf.reshape(ae_word_ids, [-1, params['abs_num_reviews'], MAX_SEQUENCE_LENGTH]),
@@ -105,7 +106,7 @@ def my_model(features, labels, mode, params):
     ae_encoder_output_c= tf.reshape(ae_encoder_output_c, [-1, params['abs_num_reviews'], last_dim])
     cos_loss= cosine_loss(ae_encoder_output_c, summ_encoder_output_c)
     
-    loss= ae_loss + cos_loss
+    loss= ae_loss + cos_loss #TODO: review cosine loss weightage; potentially add regression loss for AE
     # Compute evaluation metrics.
     metrics = {'ae_loss': ae_loss, 'cos_loss': cos_loss}
     if mode == tf.estimator.ModeKeys.EVAL:

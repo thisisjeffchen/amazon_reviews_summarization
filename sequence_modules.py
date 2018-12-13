@@ -285,7 +285,7 @@ class GumbelSoftmaxDecoder(BaseDecoder):
 
 def seq2seq_ae(features, mode, params, layers_dict):
     #pdb.set_trace()
-    is_train= mode == tf.contrib.learn.ModeKeys.TRAIN
+    is_train= (mode == tf.contrib.learn.ModeKeys.TRAIN) or (mode == tf.estimator.ModeKeys.EVAL)
     
     encoder= layers_dict['encoder']
     if params['pretrained_encoder'] == True:
@@ -318,7 +318,7 @@ def decode_id_to_string(word_ids, params):
 
 def summarizer(features, mode, params, layers_dict):
     pdb.set_trace()
-    is_train= mode == tf.contrib.learn.ModeKeys.TRAIN
+    is_train= (mode == tf.contrib.learn.ModeKeys.TRAIN) or (mode == tf.estimator.ModeKeys.EVAL)
     
     ae_encoder_output= features['ae_encoder_output'] # (batch_size x word_emb_size)
     # decoder_input= tf.reduce_mean(ae_encoder_output, axis= 0, keepdims=True) # TODO: grouby mean asin using tf.math.segment_mean
@@ -331,9 +331,6 @@ def summarizer(features, mode, params, layers_dict):
         decoder= InferenceDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
                            layers_dict['vocab_softmax_layer'])
         summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
-        # decoder= GumbelSoftmaxDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
-        #                    layers_dict['vocab_softmax_layer'], temperature= layers_dict['temperature'])
-        # summ_decoder_output= decoder(init_decoder_input= decoder_input, seq_len= MAX_SEQUENCE_LENGTH)
     else:
         decoder= GumbelSoftmaxDecoder(layers_dict['dec_cell'], layers_dict['embedding_layer'], 
                            layers_dict['vocab_softmax_layer'], temperature= layers_dict['temperature'])

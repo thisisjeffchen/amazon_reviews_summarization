@@ -24,16 +24,17 @@ import tensorflow as tf
 import ipdb as pdb
 from ipdb import slaunch_ipdb_on_exception
 from collections import defaultdict
+from nltk.tokenize import sent_tokenize
 
 from config import DATA_PATH, args
 MAX_SEQUENCE_LENGTH = 100
 MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 300
 OOV_TOKEN= '<OOV>'
-BATCH_SIZE= args.num_products_per_batch #number of products per batch
+BATCH_SIZE= 1 #number of products per batch
 NUM_EPOCHS= 5
 NUM_REVIEWS_K= args.abs_num_reviews #number of reviews per product
-
+EOS= ' <EOS> '
 
 def db_cur_gen(cur):
     for i, c in enumerate(cur):
@@ -41,11 +42,13 @@ def db_cur_gen(cur):
             print(i)
         #     break
         for text in ast.literal_eval(c[1]):
+            sents= sent_tokenize(text)
+            text= EOS.join(sents) + EOS
             yield text
 
 
 def build_tokenizer(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
-    pdb.set_trace()
+    # pdb.set_trace()
     tokenizer= Tokenizer(num_words=MAX_NUM_WORDS, lower= True, oov_token= OOV_TOKEN)
     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
     tokenizer.fit_on_texts(db_cur_gen(review_iterator))
@@ -79,40 +82,48 @@ class TFReviewIterator(object):
 
 
 
-def train_input_fn_gen(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
-    with open('cache/tokenizer.pkl', 'rb') as fi:
-        tokenizer= pickle.load(fi)
-    review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
+# def train_input_fn_gen(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
+#     with open('cache/tokenizer.pkl', 'rb') as fi:
+#         tokenizer= pickle.load(fi)
+#     review_iterator= TFReviewIterator(data_path, db_name, asins2use_file)
     
-    # like https://github.com/keras-team/keras/blob/master/examples/pretrained_word_embeddings.py
-    def tf_data_gen(K= NUM_REVIEWS_K, maxlen= MAX_SEQUENCE_LENGTH):
-        for i, (asin, review_str_list) in enumerate(review_iterator):
-            review_list= ast.literal_eval(review_str_list)
-            random.shuffle(review_list)
-            review_list= review_list[:K]
-            asin_list= [asin]*len(review_list)
-            id_list= tokenizer.texts_to_sequences(review_list)
-            data_batch= pad_sequences(id_list, maxlen=maxlen, dtype= np.int32, 
-                                      padding='post', truncating='post')
-            text_list= tokenizer.sequences_to_texts([ids[:maxlen] for ids in id_list])
-            real_lens= np.array([len(text.split()) for text in text_list]).astype(np.int32)
-            ret_dict= {'asin_list': asin_list,
-                       'text_list': text_list,
-                       'data_batch': data_batch,
-                       'real_lens': real_lens,
-                       }
-            yield ret_dict
+#     # like https://github.com/keras-team/keras/blob/master/examples/pretrained_word_embeddings.py
+#     def tf_data_gen(K= NUM_REVIEWS_K, maxlen= MAX_SEQUENCE_LENGTH):
+#         for i, (asin, review_str_list) in enumerate(review_iterator):
+#             review_list= ast.literal_eval(review_str_list)
+#             random.shuffle(review_list)
+#             review_list= review_list[:K]
+#             asin_list= [asin]*len(review_list)
+#             id_list= tokenizer.texts_to_sequences(review_list)
+#             data_batch= pad_sequences(id_list, maxlen=maxlen, dtype= np.int32, 
+#                                       padding='post', truncating='post')
+#             text_list= tokenizer.sequences_to_texts([ids[:maxlen] for ids in id_list])
+#             real_lens= np.array([len(text.split()) for text in text_list]).astype(np.int32)
+#             ret_dict= {'asin_list': asin_list,
+#                        'text_list': text_list,
+#                        'data_batch': data_batch,
+#                        'real_lens': real_lens,
+#                        }
+#             yield ret_dict
     
-    ds= tf.data.Dataset.from_generator(
-    tf_data_gen, {'asin_list': tf.string, 'text_list': tf.string, 'data_batch': tf.int32, 'real_lens': tf.int32}, 
-    {'asin_list': tf.TensorShape([None]), 'text_list': tf.TensorShape([None]), 
-     'data_batch': tf.TensorShape([None, MAX_SEQUENCE_LENGTH]), 'real_lens': tf.TensorShape([None])}
-    )
+#     ds= tf.data.Dataset.from_generator(
+#     tf_data_gen, {'asin_list': tf.string, 'text_list': tf.string, 'data_batch': tf.int32, 'real_lens': tf.int32}, 
+#     {'asin_list': tf.TensorShape([None]), 'text_list': tf.TensorShape([None]), 
+#      'data_batch': tf.TensorShape([None, MAX_SEQUENCE_LENGTH]), 'real_lens': tf.TensorShape([None])}
+#     )
     
-    dataset= ds.shuffle(1000).repeat(NUM_EPOCHS)
-    dataset= dataset.batch(BATCH_SIZE)
-    return dataset
+#     dataset= ds.shuffle(1000).repeat(NUM_EPOCHS)
+#     dataset= dataset.batch(BATCH_SIZE)
+#     return dataset
 
+
+def append_eos(review_list):
+    ret_list= []
+    for text in review_list:
+        sents= sent_tokenize(text)
+        text= EOS.join(sents) + EOS
+        ret_list.append(text)
+    return ret_list
 
 
 def prepare_df(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "abs_train_set_8.csv"):
@@ -126,6 +137,7 @@ def prepare_df(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "a
         data_batch_list= []
         for i, (asin, review_str_list) in enumerate(review_iterator):
             review_list= ast.literal_eval(review_str_list)
+            # review_list= append_eos(review_list) #TODO: causing memory error in tensorflow: NO IDEA WHY CHECK!!!
             random.shuffle(review_list)
             review_list= review_list[:K]
             asin_list= [asin]*len(review_list)
@@ -141,8 +153,8 @@ def prepare_df(data_path= DATA_PATH, db_name= "reviews.s3db", asins2use_file= "a
             ddict['real_lens'].extend(real_lens)
 
             data_batch_list.append(data_batch)
-            if i > 10000:
-                break
+            # if i > 10000:
+            #     break
         ret_df= pd.DataFrame(ddict)
         word_ids= np.vstack(data_batch_list)
         return ret_df, word_ids
@@ -159,7 +171,8 @@ def train_input_fn(features_df, word_ids):
     features['data_batch']= word_ids
     # pdb.set_trace()
     ds = tf.data.Dataset.from_tensor_slices(features)
-    dataset= ds.prefetch(1000).repeat(NUM_EPOCHS).batch(NUM_REVIEWS_K*BATCH_SIZE)
+    dataset= ds.prefetch(NUM_REVIEWS_K*BATCH_SIZE).repeat(NUM_EPOCHS).batch(NUM_REVIEWS_K*BATCH_SIZE)
+    # dataset= ds.repeat(NUM_EPOCHS).batch(NUM_REVIEWS_K*BATCH_SIZE)
     return dataset
 
 

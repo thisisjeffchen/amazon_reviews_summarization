@@ -37,9 +37,9 @@ def make_config():
     params['abs_num_reviews']= args.abs_num_reviews
     
     config= {}
-    config['num_layers']= 1
+    config['num_layers']= args.num_layers
     config['hidden_size']= 512
-    config['dropout_keep']= 0.9
+    config['dropout_keep']= 1.0
     params['config']= config
     return params
     
@@ -62,21 +62,30 @@ def train_model(classifier, params, train_filename):
         steps=maxsteps)
 
 
-def test_model(classifier, params, test_filename):
+def evaluate_model(classifier, params, eval_filename):
+    features_df, word_ids= prepare_df(asins2use_file= eval_filename)
+    # Evaluate the model.
+    eval_result = classifier.evaluate(
+        input_fn=lambda:train_input_fn(features_df, word_ids))
+    logging.info(eval_result)
+
+
+def test_model(classifier, params, test_filename, suffix):
     features_df, word_ids= prepare_df(asins2use_file= test_filename)
     # Test the Model.
     predictions = classifier.predict(input_fn=lambda: train_input_fn(features_df, word_ids))
     asin_list, summary_id_list=[], []
-    ae_ids_list, input_ids_list= [], []
+    ae_ids_list, input_ids_list, orig_text= [], [], []
     for i, pred_dict in enumerate(predictions):
         if i==0:
             pdb.set_trace()
         print ("Processing {}".format(i))
-        if args.debug == True and i > 500:
+        if args.debug == True and i > 1500:
             break
-        elif i == 500:
+        elif i == 1500:
             break
         asin_list.append(pred_dict['asin'][0].decode())
+        orig_text.append([pred_dict['text_list'][i].decode() for i in range(len(pred_dict['text_list']))])
         summary_id_list.append(pred_dict['summary_ids'].tolist())
         ae_ids_list.append(pred_dict['ae_word_ids'].tolist())
         input_ids_list.append(pred_dict['input_word_ids'].tolist())
@@ -95,16 +104,18 @@ def test_model(classifier, params, test_filename):
         out_dict[asin]['summary']= summary
         out_dict[asin]['ae_words_list']= ae_words_list[i]
         out_dict[asin]['input_words_list']= input_words_list[i]
+        out_dict[asin]['orig_text_list']= orig_text[i]
         ddict['asin'].append(asin_list[i])
+        ddict['orig_text'].append(orig_text[i])
         ddict['summary'].append(summary)
         ddict['ae_words_list'].append(ae_words_list[i])
         ddict['input_words_list'].append(input_words_list[i])
     
-    with open('results/abstractive_summaries.json', 'w') as fo:
+    with open('results/abstractive_summaries_{}.json'.format(suffix), 'w') as fo:
         json.dump(out_dict, fo, ensure_ascii=False, indent=2)
     
     df= pd.DataFrame(ddict)
-    df.to_csv('results/abstractive_summaries.csv')
+    df.to_csv('results/abstractive_summaries_{}.csv'.format(suffix))
     
 
 def safe_mkdir(directory):
@@ -135,8 +146,9 @@ def run_model():
 
     # train_model(classifier, params, train_filename)
     pdb.set_trace()
-    # test_model(classifier, params, train_filename)
-    test_model(classifier, params, test_filename)
+    # test_model(classifier, params, train_filename, '1500_1prod_train')
+    test_model(classifier, params, test_filename, '1500_1prod_test')
+    evaluate_model(classifier, params, test_filename)
 
 
 if args.debug == False:

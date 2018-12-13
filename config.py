@@ -70,7 +70,7 @@ parser.add_argument('--abs_num_reviews', type=int,
                     help='the minimum number of reviews a product must have for ABS')
 
 parser.add_argument('--learning_rate', type=float, 
-                    default=0.005,
+                    default=0.001,
                     help='learning_rate')
 
 parser.add_argument('--tie_in_out_embeddings', type=ast.literal_eval, 
@@ -94,8 +94,13 @@ parser.add_argument('--embeddings_preprocessed', type=ast.literal_eval,
                     help='whether embeddings have been preprocessed and dont need to be extracted again for all reviews')
 
 parser.add_argument('--num_products_per_batch', type=int, 
-                    default=32,
+                    default=1,
                     help='the number of products per batch for ABS; actual batch size will be num_products_per_batch*abs_num_reviews')
+
+parser.add_argument('--num_layers', type=int, 
+                    default=2,
+                    help='the number of lstm layers')
+
 
 args = parser.parse_args()
 
