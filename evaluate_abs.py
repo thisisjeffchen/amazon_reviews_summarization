@@ -9,6 +9,7 @@ import numpy as np
 from rouge import Rouge
 from text_encoders import NNLM, Word2Vec, USE, ELMO
 from sklearn.metrics.pairwise import cosine_similarity
+from main_cluster import SENTENCE_LENGTH, load_sentiment_evaluator, evaluate_sentiment
 import ast
 
 
@@ -47,8 +48,22 @@ class SemanticEval(object):
         cosine= cosine_similarity(product_mean, summary_mean)[0][0]
         return cosine
 
+class SentimentEval (object):
+    def __init__(self):
+        self.sent_model, self.sent_tokenizer = load_sentiment_evaluator ()
 
-def evaluate_rouge(input_file):
+
+    def __call__(self, i, summary_list, reviewTexts):
+        logging.info(i)
+        reviews_short = [row[0:SENTENCE_LENGTH] for row in reviewTexts]
+        #pdb.set_trace ()
+        reviews_sent, summary_sent, summary_score = evaluate_sentiment (reviews_short, summary_list, self.sent_model, 
+                                self.sent_tokenizer)
+        print ("reviews sent: {}, summary_sent {}, score {}".format(reviews_sent, summary_sent, summary_score))
+        return summary_score
+
+
+def evaluate_rouge_harness(input_file):
     df= pd.read_csv(input_file, encoding='latin1')
     df['input_words_list']= df['input_words_list'].apply(lambda x: ast.literal_eval(x))
     df['range']= range(len(df))
@@ -90,13 +105,22 @@ def evaluate_rouge(input_file):
 
 
 
-def evaluate_semantic(input_file):
+def evaluate_semantic_harness(input_file):
     df= pd.read_csv(input_file, encoding='latin1')#.iloc[:100,:]
     df['input_words_list']= df['input_words_list'].apply(lambda x: ast.literal_eval(x))
     df['range']= range(len(df))
     semantic_module= SemanticEval()
     df['cosine_scores']= df.apply(lambda x: semantic_module(x['range'], [x['summary']], x['input_words_list']), axis=1)
     logging.info(df['cosine_scores'].describe())
+
+def evaluate_sentiment_harness (input_file):
+    df= pd.read_csv(input_file, encoding='latin1')#.iloc[:100,:]
+    df['input_words_list']= df['input_words_list'].apply(lambda x: ast.literal_eval(x))
+    df['range']= range(len(df))
+    sentiment_module= SentimentEval()
+    df['sentiment_scores']= df.apply(lambda x: sentiment_module(x['range'], [x['summary']], x['input_words_list']), axis=1)
+    logging.info(df['sentiment_scores'].describe())
+
 
 
 # INFO 2018-12-13 01:00:02,925 : count    100.000000
@@ -113,5 +137,6 @@ def evaluate_semantic(input_file):
 
 if __name__ == "__main__":
     input_file= 'results/abstractive_summaries_500_1prod_train.csv'
-    # evaluate_rouge(input_file)
-    evaluate_semantic(input_file)
+    # evaluate_rouge_harness (input_file)
+    #evaluate_semantic_harness (input_file)
+    evaluate_sentiment_harness (input_file)
