@@ -8,12 +8,18 @@ source activate cs221_project
 pip install -r requirements.txt
 ```
 
-Unzip data
+Unzip data (very small subset)
 ```
 unzip data.zip
 ```
 
-## Running extractive
+Download cached sentiment model (~38MB)
+```
+curl -LO https://s3.amazonaws.com/c4i.io/cache.zip
+unzip cache.zip
+```
+
+## Running extractive 
 ```
 mkdir tmp; 
 export TFHUB_CACHE_DIR=tmp; 
