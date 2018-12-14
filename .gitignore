@@ -1,4 +1,5 @@
 # custom
+tmp/
 data/raw
 cache/checkpoints
 .DS_Store
