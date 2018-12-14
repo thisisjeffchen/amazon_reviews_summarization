@@ -17,7 +17,8 @@ unzip data.zip
 ```
 mkdir tmp; 
 export TFHUB_CACHE_DIR=tmp; 
-python main_cluster.py --prepare_embeddings=True --embeddings_preprocessed=False
+python main_cluster.py --prepare_embeddings=True --embeddings_preprocessed=False;
+python main_cluster.py --prepare_embeddings=False --embeddings_preprocessed=True;
 ```
 
 ## Running abstractive
