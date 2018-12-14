@@ -15,5 +15,6 @@ unzip data.zip
 
 ## Running clustering
 ```
-mkdir tmp; export TFHUB_CACHE_DIR=tmp; python main_cluster.py
+mkdir tmp; 
+export TFHUB_CACHE_DIR=tmp; python main_cluster.py
 ```
