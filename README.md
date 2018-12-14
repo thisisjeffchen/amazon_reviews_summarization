@@ -13,9 +13,16 @@ Unzip data
 unzip data.zip
 ```
 
-## Running clustering
+## Running extractive
 ```
 mkdir tmp; 
 export TFHUB_CACHE_DIR=tmp; 
 python main_cluster.py --prepare_embeddings=True --embeddings_preprocessed=False
+```
+
+## Running abstractive
+```
+python model_data.py
+python main_abs.py --train_abs=True --debug=False --test_abs=False --cold_start=True
+python main_abs.py --train_abs=False --debug=False --test_abs=True --cold_start=False
 ```
