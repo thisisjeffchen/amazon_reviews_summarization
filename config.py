@@ -60,6 +60,13 @@ parser.add_argument('--products', type=str,
                     default="three",
                     help='three or all, all will run through all with 50-100 reviews')
 
+parser.add_argument('--prepare_embeddings', type=ast.literal_eval, 
+                    default=False,
+                    help='whether to run sentence encoders')
+
+parser.add_argument('--embeddings_preprocessed', type=ast.literal_eval, 
+                    default=True,
+                    help='whether embeddings have been preprocessed and dont need to be extracted again for all reviews')
 
 parser.add_argument('--debug', type=ast.literal_eval, 
                     default=True,
@@ -85,14 +92,6 @@ parser.add_argument('--cold_start', type=ast.literal_eval,
                     default=False,
                     help='whether to overwrite existing model_dir')
 
-parser.add_argument('--prepare_embeddings', type=ast.literal_eval, 
-                    default=False,
-                    help='whether to run sentence encoders')
-
-parser.add_argument('--embeddings_preprocessed', type=ast.literal_eval, 
-                    default=True,
-                    help='whether embeddings have been preprocessed and dont need to be extracted again for all reviews')
-
 parser.add_argument('--num_products_per_batch', type=int, 
                     default=1,
                     help='the number of products per batch for ABS; actual batch size will be num_products_per_batch*abs_num_reviews')
@@ -101,6 +100,14 @@ parser.add_argument('--num_layers', type=int,
                     default=2,
                     help='the number of lstm layers')
 
+
+parser.add_argument('--train_abs', type=ast.literal_eval, 
+                    default=True,
+                    help='whether to train the ABS model')
+
+parser.add_argument('--test_abs', type=ast.literal_eval, 
+                    default=True,
+                    help='whether to train the ABS model')
 
 args = parser.parse_args()
 

@@ -129,11 +129,12 @@ def run_model():
     num_reviews= args.abs_num_reviews
     train_filename, test_filename= 'abs_train_set_{}.csv'.format(num_reviews), 'abs_test_set_{}.csv'.format(num_reviews)
     model_dir= 'cache/checkpoints'
-    if args.cold_start:
-        shutil.rmtree(model_dir, ignore_errors=True)
-        os.makedirs(model_dir, exist_ok=True)
-    else:
-        safe_mkdir(model_dir)
+    if args.train_abs:
+        if args.cold_start:            
+            shutil.rmtree(model_dir, ignore_errors=True)
+            os.makedirs(model_dir, exist_ok=True)
+        else:
+            safe_mkdir(model_dir)
     model_config= tf.estimator.RunConfig(model_dir=model_dir,
                                         tf_random_seed=42,
                                         log_step_count_steps=10,
@@ -144,11 +145,13 @@ def run_model():
         params= params,
         config= model_config)
 
-    # train_model(classifier, params, train_filename)
+    if args.train_abs:
+        train_model(classifier, params, train_filename)
     pdb.set_trace()
-    # test_model(classifier, params, train_filename, '1500_1prod_train')
-    test_model(classifier, params, test_filename, '1500_1prod_test')
-    evaluate_model(classifier, params, test_filename)
+    if args.test_abs:
+        test_model(classifier, params, train_filename, '1500_1prod_train')
+        test_model(classifier, params, test_filename, '1500_1prod_test')
+    
 
 
 if args.debug == False:

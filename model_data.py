@@ -235,6 +235,7 @@ def create_pretrained_embeddings(keras_tokenizer_fname= 'cache/tokenizer.pkl'):
 
 if __name__ == "__main__":
     with slaunch_ipdb_on_exception():
-        train_filename, test_filename= abstractive_dataset_create()
+        # train_filename, test_filename= abstractive_dataset_create()
+        train_filename= 'abs_train_set_8.csv'
         build_tokenizer(asins2use_file= train_filename)
-        create_pretrained_embeddings()
+        # create_pretrained_embeddings()

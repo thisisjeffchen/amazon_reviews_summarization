@@ -179,7 +179,7 @@ def encode_reviews(reviews_df, encoder, kwargs):
 
 
 def feed_embeddings_to_db(kwargs, ddict):
-    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}_1.s3db".format(args.encoder_name))
+    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}.s3db".format(args.encoder_name))
     conn= sqlite3.connect(db_file)
     cur= conn.cursor()
     cur.execute("drop table if exists reviews_embeddings;")
@@ -190,12 +190,9 @@ def feed_embeddings_to_db(kwargs, ddict):
       "sentence_parent VARCHAR(255))")
     
     
-
-
-
 def main_preprocess_embeddings(kwargs):
     pdb.set_trace()
-    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}_1.s3db".format(args.encoder_name))
+    db_file= os.path.join(config.DATA_PATH, "embedding_db-{}.s3db".format(args.encoder_name))
     conn= sqlite3.connect(db_file)
     cur= conn.cursor()
     cur.execute("drop table if exists reviews_embeddings;")
