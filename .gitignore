@@ -1,4 +1,5 @@
 # custom
+results/
 tmp/
 data/raw
 cache/checkpoints
