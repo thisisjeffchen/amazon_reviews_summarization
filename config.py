@@ -49,7 +49,7 @@ parser.add_argument('--test_batches', type=int,
                     help='the number of product groups taken each of chunksize')
 
 parser.add_argument('--extractive_model', type=str, 
-                    default='all',
+                    default='three',
                     help='the type of extractive model to use: kmeans, affinity, dbscan, pagerank')
 
 parser.add_argument('--summary_length', type=int, 
@@ -97,7 +97,7 @@ parser.add_argument('--num_products_per_batch', type=int,
                     help='the number of products per batch for ABS; actual batch size will be num_products_per_batch*abs_num_reviews')
 
 parser.add_argument('--num_layers', type=int, 
-                    default=2,
+                    default=1,
                     help='the number of lstm layers')
 
 
