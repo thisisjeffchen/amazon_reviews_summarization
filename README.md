@@ -13,6 +13,12 @@ Unzip data (very small subset)
 unzip data.zip
 ```
 
+Download cached sentiment model (~30MB)
+```
+curl -LO https://s3.amazonaws.com/c4i.io/cache.zip
+unzip cache.zip
+```
+
 ## Running extractive 
 ```
 mkdir tmp; 
