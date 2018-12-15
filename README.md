@@ -6,9 +6,10 @@
 conda create --name cs221_project python=3.6
 source activate cs221_project
 pip install -r requirements.txt
+conda install -y -c conda-forge python-igraph
 ```
 
-Unzip data (very small subset)
+Unzip data
 ```
 unzip data.zip
 ```
@@ -19,10 +20,10 @@ curl -LO https://s3.amazonaws.com/c4i.io/cache.zip
 unzip cache.zip
 ```
 
-## Running extractive 
+## Running extractive
 ```
-mkdir tmp; 
-export TFHUB_CACHE_DIR=tmp; 
+mkdir tmp;
+export TFHUB_CACHE_DIR=tmp;
 python main_cluster.py --prepare_embeddings=True --embeddings_preprocessed=False;
 python main_cluster.py --prepare_embeddings=False --embeddings_preprocessed=True;
 ```

@@ -147,10 +147,12 @@ def run_model():
 
     if args.train_abs:
         train_model(classifier, params, train_filename)
-    pdb.set_trace()
-    if args.test_abs:
+        pdb.set_trace()
+    elif args.test_abs:
         test_model(classifier, params, train_filename, '1500_1prod_train')
         test_model(classifier, params, test_filename, '1500_1prod_test')
+    else:
+        raise ValueError("One of these must be True")
     
 
 

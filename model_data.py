@@ -32,7 +32,10 @@ MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 300
 OOV_TOKEN= '<OOV>'
 BATCH_SIZE= 1 #number of products per batch
-NUM_EPOCHS= 5
+if args.train_abs:
+    NUM_EPOCHS= 5
+elif args.test_abs:
+    NUM_EPOCHS= 1
 NUM_REVIEWS_K= args.abs_num_reviews #number of reviews per product
 EOS= ' <EOS> '
 

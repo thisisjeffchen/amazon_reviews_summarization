@@ -269,7 +269,7 @@ def main_preprocess_embeddings(kwargs):
 
 
 def main(kwargs):
-    models = ["kmeans", "affinity", "dbscan"]
+    models = ["kmeans", "affinity", "dbscan", "pagerank"]
 
     sent_model, sent_tokenizer = load_sentiment_evaluator ()
 
