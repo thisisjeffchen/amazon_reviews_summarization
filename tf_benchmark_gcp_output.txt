@@ -1,0 +1,334 @@
+Batch: 
+64
+Device: 
+0
+2019-04-16 17:13:41.270374: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-04-16 17:13:41.277503: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-04-16 17:13:43.257919: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1009] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-04-16 17:13:43.258959: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x562d082e8630 executing computations on platform CUDA. Devices:
+2019-04-16 17:13:43.259007: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla K80, Compute Capability 3.7
+2019-04-16 17:13:43.261936: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2200000000 Hz
+2019-04-16 17:13:43.262327: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x562d08358d40 executing computations on platform Host. Devices:
+2019-04-16 17:13:43.262360: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-16 17:13:43.262766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1589] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:04.0
+totalMemory: 11.17GiB freeMemory: 11.10GiB
+2019-04-16 17:13:43.262792: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:13:43.262859: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-04-16 17:13:43.263624: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:13:43.263649: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:13:43.263658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:13:43.263914: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+W0416 17:13:43.272293 140143363233216 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:250: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0416 17:13:43.278923 140143363233216 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:257: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0416 17:13:43.287035 140143363233216 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:129: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+W0416 17:13:43.652106 140143363233216 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:261: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+W0416 17:13:47.601902 140143363233216 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2250: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2019-04-16 17:13:48.103449: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:13:48.103530: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:13:48.103542: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:13:48.103570: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:13:48.103838: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+2019-04-16 17:13:48.731759: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1364] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+I0416 17:13:49.449992 140143363233216 session_manager.py:500] Running local_init_op.
+I0416 17:13:49.507581 140143363233216 session_manager.py:502] Done running local_init_op.
+2019-04-16 17:13:51.328182: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-04-16 17:13:51.518000: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+TensorFlow:  1.14
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        training
+SingleSess:  False
+Batch size:  64 global
+             64 per device
+Num batches: 100
+Num epochs:  0.00
+Devices:     ['/gpu:0']
+NUMA bind:   False
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+Initializing graph
+Running warm up
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 53.2 +/- 0.0 (jitter = 0.0)	8.220
+10	images/sec: 53.1 +/- 0.1 (jitter = 0.1)	7.880
+20	images/sec: 53.1 +/- 0.0 (jitter = 0.1)	7.910
+30	images/sec: 53.1 +/- 0.0 (jitter = 0.1)	7.820
+40	images/sec: 53.2 +/- 0.0 (jitter = 0.2)	8.004
+50	images/sec: 53.2 +/- 0.0 (jitter = 0.2)	7.770
+60	images/sec: 53.2 +/- 0.0 (jitter = 0.2)	8.113
+70	images/sec: 53.2 +/- 0.0 (jitter = 0.2)	7.818
+80	images/sec: 53.2 +/- 0.0 (jitter = 0.2)	7.978
+90	images/sec: 53.3 +/- 0.0 (jitter = 0.2)	8.097
+100	images/sec: 53.3 +/- 0.0 (jitter = 0.2)	8.039
+----------------------------------------------------------------
+total images/sec: 53.30
+----------------------------------------------------------------
+
+real	2m30.370s
+user	0m26.424s
+sys	0m12.152s
+Batch: 
+64
+Device: 
+0
+===USE FP16===
+2019-04-16 17:16:11.660578: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-04-16 17:16:11.667688: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-04-16 17:16:13.639807: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1009] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-04-16 17:16:13.640836: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5586881e8140 executing computations on platform CUDA. Devices:
+2019-04-16 17:16:13.640882: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla K80, Compute Capability 3.7
+2019-04-16 17:16:13.643899: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2200000000 Hz
+2019-04-16 17:16:13.644171: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x558688258830 executing computations on platform Host. Devices:
+2019-04-16 17:16:13.644208: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-16 17:16:13.644681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1589] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:04.0
+totalMemory: 11.17GiB freeMemory: 11.10GiB
+2019-04-16 17:16:13.644728: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:16:13.644812: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-04-16 17:16:13.645621: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:16:13.645657: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:16:13.645669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:16:13.645925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+W0416 17:16:13.657401 140314669397440 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:250: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0416 17:16:13.664438 140314669397440 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:257: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0416 17:16:13.672930 140314669397440 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:129: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+W0416 17:16:14.036385 140314669397440 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:261: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+W0416 17:16:18.461008 140314669397440 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2250: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2019-04-16 17:16:19.177565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:16:19.177662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:16:19.177677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:16:19.177685: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:16:19.177972: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+2019-04-16 17:16:19.865593: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1364] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+I0416 17:16:20.576785 140314669397440 session_manager.py:500] Running local_init_op.
+I0416 17:16:20.637856 140314669397440 session_manager.py:502] Done running local_init_op.
+2019-04-16 17:16:22.614503: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-04-16 17:16:22.788323: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+TensorFlow:  1.14
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        training
+SingleSess:  False
+Batch size:  64 global
+             64 per device
+Num batches: 100
+Num epochs:  0.00
+Devices:     ['/gpu:0']
+NUMA bind:   False
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+Initializing graph
+Running warm up
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 61.4 +/- 0.0 (jitter = 0.0)	8.104
+10	images/sec: 61.5 +/- 0.1 (jitter = 0.2)	7.752
+20	images/sec: 61.5 +/- 0.0 (jitter = 0.1)	7.913
+30	images/sec: 61.5 +/- 0.0 (jitter = 0.2)	7.780
+40	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	7.922
+50	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	7.887
+60	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	7.718
+70	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	8.011
+80	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	7.790
+90	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	7.801
+100	images/sec: 61.6 +/- 0.0 (jitter = 0.2)	8.035
+----------------------------------------------------------------
+total images/sec: 61.63
+----------------------------------------------------------------
+
+real	2m13.629s
+user	0m27.260s
+sys	0m10.508s
+Batch: 
+96
+Device: 
+0
+2019-04-16 17:18:25.285457: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-04-16 17:18:25.292632: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-04-16 17:18:27.264132: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1009] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-04-16 17:18:27.265049: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5592a96e37d0 executing computations on platform CUDA. Devices:
+2019-04-16 17:18:27.265090: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla K80, Compute Capability 3.7
+2019-04-16 17:18:27.267929: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2200000000 Hz
+2019-04-16 17:18:27.268408: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5592a9753f00 executing computations on platform Host. Devices:
+2019-04-16 17:18:27.268474: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-16 17:18:27.268928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1589] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:04.0
+totalMemory: 11.17GiB freeMemory: 11.10GiB
+2019-04-16 17:18:27.268974: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:18:27.269094: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-04-16 17:18:27.270005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:18:27.270052: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:18:27.270078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:18:27.270357: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+W0416 17:18:27.279340 139741590095296 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:250: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0416 17:18:27.288208 139741590095296 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:257: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0416 17:18:27.297116 139741590095296 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:129: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+W0416 17:18:27.650908 139741590095296 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:261: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+W0416 17:18:31.550120 139741590095296 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2250: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2019-04-16 17:18:32.056513: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:18:32.056614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:18:32.056651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:18:32.056664: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:18:32.056976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+2019-04-16 17:18:32.723147: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1364] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+I0416 17:18:33.436762 139741590095296 session_manager.py:500] Running local_init_op.
+I0416 17:18:33.493350 139741590095296 session_manager.py:502] Done running local_init_op.
+2019-04-16 17:18:35.320717: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-04-16 17:18:35.490317: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+TensorFlow:  1.14
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        training
+SingleSess:  False
+Batch size:  96 global
+             96 per device
+Num batches: 100
+Num epochs:  0.01
+Devices:     ['/gpu:0']
+NUMA bind:   False
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+Initializing graph
+Running warm up
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 53.7 +/- 0.0 (jitter = 0.0)	7.940
+10	images/sec: 54.0 +/- 0.0 (jitter = 0.1)	7.722
+20	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.965
+30	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.869
+40	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.936
+50	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.829
+60	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.830
+70	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.895
+80	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.874
+90	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.866
+100	images/sec: 54.1 +/- 0.0 (jitter = 0.1)	7.915
+----------------------------------------------------------------
+total images/sec: 54.10
+----------------------------------------------------------------
+
+real	3m35.397s
+user	0m30.928s
+sys	0m16.372s
+Batch: 
+96
+Device: 
+0
+===USE FP16===
+2019-04-16 17:22:00.659917: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-04-16 17:22:00.666719: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-04-16 17:22:02.639394: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1009] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-04-16 17:22:02.640367: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56290cc4f970 executing computations on platform CUDA. Devices:
+2019-04-16 17:22:02.640420: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla K80, Compute Capability 3.7
+2019-04-16 17:22:02.643349: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2200000000 Hz
+2019-04-16 17:22:02.643762: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56290ccc0070 executing computations on platform Host. Devices:
+2019-04-16 17:22:02.643803: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-16 17:22:02.644269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1589] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:04.0
+totalMemory: 11.17GiB freeMemory: 11.10GiB
+2019-04-16 17:22:02.644310: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:22:02.644430: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-04-16 17:22:02.645245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:22:02.645299: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:22:02.645311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:22:02.645552: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+W0416 17:22:02.657442 140454362019264 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:250: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0416 17:22:02.663851 140454362019264 deprecation.py:237] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/models/model.py:257: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0416 17:22:02.672020 140454362019264 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:129: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+W0416 17:22:03.032325 140454362019264 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:261: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+W0416 17:22:07.252168 140454362019264 deprecation.py:323] From /home/dealmaker/projects/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2250: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2019-04-16 17:22:07.949324: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1712] Adding visible gpu devices: 0
+2019-04-16 17:22:07.949439: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-16 17:22:07.949464: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1126]      0 
+2019-04-16 17:22:07.949479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1139] 0:   N 
+2019-04-16 17:22:07.949775: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1260] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10802 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+2019-04-16 17:22:08.600010: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1364] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+I0416 17:22:09.328665 140454362019264 session_manager.py:500] Running local_init_op.
+I0416 17:22:09.389605 140454362019264 session_manager.py:502] Done running local_init_op.
+2019-04-16 17:22:11.345790: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-04-16 17:22:11.518822: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+TensorFlow:  1.14
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        training
+SingleSess:  False
+Batch size:  96 global
+             96 per device
+Num batches: 100
+Num epochs:  0.01
+Devices:     ['/gpu:0']
+NUMA bind:   False
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+Initializing graph
+Running warm up
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 62.4 +/- 0.0 (jitter = 0.0)	7.729
+10	images/sec: 62.5 +/- 0.0 (jitter = 0.1)	8.016
+20	images/sec: 62.7 +/- 0.1 (jitter = 0.2)	8.173
+30	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.925
+40	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.932
+50	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.815
+60	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.883
+70	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.707
+80	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.990
+90	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.655
+100	images/sec: 62.7 +/- 0.0 (jitter = 0.2)	7.774
+----------------------------------------------------------------
+total images/sec: 62.70
+----------------------------------------------------------------
+
+real	3m9.177s
+user	0m32.352s
+sys	0m14.364s
